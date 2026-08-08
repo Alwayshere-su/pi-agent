@@ -5,7 +5,12 @@ __pycache__/
 venv/
 
 # Data & caches (bulk / non-submission)
-workspace/data/
+# 注：search_log.jsonl 是证据链四层追溯（p# → paper_summaries → search_log → sciverse_skill_log）的
+# 第 3 层审计记录，docx 方案明确引用——单独放行入库；其余缓存保持排除。
+workspace/data/*
+!workspace/data/literature_cache/
+workspace/data/literature_cache/*
+!workspace/data/literature_cache/search_log.jsonl
 workspace/checkpoint/
 
 # Only ignore runtime log files; keep structured outputs (JSON/MD/JSONL)
@@ -39,12 +44,11 @@ AI for reserach算法赛初赛模板.docx
 材料科学文献调研Agent_算法赛初赛方案.docx
 
 # 内部/赛题文档（本地保留、不入公开仓库；README 已内置合规/复现/架构摘要）
+# 注：COMPLIANCE.md / REPRODUCIBILITY.md / CROSS_THEME_REPORT.md 被初赛方案 docx 明确引用
+# （合规披露 / 复现说明 / 跨主题泛化证据），已恢复入库——评审核验需在仓库中可寻。
 ARCHITECTURE.md
-COMPLIANCE.md
-REPRODUCIBILITY.md
 RERUN_GUIDE.md
 E2E_RERUN_GUIDE.md
-CROSS_THEME_REPORT.md
 problem_definition.md
 补充.md
 赛题内容.md
