@@ -12,14 +12,15 @@
 
 ### 1.1 初赛阶段
 
-- 初赛不提交代码，但已明确开源边界。
-- 进入复赛/决赛后，以公开 GitHub 仓库形式提交完整可运行环境，包含：
+- 初赛不强制提交代码，但已明确开源边界。
+- **开源仓库已于 2026-08 上线并公开**：<https://github.com/Alwayshere-su/pi-agent>（公开仓库，285 文件、1 commit、MIT 许可），包含：
   - `pi_agent/` + `literature_agent/` + `main.py` 核心代码
   - `requirements.txt` 依赖清单（精确版本锁定）
   - 配置文件说明（`.api_key` 模板、环境变量配置）
   - 随机种子说明（`--seed 42`，`seed_everything()` 固定 random/numpy）
   - 复现步骤（见 README.md 附录 B）
 - 探索日志、知识图谱、运行反思等产物以 Markdown/JSON 随仓库开放（API Key 除外）。
+- 后续代码/文档变更将持续推送至该仓库（`git push`）。
 
 ### 1.2 复赛阶段
 
