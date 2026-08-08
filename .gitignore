@@ -32,6 +32,9 @@ nul
 GOAI_初赛_Prospector.zip
 AI for reserach算法赛初赛模板.docx
 
+# 初赛方案提交物（docx，本地保留、不入公开仓库）
+材料科学文献调研Agent_算法赛初赛方案.docx
+
 # smoke_fix 验证运行产物（本地保留供参考，不入库）
 workspace/outputs/smoke_fix/
 workspace/logs/smoke_fix/
