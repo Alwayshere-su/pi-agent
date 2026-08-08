@@ -2,7 +2,9 @@
 
 > **GOAI 赛道三** | **方向三** · 材料科学文献驱动的科学发现智能体 | **路线 A** · 构效关系发现
 >
-> **版本**：v2.0（初赛终版）｜**最后更新**：2026-08
+> **开源仓库**：[github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · 代码 MIT · 文档与运行产物 CC BY 4.0）
+>
+> **版本**：v2.2.1（初赛终版）｜**最后更新**：2026-08
 >
 > **核心成果**：一个以 LLM 为核心、端到端自主运行的文献驱动科学发现智能体。在有限时间预算内完成「文献检索 → 知识抽取 → Gap 识别 → 构效关系假设 → 贝叶斯/MCTS 搜索 → 外部验证 → 报告生成」全流程。针对 MOF 材料 CO₂ 捕获主题，经 11 轮迭代、546 篇次检索（去重后证据池 543 条、最终收录 46 篇），识别 10 项 Research Gap，生成 5 条构效关系假设，完成定量回归核验与 Materials Project / OQMD 外部交叉验证——流程完整、发现有效、引用干净、证据链可审计。
 
@@ -248,6 +250,7 @@ workspace/
 
 | 项 | 说明 |
 |----|------|
+| **开源仓库** | [github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开，2026-08 上线） |
 | **商业 API** | DeepSeek（`deepseek-v4-flash`，推理）、Sciverse（文献检索）。替代方案：任意 OpenAI 兼容端点、纯 arXiv 检索（零成本） |
 | **PDF 解析** | MinerU（推荐：云 API `mineru.net` / 本地部署 `localhost:8888`，启用见[附录 D](#附录-dmineru-pdf-解析引擎启用指南)）+ markitdown_utils（本地回退，结果确定可复现） |
 | **数据来源** | arXiv（开放获取）、Sciverse（仅标题+摘要内部使用）、Sci-Base（HuggingFace）、Materials Project / OQMD / NOMAD（公开数据库） |
@@ -292,6 +295,7 @@ workspace/
 | v2.1.0 | 2026-08 | 代码健壮性修缮（审计驱动，全量回归 125 passed）：① 上下文压缩保留 user_goal + 压缩后清理孤儿 tool 消息（恢复场景不再失忆主题/API 400）；② 恢复启动不再删除迭代脚本；③ LLM 调用全部显式 timeout=120 + 不可恢复错误（密钥/权限/模型不存在）立即放弃重试；④ 搜索固定 SEED 保证可复现；⑤ 后台子进程 atexit 自动清理 + 超时杀进程树 + daemon 线程 + 输出缓冲上限；⑥ read/write/list 路径沙箱 + `.api_key` 等敏感文件读写拦截；⑦ MinerU：缺包降级、Cloud 不 POST 本地路径、提交重试、轮询连续失败 5 次提前放弃（防预算黑洞）、parse_engine 记录真实原因；⑧ 外部验证单库异常降级不中断 discovery、OQMD 响应格式防护、缓存按 run_dir 隔离且原子读写；⑨ 知识图谱 load/merge 容错、`.api_key` 读取 UTF-8、预算除零防御、checkpoint 原子写与损坏留档 |
 | v2.1.1 | 2026-08 | symbolic_regression 域保护（完整跑冒烟发现并修复）：`_NP_FUNCS` 的 log/log10/sqrt/tan/exp 对域外输入产生 NaN/Inf，导致 `predict` 抛"非有限值"异常、工具崩溃——改为截断到有限值（log 下限 EPS、sqrt 下限 0、tan/exp clip），不适用的表达式由 MSE 自然淘汰。冒烟验证：`--run-dir smoke_fix` 600s 完整跑通（30 轮、48 篇文献、3 条假设、LLM 搜索引导注入 6 次事件、双轨验证、发现报告），修复后 symbolic_regression 正常产出报告 |
 | v2.2.0 | 2026-08 | 冒烟运行暴露问题批量修复（4 并行 agent + 父级回归）：① `generate_hypotheses` LLM 假设生成双路径增强——`_extract_json_object` 增贪婪兜底提取、新增 `_hypotheses_from_json` 兼容 dict/裸数组、独立 API 路径复用 `_call_llm` 并增加 JSON 约束重试、异常全部带 `type(e).__name__` 诊断（不再静默失败）；② 预算超支 40s 修复——收尾白名单拆分 `_WRAPUP_LIGHT_TOOLS`（write/read/edit/stop/think + 一次性报告生成）与 `_WRAPUP_HEAVY_TOOLS`（搜索/验证/模型对比/符号回归/shell 预算耗尽后一律拒绝），`_inject_final_warning` 文案同步，`budget_resume_test` 断言更新为与新设计一致；③ 临时文件残留清理——删除 `smoke_fix/refs_tmp.md` 与主案例 `gap_report.md.bak`，prompts.py 新增「产物零临时文件残留」规则（用后必删、收尾前 list_files 自查）；④ stderr 降噪——Sci-Base 缺索引提示改为进程内仅首次完整打印（模块级标志 + 锁），后续只一行简短提示 |
+| v2.2.1 | 2026-08 | 开源上线：代码推送至公开 GitHub 仓库 [github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（285 文件、1 commit、MIT）；`.gitignore` 补齐排除（赛题 zip / 官方模板 / 会话副本 / `workspace/code/` Agent 运行时脚本 / `*.bak-*` 等）；README 头部与合规表新增开源仓库链接 |
 
 ---
 
