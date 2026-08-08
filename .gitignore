@@ -38,6 +38,20 @@ AI for reserach算法赛初赛模板.docx
 # 初赛方案提交物（docx，本地保留、不入公开仓库）
 材料科学文献调研Agent_算法赛初赛方案.docx
 
+# 内部/赛题文档（本地保留、不入公开仓库；README 已内置合规/复现/架构摘要）
+ARCHITECTURE.md
+COMPLIANCE.md
+REPRODUCIBILITY.md
+RERUN_GUIDE.md
+E2E_RERUN_GUIDE.md
+CROSS_THEME_REPORT.md
+problem_definition.md
+补充.md
+赛题内容.md
+初赛提交材料.md
+初赛方案_修改清单.md
+初赛文件提交建议.md
+
 # smoke_fix 验证运行产物（本地保留供参考，不入库）
 workspace/outputs/smoke_fix/
 workspace/logs/smoke_fix/
@@ -60,6 +74,11 @@ scripts/inject_evidence_chain.py
 scripts/reference_audit.py
 scripts/backfill_redline2.py
 scripts/verify_scoring.py
+
+# 历史归档与一次性回填脚本（本地保留不入库）
+scripts/_archive_pid_work/
+scripts/backfill_llm_guidance.py
+scripts/backfill_llm_guidance_README.md
 
 # Vendor binaries
 vendor/

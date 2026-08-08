@@ -171,7 +171,7 @@ python main.py --topic "MOF materials for CO2 capture" --budget 600
 
 ### 多主题运行（Agent 泛化性验证）
 
-同一 Agent 在 **8 个主题**（6 个研究主题 + 2 个验证/冒烟测试主题）上独立调研，产物与记忆互不干扰（跨主题总结见 `CROSS_THEME_REPORT.md`）：
+同一 Agent 在 **8 个主题**（6 个研究主题 + 2 个验证/冒烟测试主题）上独立调研，产物与记忆互不干扰（跨主题产出见 `workspace/outputs/` 各主题目录）：
 
 ```bash
 python main.py --topic "MOF materials for CO2 capture" --budget 600
@@ -234,7 +234,6 @@ scripts/
 ├── run_e2e_rerun.py / run_validation_pipeline.py / run_nico5_validation.py  # 重跑管线
 ├── meta_analysis.py / prepare_scibase.py / verify_scoring.py 等
 ├── budget_resume_test/  cache_isolation_test/  test_core_functions/  # 回归测试
-└── _archive_pid_work/           # 一次性 PID 核验脚本归档（历史工作，勿依赖）
 tests/                           # pytest 单元测试
 vendor/bash/                     # 内置 Git Bash（Windows 下 shell 工具运行时依赖）
 workspace/
@@ -258,7 +257,7 @@ workspace/
 | **许可证** | 代码 MIT；文档与运行产物 CC BY 4.0 |
 | **已有项目** | 独立实现，无基于已有项目 |
 
-> 完整合规披露见 [`COMPLIANCE.md`](COMPLIANCE.md)。
+> 合规披露摘要见上表（商业 API / 数据来源 / 许可证）；完整披露（开源计划、费用假设、替代方案、迁移成本、可复现性影响）见本仓库内文档与赛题提交说明。
 
 ---
 
@@ -266,16 +265,9 @@ workspace/
 
 | 文档 | 内容 |
 |------|------|
-| [`初赛提交材料.md`](初赛提交材料.md) | 完整方案说明、技术路线、实验结果、评审自查（初赛主文档，内部稿） |
-| [`初赛方案_修改清单.md`](初赛方案_修改清单.md) | docx 方案逐项核对清单（已核对项/待处理项） |
-| `材料科学文献调研Agent_算法赛初赛方案.docx` | 初赛提交方案（**本地提交物，不入公开仓库**；内容与本文档/产物一一对应，可按本索引核对） |
-| [`problem_definition.md`](problem_definition.md) | 问题定义文档（科学问题、探索环境、发现信号定义、参照系设计） |
-| [`COMPLIANCE.md`](COMPLIANCE.md) | 合规披露文档（开源计划、商业 API、数据来源、第三方依赖） |
-| [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程） |
-| [`ARCHITECTURE.md`](ARCHITECTURE.md) | 系统架构设计说明 |
-| [`CROSS_THEME_REPORT.md`](CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题） |
-| [`RERUN_GUIDE.md`](RERUN_GUIDE.md) / [`E2E_RERUN_GUIDE.md`](E2E_RERUN_GUIDE.md) | 复赛重跑指南 / llm_guidance 真实验证指南 |
-| [`补充.md`](补充.md) / [`赛题内容.md`](赛题内容.md) / [`初赛文件提交建议.md`](初赛文件提交建议.md) | 赛题评审标准与提交要求 |
+| `初赛提交材料.md` | 完整方案说明、技术路线、实验结果、评审自查（**本地文档，不入公开仓库**） |
+| `初赛方案_修改清单.md` | docx 方案逐项核对清单（**本地文档，不入公开仓库**） |
+| `材料科学文献调研Agent_算法赛初赛方案.docx` | 初赛提交方案（**本地提交物，不入公开仓库**） |
 | `workspace/outputs/literature_survey/gap_report.md` | 10 项 Gap 完整清单 + 证据链 |
 | `workspace/outputs/literature_survey/knowledge_graph.md` | R1–R33 构效关系知识图谱 |
 | `workspace/outputs/literature_survey/paper_register.md` | 文献登记表（546 篇次口径说明 + 543 条证据池） |
@@ -296,6 +288,8 @@ workspace/
 | v2.1.1 | 2026-08 | symbolic_regression 域保护（完整跑冒烟发现并修复）：`_NP_FUNCS` 的 log/log10/sqrt/tan/exp 对域外输入产生 NaN/Inf，导致 `predict` 抛"非有限值"异常、工具崩溃——改为截断到有限值（log 下限 EPS、sqrt 下限 0、tan/exp clip），不适用的表达式由 MSE 自然淘汰。冒烟验证：`--run-dir smoke_fix` 600s 完整跑通（30 轮、48 篇文献、3 条假设、LLM 搜索引导注入 6 次事件、双轨验证、发现报告），修复后 symbolic_regression 正常产出报告 |
 | v2.2.0 | 2026-08 | 冒烟运行暴露问题批量修复（4 并行 agent + 父级回归）：① `generate_hypotheses` LLM 假设生成双路径增强——`_extract_json_object` 增贪婪兜底提取、新增 `_hypotheses_from_json` 兼容 dict/裸数组、独立 API 路径复用 `_call_llm` 并增加 JSON 约束重试、异常全部带 `type(e).__name__` 诊断（不再静默失败）；② 预算超支 40s 修复——收尾白名单拆分 `_WRAPUP_LIGHT_TOOLS`（write/read/edit/stop/think + 一次性报告生成）与 `_WRAPUP_HEAVY_TOOLS`（搜索/验证/模型对比/符号回归/shell 预算耗尽后一律拒绝），`_inject_final_warning` 文案同步，`budget_resume_test` 断言更新为与新设计一致；③ 临时文件残留清理——删除 `smoke_fix/refs_tmp.md` 与主案例 `gap_report.md.bak`，prompts.py 新增「产物零临时文件残留」规则（用后必删、收尾前 list_files 自查）；④ stderr 降噪——Sci-Base 缺索引提示改为进程内仅首次完整打印（模块级标志 + 锁），后续只一行简短提示 |
 | v2.2.1 | 2026-08 | 开源上线：代码推送至公开 GitHub 仓库 [github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · MIT）；`.gitignore` 补齐排除（赛题 zip / 官方模板 / 会话副本 / `workspace/code/` Agent 运行时脚本 / `*.bak-*` 等）；README 头部与合规表新增开源仓库链接；初赛方案 docx 为本地提交物、不入公开仓库（README 索引已标注） |
+| v2.2.2 | 2026-08 | 仓库精简：内部/赛题文档（ARCHITECTURE / COMPLIANCE / REPRODUCIBILITY / RERUN_GUIDE / E2E_RERUN_GUIDE / CROSS_THEME_REPORT / problem_definition / 补充 / 赛题内容）移出公开仓库（本地保留，`.gitignore` 排除）；README 同步去除这些文档的引用死链（合规摘要、可复现性要点、MinerU 策略已内嵌 README），文档索引标注本地文档 |
+| v2.2.3 | 2026-08 | 仓库再瘦身：历史归档 `scripts/_archive_pid_work/`（33 个一次性核验脚本）与一次性回填脚本 `backfill_llm_guidance*`（2 个）移出公开仓库（本地保留）；README 项目结构同步移除归档目录行；冒烟主题产物（smoke_test/g3test/mof_rerun/mof_rerun_v2）保留作为泛化性过程证据 |
 
 ---
 
@@ -318,7 +312,7 @@ workspace/
 
 LLM 采样不保证逐字可复现；搜索打分等确定性计算由文献数值确定（`seed_everything()` 固定 random/numpy）。
 
-> 系统化的可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）见 [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)。
+> 可复现性要点见上文（确定性计算由 `--seed` 固定；LLM 采样随机但结论带证据链可独立核验）；本地另有 REPRODUCIBILITY.md 完整说明。
 
 ## 附录 C：输出结构
 
@@ -339,7 +333,7 @@ workspace/outputs/<run-dir>/literature_survey/
 
 ## 附录 D：MinerU PDF 解析引擎启用指南
 
-> MinerU 是 OpenDataLab 的开源文档解析引擎（PDF→结构化内容），对复杂表格/数学公式/中文论文的解析质量优于本地 markitdown。本项目的双引擎策略见 COMPLIANCE.md 第四章：**MinerU 优先（Cloud > 本地服务 > pip 包），全部不可用时自动回退 markitdown**（离线、结果确定可复现）。回退原因写入 `ParsedDocument.parse_engine` 字段，可在每个解析结果与 `mineru_test_results.json` 中审计。
+> MinerU 是 OpenDataLab 的开源文档解析引擎（PDF→结构化内容），对复杂表格/数学公式/中文论文的解析质量优于本地 markitdown。本项目的双引擎策略：**MinerU 优先（Cloud > 本地服务 > pip 包），全部不可用时自动回退 markitdown**（离线、结果确定可复现）。回退原因写入 `ParsedDocument.parse_engine` 字段，可在每个解析结果与 `mineru_test_results.json` 中审计。
 
 ### D.1 云 API 方式（mineru.net）
 
@@ -369,7 +363,7 @@ docker run -d --name mineru-local -p 8888:8888 mineru/mineru-service:latest
 |----|------|
 | **自动回退** | MinerU 任一通道不可用/解析失败时，`DocumentParser` 自动回退 markitdown 本地引擎，`parse_engine` 记录原因（如 `markitdown (MinerU unavailable: ...)`） |
 | **质量差异** | markitdown 对复杂表格（合并单元格）、数学公式（LaTeX）与部分 PDF 版式解析较弱；MinerU 在上述场景质量更优。可解析质量差异影响下游数值抽取的覆盖率 |
-| **可复现性** | markitdown 离线确定可复现；MinerU 远程引擎受网络/配额/服务端版本影响，结果可能细微差异（详见 REPRODUCIBILITY.md 第 5 节） |
+| **可复现性** | markitdown 离线确定可复现；MinerU 远程引擎受网络/配额/服务端版本影响，结果可能细微差异 |
 | **强制本地** | 需要精确复现时可不配置 `MINERU_API_KEY`/`MINERU_LOCAL_URL`，或对 `DocumentParser(prefer_mineru=False)` 走纯本地路径 |
 
 ---
