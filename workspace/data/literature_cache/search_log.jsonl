@@ -1,0 +1,207 @@
+{"timestamp": "2026-08-01T23:24:53", "query": "amine-functionalized MOF CO2 adsorption humidity water effect mechanism", "sources": ["arxiv"], "result_count": 0, "elapsed_seconds": 19.17}
+{"timestamp": "2026-08-01T23:24:56", "query": "MOF temperature swing adsorption regeneration energy CO2 capture process", "sources": ["arxiv"], "result_count": 0, "elapsed_seconds": 2.62}
+{"timestamp": "2026-08-01T23:25:03", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 0, "elapsed_seconds": 2.74}
+{"query": "metal-organic framework CO2 capture", "error": "status 429"}
+{"query": "MOF carbon dioxide adsorption", "error": "status 429"}
+{"query": "amine-functionalized MOF CO2 capture", "error": "status 429"}
+{"query": "MOF-74 CO2 adsorption open metal sites", "new": 30}
+{"query": "MOF humidity water stability CO2", "error": "status 429"}
+{"query": "MOF direct air capture CO2", "new": 30}
+{"query": "bimetallic MOF CO2 adsorption", "new": 25}
+{"query": "MOF CO2/N2 selectivity flue gas", "error": "status 429"}
+{"query": "MOF temperature swing adsorption CO2 regeneration", "error": "status 429"}
+{"query": "ultramicroporous MOF CO2 separation", "error": "status 429"}
+{"query": "ZIF-8 CO2 capture adsorption", "error": "status 429"}
+{"query": "UiO-66 CO2 adsorption amine", "error": "status 429"}
+{"query": "amine grafted MOF CO2 post-combustion", "new": 30}
+{"query": "MOF CO2 isosteric heat adsorption enthalpy", "new": 29}
+{"query": "MOF vacuum swing adsorption CO2", "error": "status 429"}
+{"query": "MIL-101 CO2 adsorption", "new": 29}
+{"query": "MOF CO2 capture machine learning screening", "error": "status 429"}
+{"query": "hydrolytic stability MOF CO2 adsorption water", "error": "status 429"}
+{"query": "MOF-74 series CO2 adsorption isotherm", "new": 26}
+{"query": "polyamine impregnated MOF CO2 capture", "new": 25}
+{"timestamp": "2026-08-01T23:40:43", "query": "MOF SO2 NOx impurity CO2 capture degradation", "sources": ["arxiv"], "result_count": 0, "elapsed_seconds": 7.32}
+{"query": "MOF SO2 adsorption CO2 capture flue gas", "error": "status 429"}
+{"query": "metal-organic framework NOx resistance CO2", "new": 22}
+{"query": "amine MOF moisture stability breakthrough humid", "error": "status 429"}
+{"query": "MOF CO2 capture machine learning high-throughput", "new": 23}
+{"query": "Mg-MOF-74 water stability regeneration cycles", "error": "status 429"}
+{"timestamp": "2026-08-02T12:08:54", "query": "bimetallic MOF-74 mixed metal CO2 adsorption metal ratio synergistic", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 17, "elapsed_seconds": 2.11, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:08:56", "query": "mixed-metal MOF CO2 capture dopant ratio effect open metal sites", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 24, "elapsed_seconds": 1.96, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:08:58", "query": "bimetallic MOF CO2 adsorption DFT electronic structure metal substitution", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 2.31, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:09:00", "query": "bimetallic metal-organic framework CO2/N2 selectivity isosteric heat metal composition", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 24, "elapsed_seconds": 2.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:12:52", "query": "双金属MOF-74金属比例对CO2吸附容量倒U型响应及其组合依赖性 NiCo-MOF-74 CoMn-MOF-74 CuMg-MOF-74", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 4, "elapsed_seconds": 2.14, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:13:10", "query": "胺功能化MOF在湿CO2捕获中的火山型水响应关系 胺功能化Mg-MOF-74 PEI浸渍MOF MOF@MOF核壳复合材料", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.85, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:13:26", "query": "CO2等量吸附热Qst对容量-选择性-再生能三角平衡的约束关系 MOF-74(Ni) MIL-101 胺化SBA-15", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.7, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:13:40", "query": "缺陷工程引入的OMS密度与CO2吸附热之间的线性标度关系 缺陷Mg-MOF-74 缺陷Ni-MOF-74 M-MOF-74系列", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.91, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T12:13:50", "query": "烟气杂质NO2/SO2暴露剂量与MOF CO2捕获容量保持率之间的指数衰减关系 ELM-11 Mg-MOF-74 ZIF-8", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 3, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:00:24", "query": "MgCu-MOF-74 mixed metal CO2 adsorption alkaline earth transition metal ratio", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 13, "elapsed_seconds": 11.68, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:00:26", "query": "MgNi MgZn bimetallic MOF-74 CO2 uptake metal composition effect", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 11, "elapsed_seconds": 2.2, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:06:51", "query": "缺陷工程引入的OMS密度与CO2吸附热之间的线性标度关系 缺陷Mg-MOF-74 缺陷Ni-MOF-74 M-MOF-74系列", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 2.05, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:40:12", "query": "MgNi-MOF-74 mixed metal CO2 adsorption capacity ratio dependence isotherm", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 13, "elapsed_seconds": 21.59, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:40:33", "query": "MgZn MgCo MOF-74 bimetallic CO2 uptake composition alkaline earth transition metal", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 16, "elapsed_seconds": 21.42, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:40:42", "query": "MOF-74 d-band center DFT CO2 binding energy metal substitution electronic structure", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 17, "elapsed_seconds": 9.05, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:46:13", "query": "Material-property relationship discovery Based on the gap analysis", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.65, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:46:17", "query": "relationship", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 4.76, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:46:21", "query": "material-property relationship discovery contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 3.94, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:47:42", "query": "Material-property relationship discovery Based on the gap analysis", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.71, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:47:43", "query": "relationship", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.11, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T13:47:44", "query": "material-property relationship discovery contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.29, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:04:20", "query": "mechanochemical ball milling synthesis MOF-74 CO2 adsorption capacity performance comparison solvothermal", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 22.01, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:05:59", "query": "MgNi-MOF-74 bimetallic CO2 uptake experimental isotherm metal ratio alkaline earth nickel", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 98.9, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:06:51", "query": "DFT+U Hubbard MOF CO2 binding energy open metal site benchmark functional correlated", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 52.4, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:08:40", "query": "mechanochemical MOF-74 ball milling CO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 98.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:10:14", "query": "mixed metal MOF-74 CO2 isosteric heat ratio", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 93.85, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:11:19", "query": "DFT+U MOF CO2 adsorption benchmark", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 65.38, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:21:31", "query": "mixed metal MOF-74 CO2 isosteric heat ratio", "sources": ["sciverse(rest)"], "result_count": 0, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:21:59", "query": "mechanochemical MOF-74 CO2", "sources": ["sciverse(rest)"], "result_count": 0, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:22:26", "query": "x", "sources": ["sciverse(rest)"], "result_count": 0, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:22:50", "query": "mechanochemical ball milling synthesis MOF-74 CO2 adsorption capacity performance comparison solvothermal", "sources": ["sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.44, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:24:52", "query": "mechanochemical MOF-74 CO2", "sources": ["sciverse(rest)"], "result_count": 20, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:27:12", "query": "mechanochemical MOF-74 CO2", "sources": ["sciverse(rest)", "arxiv"], "result_count": 1, "elapsed_seconds": 60.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:28:02", "query": "mechanochemical MOF-74 CO2", "sources": ["sciverse(rest)", "arxiv"], "result_count": 1, "elapsed_seconds": 25.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:30:06", "query": "mechanochemical synthesis bimetallic MOF-74 CO2 adsorption capacity metal ratio", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.39, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:30:08", "query": "Fe-MOF-74 DFT+U Hubbard U d-band center CO2 binding", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.91, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:34:12", "query": "mechanochemical MOF-74 CO2", "sources": ["sciverse(rest)"], "result_count": 1, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:34:56", "query": "x", "sources": ["sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.76, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:35:04", "query": "x", "sources": ["sciverse(rest)"], "result_count": 10, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T15:39:18", "query": "mechanochemical ball milling mixed-metal MOF-74 CO2 adsorption capacity composition gradient", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.73, "sciverse_adapter_mode": "rest"}
+{"query": "mechanochemical ball milling mixed metal MOF-74 CO2 adsorption capacity", "count": 10, "ts": "2026-08-02 15:41:04"}
+{"query": "MgNi-MOF-74 Mg Ni mixed metal ratio CO2 adsorption uptake", "count": 10, "ts": "2026-08-02 15:41:07"}
+{"query": "Fe-MOF-74 DFT+U Hubbard U d-band center CO2 binding energy", "count": 10, "ts": "2026-08-02 15:41:11"}
+{"query": "amine functionalized MOF water humidity CO2 capture relative humidity peak", "count": 10, "ts": "2026-08-02 15:41:14"}
+{"query": "defect engineered MOF-74 missing linker open metal site CO2 adsorption quantification", "count": 10, "ts": "2026-08-02 15:41:17"}
+{"query": "bimetallic MOF actual metal composition ICP nominal ratio deviation synthesis", "count": 10, "ts": "2026-08-02 15:41:21"}
+{"query": "mixed metal MOF CO2 adsorption isotherm composition dependence curve", "count": 10, "ts": "2026-08-02 15:41:24"}
+{"query": "bimetallic MOF-74 water stability humid CO2 capture cyclic", "count": 10, "ts": "2026-08-02 15:41:27"}
+{"query": "amine functionalized MOF CO2 adsorption water enhancement relative humidity cooperative", "count": 10, "ts": "2026-08-02 16:08:27"}
+{"query": "MOF defect type missing linker vs solvent formate CO2 adsorption open metal site comparison", "count": 10, "ts": "2026-08-02 16:08:30"}
+{"query": "CO probe FTIR open metal site quantification defective MOF CO2 uptake", "count": 10, "ts": "2026-08-02 16:08:34"}
+{"query": "amine grafted MOF humid flue gas CO2 capture cyclic stability water tolerance", "count": 10, "ts": "2026-08-02 16:08:37"}
+{"query": "defective MOF-74 missing linker HBDC CO2 adsorption capacity enhancement experiment", "count": 10, "ts": "2026-08-02 16:08:40"}
+{"timestamp": "2026-08-02T16:13:09", "query": "缺陷MOF-74(Co) 缺陷MOF-74(Mg) 缺陷MOF-74(Ni)", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 25.01, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:13:34", "query": "MOF-74 CO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 3, "elapsed_seconds": 25.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:13:59", "query": "MOF-74 OMS/ CO2 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 25.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:35:30", "query": "x", "sources": ["semantic_scholar"], "result_count": 0, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:35:30", "query": "x", "sources": ["semantic_scholar"], "result_count": 0, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:35:30", "query": "x", "sources": ["semantic_scholar"], "result_count": 0, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:47:01", "query": "Mg2(dobpdc) diamine appended amine functionalized MOF water humidity CO2 adsorption enhancement", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 20, "elapsed_seconds": 25.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T16:47:26", "query": "water bridge defect sites amine-functionalized metal-organic framework CO2 capture moisture", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 25.02, "sciverse_adapter_mode": "rest"}
+{"query": "Mg2(dobpdc) amine appended CO2 capture water humidity uptake enhancement cooperative", "count": 10, "ts": "2026-08-02 16:47:49"}
+{"query": "mmen Mg2(dobpdc) diamine appended MOF water co-adsorption CO2 capacity moisture", "count": 10, "ts": "2026-08-02 16:47:52"}
+{"query": "amine functionalized metal organic framework relative humidity CO2 adsorption capacity peak enhancement water promotion", "count": 10, "ts": "2026-08-02 16:47:56"}
+{"query": "water bridging defect open metal site MOF CO2 adsorption humidity mechanism", "count": 10, "ts": "2026-08-02 16:47:59"}
+{"query": "Mg-MOF-74 vs amine MOF humid CO2 capture breakthrough water effect comparison", "count": 10, "ts": "2026-08-02 16:48:02"}
+{"timestamp": "2026-08-02T17:48:50", "query": "双金属MOF-74中金属比例与CO2吸附容量呈倒U型定量关系 在双金属MOF-74", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.34, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:48:54", "query": "CoMn-MOF-74 NiCu-MOF-74", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.28, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:48:58", "query": "CoMn-MOF-74 NiCu-MOF-74 FeCu-MOF-74 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 4.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:04", "query": "胺接枝Mg-MOF-74 MOF@MOF核壳材料 疏水功能化胺浸渍树脂", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:07", "query": "Mg-MOF-74 CO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 2, "elapsed_seconds": 2.95, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:11", "query": "Mg-MOF-74 MOF CO2 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.91, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:15", "query": "胺化SBA-15 锂掺杂MIL-101", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.53, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:19", "query": "MOF-74(Ni) MOF-74(Mg) Qst", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 3.94, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:23", "query": "MOF-74(Ni) MOF-74(Mg) UiO-66 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 4.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:27", "query": "缺陷MOF-74(Co) 缺陷MOF-74(Mg) 缺陷MOF-74(Ni)", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 1.94, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:30", "query": "MOF-74 CO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 3, "elapsed_seconds": 2.52, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:32", "query": "MOF-74 OMS/ CO2 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.1, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:36", "query": "Mg-MOF-74 HKUST-1 ZIF-8 MIL-101(Cr) MOF NO2/SO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:39", "query": "Mg-MOF-74 HKUST-1", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 2.93, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T17:49:43", "query": "Mg-MOF-74 HKUST-1 ZIF-8 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.9, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:12:55", "query": "halide perovskite band gap stability", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 2.16, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:12:59", "query": "lead-free double perovskite band gap stability Cs2AgBiBr6", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 20, "elapsed_seconds": 3.49, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:01", "query": "machine learning halide perovskite band gap prediction stability", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 5, "elapsed_seconds": 2.1, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:08", "query": "MAPbI3 FAPbI3 perovskite phase stability degradation decomposition", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.96, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:10", "query": "2D Ruddlesden-Popper perovskite band gap stability", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 2.28, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:15", "query": "CsPbI3 alpha phase stabilization band gap inorganic perovskite", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.1, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:17", "query": "perovskite tolerance factor octahedral distortion band gap engineering", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.72, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:22", "query": "inorganic cesium lead halide perovskite stability band gap solar cell", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.8, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:24", "query": "formamidinium lead iodide perovskite black phase stability", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 1.83, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:29", "query": "halide perovskite stability decomposition enthalpy DFT", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.12, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:13:31", "query": "tin perovskite band gap oxidation stability lead-free", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 2, "elapsed_seconds": 2.44, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:04", "query": "thermoelectric materials ZT optimization figure of merit", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 30, "elapsed_seconds": 2.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:07", "query": "Bi2Te3 BiSbTe thermoelectric nanostructuring figure of merit", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.24, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:09", "query": "PbTe thermoelectric high ZT band convergence doping", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:11", "query": "filled skutterudite thermoelectric ZT optimization", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 2.52, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:18", "query": "bismuth telluride thermoelectric Seebeck conductivity optimization", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 1.78, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:20", "query": "lead telluride thermoelectric Seebeck lattice thermal conductivity", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.77, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:22", "query": "SnSe thermoelectric record ZT single crystal thermal conductivity", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.86, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:24", "query": "machine learning thermoelectric materials discovery ZT prediction", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 6, "elapsed_seconds": 1.79, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:30", "query": "Bi2Te3 thermoelectric", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 1.95, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:32", "query": "PbTe thermoelectric", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 1.99, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:36", "query": "SnSe thermoelectric", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 4.1, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:38", "query": "half-Heusler thermoelectric", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 25, "elapsed_seconds": 1.73, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:44", "query": "GeTe thermoelectric", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 20, "elapsed_seconds": 1.84, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:46", "query": "Cu2Se thermoelectric liquid-like", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 2.14, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:48", "query": "phonon engineering lattice thermal conductivity thermoelectric", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 20, "elapsed_seconds": 1.94, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:20:50", "query": "carrier concentration optimization thermoelectric power factor", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 20, "elapsed_seconds": 2.09, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:24:44", "query": "Si-Ge-P 超饱和固溶体 超饱和固溶体的晶格热导率与 因此存在最优晶粒尺寸使晶格热导率大幅下降而载流子迁移率未严重恶化", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.34, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:24:47", "query": "Si80Ge20P10Fe1", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:24:51", "query": "Si80Ge20P10Fe1 Si-Ge-P ZT contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 4, "elapsed_seconds": 3.91, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:24:55", "query": "SnSe SnSe1-xBrx SnSe1-xClx SnSe1-xIx ZT Cl/Br/I", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.8, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:24:59", "query": "SnSe1-xBrx SnSe1-xClx", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.54, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:03", "query": "SnSe SnSe1-xBrx SnSe1-xClx contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.89, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:07", "query": "最优掺杂浓度随温度上移抑制双极效应的实验验证 通过制备一系列不同掺杂浓度的样品 的电输运和热输运性质", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.12, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:11", "query": "Bi2Te3 Bi0.5Sb1.5Te3", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 2, "elapsed_seconds": 4.07, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:15", "query": "Bi2Te3 Bi0.5Sb1.5Te3 PbTe contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.86, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:19", "query": "共振掺杂浓度与 共振掺杂浓度 但超过临界浓度后杂质带扩展会破坏共振态", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.14, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:23", "query": "HfZrCoSnSb HfZrCoSnSb:Al", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.85, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:27", "query": "HfZrCoSnSb HfZrCoSnSb:Al PbTe:K/Na contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.86, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:32", "query": "填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性 可定量降低晶格热导率 但过量填充会引入附加的电子散射并改变载流子浓度", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.12, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:35", "query": "YbyFe4Sb12 YbyCo4Sb12", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.29, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:25:39", "query": "YbyFe4Sb12 YbyCo4Sb12 CeyFe4Sb12 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.87, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:04", "query": "Si-Ge-P 超饱和固溶体 超饱和固溶体的晶格热导率与 因此存在最优晶粒尺寸使晶格热导率大幅下降而载流子迁移率未严重恶化", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.94, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:06", "query": "Si80Ge20P10Fe1", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:07", "query": "Si80Ge20P10Fe1 Si-Ge-P ZT contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 4, "elapsed_seconds": 1.23, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:35", "query": "SnSe SnSe1-xBrx SnSe1-xClx SnSe1-xIx ZT Cl/Br/I", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.01, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:37", "query": "SnSe1-xBrx SnSe1-xClx", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.17, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:38", "query": "SnSe SnSe1-xBrx SnSe1-xClx contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.83, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:47", "query": "最优掺杂浓度随温度上移抑制双极效应的实验验证 通过制备一系列不同掺杂浓度的样品 的电输运和热输运性质", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.38, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:49", "query": "Bi2Te3 Bi0.5Sb1.5Te3", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 2, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:31:51", "query": "Bi2Te3 Bi0.5Sb1.5Te3 PbTe contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.81, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:32:08", "query": "共振掺杂浓度与 共振掺杂浓度 但超过临界浓度后杂质带扩展会破坏共振态", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:32:09", "query": "HfZrCoSnSb HfZrCoSnSb:Al", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:32:11", "query": "HfZrCoSnSb HfZrCoSnSb:Al PbTe:K/Na contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:32:22", "query": "填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性 可定量降低晶格热导率 但过量填充会引入附加的电子散射并改变载流子浓度", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.9, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:32:24", "query": "YbyFe4Sb12 YbyCo4Sb12", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.8, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:32:25", "query": "YbyFe4Sb12 YbyCo4Sb12 CeyFe4Sb12 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.53, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:33:43", "query": "high-nickel cathode capacity retention lithium-ion batteries", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:33:45", "query": "Ni-rich layered oxide cathode capacity fade degradation mechanism", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.85, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:33:47", "query": "single crystal vs polycrystalline NMC cathode cycling stability", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:33:53", "query": "lithium battery cathode capacity retention", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 12, "elapsed_seconds": 1.98, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:33:55", "query": "NMC cathode lithium ion battery", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 10, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:01", "query": "Ni-rich cathode single crystal NMC811 degradation", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 2.37, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:03", "query": "layered oxide cathode doping cycle life cobalt free", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.93, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:11", "query": "lithium nickel manganese cobalt oxide cathode", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.14, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:14", "query": "high voltage cathode surface coating electrolyte", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.65, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:40", "query": "cathode electrolyte interphase nickel-rich layered oxide surface reconstruction", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.97, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:42", "query": "microcrack particle fracture lithium battery cathode cycling", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.81, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:48", "query": "lithium ion battery cathode degradation", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 20, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:50", "query": "nickel rich cathode electrolyte interface", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 1.78, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:57", "query": "oxygen release cation mixing cathode high voltage", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.08, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:34:59", "query": "cobalt free cathode lithium batteries", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 1, "elapsed_seconds": 2.07, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:35:05", "query": "NMC811 full cell cycling performance", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.35, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:35:07", "query": "electrolyte additive lithium battery high voltage stability", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 4, "elapsed_seconds": 1.77, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:41:54", "query": "单晶NMC811中Ni氧化态异质性调控位错辅助裂纹萌生 在单晶LiNi0 1O2正极颗粒中", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.81, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:41:58", "query": "LiNi0.8Mn0.1Co0.1O2 (SC-NMC811) NMC811", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.24, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:01", "query": "LiNi0.8Mn0.1Co0.1O2 (SC-NMC811) NMC811 Ni contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.88, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:06", "query": "碳酸酯电解液 裂纹电解质润湿通过表面重构与氧释放加速容量衰减 在高镍多晶NMC正极中", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.86, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:09", "query": "LiNi0.8Mn0.1Co0.1O2 LiNiO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.31, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:13", "query": "LiNi0.8Mn0.1Co0.1O2 LiNiO2 NMC contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:17", "query": "高镍层状氧化物中Ni含量与容量保持率呈非单调权衡", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 1.82, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:21", "query": "LiNi0.6Mn0.2Co0.2O2 LiNi0.7Mn0.1Co0.2O2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.66, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:25", "query": "LiNi0.6Mn0.2Co0.2O2 LiNi0.7Mn0.1Co0.2O2 LiNi0.8Mn0.1Co0.1O2 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 4.07, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:30", "query": "涂层材料的Li离子电导率与界面副反应阻抗之间的帕累托最优设计", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.09, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:33", "query": "α-AlF3 α-Al2O3", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.66, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:37", "query": "α-AlF3 α-Al2O3 m-ZrO2 contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 3.94, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:41", "query": "Ni氧化态升高降低阳离子混排迁移势垒 高Ni3 含量使Ni经四面体中间体迁移至Li层", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.1, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:44", "query": "LiNi0.8Mn0.1Co0.1O2 LiNiO2", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.4, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-02T19:42:46", "query": "LiNi0.8Mn0.1Co0.1O2 LiNiO2 Ni contradictory evidence", "sources": ["arxiv", "semantic_scholar", "sciverse(rest)"], "result_count": 0, "elapsed_seconds": 2.09, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-03T18:56:03", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 1.47, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-03T19:00:16", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.03, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-03T19:04:54", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-03T19:10:51", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-03T19:12:53", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-08T19:39:57", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.02, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-08T19:40:18", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-08T19:40:39", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.01, "sciverse_adapter_mode": "rest"}
