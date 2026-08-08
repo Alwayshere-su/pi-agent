@@ -832,6 +832,16 @@ class DocumentParser:
         self._mineru_pip = MinerUParser(mode="pip")
         self._prefer_mineru = prefer_mineru
 
+    @property
+    def mineru_available(self) -> bool:
+        """任一 MinerU tier（Cloud / 本地服务 / pip 包）可用即返回 True。
+
+        README 附录 D 的 `python literature_agent/parser.py` 状态诊断依赖此属性。
+        """
+        return any(
+            p.available for p in (self._mineru_cloud, self._mineru_local, self._mineru_pip)
+        )
+
     def _try_mineru_tier(self, parser: MinerUParser, filepath: str,
                          tier_name: str, url: Optional[str] = None) -> Optional[ParsedDocument]:
         """尝试单个 MinerU tier 解析。"""

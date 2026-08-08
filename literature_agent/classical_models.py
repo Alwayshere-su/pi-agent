@@ -421,4 +421,10 @@ def _self_check() -> int:
 
 
 if __name__ == "__main__":
+    # Windows GBK 控制台打印 ²/°C 等 Unicode 会 UnicodeEncodeError：统一 UTF-8 输出
+    # （复现命令可跨平台运行，README 附录 B 自检命令依赖此兜底）
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
     sys.exit(_self_check())

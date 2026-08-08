@@ -9,7 +9,8 @@ services:
       dockerfile: Dockerfile
     image: pi-agent:latest
     env_file:
-      - .api_key
+      - path: .api_key
+        required: false
     stdin_open: true
     tty: true
     command: ["python", "main.py", "--help"]

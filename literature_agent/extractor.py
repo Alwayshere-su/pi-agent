@@ -801,6 +801,12 @@ def extract_xy_pairs(
 # ═══════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
+    import sys
+    # Windows GBK 控制台打印 ²/°C/✓ 等 Unicode 会 UnicodeEncodeError：统一 UTF-8 输出
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
     sample_text = """本研究对比了三种材料在 CO2 吸附中的性能差异。
 
 | 材料 | T (K) | Capacity (mmol/g) |

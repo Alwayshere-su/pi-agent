@@ -291,6 +291,7 @@ workspace/
 | v2.2.2 | 2026-08 | 仓库精简：内部/赛题文档（ARCHITECTURE / COMPLIANCE / REPRODUCIBILITY / RERUN_GUIDE / E2E_RERUN_GUIDE / CROSS_THEME_REPORT / problem_definition / 补充 / 赛题内容）移出公开仓库（本地保留，`.gitignore` 排除）；README 同步去除这些文档的引用死链（合规摘要、可复现性要点、MinerU 策略已内嵌 README），文档索引标注本地文档 |
 | v2.2.3 | 2026-08 | 仓库再瘦身：历史归档 `scripts/_archive_pid_work/`（33 个一次性核验脚本）与一次性回填脚本 `backfill_llm_guidance*`（2 个）移出公开仓库（本地保留）；README 项目结构同步移除归档目录行；冒烟主题产物（smoke_test/g3test/mof_rerun/mof_rerun_v2）保留作为泛化性过程证据 |
 | v2.2.4 | 2026-08 | 仓库精简（209→180）：docx 生成工具（`build_prelim_proposal.py`/`fill_initial_template.py`）与冒烟/旧版重跑主题产物（smoke_test / g3test / mof_rerun / mof_rerun_v2 三目录）移出公开仓库（本地保留，`.gitignore` 排除）；README 主题表述更新（保留主案例 + mof_e2e_v4 + 4 个正式主题：cathode / perovskite / thermoelectric / validation） |
+| v2.2.5 | 2026-08 | 复现性修缮（组委会复现扫描）：① `docker-compose.yml` 的 `env_file: .api_key` 改 `required: false`——无 `.api_key` 也能 `docker compose up`（与 README"缺失自动降级"承诺一致）；② 模块自检命令（`classical_models.py` / `extractor.py` / `symbolic_regression.py`）加 Windows UTF-8 输出兜底——GBK 控制台打印 `²`/`°C` 不再 UnicodeEncodeError，复现命令跨平台可跑；③ `DocumentParser` 补 `mineru_available` 属性（README 附录 D 的 `python literature_agent/parser.py` 诊断命令依赖，此前 AttributeError）；验证：pytest 122 passed、四个自检命令与 demo.py 全部 exit 0 |
 
 ---
 
