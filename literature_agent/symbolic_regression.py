@@ -672,4 +672,9 @@ def _self_test() -> int:
 
 
 if __name__ == "__main__":
+    # Windows GBK 控制台打印 Unicode 会 UnicodeEncodeError：统一 UTF-8 输出
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
     sys.exit(_self_test())
