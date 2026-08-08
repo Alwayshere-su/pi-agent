@@ -80,5 +80,21 @@ scripts/_archive_pid_work/
 scripts/backfill_llm_guidance.py
 scripts/backfill_llm_guidance_README.md
 
+# 冒烟/旧版重跑主题产物（本地保留不入库；正式主题 cathode/perovskite/thermoelectric/validation/mof_e2e_v4 入库）
+workspace/outputs/smoke_test/
+workspace/logs/smoke_test/
+workspace/memory/smoke_test/
+workspace/outputs/g3test/
+workspace/logs/g3test/
+workspace/memory/g3test/
+workspace/logs/mof_rerun/
+workspace/memory/mof_rerun/
+workspace/logs/mof_rerun_v2/
+workspace/memory/mof_rerun_v2/
+
+# docx 生成工具（docx 为本地提交物不入库，工具本地保留）
+scripts/build_prelim_proposal.py
+scripts/fill_initial_template.py
+
 # Vendor binaries
 vendor/
