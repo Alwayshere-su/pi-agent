@@ -1,0 +1,214 @@
+{
+  "hypothesis_index": 4,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 22,
+    "material_tokens": 39,
+    "property_keywords": [
+      "capacity",
+      "co2",
+      "loading",
+      "uptake"
+    ],
+    "literature_values": [
+      1.49,
+      9.21,
+      9.5
+    ]
+  },
+  "best_params": {
+    "property_value": 9.721506329440313,
+    "composition_x": 0.40564679656437264,
+    "temperature": 849.6491234947932
+  },
+  "best_score": 0.734319994644423,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.6301836250157213,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 8.09356832650648,
+        "composition_x": 0.8294904247348851,
+        "temperature": 1463.865741688456
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.6343462934446022,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 10.188083679151417,
+        "composition_x": 0.8279578733280291,
+        "temperature": 1290.630873535979
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.5975756862717253,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 12.113711604978809,
+        "composition_x": 0.040051503303271785,
+        "temperature": 850.6625153909134
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.5732363350150513,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 13.84596444195257,
+        "composition_x": 0.12198883525844306,
+        "temperature": 813.5866625283574
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.6513068344492553,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 13.939055397665955,
+        "composition_x": 0.371026228692923,
+        "temperature": 817.1470567097771
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.6212753477014161,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 7.520432028905921,
+        "composition_x": 0.12977880931301744,
+        "temperature": 1405.9603159387723
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.5953752479161599,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 3.725170525339717,
+        "composition_x": 0.26057490220156954,
+        "temperature": 1470.565221362239
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.7159010689234621,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 10.068182347263507,
+        "composition_x": 0.369769583649476,
+        "temperature": 847.3833680975364
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.6513722338405339,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 9.359721283090076,
+        "composition_x": 0.745998707628637,
+        "temperature": 1287.03980279104
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.6804564211516253,
+      "best_score": 0.734319994644423,
+      "params": {
+        "property_value": 12.788409287100043,
+        "composition_x": 0.42594414770429034,
+        "temperature": 848.5485384819858
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 4,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选温度过高（>800K），远超MOF热稳定范围（通常<600K），且composition_x与MOF组分无直接对应。建议将温度聚焦于300-500K，composition_x聚焦于0.0-0.3或0.7-1.0以匹配MOF-74/ZIF-8等典型结构，property值应接近文献量纲（1.49-9.5）。"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.3,
+            0.7
+          ],
+          [
+            800.0,
+            1500.0
+          ],
+          [
+            13.0,
+            15.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.0,
+            0.3
+          ],
+          [
+            300.0,
+            500.0
+          ],
+          [
+            1.0,
+            9.5
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（>1400K），远超MOF热分解温度（通常<600K），物理不合理。建议聚焦composition_x在0.1-0.5、温度300-500K区间，并优先探索低OMS密度、疏水孔道材料组合。"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.0,
+            0.1
+          ],
+          [
+            1000.0,
+            1500.0
+          ],
+          [
+            0.0,
+            3.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.1,
+            0.5
+          ],
+          [
+            300.0,
+            500.0
+          ],
+          [
+            5.0,
+            10.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      }
+    ]
+  }
+}

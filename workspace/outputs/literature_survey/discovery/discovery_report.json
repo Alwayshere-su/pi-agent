@@ -1,0 +1,394 @@
+{
+  "title": "Structure-Property Relationship Discovery",
+  "generated_at": "2026-08-02 17:50",
+  "hypotheses": [
+    {
+      "id": "hypo_1",
+      "title": "双金属MOF-74中金属比例与CO2吸附容量呈倒U型定量关系",
+      "description": "在双金属MOF-74（如CoMn、NiCu、FeCu等）体系中，通过梯度调节两种金属的摩尔比例（0-100%，步长10%），系统测量CO2吸附容量和CO2/N2选择性。预期发现容量-比例曲线呈倒U型，且最优比例因金属组合不同而偏移（如CoMn为1:1，NiCu为1:1附近）。该关系源于双金属协同效应：异金属节点改变电子密度和不饱和配位环境，从而优化CO2结合能，但过量第二金属可能导致结构扭曲或相分离，削弱性能。\n\n[数值验证] 以下数值未在文献中查证: 10%",
+      "source_gap_id": "Gap 1",
+      "materials": [
+        "CoMn-MOF-74",
+        "NiCu-MOF-74",
+        "FeCu-MOF-74",
+        "MIL-101(Cr,Mg)"
+      ],
+      "property": "CO2吸附容量",
+      "expected_relationship": "金属比例与CO2容量呈倒U型关系，峰值位于特定比例（如1:1或3:1），选择性同步变化；双金属优于任意单金属。",
+      "confidence": 0.88,
+      "novelty_score": 0.82,
+      "search_method": "bayesian",
+      "search_iterations": 10,
+      "candidates_explored": 21,
+      "external_validation": {
+        "overall_match": true,
+        "databases_checked": [
+          "materials_project"
+        ],
+        "supporting_evidence": [
+          "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgCoO2 (mp-aaadegef) = -2.111 eV/atom; Cr2O3 (mp-aaacswcd) = -1.996 eV/atom。双金属稳定性增益：MgNiO2 ΔE=-0.035 eV/atom (bi mp-aaacrnqf vs mono MgO/NiO)；MgCoO2 ΔE=+0.014 eV/atom (bi mp-aaadegef vs mono MgO/CoO)。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+          "MgNiO2: 双金属氧化物比单金属平均更稳定（ΔE<0），为双金属节点协同/稳定的间接热力学证据",
+          "MgCoO2: 双金属氧化物比单金属平均更不稳定（ΔE>0）"
+        ],
+        "details": {
+          "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgCoO2 (mp-aaadegef) = -2.111 eV/atom; Cr2O3 (mp-aaacswcd) = -1.996 eV/atom。双金属稳定性增益：MgNiO2 ΔE=-0.035 eV/atom (bi mp-aaacrnqf vs mono MgO/NiO)；MgCoO2 ΔE=+0.014 eV/atom (bi mp-aaadegef vs mono MgO/CoO)。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+          "n_bimetallic_gain": 2
+        },
+        "match_judgment": "thermo_indirect_evidence"
+      },
+      "validation_status": "pending",
+      "evidence_chain": [
+        "p65",
+        "p67",
+        "p22",
+        "p147",
+        "p24",
+        "[Novelty Verification] Overlap: none | Novelty: 0.820 (was 0.820) | Queries: 3 | Results: 0"
+      ],
+      "llm_plausibility_score": 0.802,
+      "llm_explanation": "【启发式评分】LLM API 不可用，基于证据质量自动计算。证据链长度=5/5（得分1.00）、数值验证得分=0.50、置信度=0.88，加权得分=0.80。建议配置 DEEPSEEK_API_KEY 后重新运行以获取 LLM 深度评估。",
+      "best_score": 0.6645024400546998,
+      "literature_values": [
+        1.49,
+        9.21,
+        9.5
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "0-100%",
+            "found_in_text": true,
+            "context": "水解离占据 OMS） | p186/p182（分子模拟）、p196（突破） | 高 |\n| R8 | 水蒸气 → 胺型 MOF 容量 | 先升后降（峰值 30-50% RH）[待验证] | p224/p210/p201（疏水化调控） | 中（新证据↑） |\n| R9 | 双金属 → 水稳定性 | 正相关 | 历史 p169（混合金属偏好+水稳） | 中 |\n| R10 | 配体疏水化 → 湿气容量..."
+          },
+          {
+            "claimed": "10%",
+            "found_in_text": false,
+            "context": ""
+          }
+        ],
+        "overall_verification_score": 0.5,
+        "unverified_values": [
+          "10%"
+        ]
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_2",
+      "title": "胺功能化MOF在湿态下的CO2捕获容量随相对湿度呈峰值增强",
+      "description": "对比OMS型MOF（如Mg-MOF-74）和胺功能化MOF（如胺接枝MOF或MOF@MOF核壳结构）在0-90% RH范围内的CO2吸附容量。预期胺型材料在中等湿度（如40-60% RH）出现容量峰值，因水分子促进氨基甲酸酯形成并缓解传质限制；而OMS型材料随RH增加容量单调下降，因水优先占据开放金属位点。该假设可统一现有文献中水促进/抑制的矛盾结论。",
+      "source_gap_id": "Gap 2",
+      "materials": [
+        "胺接枝Mg-MOF-74",
+        "MOF@MOF核壳材料",
+        "疏水功能化胺浸渍树脂",
+        "Mg-MOF-74"
+      ],
+      "property": "湿态CO2吸附容量",
+      "expected_relationship": "胺功能化材料的CO2容量随RH先增后减，峰值在中等RH区域；OMS型材料的容量随RH增加而单调衰减。",
+      "confidence": 0.9,
+      "novelty_score": 0.85,
+      "search_method": "bayesian",
+      "search_iterations": 10,
+      "candidates_explored": 21,
+      "external_validation": {
+        "overall_match": true,
+        "databases_checked": [
+          "materials_project"
+        ],
+        "supporting_evidence": [
+          "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgCO3 (mp-aaabfbvb) = -2.064 eV/atom; Mg(HO)2 (mp-aaabjqgl) = -1.993 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。"
+        ],
+        "details": {
+          "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgCO3 (mp-aaabfbvb) = -2.064 eV/atom; Mg(HO)2 (mp-aaabjqgl) = -1.993 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+          "n_bimetallic_gain": 0
+        },
+        "match_judgment": "thermo_indirect_evidence"
+      },
+      "validation_status": "pending",
+      "evidence_chain": [
+        "p210",
+        "p224",
+        "p201",
+        "p186",
+        "p182",
+        "[Novelty Verification] Overlap: none | Novelty: 0.850 (was 0.850) | Queries: 3 | Results: 2"
+      ],
+      "llm_plausibility_score": 0.75,
+      "llm_explanation": "该假设具有较好的物理化学基础：胺功能化MOF在中等湿度下，水分子可参与氨基甲酸酯形成过程中的质子转移，降低反应能垒并缓解传质限制，但过高湿度会因水竞争氢键位点或毛细凝聚导致容量下降，从而形成峰值；OMS型MOF中水与开放金属位点的强配位会直接抑制CO2吸附，随RH增加单调衰减也符合配位场理论。文献中已有胺基吸附剂在潮湿条件下容量提升的报道，而Mg-MOF-74在含水条件下性能下降的证据充分，因此该假设能部分统一矛盾结论，但并非所有胺功能化体系均适用，疏水改性或核壳结构可能改变峰值位置甚至消除峰值。该假设可通过变湿度吸附等温线、原位红外光谱和DFT计算明确验证，实验设计清晰。新颖性中等，它整合了已知机制并提出了可检验的非单调关系，但未超出已有定性认识范畴，也缺乏定量标度律。综合评分0.75。",
+      "best_score": 0.828641450564955,
+      "literature_values": [
+        1.49,
+        2.0,
+        2.42,
+        5.8,
+        8.29,
+        8.6,
+        9.21,
+        9.5,
+        42.0
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "0-90% RH",
+            "found_in_text": true,
+            "context": "水解离占据 OMS） | p186/p182（分子模拟）、p196（突破） | 高 |\n| R8 | 水蒸气 → 胺型 MOF 容量 | 先升后降（峰值 30-50% RH）[待验证] | p224/p210/p201（疏水化调控） | 中（新证据↑） |\n| R9 | 双金属 → 水稳定性 | 正相关 | 历史 p169（混合金属偏好+水稳） | 中 |\n| R10 | 配体疏水化 → 湿气容量..."
+          },
+          {
+            "claimed": "40-60% RH",
+            "found_in_text": true,
+            "context": "水解离占据 OMS） | p186/p182（分子模拟）、p196（突破） | 高 |\n| R8 | 水蒸气 → 胺型 MOF 容量 | 先升后降（峰值 30-50% RH）[待验证] | p224/p210/p201（疏水化调控） | 中（新证据↑） |\n| R9 | 双金属 → 水稳定性 | 正相关 | 历史 p169（混合金属偏好+水稳） | 中 |\n| R10 | 配体疏水化 → 湿气容量..."
+          }
+        ],
+        "overall_verification_score": 1.0,
+        "unverified_values": []
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_3",
+      "title": "MOF的CO2吸附热（Qst）在25-40 kJ/mol窗口内可实现容量-选择性-再生能耗Pareto最优",
+      "description": "选取50种以上具有不同Qst值的MOF材料（涵盖MOF-74系列、UiO系列、ZIF系列等），测量其CO2容量、CO2/N2选择性和再生温度/能耗。预期Qst在29-40 kJ/mol（尤其约29 kJ/mol）时，材料同时具备较高容量和选择性，且再生能耗适中；过高的Qst（>50）虽增强容量但再生困难，过低Qst（<20）选择性不足。该假设将建立容量-选择性-再生能三维Pareto前沿，为吸附剂筛选提供热力学约束。\n\n[数值验证] 以下数值未在文献中查证: 25-40 kJ/mol, 29-40 kJ/mol, 29 kJ/mol, 25-40 kJ/mol",
+      "source_gap_id": "Gap 3",
+      "materials": [
+        "MOF-74(Ni)",
+        "MOF-74(Mg)",
+        "胺化SBA-15",
+        "锂掺杂MIL-101",
+        "UiO-66"
+      ],
+      "property": "CO2吸附热（Qst）",
+      "expected_relationship": "Qst与选择性呈正相关，与再生能耗也正相关；存在Qst甜点区（25-40 kJ/mol），在此区间容量-选择性-再生能耗三者可达Pareto最优。",
+      "confidence": 0.62,
+      "novelty_score": 0.78,
+      "search_method": "bayesian",
+      "search_iterations": 30,
+      "candidates_explored": 41,
+      "external_validation": {
+        "match_judgment": "thermo_indirect_evidence",
+        "databases_checked": [
+          "materials_project"
+        ],
+        "overall_match": true,
+        "supporting_evidence": [
+          "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: ZrO2 (mp-aaacswew) = -3.591 eV/atom; MgO (mp-aaacptif) = -2.885 eV/atom; LiCrO2 (mp-aaabrjxe) = -2.371 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。"
+        ],
+        "details": {
+          "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: ZrO2 (mp-aaacswew) = -3.591 eV/atom; MgO (mp-aaacptif) = -2.885 eV/atom; LiCrO2 (mp-aaabrjxe) = -2.371 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+          "n_bimetallic_gain": 0
+        }
+      },
+      "validation_status": "pending",
+      "evidence_chain": [
+        "p27",
+        "p117",
+        "p129",
+        "p116",
+        "[Novelty Verification] Overlap: none | Novelty: 0.780 (was 0.780) | Queries: 3 | Results: 5"
+      ],
+      "llm_plausibility_score": 0.5,
+      "llm_explanation": "假设的核心思想符合热力学权衡：Qst过高导致再生能耗大，过低不利于选择性，因此存在理想区间在理论上是合理的。但将容量-选择性-再生能耗的Pareto最优仅归因于Qst窗口过于简化，容量与选择性还受比表面、孔尺寸、官能团等影响。文献中高效MOF的Qst常高于40 kJ/mol（如MOF-74系列），25-40 kJ/mol作为普适甜点区缺乏充分依据，且“尤其29 kJ/mol”未经验证。涉及材料中混入胺化SBA-15等非MOF，体系不一致。该假设可通过实验设计验证，具备可检验性，但新颖性一般，类似Qst最优区间在已有文献中被讨论过。总体部分合理，但需结合多因素修正。",
+      "best_score": 0.6770681025362877,
+      "literature_values": [
+        1.49,
+        8.6,
+        9.21,
+        9.5
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "25-40 kJ/mol",
+            "found_in_text": false,
+            "context": ""
+          },
+          {
+            "claimed": "29-40 kJ/mol",
+            "found_in_text": false,
+            "context": ""
+          },
+          {
+            "claimed": "29 kJ/mol",
+            "found_in_text": false,
+            "context": ""
+          },
+          {
+            "claimed": "25-40 kJ/mol",
+            "found_in_text": false,
+            "context": ""
+          }
+        ],
+        "overall_verification_score": 0.0,
+        "unverified_values": [
+          "25-40 kJ/mol",
+          "29-40 kJ/mol",
+          "29 kJ/mol",
+          "25-40 kJ/mol"
+        ],
+        "_confidence_adjusted": true
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_4",
+      "title": "MOF-74缺陷类型依赖：缺失配体型缺陷↑OMS/容量 vs 溶剂甲酸盐占据型缺陷↓OMS/容量",
+      "description": "区分两类缺陷通道对CO2吸附的方向性影响（九轮缺陷类型二分，Nature Commun 2023）：(1) 缺失配体型（HBDC比例0-50%）——配体缺失暴露额外金属位点，OMS密度↑、CO2容量↑（但超过临界比例后结构稳定性下降、容量回落，临界值待实验确定）；(2) 溶剂衍生甲酸盐型（DMF分解甲酸配位金属）——甲酸盐额外M-O键部分消除OMS，N2/CO2吸附随缺陷浓度定量下降（r10s1_a9ed68d1734e）。十轮新增旁证：水桥可替代缺陷增强胺功能化UiO-66的CO2吸附（r10s0_1fbbe940f717）、Ru-MOF不同缺陷类型对吸附方向性影响不同（r10s1_821919f491c8）、缺陷工程Ni-MOF-74配体功能化吸附取决于功能基团类型/位置/大小（r10s2_0341d732c860）。必须用13C NMR定量甲酸盐 + CO探针IR定量OMS，建立\"缺陷类型→OMS密度→容量\"双向标度律。",
+      "source_gap_id": "Gap 9",
+      "materials": [
+        "缺陷MOF-74(Co)",
+        "缺陷MOF-74(Mg)",
+        "缺陷MOF-74(Ni)"
+      ],
+      "property": "开放金属位点密度及CO2吸附容量",
+      "expected_relationship": "缺陷类型依赖（非普适线性）：缺失配体型→OMS/容量正相关（先升后降拐点）；溶剂甲酸盐占据型→OMS/容量负相关。忽略缺陷类型将导致方向性误判。",
+      "confidence": 0.92,
+      "novelty_score": 0.88,
+      "search_method": "bayesian",
+      "search_iterations": 30,
+      "candidates_explored": 41,
+      "external_validation": {
+        "overall_match": true,
+        "databases_checked": [
+          "materials_project"
+        ],
+        "supporting_evidence": [
+          "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; Mg(HO)2 (mp-aaabjqgl) = -1.993 eV/atom; Co3O4 (mp-aaaabbtc) = -1.280 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。"
+        ],
+        "details": {
+          "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; Mg(HO)2 (mp-aaabjqgl) = -1.993 eV/atom; Co3O4 (mp-aaaabbtc) = -1.280 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+          "n_bimetallic_gain": 0
+        },
+        "match_judgment": "thermo_indirect_evidence"
+      },
+      "validation_status": "validated",
+      "evidence_chain": [
+        "p13",
+        "p7",
+        "p192",
+        "p9",
+        "r10s1_a9ed68d1734e",
+        "r10s0_1fbbe940f717",
+        "r10s1_821919f491c8",
+        "r10s2_0341d732c860",
+        "文献验证: 0-50% — 在 34 篇论文中检索到 4 条匹配记录 (来源: p224, 1.5 载体/对比体系, p224)",
+        "[Novelty Verification] Overlap: none | Novelty: 0.880 (was 0.880) | Queries: 3 | Results: 8"
+      ],
+      "llm_plausibility_score": 0.91,
+      "llm_explanation": "该假设在理论上符合MOF缺陷化学基本原理：缺失配体可暴露配位不饱和金属位点，增加OMS密度，进而增强CO2吸附；而甲酸盐占据金属配位点会消除OMS，降低吸附容量。文献证据链支持缺陷类型对吸附性能的方向性影响，且旁证（水桥、Ru-MOF、Ni-MOF-74）与假设一致。假设提出临界比例和双向标度律，具有明确的可验证性，可通过13C NMR定量甲酸盐和CO探针IR定量OMS进行实验检验。新颖性检索显示与已有工作重叠为零，表明该缺陷类型二分及定量标度律具有较高新颖性。但需注意临界比例依赖合成条件，且MOF-74体系中缺失配体可能同时改变孔道结构，故评分略低于满分。；系统查重: 8 篇结果，重叠=none，新颖性 0.88->0.88",
+      "best_score": 0.9131190923934623,
+      "literature_values": [
+        1.49,
+        5.8,
+        9.21,
+        9.5
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "0-50%",
+            "found_in_text": true,
+            "context": "水解离占据 OMS） | p186/p182（分子模拟）、p196（突破） | 高 |\n| R8 | 水蒸气 → 胺型 MOF 容量 | 先升后降（峰值 30-50% RH）[待验证] | p224/p210/p201（疏水化调控） | 中（新证据↑） |\n| R9 | 双金属 → 水稳定性 | 正相关 | 历史 p169（混合金属偏好+水稳） | 中 |\n| R10 | 配体疏水化 → 湿气容量..."
+          },
+          {
+            "claimed": ">30%",
+            "found_in_text": false,
+            "context": ""
+          }
+        ],
+        "overall_verification_score": 0.5,
+        "unverified_values": [
+          ">30%"
+        ]
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_5",
+      "title": "MOF在痕量NO2/SO2暴露后CO2吸附容量衰减率与OMS密度和孔道亲水性相关",
+      "description": "选取MOF-74(Mg)、ZIF-8、HKUST-1、MIL-101(Cr)等代表性MOF，在含1000 ppm NO2或SO2的模拟烟气/空气中暴露不同时间（0-24h），测量CO2吸附容量变化及结构变化。预期含高密度OMS的MOF（如MOF-74、HKUST-1）衰减更快，因杂质气体与金属位点强结合或反应；而ZIF-8因疏水性和配位饱和更稳定。该假设为MOF在真实含杂质环境中的适用性提供筛选依据。\n\n[数值验证] 以下数值未在文献中查证: 1000 ppm, 0-24h",
+      "source_gap_id": "Gap 8",
+      "materials": [
+        "Mg-MOF-74",
+        "HKUST-1",
+        "ZIF-8",
+        "MIL-101(Cr)"
+      ],
+      "property": "CO2吸附容量保持率",
+      "expected_relationship": "暴露NO2/SO2后，CO2容量保持率与OMS密度呈负相关，与孔道疏水性呈正相关；ZIF-8保持率最高，MOF-74最低。",
+      "confidence": 0.63,
+      "novelty_score": 0.9,
+      "search_method": "bayesian",
+      "search_iterations": 30,
+      "candidates_explored": 41,
+      "external_validation": {
+        "match_judgment": "thermo_indirect_evidence",
+        "databases_checked": [
+          "materials_project"
+        ],
+        "overall_match": true,
+        "supporting_evidence": [
+          "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgSO4 (mp-aaaaalfg) = -2.402 eV/atom; Cr2O3 (mp-aaacswcd) = -1.996 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。"
+        ],
+        "details": {
+          "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgSO4 (mp-aaaaalfg) = -2.402 eV/atom; Cr2O3 (mp-aaacswcd) = -1.996 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+          "n_bimetallic_gain": 0
+        }
+      },
+      "validation_status": "pending",
+      "evidence_chain": [
+        "p216",
+        "p52",
+        "p55",
+        "[Novelty Verification] Overlap: none | Novelty: 0.900 (was 0.900) | Queries: 3 | Results: 5"
+      ],
+      "llm_plausibility_score": 0.8,
+      "llm_explanation": "该假设总体符合物理化学原理：NO2/SO2作为路易斯酸性气体，易与开放金属位点（OMS）强配位或发生氧化还原/分解反应，导致CO2吸附位点被占据或结构坍塌；疏水孔道可抑制酸性气体与水共吸附，减缓降解。MOF-74的高OMS密度和Mg-O亲水性使其敏感性高于ZIF-8，这与文献中关于MOF-74吸附NO2/SO2后容量显著下降、ZIF-8稳定性较好的报道一致。MIL-101(Cr)虽有OMS但密度较低且孔道较大，衰减可能介于中间，符合趋势。假设可通过控制暴露时间、浓度下的吸附等温线、PXRD、XPS及原位红外进行验证，也可用DFT计算吸附能。但“与孔道疏水性呈正相关”的表述略笼统，因疏水性主要影响水竞争而非直接决定酸性气体反应性；且1000 ppm和0-24h参数未证实，可能影响定量外推。总体上机制合理、可验证，但新颖性一般，属于已有知识的系统化延伸。",
+      "best_score": 0.734319994644423,
+      "literature_values": [
+        1.49,
+        9.21,
+        9.5
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "1000 ppm",
+            "found_in_text": false,
+            "context": ""
+          },
+          {
+            "claimed": "0-24h",
+            "found_in_text": false,
+            "context": ""
+          }
+        ],
+        "overall_verification_score": 0.0,
+        "unverified_values": [
+          "1000 ppm",
+          "0-24h"
+        ],
+        "_confidence_adjusted": true
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    }
+  ],
+  "total_candidates": 5,
+  "total_explored": 165,
+  "validated_count": 1,
+  "refuted_count": 0,
+  "contested_count": 0,
+  "underexplored_count": 0,
+  "search_summary": "Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: strong=5, underexplored=0, contested=0, weak=0",
+  "materials_project_hits": 5
+}

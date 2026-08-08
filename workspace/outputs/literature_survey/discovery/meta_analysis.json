@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-08-04",
+  "method": "跨体系 meta-analysis：中点增强率 ratio=(mid-linear_mid)/linear_mid, linear_mid=(endpoint_low+endpoint_high)/2 (Vegard)",
+  "data_file": "workspace\\outputs\\literature_survey\\discovery\\meta_analysis_data.json",
+  "per_system": [
+    {
+      "system": "NiCo-MOF-74",
+      "endpoint_low": 5.03,
+      "endpoint_low_label": "Co-MOF-74 (x=0)",
+      "endpoint_high": 3.99,
+      "endpoint_high_label": "Ni-MOF-74 (x=1)",
+      "midpoint_value": 8.3,
+      "midpoint_label": "NiCo-MOF-74 1:1 (x=0.5)",
+      "midpoint_is_measured": true,
+      "unit": "mmol/g (CO2 容量, 298K/1bar)",
+      "source": "quantitative_pairs.json (p62 实测) / quantitative_validation.md 表1.1",
+      "note": "唯一全实测体系。实测中点 8.30 vs Vegard 中点 4.51，增强率约 +84%。GCMC 预测中点 7.90 (scv:a9220ad0eefa, 估计) 仅作稳健性参考，不计入统计。",
+      "linear_mid": 4.51,
+      "ratio": 0.8403547671840357
+    },
+    {
+      "system": "CoMn-MOF-74",
+      "endpoint_low": 0.62,
+      "endpoint_low_label": "Co-MOF-74 (x=0, 归一化)",
+      "endpoint_high": 0.68,
+      "endpoint_high_label": "Mn-MOF-74 (x=1, 归一化)",
+      "midpoint_value": 1.0,
+      "midpoint_label": "CoMn-MOF-74 1:1 (x=0.5, 归一化最大值)",
+      "midpoint_is_measured": false,
+      "unit": "归一化 CO2 容量 (体系最大=1.0, 无量纲)",
+      "source": "quantitative_validation.md 表1.2 / p65 (Co/Mn=1:1 最优)",
+      "note": "归一化估计，仅趋势参考。端点 0.62/0.68 为 R_EST_1/2 规则构造（quantitative_validation.md §4bis，Co-MOF-74 绝对容量参照 p62 的 5.03 mmol/g）；中点 1.0 为文献定性结论'Co/Mn=1:1 最优'（p65）加归一化强制最大值，非独立实测。",
+      "linear_mid": 0.65,
+      "ratio": 0.5384615384615384
+    },
+    {
+      "system": "FeCu-MOF",
+      "endpoint_low": 0.55,
+      "endpoint_low_label": "Fe-MOF-74 (x=0, 归一化)",
+      "endpoint_high": 0.6,
+      "endpoint_high_label": "Cu-MOF-74 (x=1, 归一化)",
+      "midpoint_value": 1.0,
+      "midpoint_label": "FeCu-MOF 1:1 (x=0.5, 归一化最大值)",
+      "midpoint_is_measured": false,
+      "unit": "归一化 CO2 容量 (体系最大=1.0, 无量纲)",
+      "source": "quantitative_validation.md 表1.2 / p67 (双金属>单金属)",
+      "note": "归一化估计，仅趋势参考。端点 0.55/0.60 为 R_EST_1/2 规则构造（§4bis）；中点 1.0 为文献定性结论'FeCu 双金属容量>单金属 Fe 与 Cu'（p67, 1-5 bar, 40-50°C 系统评估）加归一化强制最大值，非独立实测。",
+      "linear_mid": 0.575,
+      "ratio": 0.7391304347826089
+    },
+    {
+      "system": "MIL-101(Cr,Mg)",
+      "endpoint_low": 0.72,
+      "endpoint_low_label": "MIL-101(Cr) (x=0, 归一化)",
+      "endpoint_high": 0.78,
+      "endpoint_high_label": "MIL-101(Mg) (x=1, 归一化)",
+      "midpoint_value": 1.0,
+      "midpoint_label": "MIL-101(Cr,Mg) 1:1 (x=0.5, 归一化最大值)",
+      "midpoint_is_measured": false,
+      "unit": "归一化 CO2 容量 (体系最大=1.0, 无量纲)",
+      "source": "quantitative_validation.md 表1.2 / p147 (MIL-101(Cr,Mg) 高容量+高选择性)",
+      "note": "归一化估计，仅趋势参考。端点 0.72/0.78 为 R_EST_3/4 规则构造（§4bis，MIL 介孔框架协同幅度预期小于 MOF-74）；中点 1.0 为文献定性结论加归一化强制最大值，非独立实测。",
+      "linear_mid": 0.75,
+      "ratio": 0.3333333333333333
+    }
+  ],
+  "excluded_systems": [
+    {
+      "system": "Cu/Mg-MOF-74",
+      "midpoint_value": 9.21,
+      "midpoint_label": "Cu/Mg=0.1/0.9 (x=0.9, Mg 摩尔比例)",
+      "unit": "mmol/g (CO2 容量, 273K/100kPa)",
+      "source": "quantitative_pairs.json (scv:ecfe34f94197 实测, 273K/100kPa)",
+      "is_measured": true,
+      "exclude_reason": "无中点且无同条件端点（273K/100kPa 与 298K/1bar 不可比）；s-d 组合单调增反例（R19），非倒 U 协同体系。"
+    }
+  ],
+  "meta_stats": {
+    "n": 4,
+    "t_test_applicable": true,
+    "sign_test": {
+      "positive_count": 4,
+      "total": 4,
+      "positive_ratio": 1.0,
+      "p_twosided_binom": 0.125,
+      "p_onesided_greater": 0.0625
+    },
+    "mean_ratio": 0.6128200184403791,
+    "std_ratio": 0.22462440788961097,
+    "se": 0.11231220394480548,
+    "t_statistic": 5.456397407547468,
+    "df": 3,
+    "p_twosided": 0.012094328446869017,
+    "ci95_low": 0.25539245995796267,
+    "ci95_high": 0.9702475769227956,
+    "cohens_d": 2.728198703773734
+  },
+  "warnings": [
+    "CoMn/FeCu/MIL-101 的端点与中点为归一化估计（quantitative_validation.md §4bis R_EST 规则+文献定性结论），中点=1.0 含构造成分，仅趋势参考，不替代实验验证。",
+    "n=4 样本量小：t 检验功效有限；符号检验双侧 p 不显著，结论以定性「正向协同趋势」为准。",
+    "各体系测试条件不完全一致（NiCo 298K/1bar；FeCu 1-5 bar/40-50°C；MIL-101 p147），基于体系内增强率比较以缓解。"
+  ]
+}

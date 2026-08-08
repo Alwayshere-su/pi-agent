@@ -1,0 +1,48 @@
+# ═══════════════════════════════════════════════════════════════
+# 依赖锁定 —— 复现性保证
+# ═══════════════════════════════════════════════════════════════
+# 复赛要求「可复现代码 + 依赖披露」:本文件所有依赖均锁定为
+# 开发/评测环境实测版本(Python 3.12, 2026-06 通过 pip freeze 验证)。
+# 锁定采用 == 精确版本,避免上游发布破坏可复现性。
+# 如需升级依赖,请显式修改版本号并在完整评测后重新提交。
+#
+# 安装方式:
+#   pip install -r requirements.txt
+# ═══════════════════════════════════════════════════════════════
+
+# ── LLM API ──
+openai==1.108.1
+
+# ── Literature Survey ──
+requests==2.32.5
+charset-normalizer==3.4.6
+magika==1.0.3
+beautifulsoup4==4.12.3
+markitdown==0.1.7
+markdownify==1.2.3
+mammoth==1.12.0
+pdfplumber==0.11.10
+pdfminer.six==20260107
+
+# ── Data & ML (lightweight) ──
+numpy==1.26.4
+scipy==1.17.1  # discovery.py 使用 scipy.spatial.distance.cdist
+pandas==3.0.3
+scikit-learn==1.9.0
+
+# ── Sci-Base 数据集接入(HuggingFace,可选但建议)──
+# scripts/prepare_scibase.py --download 依赖该包;只使用 --index 模式可跳过。
+datasets==4.8.4
+
+# ── Document tooling（build_prelim_proposal / fill_initial_template / 方案核验脚本）──
+python-docx==1.2.0
+
+# ── 拟实施：混合检索 / 向量库（目标架构选型，复赛实施阶段启用；当前原型不依赖）──
+# 对应 docx 3.1.2 / 3.3.1 声明的目标架构：
+#   Chroma（向量库，FAISS 备选）、BGE-M3（Embedding）、bge-reranker-v2-m3（Reranker）。
+# BGE-M3 与 bge-reranker-v2-m3 由 FlagEmbedding / sentence-transformers 加载（本地推理）。
+# 版本为 2026-08 时点最新稳定版；实施阶段需在完整评测后实测锁定，
+# 并协调 sentence-transformers / FlagEmbedding 对 transformers 的版本要求。
+chromadb==1.5.9
+sentence-transformers==5.6.1
+FlagEmbedding==1.4.0

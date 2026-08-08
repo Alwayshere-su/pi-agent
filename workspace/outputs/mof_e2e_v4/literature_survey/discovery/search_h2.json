@@ -1,0 +1,264 @@
+{
+  "hypothesis_index": 2,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 13,
+    "material_tokens": 78,
+    "property_keywords": [
+      "co2",
+      "diamine",
+      "mol"
+    ],
+    "literature_values": [
+      0.15,
+      1.0,
+      2.0,
+      2.38,
+      2.42,
+      3.14,
+      3.62,
+      4.52,
+      8.0,
+      8.3,
+      29.0,
+      30.4,
+      273.0,
+      298.0,
+      323.0,
+      343.0,
+      373.0
+    ]
+  },
+  "best_params": {
+    "property_value": 287.7734007384502,
+    "composition_x": 0.5092115852460426,
+    "temperature": 1434.0606640735243
+  },
+  "best_score": 0.8554842961006367,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.7986437872806014,
+      "best_score": 0.8171779387493838,
+      "params": {
+        "property_value": 411.61077974720115,
+        "composition_x": 0.36502530403882305,
+        "temperature": 1385.3687127375451
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.8307309743133278,
+      "best_score": 0.8307309743133278,
+      "params": {
+        "property_value": 300.39463561850687,
+        "composition_x": 0.6469467083373054,
+        "temperature": 892.9508893695247
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.8518690642369025,
+      "best_score": 0.8518690642369025,
+      "params": {
+        "property_value": 310.87180160558785,
+        "composition_x": 0.569335201776094,
+        "temperature": 1131.1361321101208
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.765470796923831,
+      "best_score": 0.8518690642369025,
+      "params": {
+        "property_value": 458.95446406734214,
+        "composition_x": 0.35698369214011294,
+        "temperature": 915.2256867945737
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.8554842961006367,
+      "best_score": 0.8554842961006367,
+      "params": {
+        "property_value": 287.7734007384502,
+        "composition_x": 0.5092115852460426,
+        "temperature": 1434.0606640735243
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.8095798899971168,
+      "best_score": 0.8554842961006367,
+      "params": {
+        "property_value": 227.32500346772736,
+        "composition_x": 0.4642664202859397,
+        "temperature": 1412.6098052831867
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.8459077788024184,
+      "best_score": 0.8554842961006367,
+      "params": {
+        "property_value": 308.10790583365576,
+        "composition_x": 0.5949683573414702,
+        "temperature": 1468.7287002879086
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.7644429083518043,
+      "best_score": 0.8554842961006367,
+      "params": {
+        "property_value": 184.15683403724773,
+        "composition_x": 0.6149341779171474,
+        "temperature": 1472.625286958902
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.7804749195138722,
+      "best_score": 0.8554842961006367,
+      "params": {
+        "property_value": 449.7041736265797,
+        "composition_x": 0.6131219737415599,
+        "temperature": 937.203755691555
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.6684055009446204,
+      "best_score": 0.8554842961006367,
+      "params": {
+        "property_value": 501.9688996324325,
+        "composition_x": 0.1810503604721475,
+        "temperature": 1450.8085041173213
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 11,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选温度参数不合理，CO2容量应在固定0C 1bar下测量；应剪枝温度变量，固定273K，并扩展组分覆盖两端以验证倒U形状。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            585.0,
+            950.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.1,
+            0.3
+          ],
+          [
+            0.7,
+            0.9
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 14,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度均远高于MOF-74稳定/测试温度（0°C=273K），物理不合理；组成x偏离0.5较多，未充分覆盖峰值区域。应固定温度为273K，将组分搜索聚焦在x=0.3-0.6，剔除极端x样本。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.1,
+            0.28
+          ],
+          [
+            0.62,
+            0.9
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.3,
+            0.6
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 14,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选参数与假设目标严重不符：CO2/diamine 化学计量应≈1.0–1.5，而property_value高达184–450；温度1434K远超CO2吸附操作窗口。建议停止该参数空间，重建以胺结构描述符为输入、目标限制在0–2的代理模型。"
+      },
+      {
+        "iteration": 16,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            180.0,
+            450.0
+          ],
+          [
+            900.0,
+            1500.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.0,
+            2.0
+          ],
+          [
+            250.0,
+            400.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+# ═══════════════════════════════════════════════════════════════
+# .dockerignore — 排除不参与构建的文件
+# ═══════════════════════════════════════════════════════════════
+
+# Secrets
+.api_key
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Vendored dependencies
+vendor/
+
+# Workspace artifacts
+workspace/data/
+workspace/logs/*.log
+
+# Misc large/unused
+aaa/
+
+# Git
+.git/
+
+# Claude Code
+.claude/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

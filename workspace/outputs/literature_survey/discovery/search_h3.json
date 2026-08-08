@@ -1,0 +1,209 @@
+{
+  "hypothesis_index": 3,
+  "search_method": "bayesian",
+  "iterations": 30,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 26,
+    "material_tokens": 48,
+    "property_keywords": [
+      "adsorption",
+      "capacity",
+      "capture",
+      "co2",
+      "loading",
+      "uptake"
+    ],
+    "literature_values": [
+      1.49,
+      5.8,
+      9.21,
+      9.5
+    ]
+  },
+  "best_params": {
+    "property_value": 9.593639745975324,
+    "composition_x": 0.5924145688620425,
+    "temperature": 355.7404952639973
+  },
+  "best_score": 0.9131190923934623,
+  "iteration_log": [
+    {
+      "iteration": 20,
+      "score": 0.7087314823279195,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 3.7921101121878036,
+        "composition_x": 0.826867847173362,
+        "temperature": 975.1865074832908
+      }
+    },
+    {
+      "iteration": 21,
+      "score": 0.8322123217098389,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 11.066180202860671,
+        "composition_x": 0.5391937941273144,
+        "temperature": 1462.5776286933653
+      }
+    },
+    {
+      "iteration": 22,
+      "score": 0.7243969734959819,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 11.49943583884847,
+        "composition_x": 0.15939488477140218,
+        "temperature": 1461.6266064548865
+      }
+    },
+    {
+      "iteration": 23,
+      "score": 0.6945171240145556,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 3.0634915250395314,
+        "composition_x": 0.1829229259620847,
+        "temperature": 738.0570800311218
+      }
+    },
+    {
+      "iteration": 24,
+      "score": 0.7955448095607627,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 3.130312652278029,
+        "composition_x": 0.487467835463974,
+        "temperature": 736.9452682098065
+      }
+    },
+    {
+      "iteration": 25,
+      "score": 0.8573115471441435,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 5.723372626405312,
+        "composition_x": 0.46339100880464623,
+        "temperature": 1019.316650433146
+      }
+    },
+    {
+      "iteration": 26,
+      "score": 0.8566096651504699,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 8.164655001090923,
+        "composition_x": 0.41484685030159496,
+        "temperature": 1179.268098495968
+      }
+    },
+    {
+      "iteration": 27,
+      "score": 0.7596705865651783,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 14.393017505591576,
+        "composition_x": 0.6085715931739742,
+        "temperature": 1465.0856537398433
+      }
+    },
+    {
+      "iteration": 28,
+      "score": 0.8817062734341848,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 8.46871758861516,
+        "composition_x": 0.4243890180725104,
+        "temperature": 488.1155371191536
+      }
+    },
+    {
+      "iteration": 29,
+      "score": 0.8556386738242225,
+      "best_score": 0.9131190923934623,
+      "params": {
+        "property_value": 12.191281511999932,
+        "composition_x": 0.43902924398044796,
+        "temperature": 353.85721976726165
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 4,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（>1400K）超出MOF热稳定范围，应聚焦300-600K吸附温度；composition_x在0.15-0.55区间对应缺失配体缺陷，建议重点搜索0.3-0.5以捕捉容量峰值，同时补充低缺陷区0-0.2验证甲酸盐负效应。"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.8,
+            1.0
+          ],
+          [
+            1200.0,
+            1500.0
+          ],
+          [
+            10.0,
+            12.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.3,
+            0.5
+          ],
+          [
+            300.0,
+            600.0
+          ],
+          [
+            3.0,
+            6.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（>1000K）超出MOF稳定范围，建议聚焦composition_x 0.4-0.6、温度300-600K，并优先验证缺失配体型缺陷的拐点区域（composition_x≈0.5）及甲酸盐占据型低缺陷区（composition_x<0.2）。"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.0,
+            0.2
+          ],
+          [
+            1000.0,
+            1500.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.4,
+            0.6
+          ],
+          [
+            300.0,
+            600.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# ═══════════════════════════════════════════════════════════════
+# docker-compose.yml — Pi-Agent 单服务编排
+# ═══════════════════════════════════════════════════════════════
+
+services:
+  pi-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pi-agent:latest
+    env_file:
+      - .api_key
+    stdin_open: true
+    tty: true
+    command: ["python", "main.py", "--help"]

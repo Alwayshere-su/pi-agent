@@ -1,0 +1,265 @@
+[
+  {
+    "hypothesis_id": "hypo_1",
+    "title": "双金属MOF-74中金属比例与CO2吸附容量呈倒U型定量关系",
+    "property": "CO2吸附容量",
+    "status": "success",
+    "generated_by": "run_validation_pipeline.py (修复版) / quantitative_validation.md+json 结构化数据池",
+    "datasets": [
+      {
+        "dataset_id": "nico_ratio_capacity",
+        "dataset_title": "NiCo-MOF-74 双金属比例-CO2容量（mmol/g, 298K/1bar）",
+        "n_data_points": 8,
+        "n_measured": 3,
+        "n_estimated": 5,
+        "data": [
+          {"x": 0.0, "y": 5.03, "is_estimated": false, "source": "p62 (实测)", "label": "Co-MOF-74"},
+          {"x": 0.5, "y": 8.30, "is_estimated": false, "source": "p62 (实测)", "label": "NiCo-MOF-74 1:1"},
+          {"x": 1.0, "y": 3.99, "is_estimated": false, "source": "p62 (实测)", "label": "Ni-MOF-74"},
+          {"x": 0.37, "y": 6.54, "is_estimated": true, "source": "scv:073a40bcc5cb (NO proxy→CO2估)", "label": "Ni0.37Co0.63-MOF-74"},
+          {"x": 0.63, "y": 5.76, "is_estimated": true, "source": "p62 + 倒U对称性估计", "label": "Ni0.63Co0.37-MOF-74"},
+          {"x": 0.25, "y": 6.20, "is_estimated": true, "source": "p85 + 文献协同趋势估计", "label": "Ni0.25Co0.75-MOF-74"},
+          {"x": 0.75, "y": 5.10, "is_estimated": true, "source": "p85 + 文献协同趋势估计", "label": "Ni0.75Co0.25-MOF-74"},
+          {"x": 0.5, "y": 7.90, "is_estimated": true, "source": "scv:a9220ad0eefa (GCMC预测)", "label": "NiCo-MOF-74 (GCMC)"}
+        ],
+        "data_sources": ["p62 (实测)", "scv:073a40bcc5cb (NO proxy→CO2估)", "p62 + 倒U对称性估计", "p85 + 文献协同趋势估计", "scv:a9220ad0eefa (GCMC预测)"],
+        "models": {
+          "linear": {
+            "equation": "capacity = -1.3607·x + 6.7828",
+            "slope": -1.3607,
+            "intercept": 6.7828,
+            "r2": 0.0813,
+            "rmse": 1.3123,
+            "note": "最优线性拟合（2 自由参数）"
+          },
+          "quadratic": {
+            "equation": "capacity = -10.7569·x² + 9.3962·x + 4.9794",
+            "a": -10.7569,
+            "b": 9.3962,
+            "c": 4.9794,
+            "r2": 0.6919,
+            "rmse": 0.7599,
+            "peak_x": 0.4368,
+            "is_inverted_u": true,
+            "note": "二次回归（3 自由参数），峰值 x=0.437（倒U型协同）"
+          },
+          "power": {
+            "error": "x 含 0，幂律需 x>0；可用 (x+偏移) 形式，见 symbolic_0.md"
+          },
+          "vegard_endpoint_baseline": {
+            "equation": "capacity = 5.0300·(1-x) + 3.9900·x",
+            "r2": -1.2761,
+            "rmse": 2.0656,
+            "note": "Vegard 定律线性混合基线（端点固定，无协同零假设，等效 2 参数）——负 R² 表示数据显著偏离无协同线性混合"
+          },
+          "vegard_baseline": {
+            "equation": "capacity = -1.3607·x + 6.7828",
+            "slope": -1.3607,
+            "intercept": 6.7828,
+            "r2": 0.0813,
+            "rmse": 1.3123,
+            "note": "fit_vegard = 最优线性（2 自由参数拟合版基线）"
+          }
+        },
+        "f_test": {
+          "available": true,
+          "df1": 1,
+          "df2": 5,
+          "f_statistic": 9.909,
+          "p_value": 0.0254,
+          "significant_at_005": true,
+          "interpretation": "嵌套 F 检验（线性 k=2 vs 二次 k=3）：F=9.909, p=0.0254 < 0.05 → 二次项显著，倒U曲率有统计支撑（quantitative_validation.md 第 2.1 节）"
+        },
+        "best_model": "quadratic",
+        "best_r2": 0.6919,
+        "beats_classical": true,
+        "beats_classical_note": "二次 R²=0.6919 > 端点固定 Vegard 基线 R²=-1.2761（+0.01）→ 新模型统计上优于'无协同线性混合'经典基线",
+        "measured_only": {
+          "n_points": 3,
+          "data": [
+            {"x": 0.0, "y": 5.03, "source": "p62", "label": "Co-MOF-74"},
+            {"x": 0.5, "y": 8.30, "source": "p62", "label": "NiCo-MOF-74 1:1"},
+            {"x": 1.0, "y": 3.99, "source": "p62", "label": "Ni-MOF-74"}
+          ],
+          "note": "仅 3 个实测点（p62），自由度不足：3 点拟合 3 参数 R²=1.0 为数学恒等/过拟合伪象，嵌套 F 检验无定义（df2=0）。实测点仅能定性确认倒U形状（峰值 x≈0.466），不能定量确证。估计点驱动的 R²=0.6919 不作独立验证证据（quantitative_validation.md 第 2.1bis/5.2 节）。"
+        }
+      }
+    ],
+    "caveat": "8 点中 5 个为估计点（is_estimated=True），估计点驱动的拟合结果不能作为独立验证证据，仅作趋势参考；需梯度合成实验（0-100%，步长10%）取得足量实测点。"
+  },
+  {
+    "hypothesis_id": "hypo_2",
+    "title": "胺功能化MOF在湿态下的CO2捕获容量随相对湿度呈峰值增强",
+    "property": "湿态CO2吸附容量",
+    "status": "skipped",
+    "reason": "主案例 knowledge_graph.md / quantitative_validation.md 中无该假设的量化 (x, y) 数据点（RH-容量数值表缺失），不编造数值。证据链为定性/机理级（R8/R29/R32，p224/p210/p201 等）。"
+  },
+  {
+    "hypothesis_id": "hypo_3",
+    "title": "MOF的CO2吸附热（Qst）在25-40 kJ/mol窗口内可实现容量-选择性-再生能耗Pareto最优",
+    "property": "CO2吸附热 Qst",
+    "status": "success",
+    "generated_by": "run_validation_pipeline.py (修复版) / quantitative_validation.md 第 6 节（mof_rerun_v2 量化表）",
+    "datasets": [
+      {
+        "dataset_id": "qst_nd",
+        "dataset_title": "Qst_CO2 vs d电子数（M-MOF-74 平台, n=5, kJ/mol）",
+        "n_data_points": 5,
+        "n_measured": 4,
+        "n_estimated": 1,
+        "data": [
+          {"x": 0, "y": 47, "is_estimated": false, "source": "Caskey 2008; Koh 2016 (p26); 主案例 p6/p196/p197 (Mg Qst 42-47)", "label": "Mg"},
+          {"x": 6, "y": 36, "is_estimated": true, "source": "领域文献值[待验证]（mof_rerun_v2 量化表）", "label": "Fe"},
+          {"x": 7, "y": 37, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Co"},
+          {"x": 8, "y": 41, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Ni"},
+          {"x": 10, "y": 29, "is_estimated": false, "source": "Caskey 2008", "label": "Zn"}
+        ],
+        "data_sources": ["Caskey 2008; Koh 2016 (p26)", "Caskey 2008; Tan 2015 (p15)", "领域文献值[待验证]（mof_rerun_v2 量化表）"],
+        "models": {
+          "linear": {
+            "equation": "Qst = -1.496·Nd + 47.278",
+            "slope": -1.496,
+            "intercept": 47.278,
+            "r2": 0.7227,
+            "rmse": 3.124,
+            "note": "线性（2 自由参数），经典基线"
+          },
+          "quadratic": {
+            "equation": "Qst = -0.080·Nd² - 0.752·Nd + 46.657",
+            "a": -0.080,
+            "b": -0.752,
+            "c": 46.657,
+            "r2": 0.7410,
+            "rmse": 3.020,
+            "note": "二次（3 自由参数）"
+          },
+          "power": {
+            "equation": "Qst = 47.741·(Nd+1)^-0.140",
+            "a": 47.741,
+            "b": -0.140,
+            "r2": 0.6396,
+            "rmse": 3.562,
+            "note": "幂律（Nd+1 偏移，保证 x>0）"
+          },
+          "vegard_endpoint_baseline": {
+            "equation": "Qst = 47.278 - 1.496·Nd",
+            "r2": 0.7227,
+            "rmse": 3.124,
+            "note": "经典线性基线（本空间无 Vegard 组分混合语义，以线性为合理经典对照）"
+          }
+        },
+        "f_test": {
+          "available": true,
+          "df1": 1,
+          "df2": 2,
+          "f_statistic": 0.141,
+          "p_value": 0.743,
+          "significant_at_005": false,
+          "interpretation": "嵌套 F 检验（线性 vs 二次）：F=0.141, p=0.743 → 二次项不显著；n=5 小样本下线性为最稳健可解释描述符（mof_rerun_v2 symbolic_0.md 一致）"
+        },
+        "best_model": "linear",
+        "best_r2": 0.7227,
+        "beats_classical": null,
+        "beats_classical_note": "线性即为经典基线，二次未统计显著优于线性（F p=0.743）；结论：d 电子数↑→Qst↓ 负相关趋势在文献数值上成立",
+        "measured_only": {
+          "n_points": 4,
+          "data": [
+            {"x": 0, "y": 47, "source": "Caskey 2008; Koh 2016 (p26)", "label": "Mg"},
+            {"x": 7, "y": 37, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Co"},
+            {"x": 8, "y": 41, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Ni"},
+            {"x": 10, "y": 29, "source": "Caskey 2008", "label": "Zn"}
+          ],
+          "note": "排除 Fe 估计点后仅 4 点（Mg/Co/Ni/Zn），拟合 3 参数二次自由度=1，无统计意义；Nd 线性 R²≈0.75（趋势参考，不作推断）。"
+        }
+      },
+      {
+        "dataset_id": "qst_chi",
+        "dataset_title": "Qst_CO2 vs Pauling 电负性（M-MOF-74 平台, n=5, kJ/mol）",
+        "n_data_points": 5,
+        "n_measured": 4,
+        "n_estimated": 1,
+        "data": [
+          {"x": 1.31, "y": 47, "is_estimated": false, "source": "Caskey 2008; Koh 2016 (p26)", "label": "Mg"},
+          {"x": 1.83, "y": 36, "is_estimated": true, "source": "领域文献值[待验证]", "label": "Fe"},
+          {"x": 1.88, "y": 37, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Co"},
+          {"x": 1.91, "y": 41, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Ni"},
+          {"x": 1.65, "y": 29, "is_estimated": false, "source": "Caskey 2008", "label": "Zn"}
+        ],
+        "data_sources": ["Caskey 2008; Koh 2016 (p26)", "Caskey 2008; Tan 2015 (p15)", "领域文献值[待验证]"],
+        "models": {
+          "linear": {
+            "equation": "Qst = -11.633·χ + 57.962",
+            "slope": -11.633,
+            "intercept": 57.962,
+            "r2": 0.190,
+            "rmse": 5.341,
+            "note": "线性（2 自由参数），经典基线"
+          },
+          "quadratic": {
+            "equation": "Qst = 159.33·χ² - 523.56·χ + 459.41",
+            "a": 159.33,
+            "b": -523.56,
+            "c": 459.41,
+            "r2": 0.983,
+            "rmse": 0.781,
+            "trough_x": 1.643,
+            "is_u_shaped": true,
+            "note": "二次（U 型，谷底 χ≈1.64，即 Zn d¹⁰ 位置 Qst 最低）"
+          },
+          "power": {
+            "equation": "Qst = 77.166·(χ+1)^-0.724",
+            "a": 77.166,
+            "b": -0.724,
+            "r2": 0.219,
+            "rmse": 5.244,
+            "note": "幂律（χ+1 偏移）"
+          },
+          "vegard_endpoint_baseline": {
+            "equation": "Qst = 57.962 - 11.633·χ",
+            "r2": 0.190,
+            "rmse": 5.341,
+            "note": "经典线性基线"
+          }
+        },
+        "f_test": {
+          "available": true,
+          "df1": 1,
+          "df2": 2,
+          "f_statistic": 93.4,
+          "p_value": 0.011,
+          "significant_at_005": true,
+          "interpretation": "嵌套 F 检验（线性 vs 二次）：F=93.4, p=0.011 < 0.05 → 二次项显著，电负性-U 型关系有统计支撑（n=5 小样本，置信区间宽）"
+        },
+        "best_model": "quadratic",
+        "best_r2": 0.983,
+        "beats_classical": true,
+        "beats_classical_note": "二次 R²=0.983 > 线性经典基线 R²=0.190（+0.01）且 F 检验 p=0.011 显著 → 统计上优于经典线性模型",
+        "measured_only": {
+          "n_points": 4,
+          "data": [
+            {"x": 1.31, "y": 47, "source": "Caskey 2008; Koh 2016 (p26)", "label": "Mg"},
+            {"x": 1.88, "y": 37, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Co"},
+            {"x": 1.91, "y": 41, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Ni"},
+            {"x": 1.65, "y": 29, "source": "Caskey 2008", "label": "Zn"}
+          ],
+          "note": "排除 Fe 估计点后仅 4 点（Mg/Co/Ni/Zn），χ 线性 R²≈0.17（趋势参考）；U 型形态在 4 个实测点下仍成立（Mg/Zn 两端高、Zn 谷底），但自由度不足以做统计推断。"
+        }
+      }
+    ],
+    "caveat": "Qst 数值取自 mof_rerun_v2 子案例量化数值表（Caskey 2008 JACS 130,10870 / Koh 2016 p26 / Tan 2015 p15），主案例 Mg-MOF-74 Qst 42-47 kJ/mol (p6/p196/p197) 交叉印证 Mg 点；Fe 点 [待验证]。n=5 小样本，统计推断谨慎。hypo_3 的 Pareto 三维前沿（容量×选择性×再生能耗）仍需实测数据刻画，本结果仅提供 Qst 与金属电子构型的描述符级关联。"
+  },
+  {
+    "hypothesis_id": "hypo_4",
+    "title": "MOF-74缺陷类型依赖：缺失配体型缺陷↑OMS/容量 vs 溶剂甲酸盐占据型缺陷↓OMS/容量",
+    "property": "OMS 密度 / CO2 容量",
+    "status": "skipped",
+    "reason": "主案例 knowledge_graph.md / gap_report.md 中该假设的证据为定性/机理级（R25/R31，Nature Commun 2023 溶剂甲酸盐缺陷 vs p7/p13/p192 缺失配体缺陷），无 OMS 密度-容量的定量数值表，不编造数值。"
+  },
+  {
+    "hypothesis_id": "hypo_5",
+    "title": "MOF在痕量NO2/SO2暴露后CO2吸附容量衰减率与OMS密度和孔道亲水性相关",
+    "property": "CO2 容量衰减率",
+    "status": "skipped",
+    "reason": "主案例中唯一直接证据为 ELM-11 暴露 1000 ppm NO2 后吸附衰减（p216）单点定性证据，无衰减率-OMS/亲水性的定量数据，不编造数值。"
+  }
+]

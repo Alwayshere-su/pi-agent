@@ -1,0 +1,221 @@
+{
+  "hypothesis_index": 2,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 22,
+    "material_tokens": 40,
+    "property_keywords": [
+      "capacity",
+      "co2",
+      "efficiency",
+      "energy",
+      "energy penalty",
+      "loading",
+      "pareto",
+      "regeneration",
+      "regeneration energy",
+      "uptake"
+    ],
+    "literature_values": [
+      1.49,
+      8.6,
+      9.21,
+      9.5
+    ]
+  },
+  "best_params": {
+    "property_value": 9.6080711980098,
+    "composition_x": 0.18615143437225545,
+    "temperature": 1094.8303103740204
+  },
+  "best_score": 0.6770681025362877,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.6770681025362877,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 9.6080711980098,
+        "composition_x": 0.18615143437225545,
+        "temperature": 1094.8303103740204
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.6443420246463096,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 10.660087452584264,
+        "composition_x": 0.15144522168548946,
+        "temperature": 1150.8843984976595
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.5745958139485418,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 13.9048137753944,
+        "composition_x": 0.27443919536700523,
+        "temperature": 700.0685230771059
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.6401476265383719,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 14.760131101875022,
+        "composition_x": 0.36986176000915716,
+        "temperature": 1148.4076546771566
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.6138668840382245,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 17.255007381078073,
+        "composition_x": 0.6702689030446585,
+        "temperature": 455.9104189374945
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.5525079418924113,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 15.388140071504674,
+        "composition_x": 0.7233777270890357,
+        "temperature": 1149.8133235817088
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.6216738558628054,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 6.6533943695407185,
+        "composition_x": 0.09960499799396638,
+        "temperature": 1178.2783510400322
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.6303599678337327,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 16.870355232671567,
+        "composition_x": 0.4437403339102105,
+        "temperature": 1331.5532360699465
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.6259727859169392,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 17.643667019361946,
+        "composition_x": 0.49273844864534855,
+        "temperature": 745.6649338757593
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.6442804133754575,
+      "best_score": 0.6770681025362877,
+      "params": {
+        "property_value": 14.309735421978806,
+        "composition_x": 0.6380765153009678,
+        "temperature": 1200.9695582601446
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 4,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选property值9-17 kJ/mol远低于假设甜点区25-40 kJ/mol，物理上不合理。建议聚焦property 25-40，composition_x 0.2-0.5，temperature 300-600K，并剪枝低Qst区域。"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.0,
+            0.2
+          ],
+          [
+            900.0,
+            1500.0
+          ],
+          [
+            0.0,
+            20.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.2,
+            0.5
+          ],
+          [
+            300.0,
+            600.0
+          ],
+          [
+            25.0,
+            40.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选Qst值（6.7-17.6 kJ/mol）远低于假设甜点区（25-40 kJ/mol），且温度过高（745-1331 K）不利于物理吸附。建议聚焦Qst=25-40 kJ/mol、composition_x=0.3-0.7、温度300-500 K区域，并增加胺基功能化或开放金属位点材料。"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.0,
+            0.2
+          ],
+          [
+            1000.0,
+            1500.0
+          ],
+          [
+            0.0,
+            20.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.3,
+            0.7
+          ],
+          [
+            300.0,
+            500.0
+          ],
+          [
+            25.0,
+            40.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      }
+    ]
+  }
+}

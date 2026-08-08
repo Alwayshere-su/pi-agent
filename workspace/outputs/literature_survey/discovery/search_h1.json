@@ -1,0 +1,222 @@
+{
+  "hypothesis_index": 1,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 26,
+    "material_tokens": 56,
+    "property_keywords": [
+      "adsorption",
+      "capacity",
+      "capture",
+      "co2",
+      "loading",
+      "uptake"
+    ],
+    "literature_values": [
+      1.49,
+      2.0,
+      2.42,
+      5.8,
+      8.29,
+      8.6,
+      9.21,
+      9.5,
+      42.0
+    ]
+  },
+  "best_params": {
+    "property_value": 9.974062698593585,
+    "composition_x": 0.5924145688620425,
+    "temperature": 355.7404952639973
+  },
+  "best_score": 0.828641450564955,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.6703430290204169,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 10.603899157583566,
+        "composition_x": 0.18485445552552704,
+        "temperature": 1463.5015533174703
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.7637998951793756,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 11.944796801624687,
+        "composition_x": 0.6350936508676438,
+        "temperature": 354.3648117264534
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.7122792605999575,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 7.927990514276483,
+        "composition_x": 0.02538635566034486,
+        "temperature": 487.38311683942845
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.602694897003081,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 13.684924895769264,
+        "composition_x": 0.9252483174156658,
+        "temperature": 516.6904141528003
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.5863934411509255,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 15.001737799565934,
+        "composition_x": 0.13087366071834983,
+        "temperature": 1463.7852540942536
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.7738443276387277,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 12.488879093176688,
+        "composition_x": 0.5303021332491583,
+        "temperature": 350.34146811796353
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.6101106969918406,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 3.9279079838446145,
+        "composition_x": 0.9580734801193802,
+        "temperature": 741.5289015625013
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.613766924406653,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 3.1473546717454046,
+        "composition_x": 0.01260751997575904,
+        "temperature": 971.7068203660591
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.6562940170438768,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 11.124020484529389,
+        "composition_x": 0.9560471436119331,
+        "temperature": 540.5694186340834
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.701268429607492,
+      "best_score": 0.828641450564955,
+      "params": {
+        "property_value": 11.322689305290682,
+        "composition_x": 0.9522217856975946,
+        "temperature": 350.90675784827005
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 4,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（>1400K）超出MOF稳定范围，应聚焦300-500K。composition_x建议0.1-0.3（胺接枝）和0.8-1.0（OMS）对比，property目标5-15 mmol/g。当前高温度点应剪枝。"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.0,
+            0.05
+          ],
+          [
+            1400.0,
+            1500.0
+          ],
+          [
+            15.0,
+            42.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.1,
+            0.3
+          ],
+          [
+            300.0,
+            500.0
+          ],
+          [
+            5.0,
+            15.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选1和5温度350K接近胺功能化最优吸附温度，但composition_x偏高（0.53/0.95），建议聚焦composition_x 0.2-0.5、温度320-400K区间，并探索低温和高胺比例协同。"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.8,
+            1.0
+          ],
+          [
+            700.0,
+            1500.0
+          ],
+          [
+            2.0,
+            4.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.2,
+            0.5
+          ],
+          [
+            320.0,
+            400.0
+          ],
+          [
+            8.0,
+            15.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）[回填审计]"
+      }
+    ]
+  }
+}

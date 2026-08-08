@@ -1,0 +1,124 @@
+{
+  "hypothesis_index": 0,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 5,
+    "material_tokens": 23,
+    "property_keywords": [
+      "adsorption",
+      "capacity",
+      "selectivity"
+    ],
+    "literature_values": []
+  },
+  "best_params": {
+    "property_value": 51.472020397519806,
+    "composition_x": 0.5924145688620425,
+    "temperature": 355.7404952639973
+  },
+  "best_score": 0.39999999999999997,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.37,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 60.793730704953695,
+        "composition_x": 0.17052412368729153,
+        "temperature": 378.0619115823354
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 80.63950785132683,
+        "composition_x": 0.7482596903836584,
+        "temperature": 521.4252232276529
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 71.3636236298668,
+        "composition_x": 0.8952068376871993,
+        "temperature": 914.0129305387993
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 14.021671799875131,
+        "composition_x": 0.8349302367992991,
+        "temperature": 1481.2826168442625
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 89.42051044754552,
+        "composition_x": 0.22995460589108618,
+        "temperature": 555.7256448301
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 31.199639145684767,
+        "composition_x": 0.6103337833109184,
+        "temperature": 1159.3808090678322
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 97.99903590294917,
+        "composition_x": 0.6018815896363221,
+        "temperature": 998.9071898486958
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 16.30711723766969,
+        "composition_x": 0.01260751997575904,
+        "temperature": 971.7068203660591
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.35,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 60.333993360298216,
+        "composition_x": 0.8267073597414875,
+        "temperature": 1480.8157958525571
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.39999999999999997,
+      "best_score": 0.39999999999999997,
+      "params": {
+        "property_value": 74.76969621900973,
+        "composition_x": 0.4738098283979466,
+        "temperature": 369.41333933659274
+      }
+    }
+  ]
+}

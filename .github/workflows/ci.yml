@@ -1,0 +1,66 @@
+# ═══════════════════════════════════════════════════════════════
+# CI — Continuous Integration for Pi-Agent
+# ═══════════════════════════════════════════════════════════════
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      # ── 1. Checkout ──
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Setup Python ──
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # ── 3. Install dependencies ──
+      # pytest 未锁定在 requirements.txt（它是运行时依赖而非项目依赖），
+      # 这里作为 CI 专用工具单独安装，保证 tests/ 与 scripts/ 的测试可运行。
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      # ── 4. Import check ──
+      - name: Verify core modules importable
+        run: |
+          python -c "from literature_agent.search import LiteratureSearcher; from literature_agent.discovery import BayesianOptimizer; print('OK')"
+
+      # ── 5. Run tests（质量闸门）──
+      # 设计意图：pytest 失败即 CI 失败（不设 continue-on-error），
+      # 作为真正的质量闸门拦截回归。
+      # 覆盖范围：
+      #   - tests/：项目级 pytest 单元测试（utils.config、literature_agent
+      #     discovery/extractor/search，纯离线，115 项）；
+      #   - scripts/budget_resume_test/：预算恢复回归测试（pytest 风格）；
+      #   - scripts/test_core_functions/、scripts/cache_isolation_test/：
+      #     为 print+assert 风格（入口为 main()），pytest 收集 0 项，
+      #     保留在命令中以便未来迁移为 pytest 风格后自动纳入闸门。
+      - name: Run tests
+        run: |
+          python -m pytest tests/ scripts/test_core_functions/ scripts/cache_isolation_test/ scripts/budget_resume_test/ -v
+
+      # ── 6. Lint with ruff（软检查）──
+      # 设计意图：lint 仅作风格提示（continue-on-error: true），不拦截提交；
+      # 与 test 步骤（硬闸门）职责分离——代码风格问题不应阻塞功能性修复合入。
+      - name: Lint with ruff
+        continue-on-error: true
+        run: |
+          pip install ruff
+          ruff check . --select=E,F --ignore=E501

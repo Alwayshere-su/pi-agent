@@ -1,0 +1,93 @@
+{
+  "hypothesis_index": 0,
+  "search_method": "bayesian",
+  "iterations": 6,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 10,
+    "material_tokens": 82,
+    "property_keywords": [
+      "cyclability",
+      "degradation",
+      "h2o",
+      "stability"
+    ],
+    "literature_values": []
+  },
+  "best_params": {
+    "property_value": 51.472020397519806,
+    "composition_x": 0.5924145688620425,
+    "temperature": 355.7404952639973
+  },
+  "best_score": 0.31432443432755347,
+  "iteration_log": [
+    {
+      "iteration": -1,
+      "type": "initial",
+      "best_score": 0.31432443432755347,
+      "n_samples": 10,
+      "mean_score": 0.19614230600256627,
+      "max_score": 0.31432443432755347
+    },
+    {
+      "iteration": 0,
+      "score": 0.19499999999999998,
+      "best_score": 0.31432443432755347,
+      "params": {
+        "property_value": 60.793730704953695,
+        "composition_x": 0.17052412368729153,
+        "temperature": 378.0619115823354
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.22499999999999998,
+      "best_score": 0.31432443432755347,
+      "params": {
+        "property_value": 35.661670597261036,
+        "composition_x": 0.7578461104643691,
+        "temperature": 317.27218635570705
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.175,
+      "best_score": 0.31432443432755347,
+      "params": {
+        "property_value": 71.3636236298668,
+        "composition_x": 0.8952068376871993,
+        "temperature": 914.0129305387993
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.175,
+      "best_score": 0.31432443432755347,
+      "params": {
+        "property_value": 14.021671799875131,
+        "composition_x": 0.8349302367992991,
+        "temperature": 1481.2826168442625
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.175,
+      "best_score": 0.31432443432755347,
+      "params": {
+        "property_value": 89.42051044754552,
+        "composition_x": 0.22995460589108618,
+        "temperature": 555.7256448301
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.2597830703253741,
+      "best_score": 0.31432443432755347,
+      "params": {
+        "property_value": 31.199639145684767,
+        "composition_x": 0.6103337833109184,
+        "temperature": 1159.3808090678322
+      }
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "hypo_0",
+    "title": "Material-property relationship discovery",
+    "description": "Based on the gap analysis",
+    "source_gap_id": "",
+    "materials": [],
+    "property": "",
+    "expected_relationship": "To be determined",
+    "confidence": 0.39999999999999997,
+    "novelty_score": 0.4,
+    "search_method": "bayesian",
+    "search_iterations": 10,
+    "candidates_explored": 21,
+    "external_validation": {
+      "overall_match": false,
+      "databases_checked": [
+        "materials_project"
+      ],
+      "supporting_evidence": [],
+      "details": {
+        "materials_project": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [],
+          "queries_attempted": [],
+          "message": "Materials Project 中未找到与假设涉及材料直接匹配的无机相。这可能是因为：(1) MOF 作为有机-无机杂化材料不在 MP 收录范围内；(2) 对应的纯金属或氧化物相在数据库中不存在。"
+        }
+      }
+    },
+    "validation_status": "inconclusive",
+    "evidence_chain": [
+      "[Novelty Verification] Overlap: insufficient | Novelty: 0.400 (was 0.500) | Queries: 0 | Results: 0"
+    ],
+    "llm_plausibility_score": 0.1,
+    "llm_explanation": "该假设描述极为空泛，未指定材料体系、目标性质或预期关系，仅提出'基于差距分析'的泛化框架，缺乏具体物理化学机制或可检验的定量表述。理论基础维度，未涉及任何已知原理（如热力学、动力学或电子结构），无法判断其是否符合科学规律；文献一致性维度，因缺少可对比的明确假设，无法与已有工作建立关联或延伸；可验证性维度，由于未定义材料、性质及关系形式，既无法设计实验也无法进行计算验证；新颖性维度，检索结果显示新颖性不足（0.4），且未提取到有效查询词，未能证明相对现有研究的增量贡献。综合来看，该假设尚处于构思前阶段，不具备科学假设的基本要素，因此评分极低。；新颖性判定 **insufficient**（无法提取有效查询词，未执行有效查重），新颖性调整 +0.00",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "known_prior_work": "本假设基于研究 Gap 分析提出，具体已知工作待补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  }
+]

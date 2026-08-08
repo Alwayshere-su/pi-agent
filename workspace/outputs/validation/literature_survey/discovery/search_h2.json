@@ -1,0 +1,82 @@
+{
+  "hypothesis_index": 2,
+  "search_method": "bayesian",
+  "iterations": 5,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 10,
+    "material_tokens": 83,
+    "property_keywords": [
+      "adsorption",
+      "capacity",
+      "selectivity"
+    ],
+    "literature_values": []
+  },
+  "best_params": {
+    "property_value": 82.70317024117803,
+    "composition_x": 0.5247356376614322,
+    "temperature": 1230.292862201939
+  },
+  "best_score": 0.2742351852868529,
+  "iteration_log": [
+    {
+      "iteration": -1,
+      "type": "initial",
+      "best_score": 0.24220757615295094,
+      "n_samples": 10,
+      "mean_score": 0.18677317807073218,
+      "max_score": 0.24220757615295094
+    },
+    {
+      "iteration": 0,
+      "score": 0.175,
+      "best_score": 0.24220757615295094,
+      "params": {
+        "property_value": 32.37043184083398,
+        "composition_x": 0.8979191869576658,
+        "temperature": 1365.741826720843
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.2742351852868529,
+      "best_score": 0.2742351852868529,
+      "params": {
+        "property_value": 82.70317024117803,
+        "composition_x": 0.5247356376614322,
+        "temperature": 1230.292862201939
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.175,
+      "best_score": 0.2742351852868529,
+      "params": {
+        "property_value": 8.444138976533875,
+        "composition_x": 0.2111259425580374,
+        "temperature": 1202.9620051037932
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.175,
+      "best_score": 0.2742351852868529,
+      "params": {
+        "property_value": 54.07386142942337,
+        "composition_x": 0.07928028463119174,
+        "temperature": 979.020672375896
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.2727980037176701,
+      "best_score": 0.2742351852868529,
+      "params": {
+        "property_value": 41.95508040057449,
+        "composition_x": 0.4580286165838686,
+        "temperature": 607.976648623315
+      }
+    }
+  ]
+}

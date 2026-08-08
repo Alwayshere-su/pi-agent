@@ -1,0 +1,79 @@
+{
+  "connectivity": {
+    "mineru_available": false,
+    "cloud": {
+      "available": false,
+      "endpoint": "https://api.mineru.net",
+      "detail": "MINERU_API_KEY 未设置（环境变量或 .api_key 文件）"
+    },
+    "local": {
+      "available": false,
+      "endpoint": "http://localhost:8888",
+      "detail": "本地服务不可达: HTTPConnectionPool(host='localhost', port=8888): Max retries exceeded with url: /health (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8888): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+    },
+    "recommended_engine": "markitdown",
+    "fallback_engine": "markitdown",
+    "diagnosis": "MinerU 不可用 — 自动回退到 markitdown 本地引擎。原因：Cloud: MINERU_API_KEY 未设置（环境变量或 .api_key 文件）；Local: 本地服务不可达: HTTPConnectionPool(host='localhost', port=8888): Max retries exceeded with url: /health (Caused by NewConnectionError(\"HTTPConnection(host='localhost', port=8888): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。\"))"
+  },
+  "fallback": {
+    "parser_created": true,
+    "mineru_available": false,
+    "fallback_works": true,
+    "parse_engine_annotated": false,
+    "details": [
+      "MinerU 正确检测为不可用"
+    ],
+    "mineru_status": {
+      "available": false,
+      "mode": "cloud",
+      "reason": "MINERU_API_KEY 未设置"
+    },
+    "markitdown_available": true,
+    "entity_extractors_ok": true
+  },
+  "mock_parse": {
+    "sections_count": 1,
+    "references_count": 5,
+    "abstract_length": 423,
+    "materials_found": [
+      "ASAP",
+      "CO2",
+      "DFT",
+      "DMF",
+      "IAST",
+      "JEOL",
+      "JSM",
+      "MIL",
+      "MIL-101",
+      "MOF",
+      "MOFs",
+      "NO3",
+      "PBE",
+      "SEM",
+      "UiO",
+      "UiO-66",
+      "VASP",
+      "XRD",
+      "ZIF",
+      "ZIF-8"
+    ],
+    "properties_found": [
+      "adsorption capacity",
+      "selectivity",
+      "uptake"
+    ],
+    "methods_found": [
+      "DFT",
+      "Density functional theory",
+      "SEM",
+      "VASP",
+      "XRD",
+      "physisorption",
+      "solvothermal"
+    ],
+    "all_fields_present": true
+  },
+  "status_report": {
+    "ok": true
+  }
+}
