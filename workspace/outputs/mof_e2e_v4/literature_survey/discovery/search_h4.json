@@ -1,0 +1,317 @@
+{
+  "hypothesis_index": 4,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 13,
+    "material_tokens": 78,
+    "property_keywords": [
+      "co2",
+      "energy",
+      "energy penalty",
+      "kg",
+      "kj",
+      "mj",
+      "mol",
+      "qst",
+      "reg",
+      "regeneration"
+    ],
+    "literature_values": [
+      29.0
+    ]
+  },
+  "best_params": {
+    "property_value": 30.648719649624198,
+    "composition_x": 0.522243251566884,
+    "temperature": 363.99694780630676
+  },
+  "best_score": 0.907476696432277,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.7950055617355913,
+      "best_score": 0.8308876232530138,
+      "params": {
+        "property_value": 14.654381146117553,
+        "composition_x": 0.6134262615212319,
+        "temperature": 335.7262888885584
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.7503257395382706,
+      "best_score": 0.8308876232530138,
+      "params": {
+        "property_value": 31.385022986273786,
+        "composition_x": 0.14574117587397772,
+        "temperature": 575.9875359497344
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.85190530316039,
+      "best_score": 0.85190530316039,
+      "params": {
+        "property_value": 26.209610147468396,
+        "composition_x": 0.6069454128382038,
+        "temperature": 447.70542408392464
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.9070651747902826,
+      "best_score": 0.9070651747902826,
+      "params": {
+        "property_value": 28.68751269469223,
+        "composition_x": 0.6135841848558766,
+        "temperature": 362.5886770239951
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.8378313265963007,
+      "best_score": 0.9070651747902826,
+      "params": {
+        "property_value": 34.89067112889701,
+        "composition_x": 0.4993955991710657,
+        "temperature": 453.78598147575923
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.8634739927153844,
+      "best_score": 0.9070651747902826,
+      "params": {
+        "property_value": 31.962560046950625,
+        "composition_x": 0.5283989834014866,
+        "temperature": 447.28718345317077
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.907476696432277,
+      "best_score": 0.907476696432277,
+      "params": {
+        "property_value": 30.648719649624198,
+        "composition_x": 0.522243251566884,
+        "temperature": 363.99694780630676
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.8567171889846998,
+      "best_score": 0.907476696432277,
+      "params": {
+        "property_value": 35.97981150615375,
+        "composition_x": 0.4570252804809394,
+        "temperature": 309.74256844439384
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.8671357154212878,
+      "best_score": 0.907476696432277,
+      "params": {
+        "property_value": 31.540476688402766,
+        "composition_x": 0.46426690242611335,
+        "temperature": 391.46207213405785
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.7809387557914047,
+      "best_score": 0.907476696432277,
+      "params": {
+        "property_value": 18.163285252074886,
+        "composition_x": 0.5248902827551506,
+        "temperature": 550.6692410920859
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 17,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选温度参数不合理，CO2容量应在固定0C 1bar下测量；应剪枝温度变量，固定273K，并扩展组分覆盖两端以验证倒U形状。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            585.0,
+            950.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.1,
+            0.3
+          ],
+          [
+            0.7,
+            0.9
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 14,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度均远高于MOF-74稳定/测试温度（0°C=273K），物理不合理；组成x偏离0.5较多，未充分覆盖峰值区域。应固定温度为273K，将组分搜索聚焦在x=0.3-0.6，剔除极端x样本。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.1,
+            0.28
+          ],
+          [
+            0.62,
+            0.9
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.3,
+            0.6
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 14,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选参数与假设目标严重不符：CO2/diamine 化学计量应≈1.0–1.5，而property_value高达184–450；温度1434K远超CO2吸附操作窗口。建议停止该参数空间，重建以胺结构描述符为输入、目标限制在0–2的代理模型。"
+      },
+      {
+        "iteration": 16,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            180.0,
+            450.0
+          ],
+          [
+            900.0,
+            1500.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.0,
+            2.0
+          ],
+          [
+            250.0,
+            400.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选Qst部分低于MOF-74物理合理范围，且搜索变量未直接对应d电子数与电负性。建议将搜索空间改为Nd∈[0,10]和χ∈[1.3,1.9]，聚焦Qst在25-45 kJ/mol区域，剪枝预测低于20 kJ/mol的尝试。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.0,
+            20.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            25.0,
+            45.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前Qst集中在30-36 kJ/mol，符合假设的最优区间，但需注意温度与Qst匹配：高Qst材料应匹配更高解吸温度，低Qst材料宜低温真空再生。建议继续聚焦30-40 kJ/mol，并探索温度300-500K内的工艺联合优化，避免>500K以防MOF分解。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            20.0,
+            29.0
+          ],
+          [
+            41.0,
+            50.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            30.0,
+            40.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Data & caches (bulk / non-submission)
+workspace/data/
+workspace/checkpoint/
+
+# Only ignore runtime log files; keep structured outputs (JSON/MD/JSONL)
+workspace/logs/*.log
+
+# IDE / misc
+.claude/
+.api_key
+*.bak
+*.bak-*
+
+# 本地临时/会话文件（不入库）
+_docx_dump.txt
+11111.md
+尚未解决的问题.md
+
+# Agent 运行时工作区（脚本由 Agent 自主生成，非项目代码）
+workspace/code/
+
+# Windows 设备名伪文件（无法正常删除，git 会尝试跟踪）
+nul
+
+# 赛题资料与官方模板（第三方内容，不入库）
+GOAI_初赛_Prospector.zip
+AI for reserach算法赛初赛模板.docx
+
+# smoke_fix 验证运行产物（本地保留供参考，不入库）
+workspace/outputs/smoke_fix/
+workspace/logs/smoke_fix/
+workspace/memory/smoke_fix/
+
+# Vendor binaries
+vendor/

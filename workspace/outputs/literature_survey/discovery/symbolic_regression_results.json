@@ -1,0 +1,175 @@
+[
+  {
+    "hypothesis_id": "hypo_1",
+    "title": "双金属MOF-74中金属比例与CO2吸附容量呈倒U型定量关系",
+    "status": "success",
+    "generated_by": "run_validation_pipeline.py (修复版) / quantitative_validation.md+json 结构化数据池",
+    "datasets": [
+      {
+        "dataset_id": "nico_ratio_capacity",
+        "dataset_title": "NiCo-MOF-74 双金属比例-CO2容量（mmol/g, 298K/1bar）",
+        "n_data_points": 8,
+        "n_measured": 3,
+        "n_estimated": 5,
+        "data": [
+          {"x": 0.0, "y": 5.03, "is_estimated": false, "source": "p62 (实测)", "label": "Co-MOF-74"},
+          {"x": 0.5, "y": 8.30, "is_estimated": false, "source": "p62 (实测)", "label": "NiCo-MOF-74 1:1"},
+          {"x": 1.0, "y": 3.99, "is_estimated": false, "source": "p62 (实测)", "label": "Ni-MOF-74"},
+          {"x": 0.37, "y": 6.54, "is_estimated": true, "source": "scv:073a40bcc5cb (NO proxy→CO2估)", "label": "Ni0.37Co0.63-MOF-74"},
+          {"x": 0.63, "y": 5.76, "is_estimated": true, "source": "p62 + 倒U对称性估计", "label": "Ni0.63Co0.37-MOF-74"},
+          {"x": 0.25, "y": 6.20, "is_estimated": true, "source": "p85 + 文献协同趋势估计", "label": "Ni0.25Co0.75-MOF-74"},
+          {"x": 0.75, "y": 5.10, "is_estimated": true, "source": "p85 + 文献协同趋势估计", "label": "Ni0.75Co0.25-MOF-74"},
+          {"x": 0.5, "y": 7.90, "is_estimated": true, "source": "scv:a9220ad0eefa (GCMC预测)", "label": "NiCo-MOF-74 (GCMC)"}
+        ],
+        "model_family_comparison": {
+          "linear": {
+            "expression": "capacity = -1.3607·x + 6.7828",
+            "r2": 0.0813,
+            "rmse": 1.3123
+          },
+          "quadratic": {
+            "expression": "capacity = -10.7569·x² + 9.3962·x + 4.9794",
+            "r2": 0.6919,
+            "rmse": 0.7599
+          },
+          "power": {
+            "error": "x 含 0，幂律需 x>0"
+          }
+        },
+        "nested_f_test_linear_vs_quadratic": {
+          "f_statistic": 9.909,
+          "df1": 1,
+          "df2": 5,
+          "p_value": 0.0254,
+          "significant_at_005": true,
+          "interpretation": "二次项显著（倒U曲率有统计支撑）"
+        },
+        "expression": "capacity = -10.7569·x² + 9.3962·x + 4.9794",
+        "best_interpretable_expression": "quadratic",
+        "r2": 0.6919,
+        "rmse": 0.7599,
+        "peak_x": 0.4368,
+        "physical_interpretation": "倒U型协同：8 点二次模型在 x=0.437 处容量峰值 ≈7.03 mmol/g，高于端点 Vegard 线性内插（x=0.437 处 4.58 mmol/g，+约54%）；仅实测 3 点二次（过拟合）峰值 8.32 mmol/g、较线性内插 +83%（见 quantitative_validation.md 2.1bis）。异金属节点（Ni-Co）协同调控开放金属位点电子密度，过量第二金属导致结构扭曲/相分离→容量回落。",
+        "caveat": "5 个估计点（is_estimated=True）按假设构造/文献定性外推或 GCMC 预测，估计点驱动的 R² 不作独立验证证据；仅 3 个实测点（p62）自由度不足，需梯度合成实验。"
+      }
+    ]
+  },
+  {
+    "hypothesis_id": "hypo_2",
+    "title": "胺功能化MOF在湿态下的CO2捕获容量随相对湿度呈峰值增强",
+    "status": "skipped",
+    "reason": "主案例 knowledge_graph.md / quantitative_validation.md 中无该假设的量化 (x, y) 数据点（RH-容量数值表缺失），不编造数值。证据链为定性/机理级（R8/R29/R32，p224/p210/p201 等）。"
+  },
+  {
+    "hypothesis_id": "hypo_3",
+    "title": "MOF的CO2吸附热（Qst）在25-40 kJ/mol窗口内可实现容量-选择性-再生能耗Pareto最优",
+    "status": "success",
+    "generated_by": "run_validation_pipeline.py (修复版) / quantitative_validation.md 第 6 节（mof_rerun_v2 量化表）",
+    "datasets": [
+      {
+        "dataset_id": "qst_nd",
+        "dataset_title": "Qst_CO2 vs d电子数（M-MOF-74 平台, n=5, kJ/mol）",
+        "n_data_points": 5,
+        "n_measured": 4,
+        "n_estimated": 1,
+        "data": [
+          {"x": 0, "y": 47, "is_estimated": false, "source": "Caskey 2008; Koh 2016 (p26); 主案例 p6/p196/p197 (Mg Qst 42-47)", "label": "Mg"},
+          {"x": 6, "y": 36, "is_estimated": true, "source": "领域文献值[待验证]（mof_rerun_v2 量化表）", "label": "Fe"},
+          {"x": 7, "y": 37, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Co"},
+          {"x": 8, "y": 41, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Ni"},
+          {"x": 10, "y": 29, "is_estimated": false, "source": "Caskey 2008", "label": "Zn"}
+        ],
+        "model_family_comparison": {
+          "linear": {
+            "expression": "Qst = -1.496·Nd + 47.278",
+            "r2": 0.7227,
+            "rmse": 3.124
+          },
+          "quadratic": {
+            "expression": "Qst = -0.080·Nd² - 0.752·Nd + 46.657",
+            "r2": 0.7410,
+            "rmse": 3.020
+          },
+          "power": {
+            "expression": "Qst = 47.741·(Nd+1)^-0.140",
+            "r2": 0.6396,
+            "rmse": 3.562,
+            "note": "幂律（Nd+1 偏移保证 x>0）"
+          }
+        },
+        "nested_f_test_linear_vs_quadratic": {
+          "f_statistic": 0.141,
+          "df1": 1,
+          "df2": 2,
+          "p_value": 0.743,
+          "significant_at_005": false,
+          "interpretation": "二次项不显著；n=5 小样本下线性为最稳健可解释表达式（二次增益不显著）"
+        },
+        "expression": "Qst = -1.496·Nd + 47.278",
+        "best_interpretable_expression": "linear",
+        "r2": 0.7227,
+        "rmse": 3.124,
+        "physical_interpretation": "d⁰ Mg（强静电势）→ d¹⁰ Zn（弱相互作用）Qst 递减，符合开放金属位点静电/轨道作用机制；Fe(d6) 偏离趋势（36 vs 相邻 Co 37/Ni 41），与 Fe-MOF-74 强关联 Mott 绝缘体效应一致（Rocca 2025 p30）。"
+      },
+      {
+        "dataset_id": "qst_chi",
+        "dataset_title": "Qst_CO2 vs Pauling 电负性（M-MOF-74 平台, n=5, kJ/mol）",
+        "n_data_points": 5,
+        "n_measured": 4,
+        "n_estimated": 1,
+        "data": [
+          {"x": 1.31, "y": 47, "is_estimated": false, "source": "Caskey 2008; Koh 2016 (p26)", "label": "Mg"},
+          {"x": 1.83, "y": 36, "is_estimated": true, "source": "领域文献值[待验证]", "label": "Fe"},
+          {"x": 1.88, "y": 37, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Co"},
+          {"x": 1.91, "y": 41, "is_estimated": false, "source": "Caskey 2008; Tan 2015 (p15)", "label": "Ni"},
+          {"x": 1.65, "y": 29, "is_estimated": false, "source": "Caskey 2008", "label": "Zn"}
+        ],
+        "model_family_comparison": {
+          "linear": {
+            "expression": "Qst = -11.633·χ + 57.962",
+            "r2": 0.190,
+            "rmse": 5.341
+          },
+          "quadratic": {
+            "expression": "Qst = 159.33·χ² - 523.56·χ + 459.41",
+            "r2": 0.983,
+            "rmse": 0.781
+          },
+          "power": {
+            "expression": "Qst = 77.166·(χ+1)^-0.724",
+            "r2": 0.219,
+            "rmse": 5.244,
+            "note": "幂律（χ+1 偏移）"
+          }
+        },
+        "nested_f_test_linear_vs_quadratic": {
+          "f_statistic": 93.4,
+          "df1": 1,
+          "df2": 2,
+          "p_value": 0.011,
+          "significant_at_005": true,
+          "interpretation": "电负性二次（U 型）显著优于线性（p=0.011）"
+        },
+        "expression": "Qst = 159.33·χ² - 523.56·χ + 459.41",
+        "best_interpretable_expression": "quadratic",
+        "r2": 0.983,
+        "rmse": 0.781,
+        "trough_x": 1.643,
+        "physical_interpretation": "电负性-U 型：低 χ（Mg, 靠高离子性静电结合）与高 χ 区间（Fe/Co/Ni, 靠 d 轨道反馈/CFSE 补偿）两端 Qst 高；Zn（d¹⁰ 无反馈 + 中等 χ）处于谷底 Qst 最低。与 R4（金属电负性→Qst 负相关 r=-0.579，历史补充计算）部分一致但揭示了线性负相关之外的 U 型细节。"
+      }
+    ],
+    "caveat": "Qst 数值取自 mof_rerun_v2 子案例量化数值表（Caskey 2008 / Koh 2016 p26 / Tan 2015 p15），主案例 Mg Qst 42-47 kJ/mol (p6/p196/p197) 交叉印证；Fe 点 [待验证]。n=5 小样本，统计推断谨慎。"
+  },
+  {
+    "hypothesis_id": "hypo_4",
+    "title": "MOF-74缺陷类型依赖：缺失配体型缺陷↑OMS/容量 vs 溶剂甲酸盐占据型缺陷↓OMS/容量",
+    "status": "skipped",
+    "reason": "主案例中该假设的证据为定性/机理级（R25/R31），无 OMS 密度-容量定量数值表，不编造数值。"
+  },
+  {
+    "hypothesis_id": "hypo_5",
+    "title": "MOF在痕量NO2/SO2暴露后CO2吸附容量衰减率与OMS密度和孔道亲水性相关",
+    "status": "skipped",
+    "reason": "主案例中唯一直接证据为 ELM-11 NO2 衰减单点定性证据（p216），无衰减率-OMS/亲水性定量数据，不编造数值。"
+  }
+]

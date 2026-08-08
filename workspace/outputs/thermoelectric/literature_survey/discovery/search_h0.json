@@ -1,0 +1,133 @@
+{
+  "hypothesis_index": 0,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 10,
+    "material_tokens": 18,
+    "property_keywords": [
+      "zt"
+    ],
+    "literature_values": [
+      13.0,
+      30.0,
+      65.0,
+      500.0,
+      600.0,
+      773.0,
+      800.0,
+      900.0,
+      923.0,
+      1000.0
+    ]
+  },
+  "best_params": {
+    "property_value": 1106.8901144508604,
+    "composition_x": 0.5924145688620425,
+    "temperature": 355.7404952639973
+  },
+  "best_score": 0.8718697784409518,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.706846565211501,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 1307.740686172994,
+        "composition_x": 0.17052412368729153,
+        "temperature": 378.0619115823354
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.8141657843614621,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 766.2318348241619,
+        "composition_x": 0.7578461104643691,
+        "temperature": 317.27218635570705
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.6494924515900756,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 1535.4852702669132,
+        "composition_x": 0.8952068376871993,
+        "temperature": 914.0129305387993
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.6684801141431577,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 299.9648100856798,
+        "composition_x": 0.8349302367992991,
+        "temperature": 1481.2826168442625
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.6061310344894785,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 1924.548641820133,
+        "composition_x": 0.22995460589108618,
+        "temperature": 555.7256448301
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.8275744100898336,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 670.0905111255986,
+        "composition_x": 0.6103337833109184,
+        "temperature": 1159.3808090678322
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.6781606477980352,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 2109.3861539745967,
+        "composition_x": 0.6018815896363221,
+        "temperature": 998.9071898486958
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.6822649499692504,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 349.20824371338097,
+        "composition_x": 0.01260751997575904,
+        "temperature": 971.7068203660591
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.6887687884525492,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 1297.8349386791645,
+        "composition_x": 0.8267073597414875,
+        "temperature": 1480.8157958525571
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.7888509367778979,
+      "best_score": 0.8718697784409518,
+      "params": {
+        "property_value": 1608.874337754977,
+        "composition_x": 0.4738098283979466,
+        "temperature": 369.41333933659274
+      }
+    }
+  ]
+}

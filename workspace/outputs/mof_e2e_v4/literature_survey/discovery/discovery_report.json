@@ -1,0 +1,1604 @@
+{
+  "title": "Structure-Property Relationship Discovery",
+  "generated_at": "2026-08-04 00:08",
+  "hypotheses": [
+    {
+      "id": "hypo_0",
+      "title": "双金属 NiCo-MOF-74 组分比例-容量倒U（高斯峰）标度律",
+      "description": "NiCo-MOF-74 系列 CO2 容量随 Ni/(Ni+Co) 比例呈倒U/高斯型：C(x)=A*exp(-(x-mu)^2/(2*sigma^2))+B。5 点实验数据（Co 5.03 / Ni1Co6 6.40 / Ni1Co1 8.30 / Ni6Co1 3.62 / Ni 3.99 mmol/g @0C 1bar）显示峰值在 x~0.5。假设：倒U曲率与峰值位置由金属对 d-d 电子构型差异决定，可用于预测其他 d-d 金属对（Ni/Mn、Co/Mn）的最佳组分。",
+      "source_gap_id": "Gap 1",
+      "materials": [
+        "NiCo-MOF-74",
+        "Co-MOF-74",
+        "Ni-MOF-74",
+        "Ni1Co6-MOF-74",
+        "Ni6Co1-MOF-74"
+      ],
+      "property": "CO2 容量 (mmol/g) @ 0C 1bar",
+      "expected_relationship": "C(x) = A*exp(-(x-mu)^2/(2*sigma^2)) + B, 峰值 x_mu ~ 0.5, 容量增益 ~5.6 mmol/g",
+      "confidence": 0.8684467372691156,
+      "novelty_score": 0.7329,
+      "search_method": "bayesian",
+      "search_iterations": 15,
+      "candidates_explored": 26,
+      "external_validation": {
+        "overall_match": true,
+        "databases_checked": [
+          "materials_project",
+          "oqmd",
+          "hmof_core_mof",
+          "nomad"
+        ],
+        "supporting_evidence": [
+          "Co2NiO4 (OQMD): formation_energy = -1.272 eV/atom, stability = 0.000 eV/atom",
+          "CoNiO2 (OQMD): formation_energy = -0.876 eV/atom, stability = 0.372 eV/atom",
+          "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+          "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+          "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+          "4XTPhP3TuJfLPkbspIE8NzjZusZ1",
+          "nTZGBXVXx4yJBbAC5hUx4y8WXn_P"
+        ],
+        "details": {
+          "materials_project": {
+            "match": false,
+            "matching_entries": [],
+            "materials_found": [
+              {
+                "mp_id": "mp-aaaditcu",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaditde",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaadivan",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaevlpx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaevorb",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafhtqa",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafzwcl",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacflio",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacggrr",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacicfr",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafuptx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacizyf",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpjbi",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpxdj",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacuikc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaacc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaady",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabmcfm",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacfkfg",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacfseh",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaackgoe",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacsxkg",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaaax",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaapen",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafuptx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacizyf",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpjbi",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpxdj",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacuikc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaacc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaady",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabmcfm",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafuptx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacizyf",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpjbi",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpxdj",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacuikc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaacc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaady",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabmcfm",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaditcu",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaditde",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaadivan",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaevlpx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaevorb",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafhtqa",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafzwcl",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacflio",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacggrr",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacicfr",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              }
+            ],
+            "queries_attempted": [
+              "O4",
+              "Co",
+              "Ni",
+              "Co6",
+              "Co1",
+              "O2"
+            ],
+            "bimetallic_proxy_used": [
+              "NiCo-MOF-74 -> ['NiCo2O4', 'NiCoO2'] (双金属氧化物代理)"
+            ],
+            "proxy_note": "Materials Project 主要收录无机晶体材料，不直接收录 MOF 结构。以上查询使用 MOF 金属节点的对应氧化物作为跨尺度代理：MOF 节点金属氧化态与对应无机氧化物相近，氧化物形成能可定性反映金属-氧键强度，从而作为 MOF 节点稳定性和吸附热力学偏好的参考。这是定性的、非定量的近似。"
+          },
+          "oqmd": {
+            "match": true,
+            "matching_entries": [
+              "Co2NiO4 (OQMD): formation_energy = -1.272 eV/atom, stability = 0.000 eV/atom",
+              "CoNiO2 (OQMD): formation_energy = -0.876 eV/atom, stability = 0.372 eV/atom"
+            ],
+            "materials_found": [
+              {
+                "formula": "Co2NiO4",
+                "requested_formula": "NiCo2O4",
+                "delta_e_ev_per_atom": -1.2719,
+                "stability": 0.0,
+                "band_gap_ev": 0.8409999999999997,
+                "source": "api"
+              },
+              {
+                "formula": "CoNiO2",
+                "requested_formula": "NiCoO2",
+                "delta_e_ev_per_atom": -0.8762,
+                "stability": 0.371863943750002,
+                "band_gap_ev": 0.613999999999999,
+                "source": "api"
+              }
+            ],
+            "queries_attempted": [
+              {
+                "formula": "NiCo2O4",
+                "source": "api"
+              },
+              {
+                "formula": "NiCoO2",
+                "source": "api"
+              }
+            ],
+            "status": "ok",
+            "message": "OQMD 查询完成：命中 2 个无机相（queries: [{'formula': 'NiCo2O4', 'source': 'api'}, {'formula': 'NiCoO2', 'source': 'api'}]）。OQMD 以无机 DFT 计算数据为主，MOF 本体覆盖有限，命中结果作为金属节点无机相的跨尺度佐证。",
+            "formation_energy_gain_ev": {
+              "note": "只有单个金属氧化物数据，无法计算双金属形成能增益",
+              "available_energies": {
+                "Co2NiO4": 1.272,
+                "CoNiO2": 0.876
+              }
+            },
+            "calibration_note": "跨尺度代理（氧化物形成能 → MOF 节点稳定性），物理基础是 MOF 金属节点的氧化态与对应氧化物相近，但这种映射是定性的而非定量的",
+            "confidence": "moderate (cross-scale proxy, not yet calibrated)"
+          },
+          "hmof_core_mof": {
+            "match": true,
+            "matching_entries": [
+              "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)"
+            ],
+            "materials_found": [
+              {
+                "material": "NiCo-MOF-74",
+                "matched_mof": "MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.0,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    20,
+                    50
+                  ],
+                  "bet_surface_area_m2_g": [
+                    800,
+                    1800
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+              },
+              {
+                "material": "Co-MOF-74",
+                "matched_mof": "MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.0,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    20,
+                    50
+                  ],
+                  "bet_surface_area_m2_g": [
+                    800,
+                    1800
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+              },
+              {
+                "material": "Ni-MOF-74",
+                "matched_mof": "MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.0,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    20,
+                    50
+                  ],
+                  "bet_surface_area_m2_g": [
+                    800,
+                    1800
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+              },
+              {
+                "material": "Ni1Co6-MOF-74",
+                "matched_mof": "MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.0,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    20,
+                    50
+                  ],
+                  "bet_surface_area_m2_g": [
+                    800,
+                    1800
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+              },
+              {
+                "material": "Ni6Co1-MOF-74",
+                "matched_mof": "MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.0,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    20,
+                    50
+                  ],
+                  "bet_surface_area_m2_g": [
+                    800,
+                    1800
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+              }
+            ],
+            "database": "hMOF/CoRE MOF (computed, literature meta-analysis)"
+          },
+          "nomad": {
+            "match": true,
+            "matching_entries": [
+              "4XTPhP3TuJfLPkbspIE8NzjZusZ1",
+              "nTZGBXVXx4yJBbAC5hUx4y8WXn_P"
+            ],
+            "materials_found": [
+              "NiCoO2"
+            ],
+            "queries_attempted": [
+              {
+                "formula": "NiCo2O4",
+                "total_entries": 0
+              },
+              {
+                "formula": "NiCoO2",
+                "total_entries": 2
+              }
+            ],
+            "status": "ok",
+            "message": "NOMAD 查询完成：命中 1 个无机相代理（[{'formula': 'NiCo2O4', 'total_entries': 0}, {'formula': 'NiCoO2', 'total_entries': 2}]）。NOMAD 以无机 DFT 计算数据为主，MOF 本体覆盖有限，命中结果作为金属节点无机相的跨尺度佐证。"
+          }
+        }
+      },
+      "validation_status": "validated",
+      "evidence_chain": [
+        "Chen 2023 (v3s0_c795f15f9d35) 5 点实验定量：x=0->5.03, 0.14->6.40, 0.5->8.30, 0.86->3.62, 1.0->3.99",
+        "历史轮次：s-d 金属对（Cu/Mg）单调 vs d-d 金属对（NiCo/CoMn）倒U",
+        "Xu (v3s1) 固态 NMR：Mg/Ni 非随机配分 8 种构型（配分非理想是倒U的微观基础）",
+        "[Novelty Verification] Overlap: low | Adjusted novelty: 0.733 (was 0.750) | Queries: 3 | Results: 5 | Assessment: 已有文献重叠度极低，且现有研究分别聚焦光催化降解、低温CO氧化和NO捕获，均未涉及CO2容量与Ni/Co组分比例的定量标度关系。当前假设首次提出双金属NiCo-MOF-74组分比例与CO2容量之间的倒U（高斯峰）标度律，属于新的定量关联机制，具有明确的新颖性。综上，该假设的新颖性仍然成立，值得进一步实验验证。",
+        "[Overlap] \"Optimized Photocatalytic Degradation of Antibiotics with Modified Co-MOF and NiCo-MOF Catalysts\" (similarity=0.057, semantic_scholar, 2024)",
+        "[Overlap] \"Preparation and Characterization of Co-Modified Bimetallic MOF-74-NiCo as an Efficient Catalyst for Low Temperature CO-SCR\" (similarity=0.036, semantic_scholar, 2022)",
+        "[Overlap] \"Bimetal NiCo-MOF-74 for highly selective NO capture from flue gas under ambient conditions\" (similarity=0.031, semantic_scholar, 2022)",
+        "文献验证: 3.99 mmol/g — 在 12 篇论文中检索到 8 条匹配记录 (来源: 文献证据)",
+        "文献验证: 1bar — 在 12 篇论文中检索到 10 条匹配记录 (来源: p26)",
+        "预测值 ~5.6 mmol/g（待实验验证，建议方案：静态容量法测定吸附等温线，拟合模型获得饱和容量）"
+      ],
+      "llm_plausibility_score": 0.3829,
+      "llm_explanation": "理论基础：高斯峰模型为现象学拟合，缺少从d-d电子构型差异到容量峰值的明确物理推导，机制表述笼统，科学性有限。文献一致性：双金属MOF-74协同增强有文献支持，但该特定标度律未见直接证据；且实验数据在x=0.86处(3.62)低于x=1处(3.99)，与高斯对称性矛盾，降低一致性。可验证性：可通过静态容量法或第一性原理计算检验，实验设计清晰，可验证性良好。新颖性：检索重叠度低，现有研究未涉及CO2容量与组分比例的定量标度关系，新颖性成立。综合数据矛盾与理论薄弱，评分适中偏低。；系统查重: 5 篇结果，重叠=low，新颖性 0.73->0.72（3 篇潜在重叠）",
+      "extractability_score": 0.0,
+      "extractability_note": "",
+      "independent_materials": 0,
+      "data_points_available": 0,
+      "known_prior_work": "单金属 MOF-74 Qst 排序（Caskey 2008）已确立；但双金属组分-容量连续标度函数未见报道",
+      "incremental_claim": "给出倒U的定量函数形式（高斯参数 mu/sigma/A/B）并预测峰值位置与曲率随金属对的迁移规律",
+      "best_score": 0.8684467372691156,
+      "literature_values": [
+        2.0,
+        2.38,
+        2.42,
+        3.14,
+        3.62,
+        4.52,
+        8.0,
+        8.3
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "5.03",
+            "found_in_text": true
+          },
+          {
+            "claimed": "6.40",
+            "found_in_text": true
+          },
+          {
+            "claimed": "8.30",
+            "found_in_text": true
+          },
+          {
+            "claimed": "3.62",
+            "found_in_text": true
+          },
+          {
+            "claimed": "3.99",
+            "found_in_text": true
+          }
+        ],
+        "overall_verification_score": 1.0
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_1",
+      "title": "湿度-胺 MOF 合作吸附诱导效应标度律（临界RH与胺结构相关）",
+      "description": "diamine-appended MOF（mmen-Mg2(dobpdc) 等）在低 RH 下出现诱导效应（合作链），高 RH 下诱导效应消失、吸附速率增加（LKT 理论）。假设：诱导效应强度 I(RH) 随 RH 单调下降（可拟合成线性或指数衰减），临界 RHc（I=0 的截距）随胺链长增加而升高、随骨架孔径增加而降低。该标度律可用于预判 DAC/湿烟气工况下胺 MOF 的性能。",
+      "source_gap_id": "Gap 9",
+      "materials": [
+        "mmen-Mg2(dobpdc)",
+        "dmpn-Mg2(dobpdc)",
+        "e-2-Mg2(dobpdc)",
+        "een-MOF",
+        "IRMOF-74-III"
+      ],
+      "property": "诱导效应强度 I (0-1), CO2 吸附速率 (相对)",
+      "expected_relationship": "I(RH) = I0 - k*RH (线性) 或 I(RH) = I0*exp(-RH/tau)；临界 RHc = I0/k 随胺碳数↑而↑",
+      "confidence": 0.7984962218694236,
+      "novelty_score": 0.8,
+      "search_method": "mcts",
+      "search_iterations": 15,
+      "candidates_explored": 26,
+      "external_validation": {},
+      "validation_status": "pending",
+      "evidence_chain": [
+        "Marshall 2024 (p35) 突破实验：低RH诱导效应->高RH消失、速率↑（LKT 合作链->非合作簇）",
+        "Owens 2025 (p24) H2O/CO2 辫状链 ab initio",
+        "van der Zwaag (v3s3) COF 低RH竞争->合作转换（跨材料旁证）",
+        "知识图谱表 4：RH 0/10/30/50/80 -> 诱导效应 1.0/0.8/0.5/0.2/0.0（定性映射）",
+        "[Novelty Verification] Overlap: none | Adjusted novelty: 0.800 (was 0.800) | Queries: 3 | Results: 0 | Assessment: 已有文献未提出或验证类似主张，重叠级别为 none，且最高文本相似度为 0，因此不存在直接竞争或预期结论。该假设首次将湿度与胺结构协同引入吸附诱导效应的定量标度律，提出临界 RH 与胺构型关联的新机制，并覆盖多种 Mg2(dobpdc) 衍生物及 IRMOF-74-III 体系，具有明确的新颖性。最终结论：该假设的新颖性成立。"
+      ],
+      "llm_plausibility_score": 0.6212,
+      "llm_explanation": "从理论基础看，该假设基于胺-MOF的链式合作吸附与水分竞争机制，符合已知物理化学原理，但将诱导强度简化为RH的线性/指数衰减并赋予临界RH与胺链长/孔径的单调关系，缺乏严格的热力学或动力学推导，存在过度简化。文献一致性方面，所引文献确实表明高RH下合作效应减弱、速率增加，但未直接给出胺链长/孔径与临界RH的系统标度，属于合理外推而非强证据支持。可验证性较好，可通过变湿吸附突破实验、原位光谱或第一性原理计算测定I(RH)并检验标度律，但‘诱导效应强度’的量化定义尚需明确。新颖性检索显示有5篇潜在重叠，使新颖性从0.80略降至0.77，但该假设首次将湿度与胺结构耦合为定量标度律，仍具一定新意。综合评分0.65，表明假设具有部分科学合理性，但需要更多实验与理论验证支持其普适性。；系统查重: 6 篇结果，重叠=low，新颖性 0.80->0.77（5 篇潜在重叠）",
+      "extractability_score": 0.0,
+      "extractability_note": "",
+      "independent_materials": 0,
+      "data_points_available": 0,
+      "known_prior_work": "Marshall 2024 定性确立 RH 效应；跨材料定量标度未见报道",
+      "incremental_claim": "将诱导效应定量化为 I(RH) 函数并给出临界 RHc 与胺结构/孔径的关联",
+      "best_score": 0.7984962218694236,
+      "literature_values": [
+        2.0,
+        2.38,
+        2.42,
+        3.14,
+        3.62,
+        4.52,
+        8.0,
+        8.3
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "1.0",
+            "found_in_text": true
+          },
+          {
+            "claimed": "0.8",
+            "found_in_text": true
+          },
+          {
+            "claimed": "0.5",
+            "found_in_text": true
+          },
+          {
+            "claimed": "0.2",
+            "found_in_text": true
+          },
+          {
+            "claimed": "0.0",
+            "found_in_text": true
+          }
+        ],
+        "overall_verification_score": 0.8
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_2",
+      "title": "胺结构（碳数/支化/环化）与 CO2/diamine 化学计量上限的标度律",
+      "description": "diamine-appended Mg2(dobpdc) 化学吸附化学计量传统上限为 1.0 CO2/diamine（铵盐-氨基甲酸酯链），但 pip2（1-(2-氨基乙基)哌啶，双环胺）实现 ~1.5 CO2/diamine 两步吸附。假设：胺的支化/环化程度（拓扑复杂度）与化学计量上限正相关——含环状仲胺的体系可通过物理+化学双机理突破化学计量上限。",
+      "source_gap_id": "Gap 11",
+      "materials": [
+        "en-Mg2(dobpdc)",
+        "mmen-Mg2(dobpdc)",
+        "e-2-Mg2(dobpdc)",
+        "dmpn-Mg2(dobpdc)",
+        "pip2-Mg2(dobpdc)"
+      ],
+      "property": "CO2/diamine 化学计量 (mol/mol)",
+      "expected_relationship": "化学计量 S = 1.0 + f(环化度)，环状双胺（pip2）可达 ~1.5",
+      "confidence": 0.8554842961006367,
+      "novelty_score": 0.78,
+      "search_method": "bayesian",
+      "search_iterations": 10,
+      "candidates_explored": 21,
+      "external_validation": {},
+      "validation_status": "pending",
+      "evidence_chain": [
+        "Forse 2018 (10.1021/jacs.8b10203) 6金属 diamine-M2(dobpdc) 化学吸附全景：1.0 上限",
+        "Zhu 2024 (10.1021/jacs.3c13381) pip2-Mg2(dobpdc) 两步吸附 ~1.5 CO2/diamine",
+        "Martell 2020 (10.1039/d0sc01087a) 胺变体动力学",
+        "知识图谱表 6：胺碳数 2/3/4/5/7 -> 化学计量 1.0/1.0/1.0/1.0/1.5",
+        "[Novelty Verification] Overlap: none | Adjusted novelty: 0.780 (was 0.780) | Queries: 3 | Results: 0 | Assessment: 已有文献检索结果显示无任何重叠或相似工作，因此这些已有工作并未提出或验证类似的主张。当前假设针对五种不同胺结构的Mg2(dobpdc)材料，系统探讨胺碳数、支化与环化对CO2/diamine化学计量上限的定量标度律，涉及新的机制性关联和材料体系拓展，具有足够的新颖性。最终结论：该假设的新颖性成立。"
+      ],
+      "llm_plausibility_score": 0.6337,
+      "llm_explanation": "理论基础：化学吸附计量上限主要由胺的化学性质与MOF孔道协同决定，拓扑复杂度与计量上限的正相关缺乏明确热力学/动力学基础，但环状仲胺可能改变吸附位点几何与氢键网络，存在机理合理性。文献一致性：Zhu 2024报道pip2约1.5 CO2/diamine，但传统1.0上限来自铵盐-氨基甲酸酯链，1.5可能涉及物理吸附或额外氨基甲酸/两性离子路径，并非简单由环化度支配；Martell等也未支持碳数/环化度与计量上限的标度律。可验证性：可通过不同环化度胺变体的等温吸附、原位光谱及DFT计算验证，实验路径清晰。新颖性：检索显示2篇潜在重叠，且假设将多因素归因于单一拓扑描述符，定量普适性有限，但针对多种胺体系的系统标度尚未见直接报道，仍具一定新颖性。综合评分0.65。；系统查重: 3 篇结果，重叠=low，新颖性 0.78->0.76（2 篇潜在重叠）",
+      "extractability_score": 0.0,
+      "extractability_note": "",
+      "independent_materials": 0,
+      "data_points_available": 0,
+      "known_prior_work": "单一胺化学吸附机理已确立（Forse 2018）；双机理突破上限仅 pip2 单点报道",
+      "incremental_claim": "建立胺拓扑结构与化学计量上限的定量关系，指导高容量胺设计",
+      "best_score": 0.8554842961006367,
+      "literature_values": [
+        0.15,
+        1.0,
+        2.0,
+        2.38,
+        2.42,
+        3.14,
+        3.62,
+        4.52,
+        8.0,
+        8.3,
+        29.0,
+        30.4,
+        273.0,
+        298.0,
+        323.0,
+        343.0,
+        373.0
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "1.0",
+            "found_in_text": true
+          },
+          {
+            "claimed": "1.0",
+            "found_in_text": true
+          },
+          {
+            "claimed": "1.0",
+            "found_in_text": true
+          },
+          {
+            "claimed": "1.0",
+            "found_in_text": true
+          },
+          {
+            "claimed": "1.5",
+            "found_in_text": true
+          }
+        ],
+        "overall_verification_score": 0.9
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_3",
+      "title": "M-MOF-74 金属 d 电子构型-电负性联合描述符预测 CO2 吸附焓",
+      "description": "M-MOF-74 系列 CO2 吸附焓 Qst 由金属阳离子电子构型决定：d 电子数与电负性联合描述符可预测 Qst（v3 拟合 R²=0.9855）。假设：Qst = a*Nd + b*chi + c*chi^2 + d（二次多项式），该标度可外推预测未实验金属（如 Ca、Mn、Cu、Ti）的 Qst，指导金属取代筛选。",
+      "source_gap_id": "Gap 4",
+      "materials": [
+        "Mg-MOF-74",
+        "Fe-MOF-74",
+        "Co-MOF-74",
+        "Ni-MOF-74",
+        "Zn-MOF-74",
+        "Ca-MOF-74",
+        "Mn-MOF-74",
+        "Cu-MOF-74",
+        "Ti-MOF-74"
+      ],
+      "property": "Qst_CO2 (kJ/mol)",
+      "expected_relationship": "Qst = a*Nd + b*chi + c*chi^2 + d；Mg(0d, 1.31)->47, Fe(6d,1.83)->36, Co(7d,1.88)->37, Ni(8d,1.91)->41, Zn(10d,1.65)->29",
+      "confidence": 0.8664380646847296,
+      "novelty_score": 0.7,
+      "search_method": "hybrid",
+      "search_iterations": 10,
+      "candidates_explored": 21,
+      "external_validation": {},
+      "validation_status": "pending",
+      "evidence_chain": [
+        "Caskey 2008 实验 Qst 5 点：Mg 47/Fe 36/Co 37/Ni 41/Zn 29 kJ/mol",
+        "Koh 2016 (p26) vdW-DF 36 金属筛选趋势一致",
+        "v3 量化表 1：d电子数+电负性联合 R²=0.9855",
+        "[Novelty Verification] Overlap: none | Adjusted novelty: 0.700 (was 0.700) | Queries: 3 | Results: 0 | Assessment: 已有文献未提出或验证类似主张，当前假设与现有研究无重叠。该假设通过金属d电子构型与电负性联合构建描述符，针对五种M-MOF-74体系定量预测CO₂吸附焓，在机制和定量关系上具有明确新意。因此，该研究假设的新颖性成立。"
+      ],
+      "llm_plausibility_score": 0.35,
+      "llm_explanation": "理论基础：d电子数与电负性联合描述符缺乏明确的物理化学机制，CO2吸附焓受开放金属位点配位场、离子半径、孔道结构及骨架柔性等多种因素共同影响，仅用两个电子参数难以全面表征。文献一致性：Caskey等仅提供5个实验点，拟合采用4参数二次多项式（自由度为1），R²=0.9855虽高但易过拟合，不能作为可靠标度；Koh等的DFT趋势仅定性一致，未支持该具体函数形式。可验证性：原则上可通过第一性原理计算或新实验测量Ca、Mn、Cu、Ti的Qst来检验，但外推风险大，缺乏物理约束的拟合多项式在训练域外可能严重偏离。新颖性：检索未发现完全重叠工作，但该描述符组合本身并未提出新机制，属于经验拟合，新颖性有限。综合评分偏低。；系统查重: 5 篇结果，重叠=none，新颖性 0.70->0.70",
+      "extractability_score": 0.0,
+      "extractability_note": "",
+      "independent_materials": 0,
+      "data_points_available": 0,
+      "known_prior_work": "Caskey/Koh 确立金属种类排序；双描述符连续函数形式未见报道",
+      "incremental_claim": "给出 Qst=f(Nd, chi) 的定量函数并外推预测 Ca/Mn/Cu/Ti",
+      "best_score": 0.8664380646847296,
+      "literature_values": [
+        29.0
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "47",
+            "found_in_text": true
+          },
+          {
+            "claimed": "36",
+            "found_in_text": true
+          },
+          {
+            "claimed": "37",
+            "found_in_text": true
+          },
+          {
+            "claimed": "41",
+            "found_in_text": true
+          },
+          {
+            "claimed": "29",
+            "found_in_text": true
+          }
+        ],
+        "overall_verification_score": 1.0
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    },
+    {
+      "id": "hypo_4",
+      "title": "吸附焓-再生能耗权衡：低 Qst 吸附剂节能但需工艺补偿",
+      "description": "MOF CO2 捕获再生能耗与吸附焓强相关：高 Qst（如 Mg-MOF-74 47 kJ/mol）绑定强但再生能耗高；低 Qst（如 ED@MOF-520 29 kJ/mol）再生节能但需低温/低压工况。假设：再生能耗 E_reg 与 Qst 近似线性正相关（E_reg ≈ alpha*Qst + beta），且存在最优 Qst 区间（~30-40 kJ/mol）使总能耗最低——可指导吸附剂与工艺的联合设计。",
+      "source_gap_id": "Gap 10",
+      "materials": [
+        "Mg-MOF-74",
+        "ED@MOF-520",
+        "mmen-Mg2(dobpdc)",
+        "CALF-20",
+        "MOF纳米复合(磁感应)"
+      ],
+      "property": "再生能耗 E_reg (MJ/kg CO2), Qst (kJ/mol)",
+      "expected_relationship": "E_reg ≈ alpha*Qst + beta；磁感应再生 1.29 MJ/kg 为工艺侧节能旁证",
+      "confidence": 0.907476696432277,
+      "novelty_score": 0.72,
+      "search_method": "bayesian",
+      "search_iterations": 10,
+      "candidates_explored": 21,
+      "external_validation": {
+        "overall_match": true,
+        "databases_checked": [
+          "materials_project",
+          "oqmd",
+          "hmof_core_mof",
+          "nomad"
+        ],
+        "supporting_evidence": [
+          "MgO (OQMD): formation_energy = -2.946 eV/atom, stability = 0.000 eV/atom",
+          "F (OQMD): formation_energy = -0.004 eV/atom, stability = 0.000 eV/atom",
+          "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+          "MOF-74: Qst = 20-50 kJ/mol (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+          "Mg-MOF-74: CO2 吸附容量 = 3.67-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+          "-Ccu4MqTNgIiGNTdjjhYF-CXxR4O",
+          "-E3KG4cdq2-4P2d0AjBufOhZ8pSm",
+          "-EdLIARHFkOis7R6IXpxqzjqlpS1"
+        ],
+        "details": {
+          "materials_project": {
+            "match": false,
+            "matching_entries": [],
+            "materials_found": [
+              {
+                "mp_id": "mp-aaaditiz",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaadiuqu",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabwjuw",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacdknf",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaciskb",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaackktl",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpflh",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacpprd",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaabjjn",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaabkgm",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaekunm",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacdjxc",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacicbs",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacicqx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacidek",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaackgnq",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacsyym",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaaeg",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaaaafx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaditcu",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaditde",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaadivan",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaevlpx",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaevorb",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafhtqa",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaafzwcl",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacflio",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacggrr",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacicfr",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaadirox",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaadiuwe",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaacitoz",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaaabgii",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabfyet",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabfylb",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              },
+              {
+                "mp_id": "mp-aaabrgzi",
+                "formula": "",
+                "band_gap_ev": null,
+                "formation_energy_ev_per_atom": null,
+                "energy_above_hull_ev": null,
+                "crystal_system": "",
+                "nsites": null,
+                "volume_a3": null
+              }
+            ],
+            "queries_attempted": [
+              "D",
+              "Mg",
+              "O",
+              "F"
+            ],
+            "oxide_proxy_used": [
+              "Mg-MOF-74 -> ['MgO'] (MOF节点氧化物代理)"
+            ],
+            "proxy_note": "Materials Project 主要收录无机晶体材料，不直接收录 MOF 结构。以上查询使用 MOF 金属节点的对应氧化物作为跨尺度代理：MOF 节点金属氧化态与对应无机氧化物相近，氧化物形成能可定性反映金属-氧键强度，从而作为 MOF 节点稳定性和吸附热力学偏好的参考。这是定性的、非定量的近似。"
+          },
+          "oqmd": {
+            "match": true,
+            "matching_entries": [
+              "MgO (OQMD): formation_energy = -2.946 eV/atom, stability = 0.000 eV/atom",
+              "F (OQMD): formation_energy = -0.004 eV/atom, stability = 0.000 eV/atom"
+            ],
+            "materials_found": [
+              {
+                "formula": "MgO",
+                "requested_formula": "MgO",
+                "delta_e_ev_per_atom": -2.9463,
+                "stability": 0.0,
+                "band_gap_ev": 4.89,
+                "source": "api"
+              },
+              {
+                "formula": "F",
+                "requested_formula": "F",
+                "delta_e_ev_per_atom": -0.0042,
+                "stability": 0.0,
+                "band_gap_ev": 2.6069999999999998,
+                "source": "api"
+              }
+            ],
+            "queries_attempted": [
+              {
+                "formula": "MgO",
+                "source": "api"
+              },
+              {
+                "formula": "F",
+                "source": "api"
+              }
+            ],
+            "status": "ok",
+            "message": "OQMD 查询完成：命中 2 个无机相（queries: [{'formula': 'MgO', 'source': 'api'}, {'formula': 'F', 'source': 'api'}]）。OQMD 以无机 DFT 计算数据为主，MOF 本体覆盖有限，命中结果作为金属节点无机相的跨尺度佐证。",
+            "formation_energy_gain_ev": {
+              "note": "只有单个金属氧化物数据，无法计算双金属形成能增益",
+              "available_energies": {
+                "MgO": 2.946,
+                "F": 0.004
+              }
+            },
+            "calibration_note": "跨尺度代理（氧化物形成能 → MOF 节点稳定性），物理基础是 MOF 金属节点的氧化态与对应氧化物相近，但这种映射是定性的而非定量的",
+            "confidence": "moderate (cross-scale proxy, not yet calibrated)"
+          },
+          "hmof_core_mof": {
+            "match": true,
+            "matching_entries": [
+              "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "MOF-74: Qst = 20-50 kJ/mol (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "Mg-MOF-74: CO2 吸附容量 = 3.67-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+              "Mg-MOF-74: Qst = 42-47 kJ/mol (文献 meta-analysis, CoRE MOF 2014 / hMOF)"
+            ],
+            "materials_found": [
+              {
+                "material": "Mg-MOF-74",
+                "matched_mof": "MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.0,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    20,
+                    50
+                  ],
+                  "bet_surface_area_m2_g": [
+                    800,
+                    1800
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+              },
+              {
+                "material": "Mg-MOF-74",
+                "matched_mof": "Mg-MOF-74",
+                "known_properties": {
+                  "co2_capacity_mmol_g": [
+                    3.67,
+                    8.6
+                  ],
+                  "qst_kj_mol": [
+                    42,
+                    47
+                  ]
+                },
+                "note": "该材料属于已知 MOF 数据库中的 Mg-MOF-74 系列"
+              }
+            ],
+            "database": "hMOF/CoRE MOF (computed, literature meta-analysis)"
+          },
+          "nomad": {
+            "match": true,
+            "matching_entries": [
+              "-Ccu4MqTNgIiGNTdjjhYF-CXxR4O",
+              "-E3KG4cdq2-4P2d0AjBufOhZ8pSm",
+              "-EdLIARHFkOis7R6IXpxqzjqlpS1"
+            ],
+            "materials_found": [
+              "MgO"
+            ],
+            "queries_attempted": [
+              {
+                "formula": "MgO",
+                "total_entries": 985
+              }
+            ],
+            "status": "ok",
+            "message": "NOMAD 查询完成：命中 1 个无机相代理（[{'formula': 'MgO', 'total_entries': 985}]）。NOMAD 以无机 DFT 计算数据为主，MOF 本体覆盖有限，命中结果作为金属节点无机相的跨尺度佐证。"
+          }
+        }
+      },
+      "validation_status": "validated",
+      "evidence_chain": [
+        "Falcaro (v3s5) 磁感应再生 1.29 MJ/kg CO2（-45%）",
+        "Shin 2025 (p23) CALF-20 等网状 PVSA 技术经济",
+        "McDannald 2024 (p32) DAC 能量/纯度上界指标",
+        "MUF-16 SMB (10.1021/acsami.5c16139) 湿烟气连续工艺免干燥床",
+        "[Novelty Verification] Overlap: none | Adjusted novelty: 0.720 (was 0.720) | Queries: 3 | Results: 0 | Assessment: 基于已有文献重叠级别为“none”且最高文本相似度为0，未发现任何潜在重叠论文，因此已有工作未提出或验证类似主张。当前假设通过引入低Qst吸附剂与再生能耗之间的定量权衡关系，并涵盖多种MOF材料体系及磁感应工艺补偿策略，具有充分的机制与材料体系新颖性。最终结论：该研究假设的新颖性仍然成立，值得进一步验证与深入探讨。",
+        "预测值 47 kJ/mol（待实验验证，建议方案：微量热法测定零覆盖Qst，或DFT计算结合能作为代理验证）",
+        "文献验证: 29 kJ/mol — 在 12 篇论文中检索到 8 条匹配记录 (来源: p26)",
+        "文献验证: ~30-40 kJ/mol — 在 12 篇论文中检索到 8 条匹配记录 (来源: p26)"
+      ],
+      "llm_plausibility_score": 0.78,
+      "llm_explanation": "该假设在热力学上具有合理性：再生能耗必然包含克服吸附焓所需的能量，且Qst越高通常需要越高的再生温度或真空度，E_reg与Qst近似正相关符合物理直觉。文献中Mg-MOF-74高Qst高能耗、ED@MOF-520低Qst低能耗，以及磁感应再生节能的旁证均支持这一趋势。但线性关系忽略了显热、热容、传质阻力、工艺构型等因素，只能作为近似工程经验式。最优Qst约30-40 kJ/mol的区间与常见TSA/VSA吸附剂设计共识一致，可验证性强，可通过微量热法或DFT计算测定Qst，并通过变温/变压测试获取E_reg来检验。新颖性检索显示无重叠，但该权衡思想在吸附分离领域已有雏形，本假设的新颖性主要体现在定量标度关系和多材料拓展上，整体科学合理性较好，需注意其简化性。；系统查重: 0 篇结果，重叠=none，新颖性 0.72->0.72",
+      "extractability_score": 0.0,
+      "extractability_note": "",
+      "independent_materials": 0,
+      "data_points_available": 0,
+      "known_prior_work": "单材料能耗报道多；跨材料 Qst-E_reg 线性标度未见",
+      "incremental_claim": "建立 Qst-E_reg 跨材料标度并给出最优 Qst 窗口",
+      "best_score": 0.907476696432277,
+      "literature_values": [
+        29.0
+      ],
+      "search_warning": "",
+      "value_verification": {
+        "values_found": [
+          {
+            "claimed": "1.29",
+            "found_in_text": true
+          }
+        ],
+        "overall_verification_score": 0.5
+      },
+      "degraded": false,
+      "degraded_reason": ""
+    }
+  ],
+  "total_candidates": 5,
+  "total_explored": 115,
+  "validated_count": 2,
+  "refuted_count": 0,
+  "contested_count": 2,
+  "underexplored_count": 0,
+  "search_summary": "Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: strong=3, underexplored=0, contested=2, weak=0",
+  "materials_project_hits": 2
+}

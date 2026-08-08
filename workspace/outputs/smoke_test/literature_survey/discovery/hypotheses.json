@@ -1,0 +1,385 @@
+[
+  {
+    "id": "hypo_1",
+    "title": "通用机器学习势预测MOF CO2吸附能的系统性偏差与开放金属位点密度的定量关联",
+    "description": "假设通用机器学习势（MLIP）在预测MOF的CO2吸附能时，其误差符号和大小并非随机，而是由框架中配位不饱和金属位点（OMS）的密度以及孔内极性环境主导。可在一组结构连续变化的MOF上对比MLIP-MC与高精度DFT/实验等温线，构建偏差与OMS密度、孔极性描述符的回归模型，从而建立可预测的误差修正框架。",
+    "materials": [
+      "ZIF-8",
+      "ZIF-4",
+      "Mg-MOF-74",
+      "M-MOF-74 (M=Fe, Co, Ni)",
+      "CALF-20(Zn)"
+    ],
+    "property": "CO2吸附能预测偏差（MLIP vs DFT/实验）",
+    "expected_relationship": "MLIP预测偏差的绝对值随开放金属位点密度和孔极性增大而增大；在无OMS的疏水孔中MLIP倾向高估吸附强度，在含OMS的极性孔中倾向低估吸附强度。原因是通用MLIP训练集平均化了局域强结合位点的贡献，对强特异相互作用外推不足。",
+    "confidence": 0.65,
+    "novelty_score": 0.75,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 1",
+    "evidence_chain": [
+      "p12",
+      "p6",
+      "[Novelty Verification] Overlap: none | Novelty: 0.750 (was 0.750) | Queries: 3 | Results: 5"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "通用机器学习势预测MOF",
+        "ZIF-8 ZIF-4",
+        "ZIF-8 ZIF-4 Mg-MOF-74 contradictory evidence"
+      ],
+      "total_results_found": 5,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "已有文献检索显示无任何重叠或相似研究，因此不存在已提出或验证类似主张的工作。当前假设首次将MOF中开放金属位点密度与机器学习势预测CO2吸附能的系统性偏差建立定量关联，且覆盖ZIF、M-MOF-74及CALF-20等多种体系，具有新的机制视角和材料广度。综上，该假设的新颖性完全成立。",
+      "novelty_score_adjusted": 0.75,
+      "original_novelty": 0.75,
+      "query_details": [
+        {
+          "query": "通用机器学习势预测MOF",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "ZIF-8 ZIF-4",
+          "results_count": 5,
+          "top_titles": [
+            "Revisiting the High-Pressure Properties of the Metal-Organic Frameworks ZIF-8 and ZIF-67",
+            "ZIF-4 exhibiting high carbonic anhydrase-mimicking activities",
+            "The antibacterial activity of three zeolitic-imidazolate frameworks and zinc oxide nanoparticles derived from them"
+          ],
+          "error": null
+        },
+        {
+          "query": "ZIF-8 ZIF-4 Mg-MOF-74 contradictory evidence",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p12, p6)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_2",
+    "title": "胺类型和接枝密度决定水对胺功能化MOF CO2捕获的促进/抑制转变",
+    "description": "假设在胺功能化MOF中，水对CO2吸附的作用不是简单的竞争吸附，而是取决于胺类型和胺接枝密度。对于伯胺，H2O可参与形成CO2-胺-水链式中间体，从而增强CO2吸附；对于仲/叔胺，这种协同效应减弱，水更倾向于竞争吸附位点。可通过合成不同胺密度的系列MOF，在0-80%相对湿度下测量CO2等温线和等量吸附热加以验证。\n\n**数值验证结果**\n- **预测值（待实验验证）**: `0-80%` — 在 4 篇论文摘要中检索，未找到直接支撑。\n  建议验证方案: 预测值 0-80%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+    "materials": [
+      "mmen-Mg2(dobpdc)",
+      "Mg2(dobpdc)",
+      "IRMOF-74-III-(en)3",
+      "UiO-66-NH2"
+    ],
+    "property": "湿态CO2吸附容量与等量吸附热",
+    "expected_relationship": "伯胺体系中CO2容量随相对湿度呈火山型变化：适量水促进链式构象形成并提高容量，过量水因竞争位点导致容量下降；叔胺体系则表现为容量随相对湿度单调下降。该效应在胺间距接近CO2和H2O链长尺度时最强。",
+    "confidence": 0.4,
+    "novelty_score": 0.8,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 2",
+    "evidence_chain": [
+      "p10",
+      "p5",
+      "预测值 0-80%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+      "[Novelty Verification] Overlap: none | Novelty: 0.800 (was 0.800) | Queries: 3 | Results: 3"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [
+        {
+          "claimed": "0-80%",
+          "found_in_text": false,
+          "context": "",
+          "source_ids": []
+        }
+      ],
+      "overall_verification_score": 0.0,
+      "unverified_values": [
+        "0-80%"
+      ],
+      "_confidence_adjusted": true
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "胺类型和接枝密度决定水对胺功能化MOF CO2捕获的促进 假设在胺功能化MOF中",
+        "mmen-Mg2(dobpdc) Mg2(dobpdc)",
+        "mmen-Mg2(dobpdc) Mg2(dobpdc) IRMOF-74-III-(en)3 contradictory evidence"
+      ],
+      "total_results_found": 3,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "基于已有文献重叠级别为“none”且最高文本相似度为0，未发现任何已发表工作直接提出或验证过类似“胺类型和接枝密度决定水对胺功能化MOF CO2捕获的促进/抑制转变”的主张。该假设不仅引入了胺类型与接枝密度对水效应方向（促进/抑制）的潜在定量调控关系，还覆盖了多种具体材料体系（如mmen-Mg2(dobpdc)、IRMOF-74-III-(en)3、UiO-66-NH2），具有明确的机制和材料层面的新颖性。因此，尽管湿态CO2吸附和胺功能化MOF已有广泛研究，但本假设的特定转变规律与系统对比视角尚未被报道，其新颖性依然成立。",
+      "novelty_score_adjusted": 0.8,
+      "original_novelty": 0.8,
+      "query_details": [
+        {
+          "query": "胺类型和接枝密度决定水对胺功能化MOF CO2捕获的促进 假设在胺功能化MOF中",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "mmen-Mg2(dobpdc) Mg2(dobpdc)",
+          "results_count": 3,
+          "top_titles": [
+            "A combined statistical mechanical and ab initio approach to understanding H2O/CO2 co-adsorption in mmen-Mg2(dobpdc)",
+            "Hysteresis curves reveal the microscopic origin of cooperative CO$_2$ adsorption in diamine-appended metal-organic frame",
+            "Cooperative gas adsorption without a phase transition in metal-organic frameworks"
+          ],
+          "error": null
+        },
+        {
+          "query": "mmen-Mg2(dobpdc) Mg2(dobpdc) IRMOF-74-III-(en)3 contradictory evidence",
+          "results_count": 2,
+          "top_titles": [
+            "A combined statistical mechanical and ab initio approach to understanding H2O/CO2 co-adsorption in mmen-Mg2(dobpdc)",
+            "Hysteresis curves reveal the microscopic origin of cooperative CO$_2$ adsorption in diamine-appended metal-organic frame"
+          ],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p10, p5, 预测值 0-80%（待实验验证，建议方案：元素分析或TGA定量组成变化）)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_3",
+    "title": "M-DOBDC/M-HKUST-1中CO2吸附焓与金属M-O共价性描述符的定量构效关系",
+    "description": "假设金属取代MOF-74和HKUST-1的CO2吸附焓可由金属中心的可解释电子结构描述符统一预测。通过提取vdW-DF筛选数据中的ΔH，与d带中心、M-O键共价性、Mulliken电负性、离子半径等描述符进行多变量回归，可确定最优描述符组合并预测未筛选的金属取代体系。",
+    "materials": [
+      "M-DOBDC (M=Mg, Fe, Co, Ni, Cu, Zn)",
+      "M-HKUST-1 (M=Mo, Cr, Sn, Pb等)",
+      "36种金属取代变体"
+    ],
+    "property": "低覆盖率下CO2等量吸附热（ΔH）",
+    "expected_relationship": "CO2吸附焓随d带中心相对费米能级上移以及M-O键共价性增大而升高；d带中心比电负性和离子半径具有更强相关性，因为d带中心直接反映金属位点与CO2前线轨道的相互作用强度。",
+    "confidence": 0.7,
+    "novelty_score": 0.63,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 3",
+    "evidence_chain": [
+      "p3",
+      "p8",
+      "[Novelty Verification] Overlap: low | Novelty: 0.630 (was 0.650) | Queries: 3 | Results: 5",
+      "[Overlap] \"CO2/H2O adsorption equilibrium and rates on metal-organic frameworks: HKUST-1 and Ni/DOBDC.\" (sim=0.067)"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "M-HKUST-1 (M=Mo, Cr, Sn, Pb等) 36种金属取代变体 M-HKUST-1中CO2吸附焓与金属M-O共价性描述符的定量构效关系",
+        "M-DOBDC/M-HKUST-1 CO2",
+        "M-DOBDC (M=Mg, Fe, Co, Ni, Cu, Zn) M-DOBDC/M-HKUST-1 CO2 contradictory evidence"
+      ],
+      "total_results_found": 5,
+      "potentially_overlapping_papers": [
+        {
+          "title": "CO2/H2O adsorption equilibrium and rates on metal-organic frameworks: HKUST-1 and Ni/DOBDC.",
+          "source": "semantic_scholar",
+          "year": 2010,
+          "overlap_ratio": 0.0667,
+          "doi": "10.1021/la102359q"
+        }
+      ],
+      "overlap_assessment": "low",
+      "justification": "已有文献仅涉及HKUST-1与Ni/DOBDC的CO2/H2O吸附平衡和速率，并未提出或验证任何关于CO2吸附焓与金属M-O共价性描述符之间的定量构效关系。当前假设首次将36种金属取代变体统一纳入M-DOBDC与M-HKUST-1体系，并引入M-O共价性作为机理描述符，在机制解释和定量关联层面均具有明显的新颖性。因此，该研究假设的新颖性依然成立。",
+      "novelty_score_adjusted": 0.63,
+      "original_novelty": 0.65,
+      "query_details": [
+        {
+          "query": "M-HKUST-1 (M=Mo, Cr, Sn, Pb等) 36种金属取代变体 M-HKUST-1中CO2吸附焓与金属M-O共价性描述符的定量构效关系",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "M-DOBDC/M-HKUST-1 CO2",
+          "results_count": 5,
+          "top_titles": [
+            "Direct Air Capture of CO2 by Physisorbent Materials.",
+            "Comparing van der Waals Density Functionals for CO2 Adsorption in Metal Organic Frameworks",
+            "CO2/H2O adsorption equilibrium and rates on metal-organic frameworks: HKUST-1 and Ni/DOBDC."
+          ],
+          "error": null
+        },
+        {
+          "query": "M-DOBDC (M=Mg, Fe, Co, Ni, Cu, Zn) M-DOBDC/M-HKUST-1 CO2 contradictory evidence",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p3, p8)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_4",
+    "title": "超微孔MOF中CO2扩散系数在临界孔径处随孔径减小突变，形成吸附-扩散帕累托前沿",
+    "description": "假设在孔径从约0.3 nm连续变化到1.0 nm的同拓扑MOF系列中，CO2吸附热和CO2/N2选择性随孔径减小单调上升，但CO2扩散系数在接近CO2动力学直径时急剧下降，从而产生吸附容量/选择性与扩散之间的帕累托权衡。可通过GCMC与MD联合模拟以及不同链长配体的等网状MOF实验验证。",
+    "materials": [
+      "MIL-120(Al)",
+      "CALF-20(Zn)",
+      "ZIF-8",
+      "UiO-66型孔径调控系列",
+      "IRMOF-74系列"
+    ],
+    "property": "CO2扩散系数、CO2/N2选择性、CO2吸附容量",
+    "expected_relationship": "存在临界孔径dc约为0.5 nm：当孔径大于dc时，CO2扩散系数随孔径减小缓慢下降；当孔径小于dc时，扩散系数呈指数式衰减。同时CO2/N2选择性与等量吸附热随孔径减小持续上升，因此最佳碳捕获性能位于0.4-0.6 nm孔径区间，需权衡选择性与扩散损失。",
+    "confidence": 0.6,
+    "novelty_score": 0.7,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 4",
+    "evidence_chain": [
+      "p2",
+      "p5",
+      "[Novelty Verification] Overlap: none | Novelty: 0.700 (was 0.700) | Queries: 3 | Results: 7"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "UiO-66型孔径调控系列 IRMOF-74系列 超微孔MOF中CO2扩散系数在临界孔径处随孔径减小突变",
+        "MIL-120(Al) CALF-20(Zn)",
+        "MIL-120(Al) CALF-20(Zn) ZIF-8 contradictory evidence"
+      ],
+      "total_results_found": 7,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "现有文献中未发现与本假设类似的主张，因此不存在直接的先前工作验证或否定该机制。该假设提出了“临界孔径处CO2扩散系数突变”这一新的定量关系，并耦合了吸附容量与选择性形成帕累托前沿，同时涵盖多种MOF体系，具有明确的新机制和材料普适性。综上，该假设的新颖性仍然成立。",
+      "novelty_score_adjusted": 0.7,
+      "original_novelty": 0.7,
+      "query_details": [
+        {
+          "query": "UiO-66型孔径调控系列 IRMOF-74系列 超微孔MOF中CO2扩散系数在临界孔径处随孔径减小突变",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "MIL-120(Al) CALF-20(Zn)",
+          "results_count": 5,
+          "top_titles": [
+            "Mechanistic Insights into Enhanced Alkaline Oxygen Evolution on Zn-Al Alloy Electrodes",
+            "Ab initio based analysis of grain boundary segregation in Al-Mg and Al-Zn binary alloys",
+            "Control of site occupancy by variation of the Zn and Al content in NiZnAl ferrite epitaxial films with low magnetic damp"
+          ],
+          "error": null
+        },
+        {
+          "query": "MIL-120(Al) CALF-20(Zn) ZIF-8 contradictory evidence",
+          "results_count": 2,
+          "top_titles": [
+            "Decoding local framework dynamics in the ultra-small pore MOF MIL-120(Al) CO2 sorbent with Machine Learned Potentials",
+            "Topological Inductive Bias fosters Multiple Instance Learning in Data-Scarce Scenarios"
+          ],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p2, p5)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_5",
+    "title": "DAC与烟道气工况下MOF材料品质因数排序反转假设",
+    "description": "假设当前以15% CO2烟道气为优化目标的高容量MOF，在400 ppm直接空气捕获（DAC）工况下的性能排名会与传统烟道气排名发生反转。基于仅依赖本征材料性质的DAC能量/纯度指标，可对文献等温线数据重新排序，验证高吸附焓材料是否因再生能耗过高而在DAC中表现不佳。\n\n**数值验证结果**\n- **预测值（待实验验证）**: `15%` — 在 4 篇论文摘要中检索，未找到直接支撑。\n  建议验证方案: 预测值 15%（待实验验证，建议方案：元素分析或TGA定量组成变化）\n- **预测值（待实验验证）**: `45 kJ/mol` — 在 4 篇论文摘要中检索，未找到直接支撑。\n  建议验证方案: 预测值 45 kJ/mol（待实验验证，建议方案：微量热法测定零覆盖Qst，或DFT计算结合能作为代理验证）",
+    "materials": [
+      "Mg-MOF-74",
+      "CALF-20(Zn)",
+      "ZIF-8",
+      "mmen-Mg2(dobpdc)",
+      "沸石13X"
+    ],
+    "property": "DAC能量指标（每能量捕获CO2上限）和CO2纯度上限",
+    "expected_relationship": "传统烟道气下的CO2吸附量排名与DAC指标排名呈弱反相关；DAC指标随CO2吸附焓呈先升后降趋势，最佳吸附焓窗口约为-30至-45 kJ/mol。过高吸附焓虽提高低分压容量，但导致再生能耗显著上升，从而使MOF-74类材料在DAC排序中相对下降。",
+    "confidence": 0.45,
+    "novelty_score": 0.8,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 5",
+    "evidence_chain": [
+      "p9",
+      "p3",
+      "预测值 15%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+      "预测值 45 kJ/mol（待实验验证，建议方案：微量热法测定零覆盖Qst，或DFT计算结合能作为代理验证）",
+      "[Novelty Verification] Overlap: none | Novelty: 0.800 (was 0.800) | Queries: 3 | Results: 0"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [
+        {
+          "claimed": "15%",
+          "found_in_text": false,
+          "context": "",
+          "source_ids": []
+        },
+        {
+          "claimed": "45 kJ/mol",
+          "found_in_text": false,
+          "context": "",
+          "source_ids": []
+        }
+      ],
+      "overall_verification_score": 0.0,
+      "unverified_values": [
+        "15%",
+        "45 kJ/mol"
+      ],
+      "_confidence_adjusted": true
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "沸石13X",
+        "Mg-MOF-74 CALF-20(Zn) Qst",
+        "Mg-MOF-74 CALF-20(Zn) ZIF-8 contradictory evidence"
+      ],
+      "total_results_found": 0,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "根据已有文献重叠级别为“none”且最高文本相似度为0，未发现任何已有工作提出或验证过类似的主张。当前假设针对DAC与烟道气两种工况下五种MOF材料的品质因数排序反转，涉及新的工况比较维度、能量指标与纯度上限的定量关系，以及多种材料体系的系统对比，具备足够的新颖性。因此，该研究假设的新颖性仍然成立。",
+      "novelty_score_adjusted": 0.8,
+      "original_novelty": 0.8,
+      "query_details": [
+        {
+          "query": "沸石13X",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "Mg-MOF-74 CALF-20(Zn) Qst",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "Mg-MOF-74 CALF-20(Zn) ZIF-8 contradictory evidence",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p9, p3, 预测值 15%（待实验验证，建议方案：元素分析或TGA定量组成变化）, 预测值 45 kJ/mol（待实验验证，建议方案：微量热法测定零覆盖Qst，或DFT计算结合能作为代理验证）)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  }
+]

@@ -1,0 +1,219 @@
+{
+  "hypothesis_index": 1,
+  "search_method": "bayesian",
+  "iterations": 15,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 13,
+    "material_tokens": 78,
+    "property_keywords": [
+      "adsorption",
+      "capture",
+      "co2",
+      "uptake"
+    ],
+    "literature_values": [
+      2.0,
+      2.38,
+      2.42,
+      3.14,
+      3.62,
+      4.52,
+      8.0,
+      8.3
+    ]
+  },
+  "best_params": {
+    "property_value": 2.1442136660632203,
+    "composition_x": 0.6962214361212724,
+    "temperature": 547.2885359246103
+  },
+  "best_score": 0.7984962218694236,
+  "iteration_log": [
+    {
+      "iteration": 5,
+      "score": 0.6428689456236358,
+      "best_score": 0.7562709101535867,
+      "params": {
+        "property_value": 0.8516330603092895,
+        "composition_x": 0.8597478056850669,
+        "temperature": 849.9039777180575
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.7297650301825467,
+      "best_score": 0.7562709101535867,
+      "params": {
+        "property_value": 2.862083738574191,
+        "composition_x": 0.9871000859241166,
+        "temperature": 973.3802549222092
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.7374196681357734,
+      "best_score": 0.7562709101535867,
+      "params": {
+        "property_value": 2.6843983402829754,
+        "composition_x": 0.735953560515178,
+        "temperature": 661.4775537526898
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.7946350524958221,
+      "best_score": 0.7946350524958221,
+      "params": {
+        "property_value": 3.454968536560494,
+        "composition_x": 0.688292998427255,
+        "temperature": 563.6673001324763
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.7984962218694236,
+      "best_score": 0.7984962218694236,
+      "params": {
+        "property_value": 2.1442136660632203,
+        "composition_x": 0.6962214361212724,
+        "temperature": 547.2885359246103
+      }
+    },
+    {
+      "iteration": 10,
+      "score": 0.6893260087111925,
+      "best_score": 0.7984962218694236,
+      "params": {
+        "property_value": 1.4928271035594174,
+        "composition_x": 0.7186037406901956,
+        "temperature": 556.4840255782929
+      }
+    },
+    {
+      "iteration": 11,
+      "score": 0.7084279780292977,
+      "best_score": 0.7984962218694236,
+      "params": {
+        "property_value": 8.628624192526798,
+        "composition_x": 0.03820278375739106,
+        "temperature": 1038.2578759162968
+      }
+    },
+    {
+      "iteration": 12,
+      "score": 0.7036020803805205,
+      "best_score": 0.7984962218694236,
+      "params": {
+        "property_value": 6.677668367613526,
+        "composition_x": 0.11394526944454353,
+        "temperature": 1111.3701463217485
+      }
+    },
+    {
+      "iteration": 13,
+      "score": 0.7567025049277677,
+      "best_score": 0.7984962218694236,
+      "params": {
+        "property_value": 1.6770949614615067,
+        "composition_x": 0.06150573645863855,
+        "temperature": 361.6012455884131
+      }
+    },
+    {
+      "iteration": 14,
+      "score": 0.7455130785583954,
+      "best_score": 0.7984962218694236,
+      "params": {
+        "property_value": 2.5372420841966727,
+        "composition_x": 0.849034513283473,
+        "temperature": 925.9194155893459
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 8,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选温度参数不合理，CO2容量应在固定0C 1bar下测量；应剪枝温度变量，固定273K，并扩展组分覆盖两端以验证倒U形状。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            585.0,
+            950.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.1,
+            0.3
+          ],
+          [
+            0.7,
+            0.9
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 14,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度均远高于MOF-74稳定/测试温度（0°C=273K），物理不合理；组成x偏离0.5较多，未充分覆盖峰值区域。应固定温度为273K，将组分搜索聚焦在x=0.3-0.6，剔除极端x样本。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.1,
+            0.28
+          ],
+          [
+            0.62,
+            0.9
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.3,
+            0.6
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 14,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      }
+    ]
+  }
+}

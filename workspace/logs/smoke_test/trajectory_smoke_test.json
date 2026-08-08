@@ -1,0 +1,449 @@
+{
+  "task": "survey",
+  "agent_type": "pi-agent",
+  "total_rounds": 22,
+  "trajectory": [
+    {
+      "round": 1,
+      "iteration": 2,
+      "agent_thinking": "我将开始本次材料科学研究调研。首先执行第零步：检查历史记忆、评审反馈和缓存文件。",
+      "config": null,
+      "feedback": null,
+      "strategy": "我将开始本次材料科学研究调研。首先执行第零步：检查历史记忆、评审反馈和缓存文件",
+      "tools_called": [
+        {
+          "tool": "read_file",
+          "file": "workspace/memory/smoke_test/MEMORY.md"
+        },
+        {
+          "tool": "read_file",
+          "file": "workspace/feedback/survey.md"
+        },
+        {
+          "tool": "list_files"
+        },
+        {
+          "tool": "list_files"
+        }
+      ],
+      "budget_remaining": 235
+    },
+    {
+      "round": 2,
+      "iteration": 3,
+      "agent_thinking": "MEMORY.md 为空（首次调研），缓存目录为空，但有历史脚本可参考。让我查看与 MOF 相关的脚本和 literature_agent 包结构。",
+      "config": null,
+      "feedback": null,
+      "strategy": "MEMORY.md 为空（首次调研），缓存目录为空，但有历史脚本可参考。让我查看与 MOF 相关的脚本和 literature_agent 包结构",
+      "tools_called": [
+        {
+          "tool": "read_file",
+          "file": "workspace/code/survey/search_mof.py"
+        },
+        {
+          "tool": "list_files"
+        }
+      ],
+      "budget_remaining": 233
+    },
+    {
+      "round": 3,
+      "iteration": 4,
+      "agent_thinking": "有趣，search_mof.py 是历史记忆中的脚本，但 MEMORY.md 是空的。这个脚本可能是从之前迭代遗留的，说明之前有 MOF 主题的调研（但记忆文件没有更新？）。让我检查 literature_agent 包的位置。",
+      "config": {
+        "search_queries": [
+          "_mof.py 是历史记忆中的脚本，但 MEMORY.md 是空的。这个脚本可能是从之前迭代遗留的，说明之前有 MOF 主题的调研（但记忆文件没有更新？）。让我检查 literature_agent "
+        ],
+        "run_shell_calls": [
+          {
+            "command": "python -c \"import literature_agent, os; print(os.path.dirname(literature_agent.__file__))\"",
+            "exit_code": "0",
+            "success": true
+          }
+        ]
+      },
+      "feedback": null,
+      "strategy": "这个脚本可能是从之前迭代遗留的，说明之前有 MOF 主题的调研（但记忆文件没有更新？）。让我检查 literature_agent 包的位置",
+      "tools_called": [
+        {
+          "tool": "run_shell",
+          "command": "python -c \"import literature_agent, os; print(os.path.dirname(literature_agent.__file__))\"",
+          "exit_code": "0",
+          "success": true
+        },
+        {
+          "tool": "list_files"
+        }
+      ],
+      "budget_remaining": 229
+    },
+    {
+      "round": 4,
+      "iteration": 5,
+      "agent_thinking": "缓存目录有大量历史缓存文件。让我检查是否有聚合的 papers.json 以及大缓存文件的内容（判断是否与 MOF 相关）。",
+      "config": {
+        "run_shell_calls": [
+          {
+            "command": "python -c \"\nimport os, json\nbase = 'workspace/data/literature_cache'\n# 查找 papers.json / search_results.json\nfor root, dirs, files in os.walk(base):\n    for f in files:\n        if f in ('papers.json','",
+            "exit_code": "0",
+            "success": true
+          },
+          {
+            "command": "python -c \"\nimport os, json\nbase = 'workspace/data/literature_cache'\n# 检查几个大文件的标题，判断主题\nfiles = ['arxiv_19a754403de0b66b.json','arxiv_2572f42f60f60e1e.json','arxiv_38a341ecc9b1dfff.json','arxiv_43b0eb1",
+            "exit_code": "0",
+            "success": true
+          }
+        ]
+      },
+      "feedback": null,
+      "strategy": "缓存目录有大量历史缓存文件。让我检查是否有聚合的 papers.json 以及大缓存文件的内容（判断是否与 MOF 相关）",
+      "tools_called": [
+        {
+          "tool": "run_shell",
+          "command": "python -c \"\nimport os, json\nbase = 'workspace/data/literature_cache'\n# 查找 papers.json / search_results.json\nfor root, dirs, files in os.walk(base):\n    for f in files:\n        if f in ('papers.json','",
+          "exit_code": "0",
+          "success": true
+        },
+        {
+          "tool": "run_shell",
+          "command": "python -c \"\nimport os, json\nbase = 'workspace/data/literature_cache'\n# 检查几个大文件的标题，判断主题\nfiles = ['arxiv_19a754403de0b66b.json','arxiv_2572f42f60f60e1e.json','arxiv_38a341ecc9b1dfff.json','arxiv_43b0eb1",
+          "exit_code": "0",
+          "success": true
+        }
+      ],
+      "budget_remaining": 221
+    },
+    {
+      "round": 5,
+      "iteration": 6,
+      "agent_thinking": "⚠️ 注意到预算紧张（剩余 222s）。缓存文件来自其他主题（电池/热电/钙钛矿）。快速检查 g3test/validation 子目录是否 MOF 相关，以便复用。",
+      "config": {
+        "run_shell_calls": [
+          {
+            "command": "python -c \"\nimport json\nfor sub in ['g3test','validation']:\n    try:\n        d = json.load(open(f'workspace/data/literature_cache/{sub}/papers.json', encoding='utf-8'))\n        items = list(d.items())",
+            "exit_code": "0",
+            "success": true
+          }
+        ]
+      },
+      "feedback": null,
+      "strategy": "缓存文件来自其他主题（电池/热电/钙钛矿）。快速检查 g3test/validation 子目录是否 MOF 相关，以便复用",
+      "tools_called": [
+        {
+          "tool": "run_shell",
+          "command": "python -c \"\nimport json\nfor sub in ['g3test','validation']:\n    try:\n        d = json.load(open(f'workspace/data/literature_cache/{sub}/papers.json', encoding='utf-8'))\n        items = list(d.items())",
+          "exit_code": "0",
+          "success": true
+        }
+      ],
+      "budget_remaining": 213
+    },
+    {
+      "round": 6,
+      "iteration": 7,
+      "agent_thinking": "这些缓存均来自其他主题（钙钛矿带隙、固态电解质），与 MOF CO2 无关。本次为首次 MOF 调研。预算紧张（剩余约 200s），立即进入高效执行模式：阶段一控制在 35% 预算内，先并行发起核心检索。",
+      "config": null,
+      "feedback": null,
+      "strategy": "本次为首次 MOF 调研。预算紧张（剩余约 200s），立即进入高效执行模式：阶段一控制在 35% 预算内，先并行发起核心检索",
+      "tools_called": [
+        {
+          "tool": "search_papers"
+        },
+        {
+          "tool": "search_papers"
+        }
+      ],
+      "budget_remaining": 205
+    },
+    {
+      "round": 7,
+      "iteration": 8,
+      "agent_thinking": "第一个检索命中 11 篇，第二个 0 命中（换方向）。继续补充检索角度：胺功能化和机器学习筛选方向。",
+      "config": {
+        "search_queries": [
+          "命中 11 篇，第二个 0 命中（换方向）。继续补充检索角度：胺功能化和机器学习筛选方向。"
+        ]
+      },
+      "feedback": null,
+      "strategy": "第一个检索命中 11 篇，第二个 0 命中（换方向）。继续补充检索角度：胺功能化和机器学习筛选方向",
+      "tools_called": [
+        {
+          "tool": "search_papers"
+        },
+        {
+          "tool": "search_papers"
+        }
+      ],
+      "budget_remaining": 199
+    },
+    {
+      "round": 8,
+      "iteration": 9,
+      "agent_thinking": "检索角度已覆盖核心主题 + ML 方向。预算紧张，再做 1 次补充检索（MOF-74 经典材料方向，数值丰富），然后立即整理。",
+      "config": {
+        "search_queries": [
+          "角度已覆盖核心主题 + ML 方向。预算紧张，再做 1 次补充检索（MOF-74 经典材料方向，数值丰富），然后立即整理。"
+        ]
+      },
+      "feedback": null,
+      "strategy": "检索角度已覆盖核心主题 + ML 方向。预算紧张，再做 1 次补充检索（MOF-74 经典材料方向，数值丰富），然后立即整理",
+      "tools_called": [
+        {
+          "tool": "search_papers"
+        }
+      ],
+      "budget_remaining": 191
+    },
+    {
+      "round": 9,
+      "iteration": 10,
+      "agent_thinking": "已获得 14 篇相关论文。让我检查完整检索结果，然后立即整理为可读摘要。",
+      "config": {
+        "search_queries": [
+          "结果，然后立即整理为可读摘要。"
+        ],
+        "run_shell_calls": [
+          {
+            "command": "python -c \"\nimport json\nd = json.load(open('workspace/data/literature_cache/smoke_test/search_results.json', encoding='utf-8'))\nprint('总数:', len(d))\n# 去重\nseen = {}\nfor p in d:\n    t = p.get('title',''",
+            "exit_code": "0",
+            "success": true
+          }
+        ]
+      },
+      "feedback": null,
+      "strategy": "已获得 14 篇相关论文。让我检查完整检索结果，然后立即整理为可读摘要",
+      "tools_called": [
+        {
+          "tool": "run_shell",
+          "command": "python -c \"\nimport json\nd = json.load(open('workspace/data/literature_cache/smoke_test/search_results.json', encoding='utf-8'))\nprint('总数:', len(d))\n# 去重\nseen = {}\nfor p in d:\n    t = p.get('title',''",
+          "exit_code": "0",
+          "success": true
+        }
+      ],
+      "budget_remaining": 187
+    },
+    {
+      "round": 10,
+      "iteration": 11,
+      "agent_thinking": "阶段一已用 53s（22%），接近 35% 预算线。立即收尾阶段一：整理摘要并阅读。",
+      "config": null,
+      "feedback": null,
+      "strategy": "阶段一已用 53s（22%），接近 35% 预算线。立即收尾阶段一：整理摘要并阅读",
+      "tools_called": [
+        {
+          "tool": "extract_knowledge"
+        }
+      ],
+      "budget_remaining": 183
+    },
+    {
+      "round": 11,
+      "iteration": 12,
+      "agent_thinking": "extract_knowledge 需要字典格式。写脚本转换格式。",
+      "config": {
+        "run_shell_calls": [
+          {
+            "command": "python -c \"\nimport json\nd = json.load(open('workspace/data/literature_cache/smoke_test/search_results.json', encoding='utf-8'))\nout = {}\nfor i, p in enumerate(d):\n    pid = 'p' + str(i+1)\n    title = ",
+            "exit_code": "0",
+            "success": true
+          }
+        ]
+      },
+      "feedback": null,
+      "strategy": "extract_knowledge 需要字典格式。写脚本转换格式",
+      "tools_called": [
+        {
+          "tool": "run_shell",
+          "command": "python -c \"\nimport json\nd = json.load(open('workspace/data/literature_cache/smoke_test/search_results.json', encoding='utf-8'))\nout = {}\nfor i, p in enumerate(d):\n    pid = 'p' + str(i+1)\n    title = ",
+          "exit_code": "0",
+          "success": true
+        }
+      ],
+      "budget_remaining": 179
+    },
+    {
+      "round": 12,
+      "iteration": 13,
+      "agent_thinking": "extract_knowledge 需要字典格式。写脚本转换格式。",
+      "config": null,
+      "feedback": null,
+      "strategy": "extract_knowledge 需要字典格式。写脚本转换格式",
+      "tools_called": [
+        {
+          "tool": "extract_knowledge"
+        }
+      ],
+      "budget_remaining": 177
+    },
+    {
+      "round": 13,
+      "iteration": 14,
+      "agent_thinking": "extract_knowledge 需要字典格式。写脚本转换格式。",
+      "config": null,
+      "feedback": null,
+      "strategy": "extract_knowledge 需要字典格式。写脚本转换格式",
+      "tools_called": [
+        {
+          "tool": "read_file",
+          "file": "workspace/outputs/smoke_test/literature_survey/paper_summaries.md"
+        }
+      ],
+      "budget_remaining": 175
+    },
+    {
+      "round": 14,
+      "iteration": 15,
+      "agent_thinking": "预算紧张（剩余约 180s），立即高效完成阶段一收尾。基于 13 篇论文摘要，撰写知识图谱。",
+      "config": {
+        "touched_files": [
+          "workspace/outputs/smoke_test/literature_survey/knowledge_graph.md"
+        ]
+      },
+      "feedback": null,
+      "strategy": "预算紧张（剩余约 180s），立即高效完成阶段一收尾。基于 13 篇论文摘要，撰写知识图谱",
+      "tools_called": [
+        {
+          "tool": "write_file",
+          "file": "workspace/outputs/smoke_test/literature_survey/knowledge_graph.md"
+        }
+      ],
+      "budget_remaining": 156
+    },
+    {
+      "round": 15,
+      "iteration": 16,
+      "agent_thinking": "到达 35% 预算线，立即完成阶段一收尾：写 Gap 报告。",
+      "config": {
+        "touched_files": [
+          "workspace/outputs/smoke_test/literature_survey/gap_report.md"
+        ]
+      },
+      "feedback": null,
+      "strategy": "到达 35% 预算线，立即完成阶段一收尾：写 Gap 报告",
+      "tools_called": [
+        {
+          "tool": "write_file",
+          "file": "workspace/outputs/smoke_test/literature_survey/gap_report.md"
+        }
+      ],
+      "budget_remaining": 143
+    },
+    {
+      "round": 16,
+      "iteration": 17,
+      "agent_thinking": "到达 35% 预算线，立即完成阶段一收尾：写 Gap 报告。",
+      "config": null,
+      "feedback": null,
+      "strategy": "到达 35% 预算线，立即完成阶段一收尾：写 Gap 报告",
+      "tools_called": [
+        {
+          "tool": "analyze_gaps"
+        },
+        {
+          "tool": "generate_report"
+        }
+      ],
+      "budget_remaining": 142
+    },
+    {
+      "round": 17,
+      "iteration": 18,
+      "agent_thinking": "快速写调研报告（精简但完整），然后立即进入阶段二。",
+      "config": {
+        "touched_files": [
+          "workspace/outputs/smoke_test/literature_survey/survey_report.md"
+        ]
+      },
+      "feedback": null,
+      "strategy": "快速写调研报告（精简但完整），然后立即进入阶段二",
+      "tools_called": [
+        {
+          "tool": "write_file",
+          "file": "workspace/outputs/smoke_test/literature_survey/survey_report.md"
+        }
+      ],
+      "budget_remaining": 132
+    },
+    {
+      "round": 18,
+      "iteration": 19,
+      "agent_thinking": "快速写调研报告（精简但完整），然后立即进入阶段二。",
+      "config": null,
+      "feedback": null,
+      "strategy": "快速写调研报告（精简但完整），然后立即进入阶段二",
+      "tools_called": [
+        {
+          "tool": "generate_report"
+        }
+      ],
+      "budget_remaining": 130
+    },
+    {
+      "round": 19,
+      "iteration": 20,
+      "agent_thinking": "阶段一完成（13 篇论文、知识图谱、Gap 报告、调研报告）。预算剩余约 140s（58%），立即进入阶段二：生成假设。",
+      "config": null,
+      "feedback": null,
+      "strategy": "阶段一完成（13 篇论文、知识图谱、Gap 报告、调研报告）。预算剩余约 140s（58%），立即进入阶段二：生成假设",
+      "tools_called": [
+        {
+          "tool": "generate_hypotheses"
+        }
+      ],
+      "budget_remaining": 11
+    },
+    {
+      "round": 20,
+      "iteration": 21,
+      "agent_thinking": "预算耗尽（剩余 12s），立即收尾：写入记忆并更新 MEMORY.md，然后 stop。",
+      "config": {
+        "touched_files": [
+          "workspace/memory/smoke_test/survey-0802-mof-co2.md"
+        ]
+      },
+      "feedback": null,
+      "strategy": "预算耗尽（剩余 12s），立即收尾：写入记忆并更新 MEMORY.md，然后 stop",
+      "tools_called": [
+        {
+          "tool": "write_file",
+          "file": "workspace/memory/smoke_test/survey-0802-mof-co2.md"
+        }
+      ],
+      "budget_remaining": 3
+    },
+    {
+      "round": 21,
+      "iteration": 22,
+      "agent_thinking": "预算耗尽（剩余 12s），立即收尾：写入记忆并更新 MEMORY.md，然后 stop。",
+      "config": {
+        "touched_files": [
+          "workspace/memory/smoke_test/MEMORY.md"
+        ]
+      },
+      "feedback": null,
+      "strategy": "预算耗尽（剩余 12s），立即收尾：写入记忆并更新 MEMORY.md，然后 stop",
+      "tools_called": [
+        {
+          "tool": "write_file",
+          "file": "workspace/memory/smoke_test/MEMORY.md"
+        }
+      ],
+      "budget_remaining": 1
+    },
+    {
+      "round": 22,
+      "iteration": 23,
+      "agent_thinking": "预算耗尽（剩余 12s），立即收尾：写入记忆并更新 MEMORY.md，然后 stop。",
+      "config": null,
+      "feedback": null,
+      "strategy": "预算耗尽（剩余 12s），立即收尾：写入记忆并更新 MEMORY.md，然后 stop",
+      "tools_called": [
+        {
+          "tool": "stop",
+          "action": "stop"
+        }
+      ],
+      "budget_remaining": 0
+    }
+  ]
+}

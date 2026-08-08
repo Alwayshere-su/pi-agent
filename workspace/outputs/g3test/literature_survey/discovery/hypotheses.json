@@ -1,0 +1,280 @@
+[
+  {
+    "id": "hypo_1",
+    "title": "A位阳离子动态无序调控电子-声子耦合贡献比例",
+    "description": "针对Gap 2中关于反常电子-声子耦合的争议，提出假设：有机A位阳离子（MA/FA）的动态无序和rattler振动模式会增强电子-声子耦合对带隙温度变化的贡献，而无机Cs基钙钛矿中热膨胀贡献占据更大比例。通过变温光致发光与高压实验联合测量，可分解热膨胀和电子-声子耦合两项贡献，比较MAPbI3、FAPbI3、CsPbBr3及FA/MA混合体系。预期有机阳离子体系中的电子-声子耦合贡献分数显著高于Cs基体系，且与A位阳离子的转动自由度相关。\n\n**数值验证结果**\n- **预测值（待实验验证）**: `>50%` — 在 5 篇论文摘要中检索，未找到直接支撑。\n  建议验证方案: 预测值 >50%（待实验验证，建议方案：元素分析或TGA定量组成变化）\n- **预测值（待实验验证）**: `50%` — 在 5 篇论文摘要中检索，未找到直接支撑。\n  建议验证方案: 预测值 50%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+    "materials": [
+      "MAPbI3",
+      "FAPbI3",
+      "CsPbBr3",
+      "FA0.5MA0.5PbI3"
+    ],
+    "property": "电子-声子耦合对dEg/dT的贡献比例",
+    "expected_relationship": "含有甲基铵(MA)或甲脒(FA)的钙钛矿，其dEg/dT中电子-声子耦合贡献占比 >50%，而无机Cs基钙钛矿中该占比接近50%或更低；这与有机阳离子的低速rattler振动模式增强非谐性声子-电子散射有关。",
+    "confidence": 0.6,
+    "novelty_score": 0.75,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 2",
+    "evidence_chain": [
+      "p000",
+      "p010",
+      "p026",
+      "预测值 >50%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+      "预测值 50%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+      "[Novelty Verification] Overlap: none | Novelty: 0.750 (was 0.750) | Queries: 3 | Results: 4"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [
+        {
+          "claimed": ">50%",
+          "found_in_text": false,
+          "context": "",
+          "source_ids": []
+        },
+        {
+          "claimed": "50%",
+          "found_in_text": false,
+          "context": "",
+          "source_ids": []
+        }
+      ],
+      "overall_verification_score": 0.0,
+      "unverified_values": [
+        ">50%",
+        "50%"
+      ],
+      "_confidence_adjusted": true
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "A位阳离子动态无序调控电子-声子耦合贡献比例 针对Gap",
+        "MAPbI3 FAPbI3",
+        "MAPbI3 FAPbI3 CsPbBr3 contradictory evidence"
+      ],
+      "total_results_found": 4,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "已有文献检索未发现任何与“A位阳离子动态无序调控电子-声子耦合贡献比例”直接相关的主张或验证，当前假设在机制层面具有明确的空白性。该假设引入“动态无序”作为调控电子-声子耦合对dEg/dT贡献比例的新变量，并涵盖多种典型钙钛矿材料体系，具备机制与材料组合上的新颖性。因此，该研究假设的新颖性仍然成立。",
+      "novelty_score_adjusted": 0.75,
+      "original_novelty": 0.75,
+      "query_details": [
+        {
+          "query": "A位阳离子动态无序调控电子-声子耦合贡献比例 针对Gap",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "MAPbI3 FAPbI3",
+          "results_count": 4,
+          "top_titles": [
+            "Effects of Defect on Work Function and Energy Alignment of PbI2: Implications for Solar Cell Applications",
+            "Terahertz Time-Domain Spectroscopy as a Universal Defect Fingerprinting Tool for Organic Halide Perovskite Solar Cells",
+            "Roadmap for electronic structure, anharmonicity, and electron-phonon calculations in locally disordered inorganic and hy"
+          ],
+          "error": null
+        },
+        {
+          "query": "MAPbI3 FAPbI3 CsPbBr3 contradictory evidence",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p000, p010, p026, 预测值 >50%（待实验验证，建议方案：元素分析或TGA定量组成变化）)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_2",
+    "title": "B位金属Pb→Sn→Ge替换对带隙温度系数的影响",
+    "description": "针对Gap 1无铅钙钛矿温度依赖带隙数据的空白，提出假设：在CsBX3（B=Pb, Sn, Ge）体系中，随B位阳离子半径减小和晶格软化，热膨胀对dEg/dT的贡献比例增大，且dEg/dT的绝对值可能增大。该假设可通过变温吸收/光致发光和高压实验，解耦热膨胀与电子-声子耦合贡献，并与铅基参照对比来验证。",
+    "materials": [
+      "CsPbBr3",
+      "CsSnBr3",
+      "CsGeBr3",
+      "CsSnI3",
+      "CsGeI3"
+    ],
+    "property": "带隙温度系数dEg/dT及其热膨胀贡献分数",
+    "expected_relationship": "从Pb到Sn到Ge，B-X键强度降低、晶格非谐性增强，热膨胀系数增大，导致热膨胀项对dEg/dT的负贡献增强；同时声子模式软化可能使电子-声子耦合贡献也变化。综合预期dEg/dT的绝对值随B位原子序数减小而增大，且热膨胀贡献占比上升。",
+    "confidence": 0.7,
+    "novelty_score": 0.8,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 1",
+    "evidence_chain": [
+      "p015",
+      "p023",
+      "p028",
+      "[Novelty Verification] Overlap: none | Novelty: 0.800 (was 0.800) | Queries: 3 | Results: 0"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "B位金属Pb Ge替换对带隙温度系数的影响",
+        "CsPbBr3 CsSnBr3",
+        "CsPbBr3 CsSnBr3 CsGeBr3 contradictory evidence"
+      ],
+      "total_results_found": 0,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "已有文献检索结果显示，本假设与现有工作无重叠，尚无研究明确提出或验证B位金属Pb→Sn→Ge替换对带隙温度系数的系统影响。该假设不仅涵盖了CsPbBr3、CsSnBr3、CsGeBr3等系列材料，还进一步引入CsSnI3与CsGeI3，并定量区分热膨胀贡献分数，具有新的材料体系和机制视角。因此，当前假设的新颖性完全成立，值得开展后续验证与深入研究。",
+      "novelty_score_adjusted": 0.8,
+      "original_novelty": 0.8,
+      "query_details": [
+        {
+          "query": "B位金属Pb Ge替换对带隙温度系数的影响",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "CsPbBr3 CsSnBr3",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "CsPbBr3 CsSnBr3 CsGeBr3 contradictory evidence",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p015, p023, p028)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_3",
+    "title": "FAxMA1-xPbI3混合阳离子dEg/dT的Vegard类弯曲规律",
+    "description": "针对Gap 3缺乏混合阳离子组成对dEg/dT定量规律的问题，提出假设：FAxMA1-xPbI3的带隙温度系数dEg/dT随x呈非线性变化，符合类Vegard关系并存在额外弯曲项（bowing）。该弯曲项源于A位阳离子尺寸失配和动态无序增强的电子-声子耦合，与混合体系中rattler振动模式的激活温度相关。通过制备x=0,0.25,0.5,0.75,1的单晶并测量变温PL，可提取dEg/dT(x)曲线并拟合bowing系数。",
+    "materials": [
+      "FAxMA1-xPbI3 (x=0,0.25,0.5,0.75,1)"
+    ],
+    "property": "dEg/dT作为x的函数及其bowing系数",
+    "expected_relationship": "dEg/dT(x)满足dEg/dT(x) = (1-x)dEg/dT(MA) + x dEg/dT(FA) + b*x*(1-x)，且b显著非零（预期为负值，即混合使带隙温度系数更负）。b的绝对值与A位阳离子半径失配度及有机阳离子转动自由度相关。",
+    "confidence": 0.75,
+    "novelty_score": 0.75,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 3",
+    "evidence_chain": [
+      "p010",
+      "p016",
+      "p023",
+      "[Novelty Verification] Overlap: none | Novelty: 0.750 (was 0.750) | Queries: 3 | Results: 0"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "prior_art_verification": {
+      "queries_executed": [
+        "FAxMA1-xPbI3混合阳离子dEg dT的Vegard类弯曲规律 针对Gap",
+        "FAxMA1-xPbI3 (x=0,0.25,0.5,0.75,1) FAxMA1-xPbI3",
+        "FAxMA1-xPbI3 (x=0,0.25,0.5,0.75,1) FAxMA1-xPbI3 Vegard contradictory evidence"
+      ],
+      "total_results_found": 0,
+      "potentially_overlapping_papers": [],
+      "overlap_assessment": "none",
+      "justification": "已有文献未出现重叠，表明类似主张尚未被提出或验证。   该假设聚焦于 FAxMA1-xPbI3 混合阳离子体系中 dEg/dT 随组分变化的弯曲规律，涉及新的定量关系与材料体系，具有足够新颖性。   因此，该研究假设的新颖性依然成立。",
+      "novelty_score_adjusted": 0.75,
+      "original_novelty": 0.75,
+      "query_details": [
+        {
+          "query": "FAxMA1-xPbI3混合阳离子dEg dT的Vegard类弯曲规律 针对Gap",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "FAxMA1-xPbI3 (x=0,0.25,0.5,0.75,1) FAxMA1-xPbI3",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        },
+        {
+          "query": "FAxMA1-xPbI3 (x=0,0.25,0.5,0.75,1) FAxMA1-xPbI3 Vegard contradictory evidence",
+          "results_count": 0,
+          "top_titles": [],
+          "error": null
+        }
+      ]
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p010, p016, p023)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_4",
+    "title": "dEg/dT与LO声子能量及Fröhlich耦合强度的普适标度律",
+    "description": "针对Gap 5缺乏统一预测模型的问题，提出假设：不同卤化物钙钛矿的带隙温度系数dEg/dT（绝对值）与纵向光学（LO）声子能量和Fröhlich电子-声子耦合常数之间存在可标度的关系，可作为快速预测dEg/dT的基准。通过汇总已报道的MAPbI3、FAPbI3、CsPbI3、CsPbBr3、CsSnI3等材料的dEg/dT、LO声子能量和介电常数，进行回归分析，检验该标度律是否存在。",
+    "materials": [
+      "MAPbI3",
+      "FAPbI3",
+      "CsPbI3",
+      "CsPbBr3",
+      "CsSnI3"
+    ],
+    "property": "带隙温度系数dEg/dT",
+    "expected_relationship": "dEg/dT的绝对值与Fröhlich耦合常数α（或LO声子能量E_LO与静态/高频介电常数之比）呈线性正相关；且不同A位/B位组成的钙钛矿均落于同一标度线上，从而为超越AHC理论的经验预测提供基准。",
+    "confidence": 0.7,
+    "novelty_score": 0.65,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 5",
+    "evidence_chain": [
+      "p025",
+      "p029",
+      "p033"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p025, p029, p033)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_5",
+    "title": "二维Ruddlesden-Popper钙钛矿维度降低对带隙温度系数的调控",
+    "description": "针对Gap 4中2D与3D钙钛矿缺乏系统对比的问题，提出假设：在(BA)2(MA)n-1PbnI3n+1家族中，随着无机层厚度n从1增加到∞，带隙温度系数dEg/dT从正值（或接近零）单调过渡到体材料的负值。该行为与量子限域效应导致的激子局域化和自陷激子形成有关，因为2D体系中强激子-声子耦合使PL峰位随温度变化呈现反常蓝移或非单调行为。",
+    "materials": [
+      "(BA)2PbI4",
+      "(BA)2MAPb2I7",
+      "(BA)2MA2Pb3I10",
+      "MAPbI3"
+    ],
+    "property": "带隙温度系数dEg/dT（或PL峰位温度系数）",
+    "expected_relationship": "随n增大，dEg/dT从正值或轻微正/负值逐渐变为3D钙钛矿的负值；n=1的强激子局域化导致自陷激子态主导发射，带隙温度依赖被激子束缚能变化掩盖，而n≥3时趋向体材料行为。该规律可通过变温吸收和PL测量验证。",
+    "confidence": 0.65,
+    "novelty_score": 0.8,
+    "validation_status": "pending",
+    "source_gap_id": "Gap 4",
+    "evidence_chain": [
+      "p002",
+      "p032"
+    ],
+    "search_method": "bayesian",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p002, p032)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  }
+]

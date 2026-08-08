@@ -1,0 +1,207 @@
+[
+  {
+    "id": "hypo_1",
+    "title": "单晶NMC811中Ni氧化态异质性调控位错辅助裂纹萌生",
+    "description": "在单晶LiNi0.8Mn0.1Co0.1O2正极颗粒中，Ni氧化态空间异质性（Ni2+/Ni3+/Ni4+分布）会产生局部晶格应变和缺陷能波动，直接影响位错滑移的临界剪切应力。假设同一单晶颗粒中Ni氧化态异质性较大的区域（特别是Ni4+富集或Ni2+还原区域）优先成为裂纹萌生点，导致颗粒整体断裂强度降低。可通过先对同一颗粒进行光谱叠层成像获得Ni价态图，再进行原位微力学压缩实验验证裂纹起始位置与价态异质性的空间关联。",
+    "source_gap_id": "Gap 1",
+    "materials": [
+      "LiNi0.8Mn0.1Co0.1O2 (SC-NMC811)"
+    ],
+    "property": "裂纹萌生临界应力",
+    "expected_relationship": "Ni氧化态空间异质性程度（如Ni价态方差或局部Ni4+分数）与临界应力和裂纹起始位置直接相关：异质性越强，临界应力越低，且裂纹优先从价态突变界面处萌生。",
+    "confidence": 0.72,
+    "novelty_score": 0.88,
+    "search_method": "bayesian",
+    "search_iterations": 6,
+    "candidates_explored": 17,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p24",
+      "p25",
+      "[Novelty Verification] Overlap: none | Novelty: 0.880 (was 0.880) | Queries: 3 | Results: 0"
+    ],
+    "llm_plausibility_score": 0.0,
+    "llm_explanation": "",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p24, p25)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_2",
+    "title": "裂纹电解质润湿通过表面重构与氧释放加速容量衰减",
+    "description": "在高镍多晶NMC正极中，循环中形成的晶间裂纹被电解质润湿后暴露新的表面，这些新表面在高电压下按LiNiO2表面相图发生重构并释放氧，进一步增加界面阻抗和活性锂损失。假设容量衰减速率与裂纹表面积（或电解质可接触新表面面积）以及充电电压呈正相关，且存在耦合增益：裂纹+润湿比单一裂纹或单一表面重构造成的衰减更快。可通过对比在相同机械损伤下‘湿’裂纹与‘干’裂纹（如使用惰性气氛或固态电解质阻断润湿）的容量保持率来验证。",
+    "source_gap_id": "Gap 4",
+    "materials": [
+      "LiNi0.8Mn0.1Co0.1O2",
+      "LiNiO2",
+      "碳酸酯电解液"
+    ],
+    "property": "循环容量保持率",
+    "expected_relationship": "容量保持率随循环圈数下降的速率与裂纹暴露面积×表面重构动力学（电压/温度相关）成正比；在高压（>4.2 V vs graphite）下，裂纹润湿与氧释放的耦合使衰减加速超出两者单独贡献之和。",
+    "confidence": 0.7,
+    "novelty_score": 0.9,
+    "search_method": "bayesian",
+    "search_iterations": 6,
+    "candidates_explored": 17,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p27",
+      "p31",
+      "p32",
+      "[Novelty Verification] Overlap: none | Novelty: 0.900 (was 0.900) | Queries: 3 | Results: 0"
+    ],
+    "llm_plausibility_score": 0.0,
+    "llm_explanation": "",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p27, p31, p32)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_3",
+    "title": "高镍层状氧化物中Ni含量与容量保持率呈非单调权衡",
+    "description": "在LiNi_x Mn_y Co_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x>0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。",
+    "source_gap_id": "Gap 3",
+    "materials": [
+      "LiNi0.6Mn0.2Co0.2O2",
+      "LiNi0.7Mn0.1Co0.2O2",
+      "LiNi0.8Mn0.1Co0.1O2",
+      "LiNi0.9Mn0.05Co0.05O2",
+      "LiNiO2"
+    ],
+    "property": "循环容量保持率",
+    "expected_relationship": "放电容量（0.1C, 2.5-4.3V）随Ni含量线性增加，而300圈循环保持率随Ni含量分段下降：x≤0.8下降平缓，x>0.9出现加速下降，形成明确拐点；最佳折衷在x≈0.8-0.9区间。",
+    "confidence": 0.68,
+    "novelty_score": 0.82,
+    "search_method": "bayesian",
+    "search_iterations": 5,
+    "candidates_explored": 16,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p22",
+      "p24",
+      "p32",
+      "[Novelty Verification] Overlap: none | Novelty: 0.820 (was 0.820) | Queries: 3 | Results: 0"
+    ],
+    "llm_plausibility_score": 0.0,
+    "llm_explanation": "",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p22, p24, p32)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_4",
+    "title": "涂层材料的Li离子电导率与界面副反应阻抗之间的帕累托最优设计",
+    "description": "正极表面涂层（Al2O3、AlF3、ZrO2、MgO、SiO2等）对Li离子传输的阻碍与对电解液副反应的阻挡构成矛盾。假设涂层材料的体积Li扩散系数D_Li和电子绝缘性/热力学稳定性共同决定最优厚度：存在一个临界涂层厚度 h*，低于h*不能有效抑制副反应，高于h*则导致倍率性能快速下降；且D_Li越高，h*可越厚而不损失倍率性能。可通过在同一高镍正极上控制不同涂层材料与厚度并进行倍率-循环测试验证。",
+    "source_gap_id": "Gap 5",
+    "materials": [
+      "α-AlF3",
+      "α-Al2O3",
+      "m-ZrO2",
+      "c-MgO",
+      "SiO2",
+      "LiNi0.8Mn0.1Co0.1O2"
+    ],
+    "property": "倍率性能（容量保持率）",
+    "expected_relationship": "log(倍率容量保持率)随涂层厚度线性下降，下降斜率与log(D_Li)成反比；副反应抑制率随厚度单调上升；在交叉点处存在最佳厚度h* = f(D_Li, 界面反应速率常数)。",
+    "confidence": 0.65,
+    "novelty_score": 0.78,
+    "search_method": "bayesian",
+    "search_iterations": 5,
+    "candidates_explored": 16,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p39",
+      "p42",
+      "[Novelty Verification] Overlap: none | Novelty: 0.780 (was 0.780) | Queries: 3 | Results: 0"
+    ],
+    "llm_plausibility_score": 0.0,
+    "llm_explanation": "",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p39, p42)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  },
+  {
+    "id": "hypo_5",
+    "title": "Ni氧化态升高降低阳离子混排迁移势垒，促进层状结构向岩盐相降解",
+    "description": "根据氧化诱导阳离子无序理论，高Ni3+/Ni4+含量使Ni经四面体中间体迁移至Li层。假设镍氧化态越高（如充电态SOC高），阳离子迁移势垒越低，阳离子混排度越高，导致电压和容量衰减。可以通过原位XAS/STEM定量不同电位下Ni价态和Li/Ni交换度，并测量对应的容量衰减速率。",
+    "source_gap_id": "Gap 2",
+    "materials": [
+      "LiNi0.8Mn0.1Co0.1O2",
+      "LiNiO2"
+    ],
+    "property": "阳离子混排度 / 容量衰减速率",
+    "expected_relationship": "Ni平均价态每增加0.1（对应Li脱出量增加），Li层Ni占据分数呈指数增长，且容量衰减速率与混排度呈线性正相关；表面重构层厚度与Ni4+浓度同步增加。",
+    "confidence": 0.63,
+    "novelty_score": 0.85,
+    "search_method": "bayesian",
+    "search_iterations": 5,
+    "candidates_explored": 16,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p27",
+      "p32",
+      "p24",
+      "[Novelty Verification] Overlap: none | Novelty: 0.850 (was 0.850) | Queries: 3 | Results: 0"
+    ],
+    "llm_plausibility_score": 0.0,
+    "llm_explanation": "",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [],
+      "overall_verification_score": 1.0,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "known_prior_work": "已有文献依据(evidence_chain 编号: p27, p32, p24)，具体结论需人工/LLM 补写",
+    "redline2_complete": false,
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "hypothesis_index": 3,
+  "search_method": "bayesian",
+  "iterations": 5,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 6,
+    "material_tokens": 46,
+    "property_keywords": [
+      "capacity",
+      "loading",
+      "uptake"
+    ],
+    "literature_values": []
+  },
+  "best_params": {
+    "property_value": 91.58985338425532,
+    "composition_x": 0.5028755200655849,
+    "temperature": 1254.1323390320695
+  },
+  "best_score": 0.4333229975637739,
+  "iteration_log": [
+    {
+      "iteration": -1,
+      "type": "initial",
+      "best_score": 0.418696205756221,
+      "n_samples": 10,
+      "mean_score": 0.3583167072802182,
+      "max_score": 0.418696205756221
+    },
+    {
+      "iteration": 0,
+      "score": 0.4040563797464206,
+      "best_score": 0.418696205756221,
+      "params": {
+        "property_value": 38.51312978925603,
+        "composition_x": 0.34695895037758584,
+        "temperature": 818.1685141293327
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.4333229975637739,
+      "best_score": 0.4333229975637739,
+      "params": {
+        "property_value": 91.58985338425532,
+        "composition_x": 0.5028755200655849,
+        "temperature": 1254.1323390320695
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.4296730109455872,
+      "best_score": 0.4333229975637739,
+      "params": {
+        "property_value": 84.3102536973741,
+        "composition_x": 0.4458866198598078,
+        "temperature": 1150.3002549213902
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.38333333333333336,
+      "best_score": 0.4333229975637739,
+      "params": {
+        "property_value": 5.297173127441745,
+        "composition_x": 0.11364603869671941,
+        "temperature": 304.70204994131194
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.33333333333333337,
+      "best_score": 0.4333229975637739,
+      "params": {
+        "property_value": 30.904376955452257,
+        "composition_x": 0.8695411688592183,
+        "temperature": 1216.9147038946553
+      }
+    }
+  ]
+}

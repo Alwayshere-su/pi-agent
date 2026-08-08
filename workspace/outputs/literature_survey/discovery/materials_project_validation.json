@@ -1,0 +1,2176 @@
+{
+  "status": "completed",
+  "generated_at": "2026-08-02 17:48",
+  "api_key_configured": true,
+  "total_formulas_queried": 40,
+  "total_hits": 213,
+  "failed_queries": [
+    "NiCuO2"
+  ],
+  "hypotheses": {
+    "hypo_1": {
+      "title": "双金属MOF-74中金属比例与CO2吸附容量呈倒U型定量关系",
+      "materials": [
+        "CoMn-MOF-74",
+        "NiCu-MOF-74",
+        "FeCu-MOF-74",
+        "MIL-101(Cr,Mg)"
+      ],
+      "target_property": "CO2吸附容量",
+      "queries": {
+        "CoO": {
+          "hits": 8,
+          "entries_with_formation_energy": 8,
+          "entries_with_band_gap": 8,
+          "error": null
+        },
+        "Co3O4": {
+          "hits": 4,
+          "entries_with_formation_energy": 4,
+          "entries_with_band_gap": 4,
+          "error": null
+        },
+        "NiO": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "CuO": {
+          "hits": 9,
+          "entries_with_formation_energy": 9,
+          "entries_with_band_gap": 9,
+          "error": null
+        },
+        "Cu2O": {
+          "hits": 1,
+          "entries_with_formation_energy": 1,
+          "entries_with_band_gap": 1,
+          "error": null
+        },
+        "MnO": {
+          "hits": 6,
+          "entries_with_formation_energy": 6,
+          "entries_with_band_gap": 6,
+          "error": null
+        },
+        "Mn2O3": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Mn3O4": {
+          "hits": 8,
+          "entries_with_formation_energy": 8,
+          "entries_with_band_gap": 8,
+          "error": null
+        },
+        "FeO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Fe2O3": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Fe3O4": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "CoMn2O4": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "CoMnO3": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "Co2MnO4": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "NiCuO2": {
+          "hits": 0,
+          "entries_with_formation_energy": 0,
+          "entries_with_band_gap": 0,
+          "error": "网络连接失败"
+        },
+        "NiCu2O3": {
+          "hits": 0,
+          "entries_with_formation_energy": 0,
+          "entries_with_band_gap": 0,
+          "error": null
+        },
+        "CuFeO2": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "CuFe2O4": {
+          "hits": 5,
+          "entries_with_formation_energy": 5,
+          "entries_with_band_gap": 5,
+          "error": null
+        },
+        "NiCo2O4": {
+          "hits": 4,
+          "entries_with_formation_energy": 4,
+          "entries_with_band_gap": 4,
+          "error": null
+        },
+        "NiCoO2": {
+          "hits": 1,
+          "entries_with_formation_energy": 1,
+          "entries_with_band_gap": 1,
+          "error": null
+        },
+        "MgNiO2": {
+          "hits": 5,
+          "entries_with_formation_energy": 5,
+          "entries_with_band_gap": 5,
+          "error": null
+        },
+        "MgCoO2": {
+          "hits": 5,
+          "entries_with_formation_energy": 5,
+          "entries_with_band_gap": 5,
+          "error": null
+        },
+        "Cr2O3": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "MgO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        }
+      },
+      "total_mp_entries": 126,
+      "entries_with_formation_energy": 126,
+      "entries_with_band_gap": 126,
+      "match_judgment": "thermo_indirect_evidence",
+      "formation_energy_analysis": {
+        "available": true,
+        "count": 22,
+        "min_ev_per_atom": -2.8847003745833337,
+        "max_ev_per_atom": -0.6445054383333334,
+        "mean_ev_per_atom": -1.5401260985061485,
+        "most_stable": [
+          {
+            "mp_id": "mp-aaacptif",
+            "formula_pretty": "MgO",
+            "formation_energy_ev_per_atom": -2.8847003745833337
+          },
+          {
+            "mp_id": "mp-aaadegef",
+            "formula_pretty": "MgCoO2",
+            "formation_energy_ev_per_atom": -2.1111306562500003
+          },
+          {
+            "mp_id": "mp-aaacswcd",
+            "formula_pretty": "Cr2O3",
+            "formation_energy_ev_per_atom": -1.9960908367499997
+          }
+        ],
+        "by_formula": {
+          "CoO": {
+            "formation_energy_ev_per_atom": -1.2718311462500012,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabhdw",
+            "crystal_system": "Cubic"
+          },
+          "Co3O4": {
+            "formation_energy_ev_per_atom": -1.279858292857144,
+            "energy_above_hull_ev": 0.010479931428569955,
+            "mp_id": "mp-aaaabbtc",
+            "crystal_system": "Cubic"
+          },
+          "NiO": {
+            "formation_energy_ev_per_atom": -1.2180853000000003,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabcdd",
+            "crystal_system": "Cubic"
+          },
+          "CuO": {
+            "formation_energy_ev_per_atom": -0.9425302874999995,
+            "energy_above_hull_ev": 0.00026465499999961395,
+            "mp_id": "mp-aaabocjt",
+            "crystal_system": "Monoclinic"
+          },
+          "Cu2O": {
+            "formation_energy_ev_per_atom": -0.6445054383333334,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaaaanx",
+            "crystal_system": "Cubic"
+          },
+          "MnO": {
+            "formation_energy_ev_per_atom": -1.979201203965518,
+            "energy_above_hull_ev": 0.053368562500001104,
+            "mp_id": "mp-aaaabcda",
+            "crystal_system": "Cubic"
+          },
+          "Mn2O3": {
+            "formation_energy_ev_per_atom": -1.9636023541724128,
+            "energy_above_hull_ev": 0.05031748937500069,
+            "mp_id": "mp-aaacwihk",
+            "crystal_system": "Monoclinic"
+          },
+          "Mn3O4": {
+            "formation_energy_ev_per_atom": -1.8317119119704444,
+            "energy_above_hull_ev": 0.21869732857142843,
+            "mp_id": "mp-aaabkiew",
+            "crystal_system": "Monoclinic"
+          },
+          "FeO": {
+            "formation_energy_ev_per_atom": -1.1758246667500003,
+            "energy_above_hull_ev": 0.30569472074999915,
+            "mp_id": "mp-aaacsvzc",
+            "crystal_system": "Triclinic"
+          },
+          "Fe2O3": {
+            "formation_energy_ev_per_atom": -1.4012702128749992,
+            "energy_above_hull_ev": 0.3058211401250004,
+            "mp_id": "mp-aaacsvvq",
+            "crystal_system": "Triclinic"
+          },
+          "Fe3O4": {
+            "formation_energy_ev_per_atom": -1.586393616071428,
+            "energy_above_hull_ev": 0.05624860392857123,
+            "mp_id": "mp-aaacpljo",
+            "crystal_system": "Triclinic"
+          },
+          "Mn2CoO4": {
+            "formation_energy_ev_per_atom": -1.8002037108374387,
+            "energy_above_hull_ev": 0.03790963857142948,
+            "mp_id": "mp-aaabrpur",
+            "crystal_system": "Triclinic"
+          },
+          "MnCoO3": {
+            "formation_energy_ev_per_atom": -1.6499188855862066,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabenx",
+            "crystal_system": "Trigonal"
+          },
+          "Mn(CoO2)2": {
+            "formation_energy_ev_per_atom": -1.4581127304187191,
+            "energy_above_hull_ev": 0.1061130564285726,
+            "mp_id": "mp-aaacrnsz",
+            "crystal_system": "Cubic"
+          },
+          "FeCuO2": {
+            "formation_energy_ev_per_atom": -1.3211116262499996,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaabdawf",
+            "crystal_system": "Trigonal"
+          },
+          "Fe2CuO4": {
+            "formation_energy_ev_per_atom": -1.3708425173214291,
+            "energy_above_hull_ev": 0.11787843267856424,
+            "mp_id": "mp-aaabmzyg",
+            "crystal_system": "Monoclinic"
+          },
+          "Co2NiO4": {
+            "formation_energy_ev_per_atom": -1.165728552142857,
+            "energy_above_hull_ev": 0.06273705336735969,
+            "mp_id": "mp-aaacwgan",
+            "crystal_system": "Monoclinic"
+          },
+          "CoNiO2": {
+            "formation_energy_ev_per_atom": -0.9947270475000005,
+            "energy_above_hull_ev": 0.2502311756250011,
+            "mp_id": "mp-aaacsmnh",
+            "crystal_system": "Tetragonal"
+          },
+          "MgNiO2": {
+            "formation_energy_ev_per_atom": -1.83539279875,
+            "energy_above_hull_ev": 0.30009815999999745,
+            "mp_id": "mp-aaadbysp",
+            "crystal_system": "Triclinic"
+          },
+          "MgCoO2": {
+            "formation_energy_ev_per_atom": -2.1111306562500003,
+            "energy_above_hull_ev": 0.043939501875000175,
+            "mp_id": "mp-aaadegef",
+            "crystal_system": "Monoclinic"
+          },
+          "Cr2O3": {
+            "formation_energy_ev_per_atom": -1.9960908367499997,
+            "energy_above_hull_ev": 0.3704969322500009,
+            "mp_id": "mp-aaacswcd",
+            "crystal_system": "Triclinic"
+          },
+          "MgO": {
+            "formation_energy_ev_per_atom": -2.8847003745833337,
+            "energy_above_hull_ev": 0.15360879541666606,
+            "mp_id": "mp-aaacptif",
+            "crystal_system": "Monoclinic"
+          }
+        }
+      },
+      "band_gap_analysis": {
+        "available": true,
+        "count": 22,
+        "min_ev": 0.0,
+        "max_ev": 2.7412,
+        "mean_ev": 0.62305,
+        "by_formula": {
+          "CoO": {
+            "band_gap_ev": 0.5819000000000001,
+            "mp_id": "mp-aaaabhdw"
+          },
+          "Co3O4": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaaabbtc"
+          },
+          "NiO": {
+            "band_gap_ev": 2.387200000000001,
+            "mp_id": "mp-aaaabcdd"
+          },
+          "CuO": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaabocjt"
+          },
+          "Cu2O": {
+            "band_gap_ev": 0.5126999999999997,
+            "mp_id": "mp-aaaaaanx"
+          },
+          "MnO": {
+            "band_gap_ev": 0.18440000000000012,
+            "mp_id": "mp-aaaabcda"
+          },
+          "Mn2O3": {
+            "band_gap_ev": 0.3511000000000002,
+            "mp_id": "mp-aaacwihk"
+          },
+          "Mn3O4": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaabkiew"
+          },
+          "FeO": {
+            "band_gap_ev": 0.05410000000000004,
+            "mp_id": "mp-aaacsvzc"
+          },
+          "Fe2O3": {
+            "band_gap_ev": 1.1123,
+            "mp_id": "mp-aaacsvvq"
+          },
+          "Fe3O4": {
+            "band_gap_ev": 0.637,
+            "mp_id": "mp-aaacpljo"
+          },
+          "Mn2CoO4": {
+            "band_gap_ev": 0.26039999999999974,
+            "mp_id": "mp-aaabrpur"
+          },
+          "MnCoO3": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaaabenx"
+          },
+          "Mn(CoO2)2": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaacrnsz"
+          },
+          "FeCuO2": {
+            "band_gap_ev": 0.8209,
+            "mp_id": "mp-aaabdawf"
+          },
+          "Fe2CuO4": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaabmzyg"
+          },
+          "Co2NiO4": {
+            "band_gap_ev": 1.7410999999999999,
+            "mp_id": "mp-aaacwgan"
+          },
+          "CoNiO2": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaacsmnh"
+          },
+          "MgNiO2": {
+            "band_gap_ev": 0.0009000000000001229,
+            "mp_id": "mp-aaadbysp"
+          },
+          "MgCoO2": {
+            "band_gap_ev": 1.6075,
+            "mp_id": "mp-aaadegef"
+          },
+          "Cr2O3": {
+            "band_gap_ev": 0.7144000000000004,
+            "mp_id": "mp-aaacswcd"
+          },
+          "MgO": {
+            "band_gap_ev": 2.7412,
+            "mp_id": "mp-aaacptif"
+          }
+        }
+      },
+      "bimetallic_stability_gain": [
+        {
+          "bimetallic": "CoMn2O4",
+          "available": false,
+          "missing_formulas": [
+            "CoMn2O4"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMn2O4。未虚构数值。"
+        },
+        {
+          "bimetallic": "CoMnO3",
+          "available": false,
+          "missing_formulas": [
+            "CoMnO3"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMnO3。未虚构数值。"
+        },
+        {
+          "bimetallic": "Co2MnO4",
+          "available": false,
+          "missing_formulas": [
+            "Co2MnO4"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：Co2MnO4。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCo2O4",
+          "available": false,
+          "missing_formulas": [
+            "NiCo2O4"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCo2O4。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCoO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCoO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCoO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFeO2",
+          "available": false,
+          "missing_formulas": [
+            "CuFeO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFeO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFe2O4",
+          "available": false,
+          "missing_formulas": [
+            "CuFe2O4"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFe2O4。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCuO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCuO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCuO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCu2O3",
+          "available": false,
+          "missing_formulas": [
+            "NiCu2O3"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCu2O3。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgNiO2",
+          "available": true,
+          "e_bimetallic_ev": -2.1338,
+          "e_bimetallic_mp_id": "mp-aaacrnqf",
+          "e_mono1_ev": -2.9786,
+          "e_mono1_formula": "MgO",
+          "e_mono1_mp_id": "mp-aaacpfab",
+          "e_mono2_ev": -1.2181,
+          "e_mono2_formula": "NiO",
+          "e_mono2_mp_id": "mp-aaaabcdd",
+          "mono_avg_ev": -2.0983,
+          "gain_ev": -0.0354,
+          "interpretation": "双金属氧化物比单金属平均更稳定（ΔE<0），为双金属节点协同/稳定的间接热力学证据"
+        },
+        {
+          "bimetallic": "MgCoO2",
+          "available": true,
+          "e_bimetallic_ev": -2.1111,
+          "e_bimetallic_mp_id": "mp-aaadegef",
+          "e_mono1_ev": -2.9786,
+          "e_mono1_formula": "MgO",
+          "e_mono1_mp_id": "mp-aaacpfab",
+          "e_mono2_ev": -1.2718,
+          "e_mono2_formula": "CoO",
+          "e_mono2_mp_id": "mp-aaaabhdw",
+          "mono_avg_ev": -2.1252,
+          "gain_ev": 0.0141,
+          "interpretation": "双金属氧化物比单金属平均更不稳定（ΔE>0）"
+        }
+      ],
+      "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgCoO2 (mp-aaadegef) = -2.111 eV/atom; Cr2O3 (mp-aaacswcd) = -1.996 eV/atom。双金属稳定性增益：MgNiO2 ΔE=-0.035 eV/atom (bi mp-aaacrnqf vs mono MgO/NiO)；MgCoO2 ΔE=+0.014 eV/atom (bi mp-aaadegef vs mono MgO/CoO)。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+      "proxy_note": "数据为 MOF 金属节点的无机氧化物代理。Materials Project 不直接收录 MOF 结构。此代理基于：MOF 节点金属氧化态与对应氧化物相近，氧化物形成能可定性反映金属-氧键强度。"
+    },
+    "hypo_2": {
+      "title": "胺功能化MOF在湿态下的CO2捕获容量随相对湿度呈峰值增强",
+      "materials": [
+        "胺接枝Mg-MOF-74",
+        "MOF@MOF核壳材料",
+        "疏水功能化胺浸渍树脂",
+        "Mg-MOF-74"
+      ],
+      "target_property": "湿态CO2吸附容量",
+      "queries": {
+        "MgO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Mg(OH)2": {
+          "hits": 3,
+          "entries_with_formation_energy": 3,
+          "entries_with_band_gap": 3,
+          "error": null
+        },
+        "MgCO3": {
+          "hits": 3,
+          "entries_with_formation_energy": 3,
+          "entries_with_band_gap": 3,
+          "error": null
+        }
+      },
+      "total_mp_entries": 16,
+      "entries_with_formation_energy": 16,
+      "entries_with_band_gap": 16,
+      "match_judgment": "thermo_indirect_evidence",
+      "formation_energy_analysis": {
+        "available": true,
+        "count": 3,
+        "min_ev_per_atom": -2.8847003745833337,
+        "max_ev_per_atom": -1.9931184215000002,
+        "mean_ev_per_atom": -2.313929279361111,
+        "most_stable": [
+          {
+            "mp_id": "mp-aaacptif",
+            "formula_pretty": "MgO",
+            "formation_energy_ev_per_atom": -2.8847003745833337
+          },
+          {
+            "mp_id": "mp-aaabfbvb",
+            "formula_pretty": "MgCO3",
+            "formation_energy_ev_per_atom": -2.063969041999999
+          },
+          {
+            "mp_id": "mp-aaabjqgl",
+            "formula_pretty": "Mg(HO)2",
+            "formation_energy_ev_per_atom": -1.9931184215000002
+          }
+        ],
+        "by_formula": {
+          "MgO": {
+            "formation_energy_ev_per_atom": -2.8847003745833337,
+            "energy_above_hull_ev": 0.15360879541666606,
+            "mp_id": "mp-aaacptif",
+            "crystal_system": "Monoclinic"
+          },
+          "Mg(HO)2": {
+            "formation_energy_ev_per_atom": -1.9931184215000002,
+            "energy_above_hull_ev": 0.00938602799998911,
+            "mp_id": "mp-aaabjqgl",
+            "crystal_system": "Monoclinic"
+          },
+          "MgCO3": {
+            "formation_energy_ev_per_atom": -2.063969041999999,
+            "energy_above_hull_ev": 0.3780616330000077,
+            "mp_id": "mp-aaabfbvb",
+            "crystal_system": "Orthorhombic"
+          }
+        }
+      },
+      "band_gap_analysis": {
+        "available": true,
+        "count": 3,
+        "min_ev": 2.7412,
+        "max_ev": 5.1935,
+        "mean_ev": 4.042933333333334,
+        "by_formula": {
+          "MgO": {
+            "band_gap_ev": 2.7412,
+            "mp_id": "mp-aaacptif"
+          },
+          "Mg(HO)2": {
+            "band_gap_ev": 4.194100000000001,
+            "mp_id": "mp-aaabjqgl"
+          },
+          "MgCO3": {
+            "band_gap_ev": 5.1935,
+            "mp_id": "mp-aaabfbvb"
+          }
+        }
+      },
+      "bimetallic_stability_gain": [
+        {
+          "bimetallic": "CoMn2O4",
+          "available": false,
+          "missing_formulas": [
+            "CoMn2O4",
+            "CoO",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMn2O4, CoO, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CoMnO3",
+          "available": false,
+          "missing_formulas": [
+            "CoMnO3",
+            "CoO",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMnO3, CoO, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "Co2MnO4",
+          "available": false,
+          "missing_formulas": [
+            "Co2MnO4",
+            "CoO",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：Co2MnO4, CoO, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCo2O4",
+          "available": false,
+          "missing_formulas": [
+            "NiCo2O4",
+            "NiO",
+            "CoO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCo2O4, NiO, CoO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCoO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCoO2",
+            "NiO",
+            "CoO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCoO2, NiO, CoO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFeO2",
+          "available": false,
+          "missing_formulas": [
+            "CuFeO2",
+            "CuO",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFeO2, CuO, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFe2O4",
+          "available": false,
+          "missing_formulas": [
+            "CuFe2O4",
+            "CuO",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFe2O4, CuO, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCuO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCuO2",
+            "NiO",
+            "CuO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCuO2, NiO, CuO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCu2O3",
+          "available": false,
+          "missing_formulas": [
+            "NiCu2O3",
+            "NiO",
+            "CuO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCu2O3, NiO, CuO。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgNiO2",
+          "available": false,
+          "missing_formulas": [
+            "MgNiO2",
+            "NiO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgNiO2, NiO。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgCoO2",
+          "available": false,
+          "missing_formulas": [
+            "MgCoO2",
+            "CoO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgCoO2, CoO。未虚构数值。"
+        }
+      ],
+      "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgCO3 (mp-aaabfbvb) = -2.064 eV/atom; Mg(HO)2 (mp-aaabjqgl) = -1.993 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+      "proxy_note": "数据为 MOF 金属节点的无机氧化物代理。Materials Project 不直接收录 MOF 结构。此代理基于：MOF 节点金属氧化态与对应氧化物相近，氧化物形成能可定性反映金属-氧键强度。"
+    },
+    "hypo_3": {
+      "title": "MOF的CO2吸附热（Qst）在25-40 kJ/mol窗口内可实现容量-选择性-再生能耗Pareto最优",
+      "materials": [
+        "MOF-74(Ni)",
+        "MOF-74(Mg)",
+        "胺化SBA-15",
+        "锂掺杂MIL-101",
+        "UiO-66"
+      ],
+      "target_property": "CO2吸附热（Qst）",
+      "queries": {
+        "NiO": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "MgO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "CoO": {
+          "hits": 8,
+          "entries_with_formation_energy": 8,
+          "entries_with_band_gap": 8,
+          "error": null
+        },
+        "ZnO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "ZrO2": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Cr2O3": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Li2O": {
+          "hits": 6,
+          "entries_with_formation_energy": 6,
+          "entries_with_band_gap": 6,
+          "error": null
+        },
+        "LiCrO2": {
+          "hits": 5,
+          "entries_with_formation_energy": 5,
+          "entries_with_band_gap": 5,
+          "error": null
+        },
+        "SiO2": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        }
+      },
+      "total_mp_entries": 81,
+      "entries_with_formation_energy": 81,
+      "entries_with_band_gap": 81,
+      "match_judgment": "thermo_indirect_evidence",
+      "formation_energy_analysis": {
+        "available": true,
+        "count": 9,
+        "min_ev_per_atom": -3.5909381171111123,
+        "max_ev_per_atom": -1.2180853000000003,
+        "mean_ev_per_atom": -2.141441435064154,
+        "most_stable": [
+          {
+            "mp_id": "mp-aaacswew",
+            "formula_pretty": "ZrO2",
+            "formation_energy_ev_per_atom": -3.5909381171111123
+          },
+          {
+            "mp_id": "mp-aaacptif",
+            "formula_pretty": "MgO",
+            "formation_energy_ev_per_atom": -2.8847003745833337
+          },
+          {
+            "mp_id": "mp-aaabrjxe",
+            "formula_pretty": "LiCrO2",
+            "formation_energy_ev_per_atom": -2.370753757708333
+          }
+        ],
+        "by_formula": {
+          "NiO": {
+            "formation_energy_ev_per_atom": -1.2180853000000003,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabcdd",
+            "crystal_system": "Cubic"
+          },
+          "MgO": {
+            "formation_energy_ev_per_atom": -2.8847003745833337,
+            "energy_above_hull_ev": 0.15360879541666606,
+            "mp_id": "mp-aaacptif",
+            "crystal_system": "Monoclinic"
+          },
+          "CoO": {
+            "formation_energy_ev_per_atom": -1.2718311462500012,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabhdw",
+            "crystal_system": "Cubic"
+          },
+          "ZnO": {
+            "formation_energy_ev_per_atom": -1.7908991124999996,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaaadeb",
+            "crystal_system": "Hexagonal"
+          },
+          "ZrO2": {
+            "formation_energy_ev_per_atom": -3.5909381171111123,
+            "energy_above_hull_ev": 0.22267963788888778,
+            "mp_id": "mp-aaacswew",
+            "crystal_system": "Triclinic"
+          },
+          "Cr2O3": {
+            "formation_energy_ev_per_atom": -1.9960908367499997,
+            "energy_above_hull_ev": 0.3704969322500009,
+            "mp_id": "mp-aaacswcd",
+            "crystal_system": "Triclinic"
+          },
+          "Li2O": {
+            "formation_energy_ev_per_atom": -1.9772382030555544,
+            "energy_above_hull_ev": 0.0843597108333336,
+            "mp_id": "mp-aaabraew",
+            "crystal_system": "Orthorhombic"
+          },
+          "LiCrO2": {
+            "formation_energy_ev_per_atom": -2.370753757708333,
+            "energy_above_hull_ev": 0.03786809562499993,
+            "mp_id": "mp-aaabrjxe",
+            "crystal_system": "Tetragonal"
+          },
+          "SiO2": {
+            "formation_energy_ev_per_atom": -2.172436067619048,
+            "energy_above_hull_ev": 1.1003952762698423,
+            "mp_id": "mp-aaacpcuy",
+            "crystal_system": "Monoclinic"
+          }
+        }
+      },
+      "band_gap_analysis": {
+        "available": true,
+        "count": 9,
+        "min_ev": 0.14189999999999992,
+        "max_ev": 5.2421999999999995,
+        "mean_ev": 1.9134111111111112,
+        "by_formula": {
+          "NiO": {
+            "band_gap_ev": 2.387200000000001,
+            "mp_id": "mp-aaaabcdd"
+          },
+          "MgO": {
+            "band_gap_ev": 2.7412,
+            "mp_id": "mp-aaacptif"
+          },
+          "CoO": {
+            "band_gap_ev": 0.5819000000000001,
+            "mp_id": "mp-aaaabhdw"
+          },
+          "ZnO": {
+            "band_gap_ev": 0.7316,
+            "mp_id": "mp-aaaaadeb"
+          },
+          "ZrO2": {
+            "band_gap_ev": 2.9114,
+            "mp_id": "mp-aaacswew"
+          },
+          "Cr2O3": {
+            "band_gap_ev": 0.7144000000000004,
+            "mp_id": "mp-aaacswcd"
+          },
+          "Li2O": {
+            "band_gap_ev": 5.2421999999999995,
+            "mp_id": "mp-aaabraew"
+          },
+          "LiCrO2": {
+            "band_gap_ev": 1.7688999999999995,
+            "mp_id": "mp-aaabrjxe"
+          },
+          "SiO2": {
+            "band_gap_ev": 0.14189999999999992,
+            "mp_id": "mp-aaacpcuy"
+          }
+        }
+      },
+      "bimetallic_stability_gain": [
+        {
+          "bimetallic": "CoMn2O4",
+          "available": false,
+          "missing_formulas": [
+            "CoMn2O4",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMn2O4, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CoMnO3",
+          "available": false,
+          "missing_formulas": [
+            "CoMnO3",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMnO3, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "Co2MnO4",
+          "available": false,
+          "missing_formulas": [
+            "Co2MnO4",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：Co2MnO4, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCo2O4",
+          "available": false,
+          "missing_formulas": [
+            "NiCo2O4"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCo2O4。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCoO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCoO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCoO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFeO2",
+          "available": false,
+          "missing_formulas": [
+            "CuFeO2",
+            "CuO",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFeO2, CuO, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFe2O4",
+          "available": false,
+          "missing_formulas": [
+            "CuFe2O4",
+            "CuO",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFe2O4, CuO, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCuO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCuO2",
+            "CuO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCuO2, CuO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCu2O3",
+          "available": false,
+          "missing_formulas": [
+            "NiCu2O3",
+            "CuO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCu2O3, CuO。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgNiO2",
+          "available": false,
+          "missing_formulas": [
+            "MgNiO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgNiO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgCoO2",
+          "available": false,
+          "missing_formulas": [
+            "MgCoO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgCoO2。未虚构数值。"
+        }
+      ],
+      "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: ZrO2 (mp-aaacswew) = -3.591 eV/atom; MgO (mp-aaacptif) = -2.885 eV/atom; LiCrO2 (mp-aaabrjxe) = -2.371 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+      "proxy_note": "数据为 MOF 金属节点的无机氧化物代理。Materials Project 不直接收录 MOF 结构。此代理基于：MOF 节点金属氧化态与对应氧化物相近，氧化物形成能可定性反映金属-氧键强度。"
+    },
+    "hypo_4": {
+      "title": "MOF-74缺陷类型依赖：缺失配体型缺陷↑OMS/容量 vs 溶剂甲酸盐占据型缺陷↓OMS/容量",
+      "materials": [
+        "缺陷MOF-74(Co)",
+        "缺陷MOF-74(Mg)",
+        "缺陷MOF-74(Ni)"
+      ],
+      "target_property": "开放金属位点密度及CO2吸附容量",
+      "queries": {
+        "CoO": {
+          "hits": 8,
+          "entries_with_formation_energy": 8,
+          "entries_with_band_gap": 8,
+          "error": null
+        },
+        "Co3O4": {
+          "hits": 4,
+          "entries_with_formation_energy": 4,
+          "entries_with_band_gap": 4,
+          "error": null
+        },
+        "MgO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "NiO": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "Co(OH)2": {
+          "hits": 9,
+          "entries_with_formation_energy": 9,
+          "entries_with_band_gap": 9,
+          "error": null
+        },
+        "Ni(OH)2": {
+          "hits": 8,
+          "entries_with_formation_energy": 8,
+          "entries_with_band_gap": 8,
+          "error": null
+        },
+        "Mg(OH)2": {
+          "hits": 3,
+          "entries_with_formation_energy": 3,
+          "entries_with_band_gap": 3,
+          "error": null
+        }
+      },
+      "total_mp_entries": 44,
+      "entries_with_formation_energy": 44,
+      "entries_with_band_gap": 44,
+      "match_judgment": "thermo_indirect_evidence",
+      "formation_energy_analysis": {
+        "available": true,
+        "count": 7,
+        "min_ev_per_atom": -2.8847003745833337,
+        "max_ev_per_atom": -1.2053718425000006,
+        "mean_ev_per_atom": -1.5829001420272115,
+        "most_stable": [
+          {
+            "mp_id": "mp-aaacptif",
+            "formula_pretty": "MgO",
+            "formation_energy_ev_per_atom": -2.8847003745833337
+          },
+          {
+            "mp_id": "mp-aaabjqgl",
+            "formula_pretty": "Mg(HO)2",
+            "formation_energy_ev_per_atom": -1.9931184215000002
+          },
+          {
+            "mp_id": "mp-aaaabbtc",
+            "formula_pretty": "Co3O4",
+            "formation_energy_ev_per_atom": -1.279858292857144
+          }
+        ],
+        "by_formula": {
+          "CoO": {
+            "formation_energy_ev_per_atom": -1.2718311462500012,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabhdw",
+            "crystal_system": "Cubic"
+          },
+          "Co3O4": {
+            "formation_energy_ev_per_atom": -1.279858292857144,
+            "energy_above_hull_ev": 0.010479931428569955,
+            "mp_id": "mp-aaaabbtc",
+            "crystal_system": "Cubic"
+          },
+          "MgO": {
+            "formation_energy_ev_per_atom": -2.8847003745833337,
+            "energy_above_hull_ev": 0.15360879541666606,
+            "mp_id": "mp-aaacptif",
+            "crystal_system": "Monoclinic"
+          },
+          "NiO": {
+            "formation_energy_ev_per_atom": -1.2180853000000003,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabcdd",
+            "crystal_system": "Cubic"
+          },
+          "Co(HO)2": {
+            "formation_energy_ev_per_atom": -1.2053718425000006,
+            "energy_above_hull_ev": 0.07136241200000004,
+            "mp_id": "mp-aaabjrce",
+            "crystal_system": "Triclinic"
+          },
+          "Ni(HO)2": {
+            "formation_energy_ev_per_atom": -1.2273356164999996,
+            "energy_above_hull_ev": 0.027900299500000614,
+            "mp_id": "mp-aaabjrfm",
+            "crystal_system": "Trigonal"
+          },
+          "Mg(HO)2": {
+            "formation_energy_ev_per_atom": -1.9931184215000002,
+            "energy_above_hull_ev": 0.00938602799998911,
+            "mp_id": "mp-aaabjqgl",
+            "crystal_system": "Monoclinic"
+          }
+        }
+      },
+      "band_gap_analysis": {
+        "available": true,
+        "count": 7,
+        "min_ev": 0.0,
+        "max_ev": 4.194100000000001,
+        "mean_ev": 1.7497428571428573,
+        "by_formula": {
+          "CoO": {
+            "band_gap_ev": 0.5819000000000001,
+            "mp_id": "mp-aaaabhdw"
+          },
+          "Co3O4": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaaabbtc"
+          },
+          "MgO": {
+            "band_gap_ev": 2.7412,
+            "mp_id": "mp-aaacptif"
+          },
+          "NiO": {
+            "band_gap_ev": 2.387200000000001,
+            "mp_id": "mp-aaaabcdd"
+          },
+          "Co(HO)2": {
+            "band_gap_ev": 2.3438,
+            "mp_id": "mp-aaabjrce"
+          },
+          "Ni(HO)2": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaabjrfm"
+          },
+          "Mg(HO)2": {
+            "band_gap_ev": 4.194100000000001,
+            "mp_id": "mp-aaabjqgl"
+          }
+        }
+      },
+      "bimetallic_stability_gain": [
+        {
+          "bimetallic": "CoMn2O4",
+          "available": false,
+          "missing_formulas": [
+            "CoMn2O4",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMn2O4, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CoMnO3",
+          "available": false,
+          "missing_formulas": [
+            "CoMnO3",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMnO3, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "Co2MnO4",
+          "available": false,
+          "missing_formulas": [
+            "Co2MnO4",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：Co2MnO4, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCo2O4",
+          "available": false,
+          "missing_formulas": [
+            "NiCo2O4"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCo2O4。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCoO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCoO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCoO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFeO2",
+          "available": false,
+          "missing_formulas": [
+            "CuFeO2",
+            "CuO",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFeO2, CuO, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFe2O4",
+          "available": false,
+          "missing_formulas": [
+            "CuFe2O4",
+            "CuO",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFe2O4, CuO, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCuO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCuO2",
+            "CuO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCuO2, CuO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCu2O3",
+          "available": false,
+          "missing_formulas": [
+            "NiCu2O3",
+            "CuO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCu2O3, CuO。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgNiO2",
+          "available": false,
+          "missing_formulas": [
+            "MgNiO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgNiO2。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgCoO2",
+          "available": false,
+          "missing_formulas": [
+            "MgCoO2"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgCoO2。未虚构数值。"
+        }
+      ],
+      "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; Mg(HO)2 (mp-aaabjqgl) = -1.993 eV/atom; Co3O4 (mp-aaaabbtc) = -1.280 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+      "proxy_note": "数据为 MOF 金属节点的无机氧化物代理。Materials Project 不直接收录 MOF 结构。此代理基于：MOF 节点金属氧化态与对应氧化物相近，氧化物形成能可定性反映金属-氧键强度。"
+    },
+    "hypo_5": {
+      "title": "MOF在痕量NO2/SO2暴露后CO2吸附容量衰减率与OMS密度和孔道亲水性相关",
+      "materials": [
+        "Mg-MOF-74",
+        "HKUST-1",
+        "ZIF-8",
+        "MIL-101(Cr)"
+      ],
+      "target_property": "CO2吸附容量保持率",
+      "queries": {
+        "MgO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "CuO": {
+          "hits": 9,
+          "entries_with_formation_energy": 9,
+          "entries_with_band_gap": 9,
+          "error": null
+        },
+        "Cu2O": {
+          "hits": 1,
+          "entries_with_formation_energy": 1,
+          "entries_with_band_gap": 1,
+          "error": null
+        },
+        "ZnO": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "Cr2O3": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "CrO2": {
+          "hits": 10,
+          "entries_with_formation_energy": 10,
+          "entries_with_band_gap": 10,
+          "error": null
+        },
+        "MgSO4": {
+          "hits": 3,
+          "entries_with_formation_energy": 3,
+          "entries_with_band_gap": 3,
+          "error": null
+        },
+        "CuSO4": {
+          "hits": 1,
+          "entries_with_formation_energy": 1,
+          "entries_with_band_gap": 1,
+          "error": null
+        },
+        "ZnSO4": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "Mg(NO3)2": {
+          "hits": 3,
+          "entries_with_formation_energy": 3,
+          "entries_with_band_gap": 3,
+          "error": null
+        },
+        "Cu(NO3)2": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        },
+        "Zn(NO3)2": {
+          "hits": 2,
+          "entries_with_formation_energy": 2,
+          "entries_with_band_gap": 2,
+          "error": null
+        }
+      },
+      "total_mp_entries": 63,
+      "entries_with_formation_energy": 63,
+      "entries_with_band_gap": 63,
+      "match_judgment": "thermo_indirect_evidence",
+      "formation_energy_analysis": {
+        "available": true,
+        "count": 12,
+        "min_ev_per_atom": -2.8847003745833337,
+        "max_ev_per_atom": -0.6445054383333334,
+        "mean_ev_per_atom": -1.5934549102885802,
+        "most_stable": [
+          {
+            "mp_id": "mp-aaacptif",
+            "formula_pretty": "MgO",
+            "formation_energy_ev_per_atom": -2.8847003745833337
+          },
+          {
+            "mp_id": "mp-aaaaalfg",
+            "formula_pretty": "MgSO4",
+            "formation_energy_ev_per_atom": -2.402174846249999
+          },
+          {
+            "mp_id": "mp-aaacswcd",
+            "formula_pretty": "Cr2O3",
+            "formation_energy_ev_per_atom": -1.9960908367499997
+          }
+        ],
+        "by_formula": {
+          "MgO": {
+            "formation_energy_ev_per_atom": -2.8847003745833337,
+            "energy_above_hull_ev": 0.15360879541666606,
+            "mp_id": "mp-aaacptif",
+            "crystal_system": "Monoclinic"
+          },
+          "CuO": {
+            "formation_energy_ev_per_atom": -0.9425302874999995,
+            "energy_above_hull_ev": 0.00026465499999961395,
+            "mp_id": "mp-aaabocjt",
+            "crystal_system": "Monoclinic"
+          },
+          "Cu2O": {
+            "formation_energy_ev_per_atom": -0.6445054383333334,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaaaanx",
+            "crystal_system": "Cubic"
+          },
+          "ZnO": {
+            "formation_energy_ev_per_atom": -1.7908991124999996,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaaadeb",
+            "crystal_system": "Hexagonal"
+          },
+          "Cr2O3": {
+            "formation_energy_ev_per_atom": -1.9960908367499997,
+            "energy_above_hull_ev": 0.3704969322500009,
+            "mp_id": "mp-aaacswcd",
+            "crystal_system": "Triclinic"
+          },
+          "CrO2": {
+            "formation_energy_ev_per_atom": -1.9911531824999997,
+            "energy_above_hull_ev": 0.05654767916663417,
+            "mp_id": "mp-aaacpgdv",
+            "crystal_system": "Orthorhombic"
+          },
+          "MgSO4": {
+            "formation_energy_ev_per_atom": -2.402174846249999,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaaalfg",
+            "crystal_system": "Orthorhombic"
+          },
+          "CuSO4": {
+            "formation_energy_ev_per_atom": -1.5091072404166663,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaaabejl",
+            "crystal_system": "Orthorhombic"
+          },
+          "ZnSO4": {
+            "formation_energy_ev_per_atom": -1.8248282212499998,
+            "energy_above_hull_ev": 0.038264746250000314,
+            "mp_id": "mp-aaabfbiq",
+            "crystal_system": "Cubic"
+          },
+          "Mg(NO3)2": {
+            "formation_energy_ev_per_atom": -1.3519638925000022,
+            "energy_above_hull_ev": 0.0,
+            "mp_id": "mp-aaacgaza",
+            "crystal_system": "Trigonal"
+          },
+          "Cu(NO3)2": {
+            "formation_energy_ev_per_atom": -0.7913011499074085,
+            "energy_above_hull_ev": 0.008939338703703115,
+            "mp_id": "mp-aaablscl",
+            "crystal_system": "Orthorhombic"
+          },
+          "Zn(NO3)2": {
+            "formation_energy_ev_per_atom": -0.9922043409722221,
+            "energy_above_hull_ev": 0.006538474861111254,
+            "mp_id": "mp-aaabsiin",
+            "crystal_system": "Orthorhombic"
+          }
+        }
+      },
+      "band_gap_analysis": {
+        "available": true,
+        "count": 12,
+        "min_ev": 0.0,
+        "max_ev": 5.4889,
+        "mean_ev": 1.8551916666666666,
+        "by_formula": {
+          "MgO": {
+            "band_gap_ev": 2.7412,
+            "mp_id": "mp-aaacptif"
+          },
+          "CuO": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaabocjt"
+          },
+          "Cu2O": {
+            "band_gap_ev": 0.5126999999999997,
+            "mp_id": "mp-aaaaaanx"
+          },
+          "ZnO": {
+            "band_gap_ev": 0.7316,
+            "mp_id": "mp-aaaaadeb"
+          },
+          "Cr2O3": {
+            "band_gap_ev": 0.7144000000000004,
+            "mp_id": "mp-aaacswcd"
+          },
+          "CrO2": {
+            "band_gap_ev": 0.9693,
+            "mp_id": "mp-aaacpgdv"
+          },
+          "MgSO4": {
+            "band_gap_ev": 5.4889,
+            "mp_id": "mp-aaaaalfg"
+          },
+          "CuSO4": {
+            "band_gap_ev": 0.0,
+            "mp_id": "mp-aaaabejl"
+          },
+          "ZnSO4": {
+            "band_gap_ev": 4.2718,
+            "mp_id": "mp-aaabfbiq"
+          },
+          "Mg(NO3)2": {
+            "band_gap_ev": 3.4662,
+            "mp_id": "mp-aaacgaza"
+          },
+          "Cu(NO3)2": {
+            "band_gap_ev": 0.006699999999999984,
+            "mp_id": "mp-aaablscl"
+          },
+          "Zn(NO3)2": {
+            "band_gap_ev": 3.3595,
+            "mp_id": "mp-aaabsiin"
+          }
+        }
+      },
+      "bimetallic_stability_gain": [
+        {
+          "bimetallic": "CoMn2O4",
+          "available": false,
+          "missing_formulas": [
+            "CoMn2O4",
+            "CoO",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMn2O4, CoO, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CoMnO3",
+          "available": false,
+          "missing_formulas": [
+            "CoMnO3",
+            "CoO",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMnO3, CoO, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "Co2MnO4",
+          "available": false,
+          "missing_formulas": [
+            "Co2MnO4",
+            "CoO",
+            "MnO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：Co2MnO4, CoO, MnO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCo2O4",
+          "available": false,
+          "missing_formulas": [
+            "NiCo2O4",
+            "NiO",
+            "CoO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCo2O4, NiO, CoO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCoO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCoO2",
+            "NiO",
+            "CoO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCoO2, NiO, CoO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFeO2",
+          "available": false,
+          "missing_formulas": [
+            "CuFeO2",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFeO2, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "CuFe2O4",
+          "available": false,
+          "missing_formulas": [
+            "CuFe2O4",
+            "FeO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFe2O4, FeO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCuO2",
+          "available": false,
+          "missing_formulas": [
+            "NiCuO2",
+            "NiO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCuO2, NiO。未虚构数值。"
+        },
+        {
+          "bimetallic": "NiCu2O3",
+          "available": false,
+          "missing_formulas": [
+            "NiCu2O3",
+            "NiO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCu2O3, NiO。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgNiO2",
+          "available": false,
+          "missing_formulas": [
+            "MgNiO2",
+            "NiO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgNiO2, NiO。未虚构数值。"
+        },
+        {
+          "bimetallic": "MgCoO2",
+          "available": false,
+          "missing_formulas": [
+            "MgCoO2",
+            "CoO"
+          ],
+          "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：MgCoO2, CoO。未虚构数值。"
+        }
+      ],
+      "interpretation": "Materials Project 氧化物代理数据提供了可引用的热力学结论：最稳定相形成能（eV/atom）: MgO (mp-aaacptif) = -2.885 eV/atom; MgSO4 (mp-aaaaalfg) = -2.402 eV/atom; Cr2O3 (mp-aaacswcd) = -1.996 eV/atom。这些是 MOF 金属节点的无机氧化物代理，仅提供**间接热力学参考**，不能替代 MOF 实测/计算证据。",
+      "proxy_note": "数据为 MOF 金属节点的无机氧化物代理。Materials Project 不直接收录 MOF 结构。此代理基于：MOF 节点金属氧化态与对应氧化物相近，氧化物形成能可定性反映金属-氧键强度。"
+    }
+  },
+  "cross_hypothesis_analysis": {
+    "overall_formation_energy_stats": {
+      "available": true,
+      "count": 38,
+      "min_ev_per_atom": -3.5909381171111123,
+      "max_ev_per_atom": -0.6445054383333334,
+      "mean_ev_per_atom": -1.6615149268796214,
+      "most_stable": [
+        {
+          "mp_id": "mp-aaacswew",
+          "formula_pretty": "ZrO2",
+          "formation_energy_ev_per_atom": -3.5909381171111123
+        },
+        {
+          "mp_id": "mp-aaacptif",
+          "formula_pretty": "MgO",
+          "formation_energy_ev_per_atom": -2.8847003745833337
+        },
+        {
+          "mp_id": "mp-aaaaalfg",
+          "formula_pretty": "MgSO4",
+          "formation_energy_ev_per_atom": -2.402174846249999
+        }
+      ],
+      "by_formula": {
+        "Co(HO)2": {
+          "formation_energy_ev_per_atom": -1.2053718425000006,
+          "energy_above_hull_ev": 0.07136241200000004,
+          "mp_id": "mp-aaabjrce",
+          "crystal_system": "Triclinic"
+        },
+        "Mn(CoO2)2": {
+          "formation_energy_ev_per_atom": -1.4581127304187191,
+          "energy_above_hull_ev": 0.1061130564285726,
+          "mp_id": "mp-aaacrnsz",
+          "crystal_system": "Cubic"
+        },
+        "Co3O4": {
+          "formation_energy_ev_per_atom": -1.279858292857144,
+          "energy_above_hull_ev": 0.010479931428569955,
+          "mp_id": "mp-aaaabbtc",
+          "crystal_system": "Cubic"
+        },
+        "Mn2CoO4": {
+          "formation_energy_ev_per_atom": -1.8002037108374387,
+          "energy_above_hull_ev": 0.03790963857142948,
+          "mp_id": "mp-aaabrpur",
+          "crystal_system": "Triclinic"
+        },
+        "MnCoO3": {
+          "formation_energy_ev_per_atom": -1.6499188855862066,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaabenx",
+          "crystal_system": "Trigonal"
+        },
+        "CoO": {
+          "formation_energy_ev_per_atom": -1.2718311462500012,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaabhdw",
+          "crystal_system": "Cubic"
+        },
+        "Cr2O3": {
+          "formation_energy_ev_per_atom": -1.9960908367499997,
+          "energy_above_hull_ev": 0.3704969322500009,
+          "mp_id": "mp-aaacswcd",
+          "crystal_system": "Triclinic"
+        },
+        "CrO2": {
+          "formation_energy_ev_per_atom": -1.9911531824999997,
+          "energy_above_hull_ev": 0.05654767916663417,
+          "mp_id": "mp-aaacpgdv",
+          "crystal_system": "Orthorhombic"
+        },
+        "Cu(NO3)2": {
+          "formation_energy_ev_per_atom": -0.7913011499074085,
+          "energy_above_hull_ev": 0.008939338703703115,
+          "mp_id": "mp-aaablscl",
+          "crystal_system": "Orthorhombic"
+        },
+        "Cu2O": {
+          "formation_energy_ev_per_atom": -0.6445054383333334,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaaaanx",
+          "crystal_system": "Cubic"
+        },
+        "Fe2CuO4": {
+          "formation_energy_ev_per_atom": -1.3708425173214291,
+          "energy_above_hull_ev": 0.11787843267856424,
+          "mp_id": "mp-aaabmzyg",
+          "crystal_system": "Monoclinic"
+        },
+        "FeCuO2": {
+          "formation_energy_ev_per_atom": -1.3211116262499996,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaabdawf",
+          "crystal_system": "Trigonal"
+        },
+        "CuO": {
+          "formation_energy_ev_per_atom": -0.9425302874999995,
+          "energy_above_hull_ev": 0.00026465499999961395,
+          "mp_id": "mp-aaabocjt",
+          "crystal_system": "Monoclinic"
+        },
+        "CuSO4": {
+          "formation_energy_ev_per_atom": -1.5091072404166663,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaabejl",
+          "crystal_system": "Orthorhombic"
+        },
+        "Fe2O3": {
+          "formation_energy_ev_per_atom": -1.4012702128749992,
+          "energy_above_hull_ev": 0.3058211401250004,
+          "mp_id": "mp-aaacsvvq",
+          "crystal_system": "Triclinic"
+        },
+        "Fe3O4": {
+          "formation_energy_ev_per_atom": -1.586393616071428,
+          "energy_above_hull_ev": 0.05624860392857123,
+          "mp_id": "mp-aaacpljo",
+          "crystal_system": "Triclinic"
+        },
+        "FeO": {
+          "formation_energy_ev_per_atom": -1.1758246667500003,
+          "energy_above_hull_ev": 0.30569472074999915,
+          "mp_id": "mp-aaacsvzc",
+          "crystal_system": "Triclinic"
+        },
+        "Li2O": {
+          "formation_energy_ev_per_atom": -1.9772382030555544,
+          "energy_above_hull_ev": 0.0843597108333336,
+          "mp_id": "mp-aaabraew",
+          "crystal_system": "Orthorhombic"
+        },
+        "LiCrO2": {
+          "formation_energy_ev_per_atom": -2.370753757708333,
+          "energy_above_hull_ev": 0.03786809562499993,
+          "mp_id": "mp-aaabrjxe",
+          "crystal_system": "Tetragonal"
+        },
+        "Mg(NO3)2": {
+          "formation_energy_ev_per_atom": -1.3519638925000022,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaacgaza",
+          "crystal_system": "Trigonal"
+        },
+        "Mg(HO)2": {
+          "formation_energy_ev_per_atom": -1.9931184215000002,
+          "energy_above_hull_ev": 0.00938602799998911,
+          "mp_id": "mp-aaabjqgl",
+          "crystal_system": "Monoclinic"
+        },
+        "MgCO3": {
+          "formation_energy_ev_per_atom": -2.063969041999999,
+          "energy_above_hull_ev": 0.3780616330000077,
+          "mp_id": "mp-aaabfbvb",
+          "crystal_system": "Orthorhombic"
+        },
+        "MgCoO2": {
+          "formation_energy_ev_per_atom": -2.1111306562500003,
+          "energy_above_hull_ev": 0.043939501875000175,
+          "mp_id": "mp-aaadegef",
+          "crystal_system": "Monoclinic"
+        },
+        "MgNiO2": {
+          "formation_energy_ev_per_atom": -1.83539279875,
+          "energy_above_hull_ev": 0.30009815999999745,
+          "mp_id": "mp-aaadbysp",
+          "crystal_system": "Triclinic"
+        },
+        "MgO": {
+          "formation_energy_ev_per_atom": -2.8847003745833337,
+          "energy_above_hull_ev": 0.15360879541666606,
+          "mp_id": "mp-aaacptif",
+          "crystal_system": "Monoclinic"
+        },
+        "MgSO4": {
+          "formation_energy_ev_per_atom": -2.402174846249999,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaaalfg",
+          "crystal_system": "Orthorhombic"
+        },
+        "Mn2O3": {
+          "formation_energy_ev_per_atom": -1.9636023541724128,
+          "energy_above_hull_ev": 0.05031748937500069,
+          "mp_id": "mp-aaacwihk",
+          "crystal_system": "Monoclinic"
+        },
+        "Mn3O4": {
+          "formation_energy_ev_per_atom": -1.8317119119704444,
+          "energy_above_hull_ev": 0.21869732857142843,
+          "mp_id": "mp-aaabkiew",
+          "crystal_system": "Monoclinic"
+        },
+        "MnO": {
+          "formation_energy_ev_per_atom": -1.979201203965518,
+          "energy_above_hull_ev": 0.053368562500001104,
+          "mp_id": "mp-aaaabcda",
+          "crystal_system": "Cubic"
+        },
+        "Ni(HO)2": {
+          "formation_energy_ev_per_atom": -1.2273356164999996,
+          "energy_above_hull_ev": 0.027900299500000614,
+          "mp_id": "mp-aaabjrfm",
+          "crystal_system": "Trigonal"
+        },
+        "Co2NiO4": {
+          "formation_energy_ev_per_atom": -1.165728552142857,
+          "energy_above_hull_ev": 0.06273705336735969,
+          "mp_id": "mp-aaacwgan",
+          "crystal_system": "Monoclinic"
+        },
+        "CoNiO2": {
+          "formation_energy_ev_per_atom": -0.9947270475000005,
+          "energy_above_hull_ev": 0.2502311756250011,
+          "mp_id": "mp-aaacsmnh",
+          "crystal_system": "Tetragonal"
+        },
+        "NiO": {
+          "formation_energy_ev_per_atom": -1.2180853000000003,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaabcdd",
+          "crystal_system": "Cubic"
+        },
+        "SiO2": {
+          "formation_energy_ev_per_atom": -2.172436067619048,
+          "energy_above_hull_ev": 1.1003952762698423,
+          "mp_id": "mp-aaacpcuy",
+          "crystal_system": "Monoclinic"
+        },
+        "Zn(NO3)2": {
+          "formation_energy_ev_per_atom": -0.9922043409722221,
+          "energy_above_hull_ev": 0.006538474861111254,
+          "mp_id": "mp-aaabsiin",
+          "crystal_system": "Orthorhombic"
+        },
+        "ZnO": {
+          "formation_energy_ev_per_atom": -1.7908991124999996,
+          "energy_above_hull_ev": 0.0,
+          "mp_id": "mp-aaaaadeb",
+          "crystal_system": "Hexagonal"
+        },
+        "ZnSO4": {
+          "formation_energy_ev_per_atom": -1.8248282212499998,
+          "energy_above_hull_ev": 0.038264746250000314,
+          "mp_id": "mp-aaabfbiq",
+          "crystal_system": "Cubic"
+        },
+        "ZrO2": {
+          "formation_energy_ev_per_atom": -3.5909381171111123,
+          "energy_above_hull_ev": 0.22267963788888778,
+          "mp_id": "mp-aaacswew",
+          "crystal_system": "Triclinic"
+        }
+      }
+    },
+    "overall_band_gap_stats": {
+      "available": true,
+      "count": 38,
+      "min_ev": 0.0,
+      "max_ev": 5.4889,
+      "mean_ev": 1.4157078947368422,
+      "by_formula": {
+        "Co(HO)2": {
+          "band_gap_ev": 2.3438,
+          "mp_id": "mp-aaabjrce"
+        },
+        "Mn(CoO2)2": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaacrnsz"
+        },
+        "Co3O4": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaaabbtc"
+        },
+        "Mn2CoO4": {
+          "band_gap_ev": 0.26039999999999974,
+          "mp_id": "mp-aaabrpur"
+        },
+        "MnCoO3": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaaabenx"
+        },
+        "CoO": {
+          "band_gap_ev": 0.5819000000000001,
+          "mp_id": "mp-aaaabhdw"
+        },
+        "Cr2O3": {
+          "band_gap_ev": 0.7144000000000004,
+          "mp_id": "mp-aaacswcd"
+        },
+        "CrO2": {
+          "band_gap_ev": 0.9693,
+          "mp_id": "mp-aaacpgdv"
+        },
+        "Cu(NO3)2": {
+          "band_gap_ev": 0.006699999999999984,
+          "mp_id": "mp-aaablscl"
+        },
+        "Cu2O": {
+          "band_gap_ev": 0.5126999999999997,
+          "mp_id": "mp-aaaaaanx"
+        },
+        "Fe2CuO4": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaabmzyg"
+        },
+        "FeCuO2": {
+          "band_gap_ev": 0.8209,
+          "mp_id": "mp-aaabdawf"
+        },
+        "CuO": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaabocjt"
+        },
+        "CuSO4": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaaabejl"
+        },
+        "Fe2O3": {
+          "band_gap_ev": 1.1123,
+          "mp_id": "mp-aaacsvvq"
+        },
+        "Fe3O4": {
+          "band_gap_ev": 0.637,
+          "mp_id": "mp-aaacpljo"
+        },
+        "FeO": {
+          "band_gap_ev": 0.05410000000000004,
+          "mp_id": "mp-aaacsvzc"
+        },
+        "Li2O": {
+          "band_gap_ev": 5.2421999999999995,
+          "mp_id": "mp-aaabraew"
+        },
+        "LiCrO2": {
+          "band_gap_ev": 1.7688999999999995,
+          "mp_id": "mp-aaabrjxe"
+        },
+        "Mg(NO3)2": {
+          "band_gap_ev": 3.4662,
+          "mp_id": "mp-aaacgaza"
+        },
+        "Mg(HO)2": {
+          "band_gap_ev": 4.194100000000001,
+          "mp_id": "mp-aaabjqgl"
+        },
+        "MgCO3": {
+          "band_gap_ev": 5.1935,
+          "mp_id": "mp-aaabfbvb"
+        },
+        "MgCoO2": {
+          "band_gap_ev": 1.6075,
+          "mp_id": "mp-aaadegef"
+        },
+        "MgNiO2": {
+          "band_gap_ev": 0.0009000000000001229,
+          "mp_id": "mp-aaadbysp"
+        },
+        "MgO": {
+          "band_gap_ev": 2.7412,
+          "mp_id": "mp-aaacptif"
+        },
+        "MgSO4": {
+          "band_gap_ev": 5.4889,
+          "mp_id": "mp-aaaaalfg"
+        },
+        "Mn2O3": {
+          "band_gap_ev": 0.3511000000000002,
+          "mp_id": "mp-aaacwihk"
+        },
+        "Mn3O4": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaabkiew"
+        },
+        "MnO": {
+          "band_gap_ev": 0.18440000000000012,
+          "mp_id": "mp-aaaabcda"
+        },
+        "Ni(HO)2": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaabjrfm"
+        },
+        "Co2NiO4": {
+          "band_gap_ev": 1.7410999999999999,
+          "mp_id": "mp-aaacwgan"
+        },
+        "CoNiO2": {
+          "band_gap_ev": 0.0,
+          "mp_id": "mp-aaacsmnh"
+        },
+        "NiO": {
+          "band_gap_ev": 2.387200000000001,
+          "mp_id": "mp-aaaabcdd"
+        },
+        "SiO2": {
+          "band_gap_ev": 0.14189999999999992,
+          "mp_id": "mp-aaacpcuy"
+        },
+        "Zn(NO3)2": {
+          "band_gap_ev": 3.3595,
+          "mp_id": "mp-aaabsiin"
+        },
+        "ZnO": {
+          "band_gap_ev": 0.7316,
+          "mp_id": "mp-aaaaadeb"
+        },
+        "ZnSO4": {
+          "band_gap_ev": 4.2718,
+          "mp_id": "mp-aaabfbiq"
+        },
+        "ZrO2": {
+          "band_gap_ev": 2.9114,
+          "mp_id": "mp-aaacswew"
+        }
+      }
+    },
+    "bimetallic_stability_analysis": [
+      {
+        "bimetallic": "CoMn2O4",
+        "available": false,
+        "missing_formulas": [
+          "CoMn2O4"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMn2O4。未虚构数值。"
+      },
+      {
+        "bimetallic": "CoMnO3",
+        "available": false,
+        "missing_formulas": [
+          "CoMnO3"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CoMnO3。未虚构数值。"
+      },
+      {
+        "bimetallic": "Co2MnO4",
+        "available": false,
+        "missing_formulas": [
+          "Co2MnO4"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：Co2MnO4。未虚构数值。"
+      },
+      {
+        "bimetallic": "NiCo2O4",
+        "available": false,
+        "missing_formulas": [
+          "NiCo2O4"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCo2O4。未虚构数值。"
+      },
+      {
+        "bimetallic": "NiCoO2",
+        "available": false,
+        "missing_formulas": [
+          "NiCoO2"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCoO2。未虚构数值。"
+      },
+      {
+        "bimetallic": "CuFeO2",
+        "available": false,
+        "missing_formulas": [
+          "CuFeO2"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFeO2。未虚构数值。"
+      },
+      {
+        "bimetallic": "CuFe2O4",
+        "available": false,
+        "missing_formulas": [
+          "CuFe2O4"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：CuFe2O4。未虚构数值。"
+      },
+      {
+        "bimetallic": "NiCuO2",
+        "available": false,
+        "missing_formulas": [
+          "NiCuO2"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCuO2。未虚构数值。"
+      },
+      {
+        "bimetallic": "NiCu2O3",
+        "available": false,
+        "missing_formulas": [
+          "NiCu2O3"
+        ],
+        "note": "以下组成在本次查询中无形成能数据（字段缺失或数据库无记录），该代理无法计算其稳定性增益：NiCu2O3。未虚构数值。"
+      },
+      {
+        "bimetallic": "MgNiO2",
+        "available": true,
+        "e_bimetallic_ev": -2.1338,
+        "e_bimetallic_mp_id": "mp-aaacrnqf",
+        "e_mono1_ev": -2.9786,
+        "e_mono1_formula": "MgO",
+        "e_mono1_mp_id": "mp-aaacpfab",
+        "e_mono2_ev": -1.2181,
+        "e_mono2_formula": "NiO",
+        "e_mono2_mp_id": "mp-aaaabcdd",
+        "mono_avg_ev": -2.0983,
+        "gain_ev": -0.0354,
+        "interpretation": "双金属氧化物比单金属平均更稳定（ΔE<0），为双金属节点协同/稳定的间接热力学证据"
+      },
+      {
+        "bimetallic": "MgCoO2",
+        "available": true,
+        "e_bimetallic_ev": -2.1111,
+        "e_bimetallic_mp_id": "mp-aaadegef",
+        "e_mono1_ev": -2.9786,
+        "e_mono1_formula": "MgO",
+        "e_mono1_mp_id": "mp-aaacpfab",
+        "e_mono2_ev": -1.2718,
+        "e_mono2_formula": "CoO",
+        "e_mono2_mp_id": "mp-aaaabhdw",
+        "mono_avg_ev": -2.1252,
+        "gain_ev": 0.0141,
+        "interpretation": "双金属氧化物比单金属平均更不稳定（ΔE>0）"
+      }
+    ]
+  }
+}

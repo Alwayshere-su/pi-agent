@@ -1,0 +1,269 @@
+{
+  "generated_at": "2026-08-04",
+  "generated_by": "run_validation_pipeline.py (修复版)：knowledge_graph.md + quantitative_validation.md/json 提取链路",
+  "note": "修复背景（问题 #8/#10）：旧提取器只解析 knowledge_graph.md，其表格为「材料名+范围值」（如 42-47 kJ/mol），提取 0 点。修复后新增 quantitative_validation.md 第 1.1/6.1 节规整数值表与 quantitative_validation.json 结构化数据池，可提取数据点并透明标注 is_estimated / source / dataset。本表收录 18 组原始单位（mmol/g、kJ/mol）文献/实测值；已排除 quantitative_validation.md 表 1.2 的归一化复合估计表（12 组按倒U假设构造/文献定性外推的归一化值，仅供趋势参考，不替代实验验证）。估计点（is_estimated=True）不作独立验证证据。 | 2026-08 新增：并入 mof_e2e_v4 主题 NiCo-MOF-74 5 实测点（Chen 2023，0°C/1bar，独立于主案例 p62 的 298K/1bar 数据，作为独立数据集交叉印证倒U趋势）。 | 2026-08 新增：并入 mof_e2e_v4 主题 NiCo-MOF-74 5 实测点（Chen 2023，0°C/1bar，独立于主案例 p62 的 298K/1bar 数据，作为独立数据集交叉印证倒U趋势）。",
+  "total_pairs_extracted": 24,
+  "source_breakdown": {
+    "p62 (实测)": 3,
+    "scv:073a40bcc5cb (NO proxy→CO2估)": 1,
+    "p62 + 倒U对称性估计": 1,
+    "p85 + 文献协同趋势估计": 2,
+    "scv:a9220ad0eefa (GCMC预测)": 1,
+    "Caskey 2008; Koh 2016 (p26); 主案例 p6/p196/p197 (Mg Qst 42-47)": 1,
+    "Caskey 2008; Tan 2015 (p15)": 4,
+    "Caskey 2008": 3,
+    "领域文献值[待验证]（mof_rerun_v2 量化表）": 1,
+    "领域文献值[待验证]": 1,
+    "scv:ecfe34f94197 (Cu/Mg-MOF-74 实测, 273K/100kPa)": 1,
+    "v3s0_c795f15f9d35 (Chen 2023, 微波辅助合成, 0°C/1bar 实测)": 7
+  },
+  "datasets": {
+    "1.1 NiCo-MOF-74 体系实测数据 (p62)": 8,
+    "表 1.3a：d 电子数 vs Qst（M-MOF-74 平台，n=5）": 5,
+    "表 1.3b：Pauling 电负性 vs Qst（M-MOF-74 平台，n=5）": 5,
+    "9.1 第五轮补充证据（Cu/Mg 吸附单调增，R19 反例）": 1,
+    "1.1bis NiCo-MOF-74 5 实测点 (Chen 2023, 0°C/1bar)": 5
+  },
+  "pairs": [
+    {
+      "x": 0.0,
+      "y": 5.03,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "p62 (实测)",
+      "is_estimated": false,
+      "label": "Co-MOF-74",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0.5,
+      "y": 8.3,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "p62 (实测)",
+      "is_estimated": false,
+      "label": "NiCo-MOF-74 1:1",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 1.0,
+      "y": 3.99,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "p62 (实测)",
+      "is_estimated": false,
+      "label": "Ni-MOF-74",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0.37,
+      "y": 6.54,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "scv:073a40bcc5cb (NO proxy→CO2估)",
+      "is_estimated": true,
+      "label": "Ni0.37Co0.63-MOF-74",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0.63,
+      "y": 5.76,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "p62 + 倒U对称性估计",
+      "is_estimated": true,
+      "label": "Ni0.63Co0.37-MOF-74",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0.25,
+      "y": 6.2,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "p85 + 文献协同趋势估计",
+      "is_estimated": true,
+      "label": "Ni0.25Co0.75-MOF-74",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0.75,
+      "y": 5.1,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "p85 + 文献协同趋势估计",
+      "is_estimated": true,
+      "label": "Ni0.75Co0.25-MOF-74",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0.5,
+      "y": 7.9,
+      "x_header": "x",
+      "y_header": "capacity (mmol/g)",
+      "source": "scv:a9220ad0eefa (GCMC预测)",
+      "is_estimated": true,
+      "label": "NiCo-MOF-74 (GCMC)",
+      "dataset": "1.1 NiCo-MOF-74 体系实测数据 (p62)"
+    },
+    {
+      "x": 0,
+      "y": 47,
+      "x_header": "d电子数 Nd",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008; Koh 2016 (p26); 主案例 p6/p196/p197 (Mg Qst 42-47)",
+      "is_estimated": false,
+      "label": "Mg",
+      "dataset": "表 1.3a：d 电子数 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 6,
+      "y": 36,
+      "x_header": "d电子数 Nd",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "领域文献值[待验证]（mof_rerun_v2 量化表）",
+      "is_estimated": true,
+      "label": "Fe",
+      "dataset": "表 1.3a：d 电子数 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 7,
+      "y": 37,
+      "x_header": "d电子数 Nd",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008; Tan 2015 (p15)",
+      "is_estimated": false,
+      "label": "Co",
+      "dataset": "表 1.3a：d 电子数 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 8,
+      "y": 41,
+      "x_header": "d电子数 Nd",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008; Tan 2015 (p15)",
+      "is_estimated": false,
+      "label": "Ni",
+      "dataset": "表 1.3a：d 电子数 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 10,
+      "y": 29,
+      "x_header": "d电子数 Nd",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008",
+      "is_estimated": false,
+      "label": "Zn",
+      "dataset": "表 1.3a：d 电子数 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 1.31,
+      "y": 47,
+      "x_header": "电负性 χ (Pauling)",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008; Koh 2016 (p26)",
+      "is_estimated": false,
+      "label": "Mg",
+      "dataset": "表 1.3b：Pauling 电负性 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 1.83,
+      "y": 36,
+      "x_header": "电负性 χ (Pauling)",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "领域文献值[待验证]",
+      "is_estimated": true,
+      "label": "Fe",
+      "dataset": "表 1.3b：Pauling 电负性 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 1.88,
+      "y": 37,
+      "x_header": "电负性 χ (Pauling)",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008; Tan 2015 (p15)",
+      "is_estimated": false,
+      "label": "Co",
+      "dataset": "表 1.3b：Pauling 电负性 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 1.91,
+      "y": 41,
+      "x_header": "电负性 χ (Pauling)",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008; Tan 2015 (p15)",
+      "is_estimated": false,
+      "label": "Ni",
+      "dataset": "表 1.3b：Pauling 电负性 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 1.65,
+      "y": 29,
+      "x_header": "电负性 χ (Pauling)",
+      "y_header": "Qst_CO2 (kJ/mol)",
+      "source": "Caskey 2008",
+      "is_estimated": false,
+      "label": "Zn",
+      "dataset": "表 1.3b：Pauling 电负性 vs Qst（M-MOF-74 平台，n=5）"
+    },
+    {
+      "x": 0.9,
+      "y": 9.21,
+      "x_header": "Mg 摩尔比例 (Cu/Mg)",
+      "y_header": "CO2 容量 (mmol/g, 273K/100kPa)",
+      "source": "scv:ecfe34f94197 (Cu/Mg-MOF-74 实测, 273K/100kPa)",
+      "is_estimated": false,
+      "label": "Cu/Mg-MOF-74 (Cu/Mg=0.1/0.9)",
+      "dataset": "9.1 第五轮补充证据（Cu/Mg 吸附单调增，R19 反例）"
+    },
+    {
+      "x": 0.0,
+      "y": 5.03,
+      "x_header": "Ni/(Ni+Co) 比例 x",
+      "y_header": "CO2 容量 (mmol/g, 0°C/1bar)",
+      "source": "v3s0_c795f15f9d35 (Chen 2023, 微波辅助合成, 0°C/1bar 实测)",
+      "is_estimated": false,
+      "label": "Co-MOF-74 (x=0)",
+      "dataset": "1.1bis NiCo-MOF-74 5 实测点 (Chen 2023, 0°C/1bar)"
+    },
+    {
+      "x": 0.14,
+      "y": 6.4,
+      "x_header": "Ni/(Ni+Co) 比例 x",
+      "y_header": "CO2 容量 (mmol/g, 0°C/1bar)",
+      "source": "v3s0_c795f15f9d35 (Chen 2023, 微波辅助合成, 0°C/1bar 实测)",
+      "is_estimated": false,
+      "label": "Ni1Co6 (x=0.14)",
+      "dataset": "1.1bis NiCo-MOF-74 5 实测点 (Chen 2023, 0°C/1bar)"
+    },
+    {
+      "x": 0.5,
+      "y": 8.3,
+      "x_header": "Ni/(Ni+Co) 比例 x",
+      "y_header": "CO2 容量 (mmol/g, 0°C/1bar)",
+      "source": "v3s0_c795f15f9d35 (Chen 2023, 微波辅助合成, 0°C/1bar 实测)",
+      "is_estimated": false,
+      "label": "NiCo-MOF-74 1:1 (x=0.5)",
+      "dataset": "1.1bis NiCo-MOF-74 5 实测点 (Chen 2023, 0°C/1bar)"
+    },
+    {
+      "x": 0.86,
+      "y": 3.62,
+      "x_header": "Ni/(Ni+Co) 比例 x",
+      "y_header": "CO2 容量 (mmol/g, 0°C/1bar)",
+      "source": "v3s0_c795f15f9d35 (Chen 2023, 微波辅助合成, 0°C/1bar 实测)",
+      "is_estimated": false,
+      "label": "Ni6Co1 (x=0.86)",
+      "dataset": "1.1bis NiCo-MOF-74 5 实测点 (Chen 2023, 0°C/1bar)"
+    },
+    {
+      "x": 1.0,
+      "y": 3.99,
+      "x_header": "Ni/(Ni+Co) 比例 x",
+      "y_header": "CO2 容量 (mmol/g, 0°C/1bar)",
+      "source": "v3s0_c795f15f9d35 (Chen 2023, 微波辅助合成, 0°C/1bar 实测)",
+      "is_estimated": false,
+      "label": "Ni-MOF-74 (x=1)",
+      "dataset": "1.1bis NiCo-MOF-74 5 实测点 (Chen 2023, 0°C/1bar)"
+    }
+  ]
+}
