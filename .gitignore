@@ -28,6 +28,9 @@ workspace/code/
 # Windows 设备名伪文件（无法正常删除，git 会尝试跟踪）
 nul
 
+# docx 解压临时目录（python-docx/脚本解压残留）
+unpacked_*/
+
 # 赛题资料与官方模板（第三方内容，不入库）
 GOAI_初赛_Prospector.zip
 AI for reserach算法赛初赛模板.docx
@@ -39,6 +42,24 @@ AI for reserach算法赛初赛模板.docx
 workspace/outputs/smoke_fix/
 workspace/logs/smoke_fix/
 workspace/memory/smoke_fix/
+
+# 一次性核验底稿与中间实验产物（成果已固化进 gap_report.md / baseline_random.json，本地保留不入库）
+workspace/_pids_*.md
+workspace/_pid_verify_guide.md
+workspace/_pid_confirmed.txt
+workspace/_deep_verify_results.json
+workspace/_doi_verify_results.json
+workspace/_quarantine_log_mof_rerun.txt
+workspace/outputs/literature_survey/discovery/baseline_v2_*.json
+
+# 一次性内部工具脚本（本地保留不入库；正式工具 baseline_random_search / prepare_scibase / run_* 等不受影响）
+scripts/_*.py
+scripts/build_pid_*.py
+scripts/build_paper_register.py
+scripts/inject_evidence_chain.py
+scripts/reference_audit.py
+scripts/backfill_redline2.py
+scripts/verify_scoring.py
 
 # Vendor binaries
 vendor/
