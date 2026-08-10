@@ -1,11 +1,11 @@
 # Literature Survey — Paper Summaries
 
-**Total papers:** 19
-**Generated:** 2026-08-02T19:35:45.740949
+**Total papers:** 27
+**Generated:** 2026-08-10T09:01:26.367577
 
 ---
 
-**Sources:** unknown(19)
+**Sources:** unknown(27)
 **Common keywords:** MIL, battery, capture, stability
 
 ---
@@ -115,12 +115,12 @@ Abstract: Nickel-based layered oxides offer an attractive platform for the devel
 
 Abstract: Core-shell electrode particles are a promising morphology control strategy for high-performance lithium-ion batteries. However, experimental observations reveal that these structures remain prone to mechanical failure, with shell fractures and core-shell debonding occurring after a single charge. In this work, we present a novel, comprehensive computational framework to predict and gain insight into the failure of core-shell morphologies and the associated degradation in battery performance. The fully coupled chemo-mechano-damage model presented captures the interplay between mechanical damage and electrochemical behaviours, enabling the quantification of particle cracking and capacity fade. Both bulk material fracture and interface debonding are captured by utilising the phase f
 
-### 16. Title: The meaning of Li diffusion in cathode materials for the cycling of Li-ion batteries: A case study on LiNi0.33Mn0.33Co0.33O2 thin films
+### 16. Title: The meaning of Li diffusion in cathode materials for the cycling of Li-ion batteries: A case study on LiNi₀.₃₃Mn₀.₃₃Co₀.₃₃O₂ thin films
 **Year:** 2025
 **DOI:** 10.1063/5.0272991
 **ID:** `p35`
 
-Abstract: We demonstrate that for polycrystalline LiNi0.33Mn0.33Co0.33O2 c-axis textured thin film cathodes of rechargeable lithium-ion batteries, the kinetics of Li storage and release including maximum specific capacity is determined by Li diffusion. The C-rate capability and long-term cycling behavior were investigated. The films exhibited up to 30% of the expected practical capacity even at low C-rates. However, 100% capacity was achieved at very low cycling rates below 0.01C. The capacity showed a reversible behaviour with changing current density, indicating no film degradation. The C-rate capability experiment showed a square root dependence of capacities on current density, which corresponds to a diffusion-controlled process. The estimated diffusivities from the cycling experiments
+Abstract: We demonstrate that for polycrystalline LiNi₀.₃₃Mn₀.₃₃Co₀.₃₃O₂ c-axis textured thin film cathodes of rechargeable lithium-ion batteries, the kinetics of Li storage and release including maximum specific capacity is determined by Li diffusion. The C-rate capability and long-term cycling behavior were investigated. The films exhibited up to 30% of the expected practical capacity even at low C-rates. However, 100% capacity was achieved at very low cycling rates below 0.01C. The capacity showed a reversible behaviour with changing current density, indicating no film degradation. The C-rate capability experiment showed a square root dependence of capacities on current density, which corresponds to a diffusion-controlled process. The estimated diffusivities from the cycling experiments
 
 ### 17. Title: Interplay of Inhomogeneous Electrochemical Reactions with Mechanical Responses in Silicon-Graphite Anode and its Impacts on Degradation
 **Year:** 2019
@@ -142,3 +142,59 @@ Abstract: Lithium-ion batteries (LIBs) have become essential in modern energy st
 **ID:** `p42`
 
 Abstract: The surface coating of cathodes using insulator films has proven to be a promising method for high-voltage cathode stabilization in Li-ion batteries. However, there is still substantial uncertainty about how these films function, specifically with regard to important coating design principles such as lithium solubility and transport through the films. This study uses Density Functional Theory to examine the diffusivity of interstitial lithium in crystalline α-$AlF_3$, α-$Al_2O_3$, m-$ZrO_2$, c-MgO, and α-quartz $SiO_2$, which provide benchmark cases for further understanding of insulator coatings in general. In addition, we propose an Ohmic electrolyte model to predict resistivities and overpotential contributions under battery operating conditions. For the crystalline materials 
+
+### 20. Title: Quadrupled Cycle Life of High-Voltage Nickel-Rich Cathodes: Understanding the Effective Thiophene-Boronic Acid-Based CEI via Operando SHINERS
+**Year:** 2023
+**DOI:** 10.1002/aenm.202300827
+**ID:** `p43`
+
+Abstract: Increasing the cell voltage of lithium-ion batteries (LIBs) is a straightforward approach to increasing their capacity and energy density. However, state-of-the-art cathode materials like LiNixMnyCo1-x-yO2 (NMC) suffer from severe failure mechanisms at high operating voltages, significantly degrading the performance and cycle life of the cells. Notably, an effective cathode electrolyte interphase (CEI) mitigates these failure mechanisms. This study introduces a promising electrolyte additive for high operating voltage NMC811||graphite cells. Implementing an optimized concentration of 3-thiophene boronic acid (3-Thp-BOH) significantly enhances the cells' performance and reduces capacity fading, resulting in a quadrupled cycle life and a six-times higher accumulated specific energy
+
+### 21. Title: Comparing Two Strategies for Extending Cycle Life in NMC-based Lithium-ion Batteries: Lowering the Upper Cut-off Voltage or Overlithiation
+**Year:** 2026
+**DOI:** 10.1149/1945-7111/ae8a88
+**ID:** `p44`
+
+Abstract: Cycling NMC cathodes to high voltage causes a severe c-lattice contraction, which leads to poor capacity retention and cycle life. Limiting the upper cut-off voltage (UCV) mitigates this degradation. In this study, we examine whether overlithiation can serve as a strategy to stabilize the c-lattice while allowing operation at higher potentials. We choose NMC 532 as a model system and synthesize both standard NMC 532 and overlithiated NMC 532 (Li-rich 532) from the same precursor to compare their performance. We find that Li-rich 532 achieves superior capacity retention and, after extended cycling, delivers a specific capacity comparable to NMC 532 cycled to 4.4 V. Furthermore, the Li-rich 532 exhibits fewer anti-site defects, resulting in enhanced rate capability. These findings 
+
+### 22. Title: Enhancing Capacity Retention in Commercial Cathode Active Materials through Configurational Entropy: An Ab-Initio Simulation Study
+**Year:** 2025
+**DOI:** N/A
+**ID:** `p45`
+
+Abstract: Cathode-active materials (CAMs) play a crucial role in enhancing the energy density and reducing the cost of Li-ion battery cells. In commercially-relevant layered oxides such as LiNixMnyCozO2 (NMCs), efforts to minimize cobalt content while maximizing nickel content have led to significant improvements in energy density. However, higher nickel content has also resulted in lower capacity retention compared to first-generation NMC-CAMs with equal proportions of nickel, manganese, and cobalt (x=y=z=1/3) or with cobalt as the dominant component. To address this challenge, this study explores the high-entropy concept as a strategy to improve capacity retention without compromising energy density. We present evidence of configurational entropy effects in commercial CAMs by measuring d
+
+### 23. Title: Revealing the Correlation between Coating Content and Li+ Diffusion Kinetics of Nickel-Rich Cathode in Li-Ion Batteries
+**Year:** 2025
+**DOI:** 10.1149/1945-7111/adde88
+**ID:** `p46`
+
+Abstract: Coating is a promising strategy for optimizing cathode active materials to enhance the cycle life of nickel-rich cathodes in Li-ion batteries. However, the effects of coating content on Li+ diffusion kinetics remain insufficiently understood. In this study, a model system, zirconia-coated LiNi₀.₈₃Mn₀.₀₅Co₀.₁₂O₂ (NMC), is used to investigate the effect of coating content on the Li+ diffusion kinetics. We used a wet-coating method to load the surface of the NMC cathode with varying amounts of Zr-O deposits (ZrO2 and Li2ZrO3). Electrochemical performance, including capacity, stability, and rate capability, exhibits a volcano-like trend with respect to coating content. This suggests that while Zr-O coatings can protect cathode particles, excessive coating increases cell internal resi
+
+### 24. Title: Exploring the Degradation Mechanism of Nickel-Rich NMC Cathode Materials
+**Year:** 2024
+**DOI:** 10.1109/ICCEPE62686.2024.10931284
+**ID:** `p47`
+
+Abstract: Li(NixCoyMnz)O2 (NMC) is renowned for being the most appealing material for Li-ion batteries cathode. The increase in Ni content in NMC materials is a useful tactic for raising their energy density, but concurrently, it will induce several issues such as reduced thermal stability, decreased structural stability, and shortened cycle life. By contrasting the cycling performances of NMCs with varying nickel concentrations, the degradation mechanism of these materials is thoroughly examined. Research results demonstrate that when nickel content escalates, NMC cathode materials' cycle durability diminishes, especially at high voltage, where the cycling stability decreases drastically. With the aim of improving the cycling performance of Ni-rich NMC, a commercial electrolyte addition h
+
+### 25. Title: Impact of Intercalated Protons in Ni-Rich Cathode Active Materials on the Performance and Cycle-Life of Lithium-Ion Batteries
+**Year:** 2025
+**DOI:** N/A
+**ID:** `p48`
+
+Abstract: With a higher nickel content, the available capacity of NCM is increased; however, the higher reactivity of nickel increases the amount of unwanted contaminants (lithium carbonate and/or hydroxide) on the surface of the NCM particles, which lead to gassing, hydrolysis of electrolyte components, impedance build-up and capacity fading. To reduce these negative effects, the contaminants are removed by washing the CAM in water; however, this process is accompanied by the cation exchange of intercalated near-surface lithium ions from the NCM with protons from the solution. Within this study, we reveal the implications of protons remaining in the CAM on their electrochemical behavior. We investigate a nickel-rich NCM831205 (LiNi₀.₈₃Co₀.₁₂Mn₀.₀₅O₂) for which parts of the intercalated li
+
+### 26. Title: Layered Sodium-Rich Cathode Material Na₁.₂Ni₀.₂Mn₀.₆O₂ with a High Rate and a Long Cycle Life
+**Year:** 2025
+**DOI:** 10.1021/acsami.5c07585
+**ID:** `p49`
+
+Abstract: A sodium-rich layered material, P2-Na₁.₂Ni₀.₂Mn₀.₆O₂ (NNMO), was synthesized via a straightforward sol-gel method. NNMO possesses a P2 phase (P63/mmc) layered structure, featuring a significantly enlarged interlayer spacing, which is conducive to the rapid diffusion of sodium ions. The introduction of nickel (Ni) effectively reduced the manganese (Mn3+) content, thereby mitigating the Jahn-Teller effect and enhancing the material's electrochemical stability. Electrochemical performance tests demonstrated that the NNMO electrode exhibited superior performance within a 2-4.0 V voltage range. At a current density of 0.2 C, the initial cycle reversible capacity reached 127.4 mAh g-1, and after 100 cycles, the electrode maintained a high specific capacity of 114.9 mAh g-1, indicating 
+
+### 27. Title: A cathode homogenization strategy for enabling long-cycle-life all-solid-state lithium batteries
+**Year:** 2024
+**DOI:** 10.1038/s41560-024-01596-6
+**ID:** `p50`
+
+Abstract: All-solid-state lithium batteries with sulfide electrolytes are promising for high energy density and safety, yet their cycle life is limited by heterogeneous reactions and contact loss at the cathode. Here we propose a cathode homogenization strategy to enable long-cycle-life all-solid-state batteries. The strategy focuses on homogenizing the electrochemical reaction and stress distribution inside composite cathodes by engineering the active material, electrolyte and conductive additive architecture. The homogenized cathode demonstrates substantially improved capacity retention and rate capability compared with conventional composite cathodes, providing a general design principle for high-performance all-solid-state batteries.

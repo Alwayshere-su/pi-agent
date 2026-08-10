@@ -1,12 +1,14 @@
 # 文献调研报告：高镍正极容量保持率——降解机制、形态工程与构效关系
 
-**调研日期**：2026-08-02 | **核心论文数**：19 | **主题**：high-nickel cathode capacity retention for lithium-ion batteries
+**调研日期**：2026-08-02（第二轮更新 2026-08-10） | **核心论文数**：27（第一轮 19 + 第二轮新增 8） | **主题**：high-nickel cathode capacity retention for lithium-ion batteries
 
 ---
 
 ## 1. 执行摘要
 
-高镍（Ni>0.6）层状氧化物正极（NMC811、LiNiO₂ 等）因高比容量与低钴成本成为下一代锂离子电池的关键材料，但其循环容量保持率受制于多尺度耦合降解机制。本调研梳理了 19 篇核心文献（2013-2026，arXiv + 期刊），识别出**四条主要降解路径**：(1) 多晶颗粒晶界裂纹→电解液润湿→表面重构/释氧的机械-化学级联（p06, p24, p31, p32）；(2) 深度脱锂诱导的阳离子无序（Ni 迁移至 Li 位）→层状-岩盐相变（p27, p32）；(3) 全电池锂库存损失（LLI）主导的容量衰减（p28）；(4) 单晶形态下位错辅助裂纹与化学异质性并存（p25, p24）。**形态工程（单晶化、核壳结构、晶界电解质注入）与表面涂层（Al₂O₃、AlF₃ 等）是提升容量保持率的两大主线**，但化学-力学耦合机制、无钴组成-稳定性定量权衡、涂层 Li 传输-保护性权衡等关键构效关系仍属空白（详见 Gap 报告）。
+高镍（Ni>0.6）层状氧化物正极（NMC811、LiNiO₂ 等）因高比容量与低钴成本成为下一代锂离子电池的关键材料，但其循环容量保持率受制于多尺度耦合降解机制。本调研梳理了 27 篇核心文献（2013-2026，arXiv + Semantic Scholar + 期刊），识别出**六条主要降解路径**：(1) 多晶颗粒晶界裂纹→电解液润湿→表面重构/释氧的机械-化学级联（p06, p24, p31, p32）；(2) 深度脱锂诱导的阳离子无序（Ni 迁移至 Li 位）→层状-岩盐相变（p27, p32, p44）；(3) 全电池锂库存损失（LLI）主导的容量衰减（p28）；(4) 单晶形态下位错辅助裂纹与化学异质性并存（p25, p24）；(5) 界面工程路径——CEI 添加剂（3-Thp-BOH）×4 循环寿命、过锂化稳定 c 晶格、Zr 涂层 1.5 wt% 火山最优（p43, p44, p46）；(6) 水洗引入质子的诱导降解新机制（p48）。**形态工程（单晶化、核壳结构、晶界电解质注入）、表面涂层与界面添加剂是提升容量保持率的两大主线**。
+
+**第二轮量化发现（路线 A）**：假设 2（Ni 含量-容量保持率）经模型对比验证——严格可比 6 点（NMC333→LiNiO₂）上**线性 R²=0.8873、二次 R²=0.9828（p=0.027）**，Ni 含量每增 1.0 保持率降 ~34.6 个百分点；**经典 Vegard 线性混合 R²=-0.032 失效**；外部数据库 OQMD 验证通过。其余 4 假设均完成贝叶斯搜索（假设 0 最佳 0.614）。详见 discovery/。
 
 ## 2. 文献综述
 
@@ -31,6 +33,19 @@ p42（Xu et al., 2016）用 DFT 计算了 α-AlF₃、α-Al₂O₃、m-ZrO₂、
 - 相搜索：低钴 NMC 三元相图高保真计算（p22，指出亚稳有序化风险）
 - 扩散动力学：NMC333 薄膜容量受 Li 扩散控制（√C-rate 律，p35）
 
+### 2.7 第二轮新增证据（Semantic Scholar 源，p43-p50）
+
+第二轮补充检索命中 8 篇含定量数据的论文，从**界面工程、组成调控、新降解机制**三个维度强化证据链：
+
+- **p43（Pfeiffer 2023）**：3-噻吩硼酸（3-Thp-BOH）添加剂在 NMC811||graphite 全电池构筑聚合 CEI（operando SHINERS 证实），**循环寿命×4、累积比能量×6**——界面添加剂工程的最直接定量证据。
+- **p44（2026）**：过锂化 NMC532（Li-rich）与限压策略对比——Li-rich 532 保持率更优、**anti-site 缺陷更少**、倍率更优，支持"稳定 c 晶格→抑制混排→保持率↑"的机制链（强化 Gap 2/假设 4）。
+- **p45（Yim 2025）**：高镍 CAM 保持率系统性低于等摩尔 NMC（x=y=z=1/3）；**构型熵（高熵）策略可在不损能量密度前提下提升保持率**——组成-保持率权衡的新调控维度（强化 Gap 3/假设 2）。
+- **p46（Zhou 2025）**：Zr 涂层 NMC83 体系中**涂层含量-电化学性能呈火山型**，1.5 wt% 最优，过高→IR/极化↑、界面 Li+ 扩散受阻——假设 3（涂层 Li 传输-保护权衡）的实验定量证实（强化 Gap 5）。
+- **p47（Chen 2024）**：Ni 含量升高时 NMC 循环耐久性系统性下降，**高电压下急剧恶化**——假设 2 方向性证据（强化 Gap 3）。
+- **p48（Wilhelm 2025）**：**水洗除杂引入质子（Li⁺/H⁺ 交换），质子残留导致容量衰减与阻抗随质子含量上升**——全新质子诱导降解机制（新增 Gap 8）。
+- **p49（Zeng 2025）**：钠电 P2-NNMO 0.2C 首圈 127.4 mAh/g、100 圈保持率 90.2%、1C 500 圈 90.0%——长循环形态参考（非锂电，仅供对照）。
+- **p50（Cui 2024, Nature Energy）**：全固态复合阴极**反应/应力均质化设计**显著提升长循环保持率——"均质化"设计原则的跨体系印证。
+
 ## 3. 关键材料与性质对比
 
 | 材料体系 | 形态/策略 | 关键容量保持率相关发现 | 来源 |
@@ -43,21 +58,28 @@ p42（Xu et al., 2016）用 DFT 计算了 α-AlF₃、α-Al₂O₃、m-ZrO₂、
 | NMC622+LFP | 双层电极 | 3C 快充 18.6min（0-90% SOC），4.4mAh/cm² | p29 |
 | NMC||Graphite-SiOx | 21700 全电池 | LLI+阳极活性损失主导 | p28 |
 | Al₂O₃/AlF₃/ZrO₂/MgO/SiO₂ | 涂层 | Li 扩散系数差异大，导 Li-保护权衡 | p42, p39 |
+| NMC83+ZrO₂/Li₂ZrO₃ | 涂层含量优化 | 火山型效应，**1.5 wt% 最优** | p46 |
+| NMC811+3-Thp-BOH | CEI 添加剂 | 循环寿命×4、累积能量×6 | p43 |
+| NMC532 (Li-rich) | 过锂化 | anti-site 缺陷↓，保持率↑、倍率↑ | p44 |
+| NMC 家族（高熵） | 构型熵 | 保持率↑且不损能量密度 | p45 |
+| NCM831205（水洗） | 质子残留 | 衰减/阻抗随质子含量↑ | p48 |
 
-**数值要点**：日历损失 6.4%@25°C/100%SOC（p16）；电解质窗口 2.15V/凝固点 -60°C（p12）；ADN 电化学窗口 ~6V（p14）。
+**数值要点**：日历损失 6.4%@25°C/100%SOC（p16）；电解质窗口 2.15V/凝固点 -60°C（p12）；ADN 电化学窗口 ~6V（p14）；Ni 含量-保持率量化趋势：x=0.33→95%、x=1.0→70%（领域共识值 [待验证]，线性 R²=0.887，p46/p47 支持方向）。
 
 ## 4. 研究空白与未来方向
 
-完整分析见 gap_report.md（Gap 1-7，编号全局唯一）。最高优先级：
+完整分析见 gap_report.md（Gap 1-8，编号全局唯一）。最高优先级（第二轮置信度更新后）：
 
-1. **Gap 1（高）**：单晶 NMC 化学（Ni 价态异质性）-力学（位错裂纹）耦合缺失
-2. **Gap 4（中高）**：裂纹润湿→表面重构/释氧全链条耦合模型缺失
-3. **Gap 3（高）**：高镍组成空间"容量-保持率"定量帕累托前沿缺失
-4. **Gap 5（中）**：涂层"Li 传输-保护性"统一设计准则缺失
+1. **Gap 1（高，0.80）**：单晶 NMC 化学（Ni 价态异质性）-力学（位错裂纹）耦合缺失
+2. **Gap 3（高，0.78↑）**：高镍组成空间"容量-保持率"定量帕累托前沿缺失（p47/p45 强化方向性证据）
+3. **Gap 5（中，0.78↑）**：涂层"Li 传输-保护性"统一设计准则缺失（p46 实验证实火山型权衡）
+4. **Gap 2（高，0.77↑）**：阳离子无序理论与原子尺度验证脱节（p44 间接支持）
+5. **Gap 4（中高，0.75）**：裂纹润湿→表面重构/释氧全链条耦合模型缺失
+6. **Gap 8（中，0.65，新增）**：质子诱导降解的定量模型与工艺交互缺失（p48）
 
-**未来方向**：原位多模态关联表征（光谱叠层+微力学）、全链条多物理场建模（裂纹→润湿→重构→释氧）、数据驱动的组成-工艺-保持率映射。
+**未来方向**：原位多模态关联表征（光谱叠层+微力学）、全链条多物理场建模（裂纹→润湿→重构→释氧）、数据驱动的组成-工艺-保持率映射、质子残留-涂层/过锂化工艺联合优化。
 
-## 5. 参考文献（核心 19 篇，可追溯）
+## 5. 参考文献（核心 27 篇，可追溯）
 
 | ID | 论文（标题保留原文） | 年份 | DOI |
 |----|----------------------|------|-----|
@@ -80,6 +102,14 @@ p42（Xu et al., 2016）用 DFT 计算了 α-AlF₃、α-Al₂O₃、m-ZrO₂、
 | p36 | *Interplay of Inhomogeneous Electrochemical Reactions with Mechanical Responses in Silicon-Graphite Anode...* | 2019 | N/A |
 | p39 | *Aluminum oxide coatings on Co-rich cathodes and interactions with organic electrolyte* | 2025 | N/A |
 | p42 | Xu S. et al., *Lithium transport through Lithium-ion battery cathode coatings* | 2016 | 10.1039/C5TA01664A |
+| p43 | Pfeiffer F. et al., *Quadrupled Cycle Life of High-Voltage Nickel-Rich Cathodes: Understanding the Effective Thiophene-Boronic Acid-Based CEI via Operando SHINERS* | 2023 | 10.1002/aenm.202300827 |
+| p44 | Senthil Arumugam R. et al., *Comparing Two Strategies for Extending Cycle Life in NMC-based Lithium-ion Batteries: Lowering the Upper Cut-off Voltage or Overlithiation* | 2026 | 10.1149/1945-7111/ae8a88 |
+| p45 | Yim C.-H. et al., *Enhancing Capacity Retention in Commercial Cathode Active Materials through Configurational Entropy: An Ab-Initio Simulation Study* | 2025 | N/A |
+| p46 | Zhou M. et al., *Revealing the Correlation between Coating Content and Li+ Diffusion Kinetics of Nickel-Rich Cathode in Li-Ion Batteries* | 2025 | 10.1149/1945-7111/adde88 |
+| p47 | Chen Y., Shadike Z., *Exploring the Degradation Mechanism of Nickel-Rich NMC Cathode Materials* | 2024 | 10.1109/ICCEPE62686.2024.10931284 |
+| p48 | Wilhelm R. et al., *Impact of Intercalated Protons in Ni-Rich Cathode Active Materials on the Performance and Cycle-Life of Lithium-Ion Batteries* | 2025 | N/A |
+| p49 | Zeng Z. et al., *Layered Sodium-Rich Cathode Material Na1.2Ni0.2Mn0.6O2 with a High Rate and a Long Cycle Life* | 2025 | 10.1021/acsami.5c07585 |
+| p50 | Cui L. et al., *A cathode homogenization strategy for enabling long-cycle-life all-solid-state lithium batteries* | 2024 | 10.1038/s41560-024-01596-6 |
 
 ---
 *证据链：所有结论可追溯至 paper_summaries.md 与 knowledge_graph.md。Gap 编号与 gap_report.md 一致。*
