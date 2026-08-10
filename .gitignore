@@ -43,12 +43,7 @@ AI for reserach算法赛初赛模板.docx
 # 初赛方案提交物（docx，本地保留、不入公开仓库）
 材料科学文献调研Agent_算法赛初赛方案.docx
 
-# 内部/赛题文档（本地保留、不入公开仓库；README 已内置合规/复现/架构摘要）
-# 注：COMPLIANCE.md / REPRODUCIBILITY.md / CROSS_THEME_REPORT.md 被初赛方案 docx 明确引用
-# （合规披露 / 复现说明 / 跨主题泛化证据），已恢复入库——评审核验需在仓库中可寻。
-ARCHITECTURE.md
-RERUN_GUIDE.md
-E2E_RERUN_GUIDE.md
+# 内部/赛题文档（本地保留、不入公开仓库）
 problem_definition.md
 补充.md
 赛题内容.md
