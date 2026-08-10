@@ -1,11 +1,11 @@
 {
-  "hypothesis_index": 0,
+  "hypothesis_index": 1,
   "search_method": "bayesian",
   "iterations": 10,
   "evidence": {
     "source": "knowledge_graph.md",
     "blocks": 9,
-    "material_tokens": 50,
+    "material_tokens": 47,
     "property_keywords": [
       "band",
       "gap"
@@ -139,8 +139,20 @@
   "llm_guidance": {
     "enabled": true,
     "injected": true,
-    "n_events": 2,
+    "n_events": 4,
     "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
       {
         "iteration": 4,
         "type": "bayes_llm_guide",

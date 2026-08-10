@@ -1,11 +1,11 @@
 {
-  "hypothesis_index": 0,
+  "hypothesis_index": 3,
   "search_method": "bayesian",
   "iterations": 10,
   "evidence": {
     "source": "knowledge_graph.md",
     "blocks": 9,
-    "material_tokens": 50,
+    "material_tokens": 45,
     "property_keywords": [
       "band",
       "gap"
@@ -33,12 +33,12 @@
     "composition_x": 0.47918187762973097,
     "temperature": 330.77047896772285
   },
-  "best_score": 0.9642038253584586,
+  "best_score": 0.9602355713902045,
   "iteration_log": [
     {
       "iteration": 0,
-      "score": 0.8958478825742928,
-      "best_score": 0.9553928659794794,
+      "score": 0.8918796286060388,
+      "best_score": 0.9514246120112254,
       "params": {
         "property_value": 3.03180613628012,
         "composition_x": 0.5357746840747585,
@@ -47,8 +47,8 @@
     },
     {
       "iteration": 1,
-      "score": 0.9129613871199371,
-      "best_score": 0.9553928659794794,
+      "score": 0.9089931331516832,
+      "best_score": 0.9514246120112254,
       "params": {
         "property_value": 2.9472268690818035,
         "composition_x": 0.6350936508676438,
@@ -57,8 +57,8 @@
     },
     {
       "iteration": 2,
-      "score": 0.9206619105110301,
-      "best_score": 0.9553928659794794,
+      "score": 0.916693656542776,
+      "best_score": 0.9514246120112254,
       "params": {
         "property_value": 1.9182504832275593,
         "composition_x": 0.5596403313082179,
@@ -67,8 +67,8 @@
     },
     {
       "iteration": 3,
-      "score": 0.926693662058456,
-      "best_score": 0.9553928659794794,
+      "score": 0.9227254080902021,
+      "best_score": 0.9514246120112254,
       "params": {
         "property_value": 1.255671187930363,
         "composition_x": 0.5950779307002548,
@@ -77,8 +77,8 @@
     },
     {
       "iteration": 4,
-      "score": 0.9642038253584586,
-      "best_score": 0.9642038253584586,
+      "score": 0.9602355713902045,
+      "best_score": 0.9602355713902045,
       "params": {
         "property_value": 2.484287260091667,
         "composition_x": 0.47918187762973097,
@@ -87,8 +87,8 @@
     },
     {
       "iteration": 5,
-      "score": 0.812793318885954,
-      "best_score": 0.9642038253584586,
+      "score": 0.8088250649177,
+      "best_score": 0.9602355713902045,
       "params": {
         "property_value": 1.6567410917567658,
         "composition_x": 0.9756102008599149,
@@ -97,8 +97,8 @@
     },
     {
       "iteration": 6,
-      "score": 0.8341516953182067,
-      "best_score": 0.9642038253584586,
+      "score": 0.8301834413499527,
+      "best_score": 0.9602355713902045,
       "params": {
         "property_value": 2.311523084056339,
         "composition_x": 0.13347997241594378,
@@ -107,8 +107,8 @@
     },
     {
       "iteration": 7,
-      "score": 0.8609948887892844,
-      "best_score": 0.9642038253584586,
+      "score": 0.8570266348210305,
+      "best_score": 0.9602355713902045,
       "params": {
         "property_value": 2.5555003886685017,
         "composition_x": 0.14213712379345766,
@@ -117,8 +117,8 @@
     },
     {
       "iteration": 8,
-      "score": 0.9156335603756212,
-      "best_score": 0.9642038253584586,
+      "score": 0.9116653064073672,
+      "best_score": 0.9602355713902045,
       "params": {
         "property_value": 1.9506858604591488,
         "composition_x": 0.40710648912562764,
@@ -127,8 +127,8 @@
     },
     {
       "iteration": 9,
-      "score": 0.8579806455882765,
-      "best_score": 0.9642038253584586,
+      "score": 0.8540123916200224,
+      "best_score": 0.9602355713902045,
       "params": {
         "property_value": 2.132471199741206,
         "composition_x": 0.20918546540792782,
@@ -139,7 +139,7 @@
   "llm_guidance": {
     "enabled": true,
     "injected": true,
-    "n_events": 2,
+    "n_events": 9,
     "events": [
       {
         "iteration": 4,
@@ -152,6 +152,67 @@
         "type": "bayes_llm_guide",
         "n_candidates": 5,
         "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前搜索未含压力维度，与假设脱节。建议引入0–5 GPa压力变量，聚焦温度300–500 K、组分x≈0.3–0.5，剪除高温>800 K及x>0.9区域。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            800.0,
+            1200.0
+          ],
+          [
+            0.9,
+            1.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            300.0,
+            500.0
+          ],
+          [
+            0.2,
+            0.6
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
       }
     ]
   }

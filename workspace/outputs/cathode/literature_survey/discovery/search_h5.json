@@ -1,0 +1,130 @@
+{
+  "hypothesis_index": 5,
+  "search_method": "bayesian",
+  "iterations": 6,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 11,
+    "material_tokens": 60,
+    "property_keywords": [
+      "capacity",
+      "loading",
+      "uptake"
+    ],
+    "literature_values": []
+  },
+  "best_params": {
+    "property_value": 51.472020397519806,
+    "composition_x": 0.5924145688620425,
+    "temperature": 355.7404952639973
+  },
+  "best_score": 0.46727272727272723,
+  "iteration_log": [
+    {
+      "iteration": -1,
+      "type": "initial",
+      "best_score": 0.46727272727272723,
+      "n_samples": 10,
+      "mean_score": 0.42427272727272725,
+      "max_score": 0.46727272727272723
+    },
+    {
+      "iteration": 0,
+      "score": 0.43727272727272726,
+      "best_score": 0.46727272727272723,
+      "params": {
+        "property_value": 63.38961810501338,
+        "composition_x": 0.5357746840747585,
+        "temperature": 408.34772406529
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.46727272727272723,
+      "best_score": 0.46727272727272723,
+      "params": {
+        "property_value": 61.62342479541643,
+        "composition_x": 0.6350936508676438,
+        "temperature": 354.3648117264534
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.46727272727272723,
+      "best_score": 0.46727272727272723,
+      "params": {
+        "property_value": 50.63827902055816,
+        "composition_x": 0.6114542354346478,
+        "temperature": 321.73222058500863
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.43727272727272726,
+      "best_score": 0.46727272727272723,
+      "params": {
+        "property_value": 75.84802372283872,
+        "composition_x": 0.6960206180537922,
+        "temperature": 484.6750876078261
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.43727272727272726,
+      "best_score": 0.46727272727272723,
+      "params": {
+        "property_value": 32.71348469357479,
+        "composition_x": 0.5177116433847114,
+        "temperature": 405.4397989738
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.41727272727272724,
+      "best_score": 0.46727272727272723,
+      "params": {
+        "property_value": 66.1709240459344,
+        "composition_x": 0.18519556786746794,
+        "temperature": 508.9312024009012
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 2,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选composition_x远离目标NCM831205的高镍区(0.83)，且温度偏高，不符合近表面Li/H交换的水洗条件。建议明确参数物理意义，聚焦x≈0.8-0.85、温度300-330K的低温水洗区，并在该区系统制备质子梯度样品。"
+      },
+      {
+        "iteration": 0,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            0.5,
+            0.7
+          ],
+          [
+            350.0,
+            500.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            0.8,
+            0.85
+          ],
+          [
+            290.0,
+            330.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      }
+    ]
+  }
+}
