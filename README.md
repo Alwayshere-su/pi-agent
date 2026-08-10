@@ -122,9 +122,9 @@ Gap/假设中的 p# 引用  →  paper_summaries.md（标题/DOI）
     →  sciverse_skill_log.jsonl（API 调用 ID、时间戳、参数 SHA256 哈希）
 ```
 
-- **运行轨迹**：`workspace/logs/trajectory_survey.json` 逐条记录每轮思考/工具调用/预算消耗
+- **运行轨迹**：`workspace/logs/literature_survey/trajectory_survey.json` 逐条记录每轮思考/工具调用/预算消耗
 - **审计机制说明**：`workspace/outputs/literature_survey/audit_trail.md`
-- **API 审计**：`workspace/logs/sciverse_skill_log.jsonl` 截至 2026-08 共 **149 条**调用记录（持续累积，以日志实际行为准）
+- **API 审计**：`workspace/logs/literature_survey/sciverse_skill_log.jsonl` 截至 2026-08 共 **149 条**调用记录（持续累积，以日志实际行为准）
 - **零虚假引用**：所有引用经 Sciverse API 调用记录 + 论文 ID 双重验证；gap_report.md 中 49 处 p# 引用 46 处（94%）内联 DOI（经 Crossref/DataCite/doi.org 核验真实存在）
 
 ---
