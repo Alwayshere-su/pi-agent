@@ -56,13 +56,7 @@ workspace/outputs/smoke_fix/
 workspace/logs/smoke_fix/
 workspace/memory/smoke_fix/
 
-# 一次性核验底稿与中间实验产物（成果已固化进 gap_report.md / baseline_random.json，本地保留不入库）
-workspace/_pids_*.md
-workspace/_pid_verify_guide.md
-workspace/_pid_confirmed.txt
-workspace/_deep_verify_results.json
-workspace/_doi_verify_results.json
-workspace/_quarantine_log_mof_rerun.txt
+# 一次性核验底稿与中间实验产物（正式核查记录已迁移至 workspace/audit/，本地保留不入库）
 workspace/outputs/literature_survey/discovery/baseline_v2_*.json
 
 # 一次性内部工具脚本（本地保留不入库；正式工具 baseline_random_search / prepare_scibase / run_* 等不受影响）
@@ -79,17 +73,13 @@ scripts/_archive_pid_work/
 scripts/backfill_llm_guidance.py
 scripts/backfill_llm_guidance_README.md
 
-# 冒烟/旧版重跑主题产物（本地保留不入库；正式主题 cathode/perovskite/thermoelectric/validation/mof_e2e_v4 入库）
+# 冒烟/旧版重跑主题产物（本地保留不入库；正式主题 cathode/perovskite/thermoelectric/validation/mof_e2e_v4 入库；mof_rerun 作为复现性证据已放开入库）
 workspace/outputs/smoke_test/
 workspace/logs/smoke_test/
 workspace/memory/smoke_test/
 workspace/outputs/g3test/
 workspace/logs/g3test/
 workspace/memory/g3test/
-workspace/logs/mof_rerun/
-workspace/memory/mof_rerun/
-workspace/logs/mof_rerun_v2/
-workspace/memory/mof_rerun_v2/
 
 # docx 生成工具（docx 为本地提交物不入库，工具本地保留）
 scripts/build_prelim_proposal.py
