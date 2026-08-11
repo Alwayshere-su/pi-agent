@@ -29,13 +29,24 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       # ── 3. Install dependencies ──
-      # pytest 未锁定在 requirements.txt（它是运行时依赖而非项目依赖），
-      # 这里作为 CI 专用工具单独安装，保证 tests/ 与 scripts/ 的测试可运行。
+      # CI 优先使用 requirements-test.txt（精简版，仅含测试导入链实际需要的包）：
+      #   numpy + scipy + requests + markitdown + markdownify（< 50 MB）
+      # chromadb / sentence-transformers / FlagEmbedding（~3 GB）是拟实施阶段
+      # 的混合检索依赖，核心模块和测试完全不 import 它们。
+      # 若 requirements-test.txt 不存在则回退到完整 requirements.txt。
+      # pytest 作为 CI 专用工具单独安装，不写入依赖文件。
+      # --no-cache-dir 避免缓存占用 GitHub Actions 已受限的磁盘空间。
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install pytest
+          if [ -f requirements-test.txt ]; then
+            pip install --no-cache-dir -r requirements-test.txt
+            echo "✓ 已安装精简测试依赖（requirements-test.txt）"
+          else
+            pip install --no-cache-dir -r requirements.txt
+            echo "⚠ 回退: 使用完整 requirements.txt（含 ~3GB ML 模型依赖）"
+          fi
+          pip install --no-cache-dir pytest
 
       # ── 4. Import check ──
       - name: Verify core modules importable
@@ -45,16 +56,12 @@ jobs:
       # ── 5. Run tests（质量闸门）──
       # 设计意图：pytest 失败即 CI 失败（不设 continue-on-error），
       # 作为真正的质量闸门拦截回归。
-      # 覆盖范围：
-      #   - tests/：项目级 pytest 单元测试（utils.config、literature_agent
-      #     discovery/extractor/search，纯离线，115 项）；
-      #   - scripts/budget_resume_test/：预算恢复回归测试（pytest 风格）；
-      #   - scripts/test_core_functions/、scripts/cache_isolation_test/：
-      #     为 print+assert 风格（入口为 main()），pytest 收集 0 项，
-      #     保留在命令中以便未来迁移为 pytest 风格后自动纳入闸门。
+      # 所有测试已集中到 tests/（67ca04f reorganize repo structure），
+      # 共 125 项，覆盖 config、discovery、extractor、search、parser_engine、
+      # core functions、budget resume、search isolation。
       - name: Run tests
         run: |
-          python -m pytest tests/ scripts/test_core_functions/ scripts/cache_isolation_test/ scripts/budget_resume_test/ -v
+          python -m pytest tests/ -v
 
       # ── 6. Lint with ruff（软检查）──
       # 设计意图：lint 仅作风格提示（continue-on-error: true），不拦截提交；

@@ -1,0 +1,30 @@
+# ═══════════════════════════════════════════════════════════════
+# CI 测试专用依赖（精简版）
+# ═══════════════════════════════════════════════════════════════
+# 只包含 literature_agent + pi_agent + utils + tests/ 导入链
+# 实际需要的包，不含拟实施阶段的重量级 ML 模型依赖。
+#
+# 与 requirements.txt 的区别：
+#   - 移除 chromadb / sentence-transformers / FlagEmbedding（~3GB）
+#     测试代码和核心模块完全不 import 这些包
+#   - 移除 pdfplumber / pdfminer.six / mammoth / python-docx
+#     测试中 pdfplumber 使用 monkeypatch mock，MarkItDownParser 通过
+#     markitdown 解析 .md 文件即可覆盖
+#   - 移除 openai / python-docx / datasets / magika
+#     openai 仅在 pi_agent/llm.py 函数体内惰性导入，测试不触发 LLM 调用
+#   - 保留 markitdown（parser 测试需要 MarkItDownParser.parse() 真实
+#     解析 .md 文件以验证 parse_engine / full_text / materials_mentioned）
+#
+# 版本号与 requirements.txt 保持同步，确保 CI 环境与开发环境一致。
+# ═══════════════════════════════════════════════════════════════
+
+# ── 核心计算 ──
+numpy==1.26.4
+scipy==1.17.1
+
+# ── 文献搜索 HTTP ──
+requests==2.32.5
+
+# ── 文档解析（MarkItDownParser 测试）──
+markitdown==0.1.7
+markdownify==1.2.3
