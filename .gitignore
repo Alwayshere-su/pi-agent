@@ -18,6 +18,7 @@ workspace/logs/*.log
 
 # IDE / misc
 .claude/
+.workbuddy/
 .api_key
 *.bak
 *.bak-*
