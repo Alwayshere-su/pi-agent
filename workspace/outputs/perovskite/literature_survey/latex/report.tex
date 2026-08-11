@@ -1,0 +1,459 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% === 核心包 ===
+\usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+% longtable 用小号字，缓解 pandoc 表格列宽溢出
+\AtBeginEnvironment{longtable}{\small}
+% pandoc 输出的列表紧排命令（由 pandoc 生成但未定义）
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% 特殊 Unicode 符号映射（默认拉丁字体缺字）
+\usepackage{newunicodechar}
+\usepackage{amssymb}
+% 星号与运算符
+\newunicodechar{⭐}{\ensuremath{\bigstar}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+% 希腊字母（热电主题正文常用）
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+% 下标
+\newunicodechar{₀}{\textsubscript{0}}\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}\newunicodechar{₈}{\textsubscript{8}}
+\newunicodechar{₆}{\textsubscript{6}}\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{ₑ}{\textsubscript{e}}\newunicodechar{ₗ}{\textsubscript{l}}
+\newunicodechar{ₓ}{\textsubscript{x}}
+% 上标
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{₋}{\ensuremath{^{-}}}
+\newunicodechar{ᵧ}{\textsuperscript{$\gamma$}}
+% 带圈数字 ①–⑧
+\newunicodechar{①}{\textcircled{\raisebox{-0.5pt}{1}}}
+\newunicodechar{②}{\textcircled{\raisebox{-0.5pt}{2}}}
+\newunicodechar{③}{\textcircled{\raisebox{-0.5pt}{3}}}
+\newunicodechar{④}{\textcircled{\raisebox{-0.5pt}{4}}}
+\newunicodechar{⑤}{\textcircled{\raisebox{-0.5pt}{5}}}
+\newunicodechar{⑥}{\textcircled{\raisebox{-0.5pt}{6}}}
+\newunicodechar{⑦}{\textcircled{\raisebox{-0.5pt}{7}}}
+\newunicodechar{⑧}{\textcircled{\raisebox{-0.5pt}{8}}}
+% 罗马数字
+\newunicodechar{Ⅱ}{II}
+% 状态图标
+\newunicodechar{✅}{\checkmark}
+\newunicodechar{⏳}{[TBD]}
+\newunicodechar{⚠}{\textbf{/!\\}}
+\geometry{margin=2.5cm}
+\addbibresource{references.bib}
+
+% === 元数据 ===
+\title{ 文献调研报告：卤化物钙钛矿带隙与稳定性（halide perovskite band gap and stability） }
+\date{ 2026-08 }
+\author{Pi-Agent（自主文献调研 Agent）}
+
+\begin{document}
+\maketitle
+\sloppy  % 允许宽松换行，缓解长 URL/DOI 溢出
+
+\section{文献调研报告：卤化物钙钛矿带隙与稳定性（halide perovskite band gap and stability）}\label{ux6587ux732eux8c03ux7814ux62a5ux544aux5364ux5316ux7269ux9499ux949bux77ffux5e26ux9699ux4e0eux7a33ux5b9aux6027halide-perovskite-band-gap-and-stability}
+
+\begin{quote}
+生成日期：2026-08-02 ｜ 更新日期：2026-08-10（第二轮：71 篇论文，新增 37 篇） 覆盖范围：铅基/无铅钙钛矿、双钙钛矿、带隙计算方法、稳定性机制、组分工程、压力/界面调控、温度-带隙反常行为、ML/高通量预测
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. 执行摘要}\label{ux6267ux884cux6458ux8981}
+
+本调研围绕卤化物钙钛矿的两大核心性质------\textbf{带隙（band gap）}与\textbf{稳定性（stability）}展开，基于 71 篇论文（arXiv 预印本 + Semantic Scholar）。文献呈现三条主线：(1) 铅基钙钛矿（MAPbI3、FAPbI3、CsPbI3 系列）带隙优异（\textasciitilde1.5-1.6 eV）但稳定性不足、含 Pb 毒性；(2) 无铅双钙钛矿（Cs2AgBiBr6 为基准）稳定性好但带隙偏大且为间接带隙；(3) 计算与机器学习方法正加速带隙预测（\cite{p53} 的 495 化合物、\cite{p65} 的 1221 化合物数据集），但带隙与稳定性的\textbf{联合定量描述符}仍缺失。第二轮新增证据揭示：温度-带隙反常行为（dEg/dT\textgreater0，\cite{p36}/\cite{p38}/\cite{p39}/\cite{p49}）、电离能稳定性判据（\cite{p50}）、Cs1-xRbxPbI3 分解热力学（\cite{p57}）、ML 联合预测可行性（\cite{p60}）。
+
+\textbf{核心研究空白}：``带隙-稳定性 trade-off 缺乏定量框架''（Gap 1，置信度 0.85）与''温度-带隙反常标度缺失''（Gap 6，新识别，0.78）。
+
+\subsection{2. 文献综述}\label{ux6587ux732eux7efcux8ff0}
+
+\subsubsection{2.1 铅基卤化物钙钛矿：带隙与稳定性的矛盾}\label{ux94c5ux57faux5364ux5316ux7269ux9499ux949bux77ffux5e26ux9699ux4e0eux7a33ux5b9aux6027ux7684ux77dbux76fe}
+
+MAPbI3 等杂化铅卤钙钛矿具有理想带隙（\textasciitilde1.55 eV）、高吸收系数和高载流子迁移率，光伏效率超 25\%，但长期环境稳定性不足（湿/热/光降解）且 Pb²⁺ 水溶性毒性阻碍商业化（\cite{p8}, jacs.6b09645）。全无机 CsPb(I1-xBrx)3 固溶体化学稳定性增强，带隙随 Br 含量线性可调（\cite{p4}/\cite{p52}, PhysRevMaterials.4.045402）。混合阳离子 FAxMA1-xPbI3 存在温度诱导 gap bowing（\cite{p49}），Cs1-xRbxPbI3 在 Rb≈0.7 达到效率-稳定性最优、RbPbI3 立方相永不稳定（\cite{p57}）。
+
+\subsubsection{2.2 无铅双钙钛矿：稳定性与带隙的折中}\label{ux65e0ux94c5ux53ccux9499ux949bux77ffux7a33ux5b9aux6027ux4e0eux5e26ux9699ux7684ux6298ux4e2d}
+
+无铅双钙钛矿 A2BB'X6 是替代铅基的主线。基准材料 \textbf{Cs2AgBiBr6} 稳定性高、无毒，但带隙 1.72-1.98 eV 且为\textbf{间接带隙}（\cite{p14}, anie.202005568; \cite{p17}, er.8099）。关键调控手段： - \textbf{Ag-Bi 无序增强}：降带隙 \textasciitilde0.26 eV，达到 1.72 eV 最低记录（\cite{p14}） - \textbf{Pb²⁺ 微量掺杂}：间接→直接带隙转变（\cite{p11}, PhysRevMaterials.2.055401） - \textbf{压力调控}：Cs2AgBiBr6 在 2.3 GPa 立方→四方相变，带隙红移→蓝移（\cite{p15}, c9nr07030c） - \textbf{厚度调控}：2D 化降带隙、提升光催化性能（\cite{p16}, d0cp03919e） - \textbf{新体系}：Cs2InAgCl6 理论预测直接带隙（\cite{p1}, 1611.05426v2）；AgInI4 直接带隙 1.72 eV 且稳定（\cite{p70}）；Cs2Au2X6 可见带隙低激子结合能（\cite{p67}）；Cs2CuBiCl6（\cite{p62}）；K2SnGeX6 带隙 0.64-2.44 eV 卤素可调（\cite{p66}）
+
+\subsubsection{2.3 带隙计算方法学}\label{ux5e26ux9699ux8ba1ux7b97ux65b9ux6cd5ux5b66}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{DFT-1/2 方法}：以 DFT 成本达到 GW 精度（\cite{p2}, s41598-017-14435-4）
+\item
+  \textbf{VCA 虚拟晶体近似}：CH3NH3Pb(I1-xBrx)3 带隙-组成遵守 Vegard 律二次拟合（\cite{p13}, PhysRevB.94.125139）
+\item
+  \textbf{HSE 混合泛函}：exact-exchange 线性增长方案精确预测 CsPb(I1-xBrx)3（\cite{p4}/\cite{p52}）
+\item
+  \textbf{有限温度带隙方案}：范围分离杂化 + SOC + 零点振动 special displacement 法，MAE 0.17 eV vs 实验（\cite{p46}）
+\end{itemize}
+
+\subsubsection{2.4 温度-带隙反常行为（第二轮新增主线）}\label{ux6e29ux5ea6-ux5e26ux9699ux53cdux5e38ux884cux4e3aux7b2cux4e8cux8f6eux65b0ux589eux4e3bux7ebf}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{CsSnI3}：振动重正化\textbf{打开}带隙 0.11 eV@300K / 0.24 eV@500K（反常 dEg/dT\textgreater0，\cite{p36}, PhysRevB.92.201205）
+\item
+  \textbf{CsPbBr3}：非谐振动贡献达 450 meV@425K，带隙随温度''温和变化''（\cite{p38}）；overdamped 声子机制（\cite{p37}）
+\item
+  \textbf{铅卤化物普遍反常}：带隙随温度降低而降低（\cite{p39}, jpclett.9b00876）；高压实验分离热膨胀与电声耦合
+\item
+  \textbf{FA-MA gap bowing}：电子-声子耦合主导，FA rattler 模式耦合八面体倾斜（\cite{p49}）
+\end{itemize}
+
+\subsubsection{2.5 稳定性机制}\label{ux7a33ux5b9aux6027ux673aux5236}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{内禀局域畸变}（polymorphous networks）：不随时间平均为零，决定带隙与稳定性（\cite{p3}, mattod.2021.05.021; \cite{p10}, PhysRevB.101.155137; \cite{p56}）
+\item
+  \textbf{离子迁移}：决定长期稳定性（\cite{p12}, D0TA03200J）
+\item
+  \textbf{锡基氧化}：FASnI3 中 Sn²⁺→Sn⁴⁺ 氧化是主要降解路径，Lewis 碱表面钝化（分子硬度主导）（\cite{p34}, mtener.2022.101038）
+\item
+  \textbf{电离能稳定性判据}：分解反应焓与电离能关联，容差/八面体因子不足以预测（\cite{p50}, jpcc.7b00333）
+\item
+  \textbf{ML+DFT 分解能}：稳定性工程（\cite{p51}）；AVA2FAPb2I7 准 2D 添加剂稳定晶界（\cite{p55}）
+\item
+  \textbf{2D/3D 异质界面}：界面电荷转移增强抗降解性且不损效率（\cite{p33}, acsami.5c00201）；MAPbI3/BN 室温稳定（-25 meV@300K）（\cite{p5}）
+\end{itemize}
+
+\subsubsection{2.6 ML 与高通量预测（第二轮新增）}\label{ml-ux4e0eux9ad8ux901aux91cfux9884ux6d4bux7b2cux4e8cux8f6eux65b0ux589e}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\cite{p53}}：495 个 ABX3 卤化物钙钛矿高通量 DFT 数据集
+\item
+  \textbf{\cite{p65}}：1221 个 A2BB'X6 双钙钛矿，4 类物理描述符（packing/bonding/polarization/electronic identity），凸包 E\_hull≤0 筛选
+\item
+  \textbf{\cite{p60}}：ML 联合预测带隙 RMSE 21 meV + 形成能 39 meV/atom
+\item
+  \textbf{\cite{p64}}：ML 筛选无铅双钙钛矿光伏；\textbf{\cite{p19}}：联合预测稳定性和带隙（摘要缺失细节）；\textbf{\cite{p41}}：ML 双钙钛矿带隙
+\end{itemize}
+
+\subsection{3. 关键材料与性质对比}\label{ux5173ux952eux6750ux6599ux4e0eux6027ux8d28ux5bf9ux6bd4}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+材料 & 带隙 (eV) & 带隙类型 & 稳定性 & 备注 & 来源 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+MAPbI3 & \textasciitilde1.55 & 直接 & 差（湿/热） & 铅基基准 & \cite{p2} \\
+CH3NH3Pb(I1-xBrx)3 & 1.55→2.3 & 直接 & 中 & Vegard 律二次拟合 & \cite{p13} \\
+CsPb(I1-xBrx)3 & 1.7→2.4 & 直接 & 较好 & 全无机 HSE & \cite{p4}/\cite{p52} \\
+Cs2AgBiBr6 & 1.72-1.98 & 间接 & 高 & 无铅基准 & \cite{p14}/\cite{p17} \\
+CsSnI3 & \textasciitilde1.3 & 直接 & 中（非谐稳定） & dEg/dT\textgreater0 反常 & \cite{p36} \\
+CsPbBr3 & \textasciitilde2.3 & 直接 & 较好 & 非谐贡献 450 meV@425K & \cite{p38} \\
+FASnI3 & \textasciitilde1.4 & 直接 & 差（氧化） & 锡基 & \cite{p34} \\
+CH3NH3BaI3 & 3.87 & 直接 & 高 & 宽带隙 & \cite{p7} \\
+MA2PtI6 & \textasciitilde2.0 & --- & 中 & dEg/dP=0.063-0.079 eV/GPa & \cite{p20} \\
+AgInI4 & 1.72 & 直接 & 高 & In 替代 Bi 稳定 & \cite{p70} \\
+K2SnGeI6 & 0.64 & {[}待验证{]} & 高 & 卤素替换至 I & \cite{p66} \\
+Cs2Au2I6 & 可见区 & 直接 & 较好 & 低激子结合能 & \cite{p67} \\
+\end{longtable}
+}
+
+\subsection{4. 研究空白与未来方向}\label{ux7814ux7a76ux7a7aux767dux4e0eux672aux6765ux65b9ux5411}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Gap 1（高，0.85）}：带隙-稳定性 trade-off 无定量联合描述符 → 构建联合数据集检验 Pareto 前沿（新增 \cite{p50}/\cite{p57}/\cite{p65} 证据）
+\item
+  \textbf{Gap 6（高，0.78，新增）}：温度-带隙反常行为（dEg/dT\textgreater0）缺乏统一标度 → 计算 dEg/dT 与电声耦合/rattler 频率关联
+\item
+  \textbf{Gap 2（高，0.80）}：间接→直接带隙调控手段缺乏系统性比较 → 同一母体上对比无序/掺杂/压力/厚度
+\item
+  \textbf{Gap 3（中，0.80）}：ML 带隙预测与稳定性预测脱节 → 多任务学习联合预测（\cite{p60} 证明技术上可行）
+\item
+  \textbf{Gap 4（中，0.75）}：压力-带隙响应体系间标度缺失 → 计算 dEg/dP 与描述符关联
+\item
+  \textbf{Gap 5（中，0.70）}：2D/3D 界面电荷转移-带隙-稳定性耦合定量缺失 → 系统扫描界面参数
+\end{enumerate}
+
+\subsection{5. 阶段二发现摘要（路线 A）}\label{ux9636ux6bb5ux4e8cux53d1ux73b0ux6458ux8981ux8defux7ebf-a}
+
+基于 5 条假设（覆盖 Gap 1/2/3/4/6）完成贝叶斯搜索（每条 10 轮、21 候选），2 条假设通过外部数据库验证：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{✅ 带隙-稳定性 trade-off（hypo\_0）}：搜索 best 0.964；OQMD 验证 I 0.716 eV / Br 1.349 eV；文献数值 15 个；置信度 0.96 → 窄带隙体系（Sn²⁺/低价态）系统性不稳定，存在 Pareto 型边界
+\item
+  \textbf{✅ 双钙钛矿间接→直接调控（hypo\_2）}：搜索 best 0.966；OQMD 验证 Cl 2.661→Br 1.349→I 0.716 eV（卤素替换降带隙趋势，与 \cite{p66} 一致）；置信度 0.97
+\item
+  \textbf{⏳ 温度-带隙反常标度（hypo\_1）}：best 0.964；Slack 经典模型在卤化物钙钛矿上失效（R²≈0），LLM 归因于非谐声子/电声耦合主导------需更多温度数据点
+\item
+  \textbf{⏳ ML 联合预测（hypo\_4）}：best 0.882；技术可行（\cite{p60}），带隙-稳定性可分离性待验证
+\item
+  \textbf{⏳ 压力-带隙分段标度（hypo\_3）}：best 0.960；MA2PtI6 1.2 GPa 分段闭合规律待外部数据补全
+\end{enumerate}
+
+\subsection{6. 参考文献（关键可追溯）}\label{ux53c2ux8003ux6587ux732eux5173ux952eux53efux8ffdux6eaf}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.1765}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3529}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4706}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\#
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+论文
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+DOI/ID
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Accurate and efficient band gap predictions of metal halide perovskites using the DFT-1/2 method & 10.1038/s41598-017-14435-4 \\
+2 & Anharmonic stabilization and band gap renormalization in the perovskite CsSnI3 & 10.1103/PhysRevB.92.201205 \\
+3 & Anharmonic Fluctuations Govern the Band Gap of Halide Perovskites & arXiv 2023 \\
+4 & On the role of the electron-phonon interaction in the temperature dependence of the gap & 10.1021/acs.jpclett.9b00876 \\
+5 & Ionization energy as a stability criterion for halide perovskites & 10.1021/acs.jpcc.7b00333 \\
+6 & A High-Throughput Computational Dataset of Halide Perovskite Alloys & arXiv 2023 \\
+7 & First-principles study on the chemical decomposition of CsPbI3 and RbPbI3 & arXiv 2018 \\
+8 & Machine-learning Based Screening of Lead-free Halide Double Perovskites & arXiv 2022 \\
+9 & Genome-Guided Interpretable Screening of Phase-Stable Lead-Free Double Perovskites & arXiv 2026 \\
+10 & Origin of the Temperature-Induced Gap Bowing of Formamidinium-Methylammonium Lead Iodide & arXiv \\
+11 & Lead-Free Halide Double Perovskite Cs2AgBiBr6 with Decreased Band Gap & 10.1002/anie.202005568 \\
+12 & Pressure-induced band gap closing of (CH3NH3)2PtI6 & 10.1088/1674-1056/adce9e \\
+13 & Design of Lead-Free Inorganic Halide Perovskites for Solar Cells via Cation-Transmutation & 10.1021/jacs.6b09645 \\
+14 & Cu-In Halide Perovskite solar absorbers & 10.1021/jacs.7b02120 \\
+15 & Computational Screening and Discovery of Silver-Indium Halide Double Salts & arXiv 2025 \\
+16 & Efficiently charting the space of mixed vacancy-ordered perovskites by ML & arXiv 2025 \\
+17 & Machine learning stability and band gap of lead-free halide double perovskite materials & 10.1016/j.solener.2021.09.030 \\
+18 & Influence of halide composition on mixed CH3NH3Pb(I1-xBrx)3 perovskites & 10.1103/PhysRevB.94.125139 \\
+19 & Optoelectronic Properties and Defect Physics of Cs2Au2X6 & 10.1103/PhysRevApplied.13.014005 \\
+20 & First-Principles Study of Novel Lead-Free Double Perovskite beta2SnGeX6 & arXiv 2026 \\
+\end{longtable}
+}
+
+\begin{quote}
+完整 71 篇论文摘要见 paper\_summaries.md；Gap 定义见 gap\_report.md；知识图谱（含量化建模数值表）见 knowledge\_graph.md；发现报告见 discovery/discovery\_report.md。
+\end{quote}
+
+\section{研究空白（Gap）分析报告 --- 卤化物钙钛矿带隙与稳定性}\label{gap:ux7814ux7a76ux7a7aux767dgapux5206ux6790ux62a5ux544a-ux5364ux5316ux7269ux9499ux949bux77ffux5e26ux9699ux4e0eux7a33ux5b9aux6027}
+
+\begin{quote}
+生成日期：2026-08-02 ｜ 更新日期：2026-08-10（新增 37 篇论文后修订） 基础：71 篇钙钛矿论文（arXiv + Semantic Scholar） 每条 Gap 标注：类型 / 严重程度 / 置信度 / 证据 / 验证方案
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Gap 1：带隙-稳定性 trade-off 缺乏定量联合描述符}\label{gap:gap-1ux5e26ux9699-ux7a33ux5b9aux6027-trade-off-ux7f3aux4e4fux5b9aux91cfux8054ux5408ux63cfux8ff0ux7b26}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接（定量关系）｜\textbf{严重程度}：高｜\textbf{置信度}：0.85（↑ 新增 \cite{p50}/\cite{p57}/\cite{p65} 证据）
+\item
+  \textbf{证据}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \cite{p6} (jacs.7b02120)：Sn²⁺ 替代 Pb²⁺ 得窄带隙但稳定性差；Bi³⁺ 替代稳定但带隙大/间接 → ``稳定性与光电性能可能互相矛盾''
+  \item
+    \cite{p8} (jacs.6b09645)：阳离子变换设计稳定无铅钙钛矿，但带隙/稳定性未联合量化
+  \item
+    \cite{p34} (mtener.2022.101038)：FASnI3 窄带隙但 Sn²⁺→Sn⁴⁺ 氧化降解严重
+  \item
+    \cite{p14} (anie.202005568)：Cs2AgBiBr6 稳定但带隙 1.72 eV 仍偏大
+  \item
+    \cite{p50} (jpcc.7b00333)：电离能可作为稳定性判据------提供了连续稳定性描述符的可能
+  \item
+    \cite{p65}：1221 个双钙钛矿的 E\_hull（稳定性）与光学性质并行计算，但未给出联合 trade-off 定律
+  \end{itemize}
+\item
+  \textbf{矛盾点}：无任何论文给出''带隙×稳定性''的联合定量框架（如 Pareto 前沿）
+\item
+  \textbf{验证方案}：构建带隙（实验/DFT）与稳定性（分解能/电离能/湿稳定性）联合数据集，检验是否存在普适 trade-off 标度律（可先用表 D 的 8 材料排序做初步回归）
+\end{itemize}
+
+\subsection{Gap 2：双钙钛矿间接→直接带隙转变的调控手段缺乏系统性比较}\label{gap:gap-2ux53ccux9499ux949bux77ffux95f4ux63a5ux76f4ux63a5ux5e26ux9699ux8f6cux53d8ux7684ux8c03ux63a7ux624bux6bb5ux7f3aux4e4fux7cfbux7edfux6027ux6bd4ux8f83}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接｜\textbf{严重程度}：高｜\textbf{置信度}：0.80（不变）
+\item
+  \textbf{证据}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \cite{p8} (jacs.6b09645) / \cite{p11} (PhysRevMaterials.2.055401)：间接带隙是双钙钛矿通病，Pb²⁺ 掺杂可致间接→直接转变
+  \item
+    \cite{p1} (1611.05426v2)：Cs2InAgCl6 理论预测直接带隙，但 {[}待验证{]}
+  \item
+    \cite{p14} (anie.202005568)：Ag-Bi 无序降带隙 0.26 eV 但未改变带隙类型
+  \item
+    \cite{p70}：AgInI4 直接带隙 1.72 eV------In 替代 Bi 或为新的间接→直接路径
+  \end{itemize}
+\item
+  \textbf{验证方案}：对同一母体（如 Cs2AgBiBr6）系统比较无序、掺杂、压力、厚度四种手段对''带隙类型+大小''的联合效果
+\end{itemize}
+
+\subsection{Gap 3：ML 带隙预测与稳定性预测严重脱节}\label{gap:gap-3ml-ux5e26ux9699ux9884ux6d4bux4e0eux7a33ux5b9aux6027ux9884ux6d4bux4e25ux91cdux8131ux8282}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接｜\textbf{严重程度}：中｜\textbf{置信度}：0.80（↑ 新增 \cite{p60}/\cite{p64}/\cite{p65} 证据）
+\item
+  \textbf{证据}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \cite{p19} (solener.2021.09.030)：ML 同时预测稳定性和带隙（唯一联合），但论文摘要缺失细节
+  \item
+    \cite{p60}：ML 预测带隙 RMSE 21 meV、形成能 RMSE 39 meV/atom------联合预测技术上可行
+  \item
+    \cite{p65}：1221 化合物基因组筛选，物理描述符（packing/bonding/polarization/electronic identity）
+  \item
+    \cite{p64}：ML 筛选无铅双钙钛矿光伏
+  \item
+    \cite{p2}：DFT-1/2 高效带隙预测但未涉及稳定性
+  \end{itemize}
+\item
+  \textbf{验证方案}：构建卤化物钙钛矿带隙+分解能联合数据集，训练多任务模型，检验带隙-稳定性的可分离性
+\end{itemize}
+
+\subsection{Gap 4：压力/应变-带隙响应的体系间标度关系缺失}\label{gap:gap-4ux538bux529bux5e94ux53d8-ux5e26ux9699ux54cdux5e94ux7684ux4f53ux7cfbux95f4ux6807ux5ea6ux5173ux7cfbux7f3aux5931}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索空间｜\textbf{严重程度}：中｜\textbf{置信度}：0.75（不变）
+\item
+  \textbf{证据}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \cite{p15} (c9nr07030c)：Cs2AgBiBr6 带隙红移→蓝移（2.3 GPa 相变）
+  \item
+    \cite{p20} (1674-1056/adce9e)：MA2PtI6 带隙单调闭合（0.063/0.079 eV/GPa）
+  \item
+    两个体系行为相反，无统一框架解释
+  \end{itemize}
+\item
+  \textbf{验证方案}：对系列 ABX3/A2BB'X6 计算压力带隙系数（dEg/dP），检验是否与离子半径/电负性描述符相关
+\end{itemize}
+
+\subsection{Gap 5：2D/3D 界面电荷转移对带隙-稳定性的耦合定量缺失}\label{gap:gap-52d3d-ux754cux9762ux7535ux8377ux8f6cux79fbux5bf9ux5e26ux9699-ux7a33ux5b9aux6027ux7684ux8026ux5408ux5b9aux91cfux7f3aux5931}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接｜\textbf{严重程度}：中｜\textbf{置信度}：0.70（不变）
+\item
+  \textbf{证据}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \cite{p33} (acsami.5c00201)：2D/3D 界面电荷转移调带隙+增强稳定性（定性）
+  \item
+    \cite{p5} (commatsci.2022.111649)：MAPbI3/BN 室温稳定（-25 meV@300K），单点证据
+  \item
+    \cite{p55}：AVA2FAPb2I7 准 2D 添加剂稳定 CsFAPbI3 晶界（新证据）
+  \end{itemize}
+\item
+  \textbf{验证方案}：系统扫描 2D 钙钛矿厚度/有机阳离子链长 × 3D 组分，定量界面电荷转移量与带隙/稳定性的关联
+\end{itemize}
+
+\subsection{Gap 6：温度-带隙反常行为（dEg/dT\textgreater0）缺乏统一标度与机制归因}\label{gap:gap-6ux6e29ux5ea6-ux5e26ux9699ux53cdux5e38ux884cux4e3adegdt0ux7f3aux4e4fux7edfux4e00ux6807ux5ea6ux4e0eux673aux5236ux5f52ux56e0}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：矛盾结论（新，2026-08-10 新增）｜\textbf{严重程度}：高｜\textbf{置信度}：0.78
+\item
+  \textbf{证据}：
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \cite{p36} (PhysRevB.92.201205)：CsSnI3 振动重正化\textbf{打开}带隙 0.11 eV@300K / 0.24 eV@500K（dEg/dT\textgreater0 反常）
+  \item
+    \cite{p39} (jpclett.9b00876)：铅卤化物带隙随温度\textbf{降低}而\textbf{降低}（反常），电声耦合主导、热膨胀次之
+  \item
+    \cite{p38}/\cite{p37}：CsPbBr3 非谐振动贡献 450 meV@425K，overdamped 声子机制
+  \item
+    \cite{p49}：FAxMA1-xPbI3 温度诱导 gap bowing，FA rattler 模式耦合八面体倾斜
+  \end{itemize}
+\item
+  \textbf{矛盾点}：同为卤化物钙钛矿，CsSnI3（打开）、铅卤化物（反常降低）、FA-MA（bowing）的温度响应符号/幅度不同，无统一描述符（如电声耦合常数、rattler 频率）解释
+\item
+  \textbf{验证方案}：系统计算/汇总系列 ABX3 的 dEg/dT 与电声耦合常数（Fröhlich/Allen-Heine 型）、声子频率，检验 dEg/dT 与 rattler/倾斜模式的标度关系
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{优先级排序}\label{gap:ux4f18ux5148ux7ea7ux6392ux5e8f}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1622}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1351}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2432}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2162}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2432}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+排名
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Gap
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+严重程度
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+置信度
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+发现潜力
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Gap 1 带隙-稳定性 trade-off & 高 & 0.85 & 高（表 D 可直接回归） \\
+2 & Gap 6 温度-带隙反常标度 & 高 & 0.78 & 高（表 A 有 CsSnI3/CsPbBr3 数据） \\
+3 & Gap 2 间接→直接带隙调控 & 高 & 0.80 & 高（掺杂/无序可计算验证） \\
+4 & Gap 3 ML 联合预测 & 中 & 0.80 & 中 \\
+5 & Gap 4 压力-带隙标度 & 中 & 0.75 & 中（表 C 可回归） \\
+6 & Gap 5 2D/3D 界面耦合 & 中 & 0.70 & 中 \\
+\end{longtable}
+}
+
+\printbibliography[title=参考文献]
+\end{document}

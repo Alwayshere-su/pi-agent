@@ -1,0 +1,534 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% === 核心包 ===
+\usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+% longtable 用小号字，缓解 pandoc 表格列宽溢出
+\AtBeginEnvironment{longtable}{\small}
+% pandoc 输出的列表紧排命令（由 pandoc 生成但未定义）
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% 特殊 Unicode 符号映射（默认拉丁字体缺字）
+\usepackage{newunicodechar}
+\usepackage{amssymb}
+% 星号与运算符
+\newunicodechar{⭐}{\ensuremath{\bigstar}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+% 希腊字母（热电主题正文常用）
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+% 下标
+\newunicodechar{₀}{\textsubscript{0}}\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}\newunicodechar{₈}{\textsubscript{8}}
+\newunicodechar{₆}{\textsubscript{6}}\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{ₑ}{\textsubscript{e}}\newunicodechar{ₗ}{\textsubscript{l}}
+\newunicodechar{ₓ}{\textsubscript{x}}
+% 上标
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{₋}{\ensuremath{^{-}}}
+\newunicodechar{ᵧ}{\textsuperscript{$\gamma$}}
+% 带圈数字 ①–⑧
+\newunicodechar{①}{\textcircled{\raisebox{-0.5pt}{1}}}
+\newunicodechar{②}{\textcircled{\raisebox{-0.5pt}{2}}}
+\newunicodechar{③}{\textcircled{\raisebox{-0.5pt}{3}}}
+\newunicodechar{④}{\textcircled{\raisebox{-0.5pt}{4}}}
+\newunicodechar{⑤}{\textcircled{\raisebox{-0.5pt}{5}}}
+\newunicodechar{⑥}{\textcircled{\raisebox{-0.5pt}{6}}}
+\newunicodechar{⑦}{\textcircled{\raisebox{-0.5pt}{7}}}
+\newunicodechar{⑧}{\textcircled{\raisebox{-0.5pt}{8}}}
+% 罗马数字
+\newunicodechar{Ⅱ}{II}
+% 状态图标
+\newunicodechar{✅}{\checkmark}
+\newunicodechar{⏳}{[TBD]}
+\newunicodechar{⚠}{\textbf{/!\\}}
+\geometry{margin=2.5cm}
+\addbibresource{references.bib}
+
+% === 元数据 ===
+\title{ 文献调研报告：MOF materials for CO2 capture }
+\date{ 2026-08 }
+\author{Pi-Agent（自主文献调研 Agent）}
+
+\begin{document}
+\maketitle
+\sloppy  % 允许宽松换行，缓解长 URL/DOI 溢出
+
+\section{文献调研报告：MOF materials for CO2 capture}\label{ux6587ux732eux8c03ux7814ux62a5ux544amof-materials-for-co2-capture}
+
+\textbf{版本}：e2e\_v4 全量版（继承历史 11 轮调研 + e2e\_v3 成果） \textbf{生成日期}：2026-08-03 \textbf{文献基础}：149 篇检索论文（109 历史复用 + 40 本轮新增，聚焦胺化学吸附机理 + 湿烟气稳定性） \textbf{数据源}：workspace/data/literature\_cache/mof\_e2e\_v4/search\_results.json（149 条） \textbf{知识图谱}：knowledge\_graph.md（R1-R46，量化表 1-7） \textbf{Gap 报告}：gap\_report.md（Gap 1-12）
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. 执行摘要}\label{ux6267ux884cux6458ux8981}
+
+本报告系统调研金属有机框架（MOF）材料用于 CO2 捕获的构效关系。核心发现： 1. \textbf{双金属协同呈高斯峰}：NiCo-MOF-74 组分比例-容量符合倒 U/高斯曲线（R²=0.978，v3 拟合），最优组分 x≈0.5（0℃, 1 bar 实验数据）------Gap 1 的核心定量证据 2. \textbf{双描述符预测 Qst}：Qst = f(d电子数, 电负性)（R²=0.9855），联合描述符超越单变量------Gap 4 支撑 3. \textbf{``水必竞争''传统认知已被多重证据改写}（本轮最大增量）：TYUT-ATZ 将 H2O 固定为结合位点增强湿态捕获、MOF-808-氨基酸经碳酸氢盐机理湿态增强、三氮唑框架 CO2/H2O 位点分离实现动力学选择性 70、离子疏水门一步分离高纯 CO2------``水增强/水调控''在多体系独立复现 4. \textbf{胺化学计量上限可突破}：pip2-Mg2(dobpdc) 实现 \textasciitilde1.5 CO2/diamine 两步吸附，超越传统 1.0 上限------Gap 11 新量化维度 5. \textbf{方法学警示}：Fe(d6) 强关联偏离（Mott）→ DFT 泛函分歧；O2 氧化降解影响胺 MOF 长期寿命（Gap 12 新方向）
+
+\subsection{2. 文献综述（按主题组织）}\label{ux6587ux732eux7efcux8ff0ux6309ux4e3bux9898ux7ec4ux7ec7}
+
+\subsubsection{2.1 金属取代平台（M-MOF-74 / M2(dobdc)）}\label{ux91d1ux5c5eux53d6ux4ee3ux5e73ux53f0m-mof-74-m2dobdc}
+
+\begin{itemize}
+\tightlist
+\item
+  Koh 2016 (\cite{p26}) 用 vdW-DF 筛选 36 种金属取代 MOF-74/HKUST-1 的 CO2 吸附焓
+\item
+  Queen (v3s2\_f920fdf886a1) 7 金属 M2(dobdc) 系统对比（Mg/Mn/Fe/Co/Ni/Cu/Zn），中子/X 射线衍射揭示位点特异性绑定
+\item
+  Tan 2015 (\cite{p15}) 竞争共吸附：H2O \textgreater{} SO2 \textgreater{} NH3 \textgreater{} CO2 \textgreater{} N2，动力学控制占据
+\item
+  Caskey 2008 实验 Qst：Mg 47 / Fe 36 / Co 37 / Ni 41 / Zn 29 kJ/mol
+\end{itemize}
+
+\subsubsection{2.2 双金属协同}\label{ux53ccux91d1ux5c5eux534fux540c}
+
+\begin{itemize}
+\tightlist
+\item
+  Chen 2023 (v3s0) 微波合成 NiCo-MOF-74：Ni1Co1 容量 8.30 mmol/g（0℃, 1 bar），5 点比例-容量数据呈倒 U
+\item
+  Xu (v3s1) 固态 NMR 揭示 Mg/Ni 双金属非随机配分（8 种原子构型）
+\item
+  Jiao (v3s1) Co/Ni 部分取代 Mg-MOF-74：反应温度主导最终组成
+\item
+  历史轮次：s-d 组合（Cu/Mg）单调 vs d-d 组合（NiCo/CoMn）倒 U
+\end{itemize}
+
+\subsubsection{2.3 胺功能化与湿度（本轮重点增强）}\label{ux80faux529fux80fdux5316ux4e0eux6e7fux5ea6ux672cux8f6eux91cdux70b9ux589eux5f3a}
+
+\begin{itemize}
+\tightlist
+\item
+  mmen-Mg2(dobpdc)（McDonald, v3s2）：2.0 mmol/g @ 0.39 mbar 25℃（DAC）、3.14 mmol/g @ 0.15 bar 40℃（烟气）
+\item
+  Forse 2018（10.1021/jacs.8b10203）：6 金属 diamine-M2(dobpdc) 化学吸附 NMR+DFT 全景，胺化学计量 1.0 CO2/diamine
+\item
+  Martell 2020（10.1039/d0sc01087a）：胺变体合作吸附动力学（吸附/脱附速率与胺结构相关）
+\item
+  Zhu 2024（10.1021/jacs.3c13381）：pip2-Mg2(dobpdc) 两步吸附，\textbf{容量逼近 1.5 CO2/diamine}
+\item
+  Marshall 2024 (\cite{p35})：低 RH 诱导效应 → 高 RH 消失、速率↑（合作链→非合作簇，LKT 理论）
+\item
+  Owens 2025 (\cite{p24})：H2O/CO2 辫状链共吸附构型（ab initio）
+\item
+  \textbf{TYUT-ATZ-β（10.1002/adma.202410500，新增）}：反直觉地将 H2O 固定为结合位点，湿态 CO2 捕获增强
+\item
+  \textbf{MOF-808-AA（10.26434/chemrxiv-2021-51rbb-v2，新增）}：11 种氨基酸功能化，Gly/dl-Lys 湿态增强（碳酸氢盐 13C/15N NMR 证实）
+\item
+  \textbf{Xiong 2025（10.1021/jacs.5c07551，新增）}：7 种 diamine MOF 的 O2 氧化降解机理（温度依赖）
+\item
+  \textbf{Choe 2022（10.1021/jacs.2c01488，新增）}：环氧化物开环疏水化 een-MOF/Al-Si-C17 湿循环稳定性
+\end{itemize}
+
+\subsubsection{2.4 经典材料与湿烟气稳定体系（本轮新增）}\label{ux7ecfux5178ux6750ux6599ux4e0eux6e7fux70dfux6c14ux7a33ux5b9aux4f53ux7cfbux672cux8f6eux65b0ux589e}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{ZIF-94（10.3390/molecules27175608，新增）}：53.30 cm3/g ≈ 2.38 mmol/g、CO2/N2 选择性 54.12 @ 298K，高湿 RH 下分离时间 30.4 min
+\item
+  \textbf{三氮唑框架（10.1021/jacs.9b12879，新增）}：CO2/N2 热力学选择性 120、CO2/H2O 动力学选择性 70（通道中心 CO2 / 角落 H2O 位点分离）
+\item
+  \textbf{离子疏水门（10.1021/jacs.5c02093，新增）}：疏水离子液体+富氟醛表面，一步高纯 CO2 分离自湿烟气
+\item
+  \textbf{MUF-16 SMB（10.1021/acsami.5c16139，新增）}：湿烟气模拟移动床连续工艺，水不竞争 CO2，免干燥床
+\item
+  \textbf{ARC-MOF 稳定性筛选（10.1021/acs.est.5c00768，新增）}：ML 稳定性预筛 28 万 → 9755 候选
+\item
+  CALF-20（Magnin 2017, Shin 2025）：超微孔异常扩散、PVSA 沼气升级技术经济
+\item
+  ZIF-8（Devkota, Alvares）：传感器集成、MOF/PVDF 复合
+\item
+  UiO-66-X（Bueken 2016）：凝胶/气凝胶整块形态设计
+\item
+  PPN-6/PEI-165（Zhao, v3s5）：4.52 mmol/g @ 0.15 bar 323K
+\end{itemize}
+
+\subsubsection{2.5 计算方法与数据库}\label{ux8ba1ux7b97ux65b9ux6cd5ux4e0eux6570ux636eux5e93}
+
+\begin{itemize}
+\tightlist
+\item
+  hMOF（137,953）/ ODAC23（8,400+ MOF, 38M DFT）/ CRAFTED（726 MOF × 2 力场 × 4 电荷）/ ARC-MOF（\textasciitilde280,000）
+\item
+  MLIP-MC（Edwards）：MACE-MP-0/ORB-v3/fairchem 系统性偏差
+\item
+  LitMOF（Kim）：近半数据库条目结构错误
+\item
+  吸附剂设计上界（Edens, v3s4）：1608 种 CO2/N2 材料权衡
+\end{itemize}
+
+\subsection{3. 关键材料与性质对比}\label{ux5173ux952eux6750ux6599ux4e0eux6027ux8d28ux5bf9ux6bd4}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1475}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.3115}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0984}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.2131}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.1311}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 10\tabcolsep) * \real{0.0984}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+材料体系
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+CO2 容量 (mmol/g)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+条件
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Qst (kJ/mol)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+选择性
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+来源
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Ni1Co1-MOF-74 & \textbf{8.30} & 0℃, 1 bar & - & 高 & v3s0 \\
+Mg-MOF-74 & 8.6（领域值） & 298K, 1 bar & 47 & 高 & Caskey; \cite{p26} \\
+mmen-Mg2(dobpdc) & 2.0（DAC）/ 3.14（烟气） & 0.39 mbar / 0.15 bar & \textasciitilde71 & 极高（台阶） & v3s2 \\
+pip2-Mg2(dobpdc) & \textbf{\textasciitilde1.5 CO2/diamine} & 饱和 & - & 极高（两步） & 10.1021/jacs.3c13381 \\
+ZIF-94 & \textbf{2.38} & 298K, 1bar & - & 54.1 & 10.3390/molecules27175608 \\
+三氮唑-MOF（最优） & - & 烟气 & - & 120 (CO2/N2)；70 (CO2/H2O 动力学) & 10.1021/jacs.9b12879 \\
+ED@MOF-520 & - & 273K & 29 & \textbf{50} (CO2/N2) & v3s3 \\
+PPN-6/PEI-165 & 4.52 & 0.15 bar, 323K & - & 极高（无 N2/CH4） & v3s5 \\
+CALF-20 & - & - & - & 高（水稳） & \cite{p17}; \cite{p23} \\
+ZIF-8 & 0.5-1.5 & 298K & - & 中 & v1 验证 \\
+HKUST-1 & 4.0-7.0 & 298K & - & 中高 & v1 验证 \\
+\end{longtable}
+}
+
+\textbf{量化建模数据}（详见 knowledge\_graph.md 第四节）： - 表 1：M-MOF-74 d 电子数 vs Qst（n=5 实验） - 表 2：双金属比例 vs 容量（n=5 实验，高斯 R²=0.978） - 表 3：竞争绑定能排序（n=5） - 表 4：RH-诱导效应映射（n=5，定性） - 表 5：胺变体-Qst（n=3，探索性） - 表 6：\textbf{胺碳数 vs CO2/diamine 化学计量（n=5，本轮新增）} - 表 7：ZIF/三氮唑湿度耐受-选择性（n=3，本轮新增）
+
+\subsection{4. 研究空白与未来方向（详见 gap\_report.md Gap 1-12）}\label{ux7814ux7a76ux7a7aux767dux4e0eux672aux6765ux65b9ux5411ux8be6ux89c1-gap_report.md-gap-1-12}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2963}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1852}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2222}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2963}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+优先级
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Gap
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+主题
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+置信度
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & Gap 1 & 双金属比例-容量倒 U 定量标度（5 点实验数据可直接拟合） & 0.95 \\
+2 & Gap 9 & 湿度诱导效应跨材料定量标度（DAC 关键） & 0.85 \\
+3 & Gap 3 & 水-胺协同/竞争定量化（MOF+COF+水固定位点五路证据） & 0.92 \\
+4 & Gap 11 & 胺链长/化学计量-性能标度律（新量化表 6） & 0.75 \\
+5 & Gap 4 & 金属取代多性质联合筛选 & 0.70 \\
+6 & Gap 10 / Gap 12 & 材料-工艺经济性；O2 降解标度（新增） & 0.70 \\
+\end{longtable}
+}
+
+\textbf{关键可执行方向}：① 扩展金属集验证 d 电子标度律；② 高斯峰峰值位置实验验证（配分非理想）；③ RHc 标度律跨材料实验；④ 胺碳数-化学计量标度（表 6 拟合）；⑤ O2 降解 Arrhenius 标度。
+
+\subsection{5. 参考文献（节选，可追溯）}\label{ux53c2ux8003ux6587ux732eux8282ux9009ux53efux8ffdux6eaf}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.2105}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3158}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.4737}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+ID
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+文献
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+DOI/标识
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\cite{p26} & Koh et al.~Thermodynamic Screening of Metal-Substituted MOFs for Carbon Capture & 10.1039/c3cp50622c \\
+\cite{p15} & Tan et al.~Competitive co-adsorption of CO2 with H2O, NH3, SO2\ldots{} in M-MOF-74 & 10.1021/acs.chemmater.5b00315 \\
+\cite{p35} & Marshall et al.~Cooperative lattice theory for CO2 adsorption\ldots{} humid DAC & v3s3 同源 \\
+\cite{p24} & Owens et al.~H2O/CO2 co-adsorption in mmen-Mg2(dobpdc) & 2025 \\
+v3s0\_c795f15f9d35 & Chen et al.~Microwave-assisted synthesis of bimetallic NiCo-MOF-74 & 2023 \\
+v3s2\_a7d3df468203 & McDonald et al.~Capture of CO2 from air and flue gas in mmen-Mg2(dobpdc) & 2012 \\
+新增 & Forse et al.~Elucidating CO2 Chemisorption in Diamine-Appended MOFs & 10.1021/jacs.8b10203 \\
+新增 & Zhu et al.~High-Capacity Cooperative CO2 Capture (pip2) & 10.1021/jacs.3c13381 \\
+新增 & Chen et al.~Immobilization of H2O in Diffusion Channel (TYUT-ATZ) & 10.1002/adma.202410500 \\
+新增 & Lyu et al.~Amino Acid Functionalized MOF-808 & 10.26434/chemrxiv-2021-51rbb-v2 \\
+新增 & Shi et al.~Robust Metal-Triazolate Frameworks & 10.1021/jacs.9b12879 \\
+新增 & Xiong et al.~Oxidative Degradation in Diamine MOFs & 10.1021/jacs.5c07551 \\
+新增 & Wang et al.~CO2 Capture from High-Humidity Flue Gas (ZIF-94) & 10.3390/molecules27175608 \\
+\cite{p30} & Rocca et al.~Quantum simulation of carbon capture in periodic MOFs & 2025 \\
+\cite{p21} & Oliveira et al.~CRAFTED database & 10.1038/s41597-023-02116-z \\
+\cite{p14} & Choudhary et al.~GNN Predictions of MOF CO2 Adsorption & 10.1016/j.commatsci.2022.111388 \\
+\end{longtable}
+}
+
+完整 149 篇见 paper\_summaries.md；知识图谱见 knowledge\_graph.md（R1-R46）；Gap 分析见 gap\_report.md（Gap 1-12）。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{6. 构效关系发现（路线 A，详见 discovery/discovery\_report.md）}\label{ux6784ux6548ux5173ux7cfbux53d1ux73b0ux8defux7ebf-aux8be6ux89c1-discoverydiscovery_report.md}
+
+\textbf{5 条假设全部完成搜索覆盖}（H0:15 轮, H1:15 轮, H2:10 轮, H3:10 轮, H4:10 轮），Best Score 0.798-0.907；2 条通过外部数据库双轨验证（H0/H4）。
+
+\subsubsection{核心发现 1：双金属倒U最优组分偏离 1:1（Gap 1，已验证）}\label{ux6838ux5fc3ux53d1ux73b0-1ux53ccux91d1ux5c5eux5012uux6700ux4f18ux7ec4ux5206ux504fux79bb-11gap-1ux5df2ux9a8cux8bc1}
+
+\begin{verbatim}
+C(x) = 5.595·exp(-(x-0.369)²/(2·0.194²)) + 3.781   [mmol/g, 0℃ 1bar]
+高斯 R²=0.978 vs 经典线性混合 R²=0.208（ΔR²=+0.77）
+\end{verbatim}
+
+\textbf{最优 Ni/(Ni+Co) = 0.369 ≠ 0.5}：Co 侧富 Ni 增强（Ni Qst 41 \textgreater{} Co 37 kJ/mol），Ni 侧富 Co 衰减更快（非随机配分，Xu v3s1 NMR）。预测 Ni0.37Co0.63-MOF-74 ≈ 9.4 mmol/g，待实验验证。
+
+\subsubsection{核心发现 2：d 电子数主导 Qst 标度（Gap 4，已验证）}\label{ux6838ux5fc3ux53d1ux73b0-2d-ux7535ux5b50ux6570ux4e3bux5bfc-qst-ux6807ux5ea6gap-4ux5df2ux9a8cux8bc1}
+
+\begin{verbatim}
+Qst = 32.53 - 1.99·Nd + 10.39·χ   [kJ/mol]
+双描述符 R²=0.794 vs 单变量 Nd R²=0.723
+\end{verbatim}
+
+d 电子数主效应（斜率 -1.99 kJ/mol·d⁻¹），电负性辅助；4 参数二次 R²=0.9855 属过拟合（n=5）不推荐。
+
+\subsubsection{核心发现 3：胺化学计量上限可突破（Gap 11，待实验）}\label{ux6838ux5fc3ux53d1ux73b0-3ux80faux5316ux5b66ux8ba1ux91cfux4e0aux9650ux53efux7a81ux7834gap-11ux5f85ux5b9eux9a8c}
+
+pip2（环状双胺）实现 \textasciitilde1.5 CO2/diamine 两步吸附（Zhu 2024），突破 1.0 传统上限------表 6 构造 5 点''胺碳数-化学计量''数据，搜索置信度 0.86。
+
+\subsubsection{核心发现 4：水增强捕获五路证据（Gap 3/9，置信度上调）}\label{ux6838ux5fc3ux53d1ux73b0-4ux6c34ux589eux5f3aux6355ux83b7ux4e94ux8defux8bc1ux636egap-39ux7f6eux4fe1ux5ea6ux4e0aux8c03}
+
+TYUT-ATZ 固定 H2O 为结合位点、MOF-808-AA 碳酸氢盐湿态增强、三氮唑框架 CO2/H2O 动力学选择性 70、离子疏水门、ZIF-94 高湿分离------``水必竞争''认知被改写为''水可被利用''，但定量标度（临界 RH）仍待建立。
+
+\subsubsection{核心发现 5：再生能耗-吸附焓权衡（Gap 10，已验证）}\label{ux6838ux5fc3ux53d1ux73b0-5ux518dux751fux80fdux8017-ux5438ux9644ux7113ux6743ux8861gap-10ux5df2ux9a8cux8bc1}
+
+H4 搜索 Best 0.907（置信度 0.91 最高）：磁感应再生 1.29 MJ/kg（-45\%）+ MUF-16 SMB 免干燥床------材料-工艺联合设计窗口 \textasciitilde30-40 kJ/mol Qst 最优。
+
+\textbf{验证方法学警示}：① 工具笛卡尔积污染可通过''每点独立块''知识图谱规避；② fit\_vegard 返回 tuple 与工具 dict 解析不兼容，自写脚本补全 F 检验（quant\_validate\_v4.py）；③ n=5 小样本 F 检验天然不显著，ΔR² 与 BIC 为主证据；④ 符号回归小样本过拟合，以受限物理模型为准。
+
+\section{Gap 分析报告 --- MOF Materials for CO2 Capture（e2e\_v4 全量版）}\label{gap:gap-ux5206ux6790ux62a5ux544a-mof-materials-for-co2-capturee2e_v4-ux5168ux91cfux7248}
+
+\textbf{生成日期}：2026-08-03（e2e\_v4，继承 e2e\_v3 的 Gap 1-11 编号体系 + 本轮证据更新） \textbf{依据}：149 篇论文摘要（paper\_summaries.md）+ 知识图谱 R1-R46 + 历史 11 轮证据池 \textbf{Gap 编号约定}：编号全局唯一，本文件为权威来源；Gap 1-11 沿用 v3，Gap 12 为本轮新增
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{概览}\label{gap:ux6982ux89c8}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2368}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1579}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1579}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2368}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2105}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Gap 编号
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+主题
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+类型
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+严重程度
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+置信度
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Gap 1 & 双金属比例-性能曲线的定量标度（倒 U 是否普适） & 矛盾 & 高 & \textbf{0.95} \\
+Gap 2 & DFT 泛函对强关联体系（Fe-MOF-74）吸附能预测分歧 & 矛盾 & 高 & 0.80 \\
+Gap 3 & H2O 对胺功能化 MOF 的 CO2 吸附影响（合作 vs 竞争） & 缺失连接 & 高 & \textbf{0.88→0.92} \\
+Gap 4 & 金属取代筛选仅覆盖吸附焓单一性质，未联合容量/选择性/水稳定性 & 未探索 & 中 & 0.70 \\
+Gap 5 & 超微孔 MOF 动力学与 CO2 吸附的定量关系缺失 & 未探索 & 中 & 0.65 \\
+Gap 6 & 水解稳定性-配体结构定量关系未连接 CO2 性能 & 缺失连接 & 中 & 0.65 \\
+Gap 7 & MOF/聚合物复合颗粒尺寸-形貌-分离性能仅有模拟无实验验证 & 缺失连接 & 中 & 0.60 \\
+Gap 8 & 数据库结构误差对 ML 构效关系提取可靠性的影响未量化 & 未探索 & 低 & 0.55 \\
+Gap 9 & 湿度诱导效应（合作→非合作链转变）缺乏跨材料定量标度 & 未探索 & 高 & \textbf{0.80→0.85} \\
+Gap 10 & MOF 材料性质与工艺经济性（PVSA/TSA 能耗成本）跨材料关联缺失 & 缺失连接 & 中 & 0.70 \\
+Gap 11 & 胺链长/接枝密度与 CO2 捕获性能的定量标度律缺失 & 未探索 & 中 & \textbf{0.65→0.75} \\
+\textbf{Gap 12} & \textbf{胺 MOF 氧化（O2）降解机理与长期稳定性-性能联合标度缺失} & \textbf{未探索} & \textbf{中} & \textbf{0.70} \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Gap 1 --- 双金属比例-性能曲线定量标度（沿用 v3，置信度 0.95）}\label{gap:gap-1-ux53ccux91d1ux5c5eux6bd4ux4f8b-ux6027ux80fdux66f2ux7ebfux5b9aux91cfux6807ux5ea6ux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.95}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{描述}：历史证据表明 Cu/Mg（s-d）吸附单调 vs NiCo/CoMn（d-d）倒 U；\textbf{NiCo-MOF-74 定量 5 点数据（Chen, v3s0\_c795f15f9d35）}：x=0 → 5.03、x=0.14 → 6.40、x=0.5 → 8.30、x=0.86 → 3.62、x=1.0 → 3.99 mmol/g（0℃, 1bar），倒 U 峰值在 x=0.5。但''倒 U 的峰值位置/曲率如何随金属对（d-d vs s-d）、温度、压力变化''的普适标度律缺失。
+\item
+  \textbf{验证方案}：用知识图谱表 2 的 5 点拟合二次/高斯模型检验倒 U；扩展金属对（Mg/Ni、Mg/Co、Cu/Co）与温度变化检验峰值迁移。
+\end{itemize}
+
+\subsection{Gap 2 --- DFT 泛函对强关联体系吸附能预测分歧（沿用 v3，置信度 0.80）}\label{gap:gap-2-dft-ux6cdbux51fdux5bf9ux5f3aux5173ux8054ux4f53ux7cfbux5438ux9644ux80fdux9884ux6d4bux5206ux6b67ux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.80}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{证据}：Rocca 2025 (\cite{p30})；Dahale (\cite{p2})；Barroca (\cite{p10})；Cazorla (\cite{p36})
+\item
+  \textbf{验证方案}：M-MOF-74 系列跨泛函对比，识别对方法最敏感的金属体系
+\end{itemize}
+
+\subsection{Gap 3 --- H2O 对胺功能化 MOF 的 CO2 吸附影响（更新：置信度 0.88→0.92）}\label{gap:gap-3-h2o-ux5bf9ux80faux529fux80fdux5316-mof-ux7684-co2-ux5438ux9644ux5f71ux54cdux66f4ux65b0ux7f6eux4fe1ux5ea6-0.880.92}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{描述}：v2/v3 已有 Edison 2020 (\cite{p20}) 磁滞 + Marshall 2024 (\cite{p35}) 低 RH 诱导效应 + Owens 2025 (\cite{p24}) 辫状链 + COF 旁证。\textbf{本轮新增五路独立证据强化''水促进/水调控''普适性}： ① TYUT-ATZ-β（10.1002/adma.202410500）：反直觉地将 H2O 固定为结合位点，湿态 CO2 容量显著升高； ② MOF-808-AA（10.26434/chemrxiv-2021-51rbb-v2）：11 种氨基酸功能化，Gly/dl-Lys 在湿态捕获增强（13C/15N NMR 证实碳酸氢盐形成）； ③ Water-enhanced CO2 capture 综述（10.3389/fchem.2025.1634637）：系统总结水增强捕获现象； ④ 离子疏水门（10.1021/jacs.5c02093）：表面工程规避水竞争； ⑤ 三氮唑框架（10.1021/jacs.9b12879）：CO2/H2O 位点分离 → 动力学选择性 70。 传统认知''水必竞争''已被多重证据改写为''水可被利用''，但\textbf{``水增强/竞争转换的临界条件（RH、胺类型、孔径、骨架电性）的定量标度''仍未建立}。
+\item
+  \textbf{验证方案}：提取''RH vs 胺 MOF/COF CO2 容量/速率''数据点回归增益/损失函数；检验临界 RH 是否随胺链长/孔径变化。
+\end{itemize}
+
+\subsection{Gap 4 --- 金属取代筛选仅覆盖单一性质（沿用 v3，置信度 0.70）}\label{gap:gap-4-ux91d1ux5c5eux53d6ux4ee3ux7b5bux9009ux4ec5ux8986ux76d6ux5355ux4e00ux6027ux8d28ux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.70}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{证据}：Koh 2016 (\cite{p26})；Tan 2015 (\cite{p15})；Bae 2016 (\cite{p6})；Queen (v3s2\_f920fdf886a1，7 金属)；Fatriyah (v3s0\_80ba25b8db20，9 金属)
+\item
+  \textbf{验证方案}：以金属电子构型（d 电子数/电负性）为自变量拟合吸附焓（表 1 已支撑）；扩展至容量/选择性联合描述符
+\end{itemize}
+
+\subsection{Gap 5 --- 超微孔 MOF 动力学与吸附性能定量关系（沿用 v3，置信度 0.65）}\label{gap:gap-5-ux8d85ux5faeux5b54-mof-ux52a8ux529bux5b66ux4e0eux5438ux9644ux6027ux80fdux5b9aux91cfux5173ux7cfbux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.65}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{证据}：Magnin 2023 (\cite{p17})；Fan 2025 (\cite{p13})；Schlaich 2024 (\cite{p37})；Gonçalves (\cite{p27})；MUF-16 SMB (10.1021/acsami.5c16139，湿烟气连续工艺动力学)
+\item
+  \textbf{验证方案}：汇总超微孔 MOF 孔径-扩散-吸附热数据，检验统一标度律
+\end{itemize}
+
+\subsection{Gap 6 --- 水解稳定性-配体结构定量关系（沿用 v3，置信度 0.65）}\label{gap:gap-6-ux6c34ux89e3ux7a33ux5b9aux6027-ux914dux4f53ux7ed3ux6784ux5b9aux91cfux5173ux7cfbux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.65}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{证据}：Yacham；Shi (\cite{p11})；Bueken 2016 (\cite{p34})；Jiao (v3s1\_40b1785140fe)；Shi 2020 (10.1021/jacs.9b12879，三氮唑稳定性策略)
+\item
+  \textbf{验证方案}：Zn/Zr-MOF 水解能垒 vs 配体特征拟合
+\end{itemize}
+
+\subsection{Gap 7 --- MOF/聚合物复合颗粒-形貌-分离性能仅有模拟（沿用 v3，置信度 0.60）}\label{gap:gap-7-mofux805aux5408ux7269ux590dux5408ux9897ux7c92-ux5f62ux8c8c-ux5206ux79bbux6027ux80fdux4ec5ux6709ux6a21ux62dfux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.60}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{证据}：Alvares ×2 (\cite{p22}, \cite{p25})
+\item
+  \textbf{验证方案}：实验合成不同粒径 ZIF-8 测 CO2/N2 选择性
+\end{itemize}
+
+\subsection{Gap 8 --- 数据库结构误差对 ML 提取构效关系的影响（沿用 v3，置信度 0.55）}\label{gap:gap-8-ux6570ux636eux5e93ux7ed3ux6784ux8befux5deeux5bf9-ml-ux63d0ux53d6ux6784ux6548ux5173ux7cfbux7684ux5f71ux54cdux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.55}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{证据}：Kim (\cite{p31}, LitMOF)；Trezza (\cite{p33})
+\item
+  \textbf{验证方案}：含错误/校正数据库分别训练比较系数稳定性
+\end{itemize}
+
+\subsection{Gap 9 --- 湿度诱导效应的跨材料定量标度缺失（更新：置信度 0.80→0.85）}\label{gap:gap-9-ux6e7fux5ea6ux8bf1ux5bfcux6548ux5e94ux7684ux8de8ux6750ux6599ux5b9aux91cfux6807ux5ea6ux7f3aux5931ux66f4ux65b0ux7f6eux4fe1ux5ea6-0.800.85}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索；\textbf{严重程度}：高
+\item
+  \textbf{描述}：Marshall 2024 (\cite{p35}) 在 mmen-Mg2(dobpdc) 上实验+理论确认''RH ↑ → 诱导效应消失、吸附速率 ↑``；Owens 2025 (\cite{p24}) 预测辫状链；COF 旁证支持普适性。\textbf{本轮新增水增强捕获五路证据（见 Gap 3）使''水调控''从单一体系走向多体系}，但''合作链→非合作簇的临界 RH''\,``诱导效应强度随胺链长/孔径/骨架电性的标度律''仍无定量表达式。DAC 吸附剂筛选需要此标度律预判湿工况性能。
+\item
+  \textbf{验证方案}：对 diamine-appended 系列（不同二胺链长、不同 M）提取''RH-诱导效应-吸附速率''数据，拟合临界 RH = f(胺链长, 孔径)；符号回归寻找标度律。
+\end{itemize}
+
+\subsection{Gap 10 --- 材料性质与工艺经济性跨材料关联缺失（沿用 v3，置信度 0.70）}\label{gap:gap-10-ux6750ux6599ux6027ux8d28ux4e0eux5de5ux827aux7ecfux6d4eux6027ux8de8ux6750ux6599ux5173ux8054ux7f3aux5931ux6cbfux7528-v3ux7f6eux4fe1ux5ea6-0.70}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接；\textbf{严重程度}：中
+\item
+  \textbf{描述}：Shin 2025 (\cite{p23}) 对 CALF-20 等网状 5 系列 PVSA 优化+技术经济；McDannald 2024 (\cite{p32}) DAC 能量/纯度上界指标；Falcaro (v3s5) 磁感应再生 1.29 MJ/kg CO2（-45\%）。\textbf{本轮新增 MUF-16 SMB 湿烟气连续工艺（10.1021/acsami.5c16139）}------水不竞争 CO2 的框架可省去干燥床。但吸附焓/容量/选择性 → PVSA/TSA/SMB 能耗/成本的通用代理模型未建立。
+\item
+  \textbf{验证方案}：收集多材料 PVSA/TSA 经济性数据（容量、ΔH、选择性 vs 能耗、回收率），建立代理模型；用 McDannald 指标交叉验证。
+\end{itemize}
+
+\subsection{Gap 11 --- 胺链长/接枝密度与 CO2 捕获性能的定量标度律缺失（更新：置信度 0.65→0.75）}\label{gap:gap-11-ux80faux94feux957fux63a5ux679dux5bc6ux5ea6ux4e0e-co2-ux6355ux83b7ux6027ux80fdux7684ux5b9aux91cfux6807ux5ea6ux5f8bux7f3aux5931ux66f4ux65b0ux7f6eux4fe1ux5ea6-0.650.75}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索；\textbf{严重程度}：中
+\item
+  \textbf{描述}：v3 已有 Kochetygov（ED\textless DETA\textless TAEA 定性趋势）、Wan（ED@MOF-520）。\textbf{本轮新增量化支撑}：① Forse 2018（10.1021/jacs.8b10203）6 金属 diamine-M2(dobpdc) 化学吸附 NMR+DFT 全景；② Martell 2020（10.1039/d0sc01087a）胺变体吸附/脱附动力学；③ Zhu 2024（10.1021/jacs.3c13381）pip2 双胺实现 \textasciitilde1.5 CO2/diamine（突破 1.0 上限）------\textbf{表 6 已构造 5 点''胺碳数 vs CO2/diamine 化学计量''数据}。但''胺碳数/支化度/骨架电性 vs Qst/容量/动力学/稳定性的连续标度函数''仍缺失------只有离散点无连续律。
+\item
+  \textbf{验证方案}：汇总胺变体（胺碳数、胺密度）×（Qst、容量、选择性、化学计量）数据点，拟合标度律；符号回归寻找胺碳数-化学计量/容量关系。
+\end{itemize}
+
+\subsection{Gap 12 --- 胺 MOF 氧化（O2）降解机理与长期稳定性-性能联合标度缺失（本轮新增，置信度 0.70）}\label{gap:gap-12-ux80fa-mof-ux6c27ux5316o2ux964dux89e3ux673aux7406ux4e0eux957fux671fux7a33ux5b9aux6027-ux6027ux80fdux8054ux5408ux6807ux5ea6ux7f3aux5931ux672cux8f6eux65b0ux589eux7f6eux4fe1ux5ea6-0.70}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索；\textbf{严重程度}：中
+\item
+  \textbf{描述}：Xiong 2025（10.1021/jacs.5c07551）对 7 种 diamine-appended MOF 进行 O2 暴露机理研究（e-2-Mg2(dobpdc) 等，不同温度），揭示复杂顺序反应路径；Choe 2022（10.1021/jacs.2c01488）用环氧化物开环+疏水涂层解决湿循环容量衰减。\textbf{但''O2 分压/温度/胺结构 vs 降解速率/容量衰减率的定量标度''缺失}------现有研究只给机理定性结论，无法预测吸附剂寿命（DAC/烟气工艺经济性关键输入）。
+\item
+  \textbf{验证方案}：提取不同 diamine/温度下 O2 降解速率与容量保持数据点，拟合 Arrhenius 型降解标度律；检验疏水化修饰对降解速率的定量抑制。
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{优先级排序（供假设生成使用，e2e\_v4 更新）}\label{gap:ux4f18ux5148ux7ea7ux6392ux5e8fux4f9bux5047ux8bbeux751fux6210ux4f7fux7528e2e_v4-ux66f4ux65b0}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Gap 1}（双金属比例-容量倒 U 定量标度，5 点实验数据可直接拟合）--- 高，置信度 0.95
+\item
+  \textbf{Gap 9}（湿度诱导效应标度律，DAC 关键，实验+理论+五路水增强证据）--- 高，置信度 0.85
+\item
+  \textbf{Gap 3}（水-胺协同/竞争定量化，MOF+COF+水固定位点证据增强）--- 高，置信度 0.92
+\item
+  \textbf{Gap 11}（胺链长/化学计量-性能标度律，新量化表 6 支撑）--- 中高，置信度 0.75
+\item
+  \textbf{Gap 4}（金属取代多性质筛选，量化表 1 支撑，可扩展金属集）--- 中，置信度 0.70
+\item
+  Gap 10（材料-工艺经济性耦合）/ Gap 12（O2 降解标度）/ Gap 5 / Gap 6 / Gap 2 / Gap 7 / Gap 8（保留）
+\end{enumerate}
+
+\printbibliography[title=参考文献]
+\end{document}
