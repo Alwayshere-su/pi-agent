@@ -1,0 +1,135 @@
+{
+  "hypothesis_index": 4,
+  "search_method": "bayesian",
+  "iterations": 8,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 17,
+    "material_tokens": 26,
+    "property_keywords": [
+      "cyclability",
+      "degradation",
+      "stability",
+      "zt"
+    ],
+    "literature_values": [
+      0.08,
+      2.23
+    ]
+  },
+  "best_params": {
+    "property_value": 2.1790918877537777,
+    "composition_x": 0.5325894325515859,
+    "temperature": 362.1882441869123
+  },
+  "best_score": 0.7863219595047535,
+  "iteration_log": [
+    {
+      "iteration": -1,
+      "type": "initial",
+      "best_score": 0.7733579402772487,
+      "n_samples": 10,
+      "mean_score": 0.6242648499932596,
+      "max_score": 0.7733579402772487
+    },
+    {
+      "iteration": 0,
+      "score": 0.720422994730905,
+      "best_score": 0.7733579402772487,
+      "params": {
+        "property_value": 2.8489966085048932,
+        "composition_x": 0.5357746840747585,
+        "temperature": 408.34772406529
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.7331892290624817,
+      "best_score": 0.7733579402772487,
+      "params": {
+        "property_value": 2.7712770310375436,
+        "composition_x": 0.6350936508676438,
+        "temperature": 354.3648117264534
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.7863219595047535,
+      "best_score": 0.7863219595047535,
+      "params": {
+        "property_value": 2.1790918877537777,
+        "composition_x": 0.5325894325515859,
+        "temperature": 362.1882441869123
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.7306683460111102,
+      "best_score": 0.7863219595047535,
+      "params": {
+        "property_value": 1.216912738742031,
+        "composition_x": 0.5950779307002548,
+        "temperature": 361.7109761811004
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.781912109562076,
+      "best_score": 0.7863219595047535,
+      "params": {
+        "property_value": 2.3458835274588146,
+        "composition_x": 0.47918187762973097,
+        "temperature": 330.77047896772285
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.6505121120097077,
+      "best_score": 0.7863219595047535,
+      "params": {
+        "property_value": 2.3726182346003966,
+        "composition_x": 0.7090462617224327,
+        "temperature": 428.25230771369263
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.6994060372882269,
+      "best_score": 0.7863219595047535,
+      "params": {
+        "property_value": 2.739085890773667,
+        "composition_x": 0.3495063720868188,
+        "temperature": 436.91494186552006
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.590567037605061,
+      "best_score": 0.7863219595047535,
+      "params": {
+        "property_value": 0.41114843699088255,
+        "composition_x": 0.2395101699095381,
+        "temperature": 1253.4939344402283
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 2,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      }
+    ]
+  }
+}

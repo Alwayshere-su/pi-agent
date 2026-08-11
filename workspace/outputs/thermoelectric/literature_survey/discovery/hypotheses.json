@@ -15,16 +15,280 @@
     "search_method": "bayesian",
     "search_iterations": 10,
     "candidates_explored": 21,
-    "external_validation": {},
-    "validation_status": "pending",
+    "external_validation": {
+      "overall_match": false,
+      "databases_checked": [
+        "materials_project",
+        "oqmd",
+        "nomad"
+      ],
+      "supporting_evidence": [],
+      "details": {
+        "materials_project": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [
+            {
+              "mp_id": "mp-aaackksk",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacpyig",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacsvwu",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacuihg",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacuijo",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacuimg",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaaan",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaafg",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaafu",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaabgitl",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaditqj",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaafdvbl",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacdhjp",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacdhjq",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacefwc",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacewcu",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaceyyj",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacfsie",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaciczr",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacjaps",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            }
+          ],
+          "queries_attempted": [
+            "Fe1",
+            "Si"
+          ]
+        },
+        "oqmd": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [
+            {
+              "formula": "Fe",
+              "requested_formula": "Fe1",
+              "delta_e_ev_per_atom": 0.0,
+              "stability": 0.0,
+              "band_gap_ev": 0.0,
+              "source": "api"
+            }
+          ],
+          "queries_attempted": [
+            {
+              "formula": "Fe1",
+              "source": "api"
+            }
+          ],
+          "status": "ok",
+          "message": "OQMD 查询完成：命中 1 个无机相（queries: [{'formula': 'Fe1', 'source': 'api'}]）。OQMD 以无机 DFT 计算数据为主，MOF 本体覆盖有限，命中结果作为金属节点无机相的跨尺度佐证。",
+          "formation_energy_gain_ev": {
+            "note": "只有单个金属氧化物数据，无法计算双金属形成能增益",
+            "available_energies": {
+              "Fe": 0.0
+            }
+          },
+          "calibration_note": "跨尺度代理（氧化物形成能 → MOF 节点稳定性），物理基础是 MOF 金属节点的氧化态与对应氧化物相近，但这种映射是定性的而非定量的",
+          "confidence": "moderate (cross-scale proxy, not yet calibrated)"
+        },
+        "nomad": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [],
+          "queries_attempted": [],
+          "status": "no_material_mapping",
+          "message": "假设材料未命中 MOF→氧化物代理映射，无法生成 NOMAD 查询。（NOMAD 以无机计算数据为主，MOF 覆盖有限，此为如实结果）"
+        }
+      }
+    },
+    "validation_status": "inconclusive",
     "evidence_chain": [
       "TE002",
       "TE057",
       "TE009",
       "[Novelty Verification] Overlap: none | Novelty: 0.800 (was 0.800) | Queries: 3 | Results: 4"
     ],
-    "llm_plausibility_score": 0.45,
-    "llm_explanation": "理论基础方面，纳米晶界散射中长波声子降低晶格热导率符合声子输运理论，但Fe/P共掺杂调整电子结构的描述缺乏支撑，Fe在SiGe中易形成深能级，不利于载流子迁移；超饱和固溶体热力学稳定性存疑。文献一致性上，SiGe基热电材料实验ZT通常低于1.5，预期ZT>2.5过于乐观，与现有数据不符。可验证性良好，变温Hall与激光闪射等测试可明确验证。新颖性较高，查重无重叠，成分组合与超饱和策略有一定新意。综合而言，假设逻辑部分合理，但关键预期过于理想，材料选择存在潜在问题，评分中等偏低。；系统查重: 4 篇结果，重叠=none，新颖性 0.80->0.80",
+    "llm_plausibility_score": 0.4,
+    "llm_explanation": "理论基础：纳米晶界散射声子降低晶格热导率符合声子输运理论，但P含量高达10 at%远超Si/Ge固溶度，低温烧结时易析出第二相；Fe在Si基材料中通常形成深能级或沉淀，而非有利的电子结构调控。晶粒尺寸降至10 nm时载流子迁移率下降往往比假设更严重，ZT>2.5缺乏理论支持。文献一致性：现有纳米结构SiGe实验ZT最高约1.3-1.5，P超饱和及Fe共掺缺乏成功先例，宣称ZT>2.5与已有报道严重不符。可验证性：实验方案与测试手段明确，但超饱和固溶体的可控制备、微结构及物相表征难度大，存在较高实施风险。新颖性：该组成与晶粒尺寸调控的组合未见报道，新颖性较高，但新颖性无法弥补物理基础缺陷。综合看，假设有部分合理内核，但关键参数和性能预期过于乐观。；系统查重: 0 篇结果，重叠=none，新颖性 0.80->0.80",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "已有文献依据(evidence_chain 编号: TE002, TE057, TE009)，具体结论需人工/LLM 补写",
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
     "best_score": 0.0,
     "literature_values": [],
     "search_warning": "",
@@ -34,10 +298,7 @@
       "unverified_values": []
     },
     "degraded": false,
-    "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: TE002, TE057, TE009)，具体结论需人工/LLM 补写",
-    "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "degraded_reason": ""
   },
   {
     "id": "hypo_2",
@@ -79,7 +340,219 @@
     "degraded_reason": "",
     "known_prior_work": "已有文献依据(evidence_chain 编号: TE122, TE115, TE113)，具体结论需人工/LLM 补写",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "model_comparison": {
+      "n_points": 17,
+      "x_label": "temperature",
+      "y_unit": "dimensionless",
+      "best_candidate": {
+        "name": "三次",
+        "kind": "cubic",
+        "k": 4,
+        "r2": 0.2619759895779582,
+        "rmse": 0.614313473941626,
+        "rss": 6.4154777525258915,
+        "params": "y = -7.79e-09x^3 + 2.12e-05x^2 + -0.01553x + 4.281"
+      },
+      "classical_model": "fit_slack_model (自 classical_models 模块)",
+      "classical_result": {
+        "name": "fit_slack_model",
+        "k": 2,
+        "r2": -7.72715225139109e-14,
+        "rmse": 0.715080269891138,
+        "rss": 8.692776470588907,
+        "expr": ""
+      },
+      "f_test": {
+        "valid": true,
+        "F": 2.3073015351945703,
+        "p_value": 0.1388219665458551,
+        "df_num": 2,
+        "df_den": 13,
+        "significant": false,
+        "full_side": "候选模型"
+      },
+      "verdict": {
+        "verdict": "candidate_possible",
+        "reason": "候选 R²=0.2620 高于经典 R²=-0.0000（ΔR²=+0.2620），但缺 F 检验/bootstrap CI 佐证，仅作弱证据提示",
+        "delta_r2": 0.262,
+        "f_supported": false,
+        "ci_supported": false
+      },
+      "bayesian": {
+        "n": 17,
+        "slope": {
+          "mean": 0.002368878001544901,
+          "std": 0.0010184916332843293,
+          "ci_low": 0.0002508087002275031,
+          "ci_high": 0.004486947302862299
+        },
+        "intercept": {
+          "mean": -0.38849010988217714,
+          "std": 0.8239764211554398,
+          "ci_low": -2.1020428830461952,
+          "ci_high": 1.3250626632818407
+        },
+        "sigma2": {
+          "mean": 0.3851987592643096,
+          "std": 0.13212208442495793
+        },
+        "r2": 0.21895095277800392,
+        "rmse": 0.631966342182069,
+        "mae": 0.5000608192980875,
+        "nu": 21.0,
+        "approximation": false,
+        "bayes_factor_vs_constant": 0.1872925854231317,
+        "log_bf_vs_constant": -1.6750832569513747,
+        "bf_evidence": "中等支持常数模型（BF ≤ 1/3）"
+      },
+      "diagnostics": {
+        "n": 17,
+        "fit": "poly1",
+        "ols": {
+          "r2": 0.21897139304003055,
+          "adjusted_r2": 0.1073958777600349,
+          "rmse": 0.6319580727640425,
+          "mae": 0.5006520497054323,
+          "slope": 0.0023916572685137743,
+          "intercept": -0.40718662787203613
+        },
+        "bootstrap": {
+          "n_boot": 300,
+          "n_ok": 300,
+          "seed": 42,
+          "approximation": false,
+          "r2": {
+            "mean": 0.05803500622228212,
+            "std": 0.19803659257637576,
+            "ci_low": -0.48336334548602006,
+            "ci_high": 0.2158352050052453
+          },
+          "rmse": {
+            "mean": 0.6909569695338612,
+            "std": 0.0651356323928346,
+            "ci_low": 0.6332256020869744,
+            "ci_high": 0.8709205295791422
+          },
+          "mae": {
+            "mean": 0.5247477818602452,
+            "std": 0.04373480257385072,
+            "ci_low": 0.4655547942036391,
+            "ci_high": 0.6272185101307486
+          },
+          "slope": {
+            "mean": 0.002646298816010209,
+            "std": 0.0017120928298092575,
+            "ci_low": -6.966739783229488e-05,
+            "ci_high": 0.006573377411902931
+          }
+        },
+        "loocv": {
+          "valid": true,
+          "method": "leave_one_out",
+          "n_folds": 17,
+          "n_ok": 17,
+          "oof_r2": -0.1413597869109986,
+          "oof_rmse": 0.7639520118950932,
+          "oof_mae": 0.5951201726345215,
+          "note": "逐点留一（同源点仍可能泄漏，建议结合 group_cv 看）"
+        },
+        "group_cv": {
+          "valid": true,
+          "method": "leave_one_group_out",
+          "n_groups": 6,
+          "n_folds": 6,
+          "n_predicted": 17,
+          "oof_r2": -0.04979392170171826,
+          "oof_rmse": 0.7326673228503244,
+          "oof_mae": 0.5551265032022358,
+          "per_fold": [
+            {
+              "group": "0",
+              "n_train": 15,
+              "n_test": 2
+            },
+            {
+              "group": "3",
+              "n_train": 13,
+              "n_test": 4
+            },
+            {
+              "group": "5",
+              "n_train": 13,
+              "n_test": 4
+            },
+            {
+              "group": "6",
+              "n_train": 14,
+              "n_test": 3
+            },
+            {
+              "group": "7",
+              "n_train": 15,
+              "n_test": 2
+            },
+            {
+              "group": "8",
+              "n_train": 15,
+              "n_test": 2
+            }
+          ],
+          "note": "组=数据点来源（近似 leave-one-paper-out，同组不跨折泄漏）"
+        },
+        "cooks": {
+          "valid": true,
+          "n": 17,
+          "max_cooks": 0.6446311091351525,
+          "max_cooks_index": 16,
+          "threshold": 0.23529411764705882,
+          "high_influence_indices": [
+            0,
+            14,
+            16
+          ],
+          "high_influence_count": 3,
+          "leverage_max": 0.5323064304577949,
+          "note": "阈值经验取 4/n；高影响点可能主导线性回归，需检查其来源"
+        }
+      },
+      "tiered_regression": {
+        "A": {
+          "n": 17,
+          "r2": 0.21897139304003055,
+          "slope": 0.002391657268513769,
+          "intercept": -0.4071866278720315
+        }
+      },
+      "quality_counts": {
+        "table": 17
+      },
+      "n_groups": 6,
+      "llm_explanation": "结论：候选模型（三次）的 R²=0.2620 虽高于经典模型的 R²=-0.0000（ΔR²=+0.2620），但嵌套 F 检验 p=0.1388>0.05，不显著；bootstrap 95% CI 包含负值，贝叶斯因子 BF=0.187，均不支持其稳健优于经典模型。因此只能视为弱证据，不能断言候选模型更优。\n\n经典模型失效的物理机制：\n\n1. **温度非线性**：ZT 在 400–1000 K 区间受声子软化、双极扩散及本征激发等影响，呈明显非线性甚至非单调变化，简单线性/指数形式无法描述。\n\n2. **组分偏离线性混合**：Cl/Br/I 取代 Se 时，离子半径和缺陷形成能差异导致固溶度有限，实际载流子浓度与掺杂量非线性；Sn 空位补偿进一步偏离线性关系。\n\n3. **缺陷/孔道效应**：卤素掺杂引入点缺陷和晶格畸变，增强声子散射以降低晶格热导率，但也会造成电离不完全、复合缺陷或迁移率与载流子浓度耦合变化，破坏经典模型对理想晶格和线性输运的假设。\n\n综上，在该数据范围内，候选模型没有统计显著的优越性；经典模型低 R² 源于其未能涵盖上述真实物理机制。",
+      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\model_comparison_1.md"
+    },
+    "symbolic_regression": {
+      "n_points": 17,
+      "x_label": "temperature",
+      "y_unit": "dimensionless",
+      "expr": "sqrt(((exp(sin(((x + c0) / c1))) + sin(((x + (x - c2)) / c3))) + exp(sin((((x + ((sin(c4) * c5) / ((c6 / c7) * x))) / c8) / c9)))))",
+      "params": {
+        "c0": 2.3852324190457566,
+        "c1": 1.3966357323432228,
+        "c2": 0.25551573014040196,
+        "c3": 1.1196181202114968,
+        "c4": 1.8215699258124407,
+        "c5": 5.418383062504282,
+        "c6": 0.00013207920787489116,
+        "c7": 0.03958336393268231,
+        "c8": 2.041425468524792,
+        "c9": 2.042625004187769
+      },
+      "mse": 0.17284494188421523,
+      "rmse": 0.4157462469875287,
+      "r2": 0.6619763522076599,
+      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\symbolic_1.md"
+    }
   },
   {
     "id": "hypo_3",
@@ -149,12 +622,227 @@
     "degraded_reason": "",
     "known_prior_work": "已有文献依据(evidence_chain 编号: TE082, TE085, TE090, 预测值 10–30%（待实验验证，建议方案：元素分析或TGA定量组成变化）)，具体结论需人工/LLM 补写",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "model_comparison": {
+      "n_points": 15,
+      "x_label": "temperature",
+      "y_unit": "dimensionless",
+      "best_candidate": {
+        "name": "三次",
+        "kind": "cubic",
+        "k": 4,
+        "r2": 0.2855191373722714,
+        "rmse": 0.6379695406604933,
+        "rss": 6.105077022158412,
+        "params": "y = -1.369e-09x^3 + 8.467e-06x^2 + -0.007666x + 2.767"
+      },
+      "classical_model": "fit_slack_model (自 classical_models 模块)",
+      "classical_result": {
+        "name": "fit_slack_model",
+        "k": 2,
+        "r2": -8.992806499463768e-14,
+        "rmse": 0.7547526452789728,
+        "rss": 8.544773333334103,
+        "expr": ""
+      },
+      "f_test": {
+        "valid": true,
+        "F": 2.1978968754635524,
+        "p_value": 0.15737955169777904,
+        "df_num": 2,
+        "df_den": 11,
+        "significant": false,
+        "full_side": "候选模型"
+      },
+      "verdict": {
+        "verdict": "candidate_possible",
+        "reason": "候选 R²=0.2855 高于经典 R²=-0.0000（ΔR²=+0.2855），但缺 F 检验/bootstrap CI 佐证，仅作弱证据提示",
+        "delta_r2": 0.2855,
+        "f_supported": false,
+        "ci_supported": false
+      },
+      "bayesian": {
+        "n": 15,
+        "slope": {
+          "mean": 0.0023928567628011196,
+          "std": 0.001065798385788492,
+          "ci_low": 0.00016211510419625926,
+          "ci_high": 0.00462359842140598
+        },
+        "intercept": {
+          "mean": -0.4442457605230459,
+          "std": 0.8652688528989754,
+          "ci_low": -2.255274283170886,
+          "ci_high": 1.366782762124794
+        },
+        "sigma2": {
+          "mean": 0.42372923260709994,
+          "std": 0.15472403931550813
+        },
+        "r2": 0.22558648494922418,
+        "rmse": 0.6641881235703633,
+        "mae": 0.5235602998489892,
+        "nu": 19.0,
+        "approximation": false,
+        "bayes_factor_vs_constant": 0.1592402539679527,
+        "log_bf_vs_constant": -1.83734118597593,
+        "bf_evidence": "中等支持常数模型（BF ≤ 1/3）"
+      },
+      "diagnostics": {
+        "n": 15,
+        "fit": "poly1",
+        "ols": {
+          "r2": 0.22560397803736698,
+          "adjusted_r2": 0.09653797437692813,
+          "rmse": 0.6641806219147379,
+          "mae": 0.524063865083862,
+          "slope": 0.0024137760114640284,
+          "intercept": -0.4615035974180185
+        },
+        "bootstrap": {
+          "n_boot": 300,
+          "n_ok": 300,
+          "seed": 42,
+          "approximation": false,
+          "r2": {
+            "mean": 0.032749433216790795,
+            "std": 0.22865860891305473,
+            "ci_low": -0.6402761071831808,
+            "ci_high": 0.221101807048453
+          },
+          "rmse": {
+            "mean": 0.738029699677784,
+            "std": 0.07942261877807676,
+            "ci_low": 0.6661085074587925,
+            "ci_high": 0.9666363355906317
+          },
+          "mae": {
+            "mean": 0.5627298154788262,
+            "std": 0.060115175483718794,
+            "ci_low": 0.4818416076621559,
+            "ci_high": 0.6932122540740778
+          },
+          "slope": {
+            "mean": 0.0029262901153302547,
+            "std": 0.0018220890735764757,
+            "ci_low": 0.00022148050743870043,
+            "ci_high": 0.007111307900351132
+          }
+        },
+        "loocv": {
+          "valid": true,
+          "method": "leave_one_out",
+          "n_folds": 15,
+          "n_ok": 15,
+          "oof_r2": -0.18204759894072065,
+          "oof_rmse": 0.8205822649054091,
+          "oof_mae": 0.6382227217066679,
+          "note": "逐点留一（同源点仍可能泄漏，建议结合 group_cv 看）"
+        },
+        "group_cv": {
+          "valid": true,
+          "method": "leave_one_group_out",
+          "n_groups": 6,
+          "n_folds": 6,
+          "n_predicted": 15,
+          "oof_r2": -0.05019636481213596,
+          "oof_rmse": 0.773463633827747,
+          "oof_mae": 0.5906767352667502,
+          "per_fold": [
+            {
+              "group": "0",
+              "n_train": 14,
+              "n_test": 1
+            },
+            {
+              "group": "1",
+              "n_train": 13,
+              "n_test": 2
+            },
+            {
+              "group": "5",
+              "n_train": 12,
+              "n_test": 3
+            },
+            {
+              "group": "7",
+              "n_train": 11,
+              "n_test": 4
+            },
+            {
+              "group": "8",
+              "n_train": 12,
+              "n_test": 3
+            },
+            {
+              "group": "9",
+              "n_train": 13,
+              "n_test": 2
+            }
+          ],
+          "note": "组=数据点来源（近似 leave-one-paper-out，同组不跨折泄漏）"
+        },
+        "cooks": {
+          "valid": true,
+          "n": 15,
+          "max_cooks": 0.6242309675281332,
+          "max_cooks_index": 14,
+          "threshold": 0.26666666666666666,
+          "high_influence_indices": [
+            0,
+            14
+          ],
+          "high_influence_count": 2,
+          "leverage_max": 0.5460628280775102,
+          "note": "阈值经验取 4/n；高影响点可能主导线性回归，需检查其来源"
+        }
+      },
+      "tiered_regression": {
+        "A": {
+          "n": 15,
+          "r2": 0.22560397803736698,
+          "slope": 0.002413776011464024,
+          "intercept": -0.4615035974180158
+        }
+      },
+      "quality_counts": {
+        "table": 15
+      },
+      "n_groups": 6,
+      "llm_explanation": "**结论：候选模型不优于经典模型。**  \n虽然候选三次模型 R²=0.2855 高于经典模型的 R²=-0.0000（ΔR²=+0.2855），但嵌套 F 检验不显著（p=0.1574），贝叶斯因子 BF=0.159 反而支持常数模型，bootstrap R² 的 95% CI 包含负值，分组 CV 的 OOF R²=-0.0502，均说明候选模型的“优势”只是噪声。因此不能判定候选模型更优。\n\n**旧经典模型为何失效？**  \n1. **温度非线性**：经典模型可能假设 ZT 随温度线性或简单指数变化，但实际材料中本征激发加剧，双极效应使 Seebeck 系数下降、双极热导率上升，ZT 随温度呈非单调曲线（先升后降），简单线性函数无法拟合。  \n2. **组分偏离线性混合**：数据来自 Bi₂Te₃、Bi₀.₅Sb₁.₅Te₃、PbTe 等多种材料，其带隙、载流子有效质量不同，最优掺杂浓度及温度依赖差异大，合并拟合必然破坏线性/简单模型假设。  \n3. **缺陷/孔道效应**：真实样品的杂质散射、晶界及孔道会改变载流子迁移率和热导率，导致实验数据相对理想模型大幅离散，经典模型未考虑这些机制。  \n4. **数据本身异质性强**：15 个点横跨 400–1000 K、ZT 0.6–3.6，材料体系混杂，R² 低是结构性的，任何简单参数模型都难以描述。\n\n建议：按单一材料体系、严格可比条件重新建模，并引入双极效应物理项或机器学习方法。",
+      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\model_comparison_2.md"
+    },
+    "symbolic_regression": {
+      "n_points": 15,
+      "x_label": "temperature",
+      "y_unit": "dimensionless",
+      "expr": "sqrt(log(((c0 + x) + c1))) + (((log(((x + c2) * ((((x * c3) / sin(c4)) / x) + c5))) / x) / ((((c6 + c7) * (x + x)) + ((c8 / c9) + x)) * ((c10 / x) + c11))) - c12)",
+      "params": {
+        "c0": -124.74138393796785,
+        "c1": -118.3168792211632,
+        "c2": -3.600000000000003,
+        "c3": -0.32437628072308156,
+        "c4": 5.153644839082231,
+        "c5": 1.186953910895451,
+        "c6": 0.31799393290690836,
+        "c7": -0.11240960358347196,
+        "c8": -761.3710507450396,
+        "c9": 0.5847070400781191,
+        "c10": -176.78508447370416,
+        "c11": 0.17681176245892452,
+        "c12": 1.283613059298951
+      },
+      "mse": 0.12013811971582028,
+      "rmse": 0.3466094628192085,
+      "r2": 0.7891024459704056,
+      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\symbolic_2.md"
+    }
   },
   {
     "id": "hypo_4",
     "title": "共振掺杂浓度与 DOS 局部异常及 Seebeck 增强的定量标度",
     "description": "针对共振掺杂缺乏定量标度规律的问题，提出在 half-Heusler HfZrCoSnSb 中，通过控制 Al 共振掺杂浓度（0–1.5 at%）并利用第一性原理计算费米能级附近态密度（DOS）的局部畸变幅度，再与实验测量的 Seebeck 系数和功率因子关联。假设共振杂质产生的 DOS 局部异常幅度越大，Seebeck 系数的增强越显著，但超过临界浓度后杂质带扩展会破坏共振态，导致 Seebeck 骤降。",
+    "source_gap_id": "Gap 6",
     "materials": [
       "HfZrCoSnSb",
       "HfZrCoSnSb:Al",
@@ -164,63 +852,41 @@
     "expected_relationship": "在 Al 浓度为 0–0.8 at% 范围内，费米能级处 DOS 异常幅度随浓度近似线性增大，Seebeck 系数随之增加；功率因子在 0.5–0.8 at% 附近达到峰值。当 Al 浓度超过约 1 at% 时，体系过渡为金属性杂质带行为，Seebeck 系数快速下降。该标度律可推广到其他共振掺杂体系以替代盲目试错。",
     "confidence": 0.68,
     "novelty_score": 0.82,
+    "search_method": "bayesian",
+    "search_iterations": 8,
+    "candidates_explored": 19,
+    "external_validation": {},
     "validation_status": "pending",
-    "source_gap_id": "Gap 6",
     "evidence_chain": [
       "TE146",
       "TE087",
       "TE101",
       "[Novelty Verification] Overlap: none | Novelty: 0.820 (was 0.820) | Queries: 3 | Results: 0"
     ],
-    "search_method": "bayesian",
+    "llm_plausibility_score": 0.65,
+    "llm_explanation": "该假设基于共振态增强Seebeck系数的电子结构机制，符合Mahan-Sofo理论和已有掺杂半导体中DOS畸变影响输运的基本物理图像，理论基础部分合理。文献中已有PbTe:K/Na及half-Heusler体系共振掺杂增强Seebeck的报道，假设是对这些现象的定量化延伸，但将DOS异常幅度与Seebeck系数描述为近似线性关系缺乏严格理论推导，且未考虑散射率变化、能带各向异性等因素，文献一致性中等。假设给出了明确的浓度范围、预测趋势及可比较的实验与计算方案，可验证性较好。新颖性检索显示无直接重叠，但类似共振掺杂定量标度研究已存在，所提出的线性标度和临界浓度行为并非全新机制，新颖性一般。综合评估为基本合理但需进一步理论细化与实验验证。；系统查重: 0 篇结果，重叠=none，新颖性 0.82->0.82",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "已有文献依据(evidence_chain 编号: TE146, TE087, TE101)，具体结论需人工/LLM 补写",
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
     "value_verification": {
       "values_found": [],
       "overall_verification_score": 1.0,
       "unverified_values": []
     },
-    "prior_art_verification": {
-      "queries_executed": [
-        "共振掺杂浓度与 共振掺杂浓度 但超过临界浓度后杂质带扩展会破坏共振态",
-        "HfZrCoSnSb HfZrCoSnSb:Al",
-        "HfZrCoSnSb HfZrCoSnSb:Al PbTe:K/Na contradictory evidence"
-      ],
-      "total_results_found": 0,
-      "potentially_overlapping_papers": [],
-      "overlap_assessment": "none",
-      "justification": "根据已有文献重叠级别为“none”且最高文本相似度为0，现有工作并未提出或验证类似的主张。该假设首次将共振掺杂浓度与DOS局部异常及Seebeck增强建立定量标度，并具体应用于HfZrCoSnSb及PbTe:K/Na体系，涉及新的定量关系和材料组合，具有足够的新颖性。因此，该研究假设的新颖性仍然成立。",
-      "novelty_score_adjusted": 0.82,
-      "original_novelty": 0.82,
-      "query_details": [
-        {
-          "query": "共振掺杂浓度与 共振掺杂浓度 但超过临界浓度后杂质带扩展会破坏共振态",
-          "results_count": 0,
-          "top_titles": [],
-          "error": null
-        },
-        {
-          "query": "HfZrCoSnSb HfZrCoSnSb:Al",
-          "results_count": 0,
-          "top_titles": [],
-          "error": null
-        },
-        {
-          "query": "HfZrCoSnSb HfZrCoSnSb:Al PbTe:K/Na contradictory evidence",
-          "results_count": 0,
-          "top_titles": [],
-          "error": null
-        }
-      ]
-    },
-    "llm_plausibility_score": 0.65,
-    "llm_explanation": "该假设基于共振态增强Seebeck系数的电子结构机制，符合Mahan-Sofo理论和已有掺杂半导体中DOS畸变影响输运的基本物理图像，理论基础部分合理。文献中已有PbTe:K/Na及half-Heusler体系共振掺杂增强Seebeck的报道，假设是对这些现象的定量化延伸，但将DOS异常幅度与Seebeck系数描述为近似线性关系缺乏严格理论推导，且未考虑散射率变化、能带各向异性等因素，文献一致性中等。假设给出了明确的浓度范围、预测趋势及可比较的实验与计算方案，可验证性较好。新颖性检索显示无直接重叠，但类似共振掺杂定量标度研究已存在，所提出的线性标度和临界浓度行为并非全新机制，新颖性一般。综合评估为基本合理但需进一步理论细化与实验验证。；系统查重: 0 篇结果，重叠=none，新颖性 0.82->0.82",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: TE146, TE087, TE101)，具体结论需人工/LLM 补写",
-    "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "degraded": false,
+    "degraded_reason": ""
   },
   {
     "id": "hypo_5",
     "title": "Yb 填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性",
     "description": "针对填充方钴矿批次复现性差的问题，提出名义填充分数 y 与实际填充分数之间的偏差是导致 ZT 不一致的主要原因。假设 Yb 填充原子在方钴矿笼子中产生“rattling”效应，可定量降低晶格热导率；但过量填充会引入附加的电子散射并改变载流子浓度。通过制备一系列 y=0–0.4 的 Yb_yFe4Sb12/Yb_yCo4Sb12 样品，测定实际填充分数、晶格热导率、载流子迁移率和 ZT，可确定性能最优且对 y 不敏感的填充范围。\n\n**数值验证结果**\n- **预测值（待实验验证）**: `40–60%` — 在 4 篇论文摘要中检索，未找到直接支撑。\n  建议验证方案: 预测值 40–60%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
+    "source_gap_id": "Gap 3",
     "materials": [
       "YbyFe4Sb12",
       "YbyCo4Sb12",
@@ -228,19 +894,185 @@
     ],
     "property": "晶格热导率与 ZT 的批次稳定性",
     "expected_relationship": "当实际填充分数 y 从 0 增至约 0.25 时，晶格热导率因填充原子的 rattling 散射单调下降约 40–60%；继续增加填充至 0.4 时，载流子迁移率因缺陷散射增强而明显下降，功率因子受损。因此 ZT 在 y≈0.20–0.25 出现宽峰，且该区域对 y 的敏感度最低，从而解释文献中 0.67–0.89 的 ZT 波动并给出提升批次复现性的合成窗口。",
-    "confidence": 0.55,
+    "confidence": 0.7863219595047535,
     "novelty_score": 0.65,
-    "validation_status": "pending",
-    "source_gap_id": "Gap 3",
+    "search_method": "bayesian",
+    "search_iterations": 8,
+    "candidates_explored": 19,
+    "external_validation": {
+      "overall_match": false,
+      "databases_checked": [
+        "materials_project",
+        "oqmd",
+        "nomad"
+      ],
+      "supporting_evidence": [],
+      "details": {
+        "materials_project": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [
+            {
+              "mp_id": "mp-aaaaaabc",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaacm",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaovo",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaabedo",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaabero",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaabghgm",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacdikq",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacppfn",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaact",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaagg",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            }
+          ],
+          "queries_attempted": [
+            "Ce",
+            "Yb"
+          ]
+        },
+        "oqmd": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [],
+          "queries_attempted": [
+            {
+              "formula": "Yb",
+              "source": "api"
+            },
+            {
+              "formula": "Ce",
+              "source": "api"
+            }
+          ],
+          "status": "http_error",
+          "message": "OQMD 查询失败（status=http_error）：['查询 Yb 失败: HTTP 502 \\n<html><head>\\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\\n<title>502 Server E', '查询 Ce 失败: HTTP 502 \\n<html><head>\\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\\n<title>502 Server E']。OQMD 本轮未参与交叉验证。",
+          "formation_energy_gain_ev": null,
+          "calibration_note": "跨尺度代理（氧化物形成能 → MOF 节点稳定性），物理基础是 MOF 金属节点的氧化态与对应氧化物相近，但这种映射是定性的而非定量的",
+          "confidence": "moderate (cross-scale proxy, not yet calibrated)",
+          "api_errors": [
+            "查询 Yb 失败: HTTP 502 \n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server E",
+            "查询 Ce 失败: HTTP 502 \n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server E"
+          ]
+        },
+        "nomad": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [],
+          "queries_attempted": [],
+          "status": "no_material_mapping",
+          "message": "假设材料未命中 MOF→氧化物代理映射，无法生成 NOMAD 查询。（NOMAD 以无机计算数据为主，MOF 覆盖有限，此为如实结果）"
+        }
+      }
+    },
+    "validation_status": "inconclusive",
     "evidence_chain": [
       "TE048",
       "TE035",
       "TE037",
       "TE051",
       "预测值 40–60%（待实验验证，建议方案：元素分析或TGA定量组成变化）",
-      "[Novelty Verification] Overlap: none | Novelty: 0.650 (was 0.650) | Queries: 3 | Results: 0"
+      "[Novelty Verification] Overlap: none | Novelty: 0.650 (was 0.650) | Queries: 3 | Results: 0",
+      "文献验证: 40–60% — 在 20 篇论文中检索到 4 条匹配记录 (来源: 3. 高温区（800-1000 K）— SnSe / half-Heusler / GeTe, 4. 新兴/二维/理论探索, 3. 高温区（800-1000 K）— SnSe / half-Heusler / GeTe)"
     ],
-    "search_method": "bayesian",
+    "llm_plausibility_score": 0.65,
+    "llm_explanation": "理论基础基本合理：Yb填充方钴矿的rattling效应降低晶格热导率、过量填充引入额外散射影响迁移率，符合已知声子-电子输运机制；但笼统给出40-60%的定量下降并推断宽峰区间，缺少可依据的标度模型。文献一致性中等：填充方钴矿降低晶格热导率是成熟结论，Yb_yCo4Sb12研究很多，但预测的敏感窗口和ZT波动范围未得到检索结果直接支持，且Yb_yFe4Sb12相稳定性存疑。可验证性较好：可通过元素分析或TGA测定实际填充量，结合热导率、迁移率和ZT测试验证，也可用第一性原理计算缺陷形成能和声子谱。新颖性一般：系统查重无重叠，针对批次复现性提出‘对y不敏感窗口’具有一定新视角，但未揭示新机制或通用标度律。综合评分为0.65。；系统查重: 0 篇结果，重叠=none，新颖性 0.65->0.65",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "已有文献依据(evidence_chain 编号: TE048, TE035, TE037, TE051)，具体结论需人工/LLM 补写",
+    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
     "value_verification": {
       "values_found": [
         {
@@ -256,43 +1088,7 @@
       ],
       "_confidence_adjusted": true
     },
-    "prior_art_verification": {
-      "queries_executed": [
-        "填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性 可定量降低晶格热导率 但过量填充会引入附加的电子散射并改变载流子浓度",
-        "YbyFe4Sb12 YbyCo4Sb12",
-        "YbyFe4Sb12 YbyCo4Sb12 CeyFe4Sb12 contradictory evidence"
-      ],
-      "total_results_found": 0,
-      "potentially_overlapping_papers": [],
-      "overlap_assessment": "none",
-      "justification": "根据已有文献重叠信息，未发现任何工作提出或验证过类似的主张，因此该假设在现有数据库中是空白点。当前假设聚焦于Yb填充分数对两种方钴矿材料晶格热导率与迁移率的定量影响，并结合批次稳定性评估，体现了明确的定量关系和材料体系层面的新颖性。综上，该研究假设的新颖性依然成立，值得进一步探索。",
-      "novelty_score_adjusted": 0.65,
-      "original_novelty": 0.65,
-      "query_details": [
-        {
-          "query": "填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性 可定量降低晶格热导率 但过量填充会引入附加的电子散射并改变载流子浓度",
-          "results_count": 0,
-          "top_titles": [],
-          "error": null
-        },
-        {
-          "query": "YbyFe4Sb12 YbyCo4Sb12",
-          "results_count": 0,
-          "top_titles": [],
-          "error": null
-        },
-        {
-          "query": "YbyFe4Sb12 YbyCo4Sb12 CeyFe4Sb12 contradictory evidence",
-          "results_count": 0,
-          "top_titles": [],
-          "error": null
-        }
-      ]
-    },
-    "llm_plausibility_score": 0.72,
-    "llm_explanation": "理论基础扎实：填充原子在笼中的rattling散射声子降低晶格热导率是公认机制，过量填充引入额外电子散射并改变载流子浓度也符合物理原理。文献总体一致：Yb填充CoSb3等体系已有大量报道显示晶格热导率随填充分数降低、ZT在y≈0.2附近出现峰值，但具体下降幅度因体系而异（部分报道达70%以上），故40–60%的定量预测需谨慎看待。可验证性强：可通过控制合成、元素分析测定实际填充分数，并结合热导率、迁移率及ZT测试验证，也可用第一性原理计算辅助。新颖性一般：填充-性能关系本身非新概念，但将名义/实际填充分数偏差与批次稳定性联系起来，并寻找对y不敏感的合成窗口，具有一定应用视角新意；系统检索未发现直接相似工作。综合认为假设合理但定量普适性有待实验确认。；系统查重: 0 篇结果，重叠=none，新颖性 0.65->0.65",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: TE048, TE035, TE037, TE051)，具体结论需人工/LLM 补写",
-    "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "degraded": false,
+    "degraded_reason": ""
   }
 ]
