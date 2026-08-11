@@ -1,0 +1,55 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% === 核心包 ===
+\usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+% longtable 用小号字，缓解 pandoc 表格列宽溢出
+\AtBeginEnvironment{longtable}{\small}
+% pandoc 输出的列表紧排命令（由 pandoc 生成但未定义）
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% 特殊 Unicode 符号映射（默认拉丁字体缺字）
+\usepackage{newunicodechar}
+\usepackage{amssymb}
+\newunicodechar{⭐}{\ensuremath{\bigstar}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{₀}{\textsubscript{0}}\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₆}{\textsubscript{6}}\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{ₓ}{\textsubscript{x}}
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{₋}{\ensuremath{^{-}}}
+\newunicodechar{①}{\textcircled{\raisebox{-0.5pt}{1}}}
+\newunicodechar{②}{\textcircled{\raisebox{-0.5pt}{2}}}
+\newunicodechar{③}{\textcircled{\raisebox{-0.5pt}{3}}}
+\newunicodechar{④}{\textcircled{\raisebox{-0.5pt}{4}}}
+\newunicodechar{⑤}{\textcircled{\raisebox{-0.5pt}{5}}}
+\newunicodechar{⑥}{\textcircled{\raisebox{-0.5pt}{6}}}
+\newunicodechar{⑦}{\textcircled{\raisebox{-0.5pt}{7}}}
+\newunicodechar{⑧}{\textcircled{\raisebox{-0.5pt}{8}}}
+\geometry{margin=2.5cm}
+\addbibresource{references.bib}
+
+% === 元数据 ===
+\title{ {{ title }} }
+\date{ {{ date }} }
+\author{Pi-Agent（自主文献调研 Agent）}
+
+\begin{document}
+\maketitle
+\sloppy  % 允许宽松换行，缓解长 URL/DOI 溢出
+
+{{ body }}
+
+\printbibliography[title=参考文献]
+\end{document}

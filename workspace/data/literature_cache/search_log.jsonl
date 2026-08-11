@@ -205,3 +205,4 @@
 {"timestamp": "2026-08-08T19:39:57", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.02, "sciverse_adapter_mode": "rest"}
 {"timestamp": "2026-08-08T19:40:18", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.0, "sciverse_adapter_mode": "rest"}
 {"timestamp": "2026-08-08T19:40:39", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.01, "sciverse_adapter_mode": "rest"}
+{"timestamp": "2026-08-11T20:45:01", "query": "MOF CO2 capture", "sources": ["arxiv"], "result_count": 10, "elapsed_seconds": 0.18, "sciverse_adapter_mode": "rest"}
