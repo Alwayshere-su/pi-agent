@@ -19,13 +19,13 @@
 |---|---|
 | 总覆盖主题数 | 10（6 个研究主题 + 4 个验证/冒烟测试主题） |
 | 总检索文献数 | 1,000+（含 gitignored 主题） |
-| 总识别 Gap 数 | 66（含 mof_e2e_v4 12；与 literature_survey 主题相同、Gap 有重叠；mof_rerun 8 待核实） |
+| 总识别 Gap 数 | 63（含 mof_e2e_v4 12；literature_survey 10 + mof_rerun_v3 5 + perovskite 6 + thermoelectric 7 + cathode 8 + validation 5 + smoke_test 5 + g3test 5 + mof_e2e_v4 12） |
 | 总生成假设数 | 31（分布在 6 个 tracked 主题中）；正式研究主题 21 条（MOF 5 + 钙钛矿 5 + 热电 5 + 正极 6） |
 | 正结果数（confidence >= 0.7） | 14（4 个正式研究主题：MOF 3 + 钙钛矿 5 + 热电 4 + 正极 2） |
 | 负/低置信度结果数 | 7（MOF 2 + 钙钛矿 0 + 热电 1 + 正极 4） |
 | 有外部数据库验证的主题 | 4/10（Materials Project / hMOF） |
-| 缺乏发现报告的主题 | 1/10（mof_rerun，gitignored 且本地无 outputs；tracked 6 主题全部有产出） |
-| Agent 泛化成功率（有假设产出） | 100%（tracked 6/6；含 gitignored 9/10） |
+| 缺乏发现报告的主题 | 3/10（smoke_test / g3test / smoke_fix；mof_rerun 原数据已清理，v3 已恢复） |
+| Agent 泛化成功率（有假设产出） | 100%（tracked 6/6；含 mof_rerun_v3 7/7，gitignored 3 主题无 discovery） |
 | 最高正结果置信度 | 0.97（钙钛矿带隙-稳定性等假设） |
 
 **关键结论**：(1) 补跑（2026-08-10/11）后 tracked 6 主题全部产出假设（100%），4 个正式研究主题正结果率 33%~100%（钙钛矿 100%、热电 80%、MOF 60%、正极 33%）；(2) 首次运行的假设生成质量仍受文献密度影响（perovskite 34 篇、cathode 19 篇初跑均失败），补跑与聚焦检索可弥补；(3) "ML-实验闭环断裂"是跨越 5/8 主题的最普遍 Gap 类型；(4) 跨领域知识迁移潜力显著（MOF 缺陷工程 -> 电池正极缺陷分类）；(5) Materials Project 对有机-无机杂化材料（MOF）覆盖为 0，是系统性能瓶颈。
@@ -39,7 +39,7 @@
 | # | 主题 | 调研主题描述 | 检索文献数 | Gap 数量 | 高严重度 | 中严重度 | 低严重度 | 假设数量 | 正结果 (conf>=0.7) | 负结果 (conf<0.7) | 外部数据库验证 | Best Score 范围 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **literature_survey** (主案例) | MOF 材料用于 CO2 捕获 | 546 (11 轮累计) | 10 | 4 | 5+1* | 0 | 5 | 3 | 2 | Materials Project (氧化物代理) | 0.66 ~ 0.91 |
-| 2 | **mof_rerun** (重跑) | MOF 材料 CO2 捕获（重跑验证） | 42 | 8 | 3 | 4 | 1 | 4 | 1 | 3 | Materials Project + hMOF/CoRE MOF | 0.0 ~ 0.62 |
+| 2 | **mof_rerun_v3** (重跑恢复) | MOF 材料 CO2 捕获（2026-08-11 重跑恢复） | 63 | 5 | 2 | 3 | 0 | 5 | 5 | 0 | Materials Project + hMOF/CoRE MOF | 0.66 ~ 0.87 |
 | 3 | **perovskite** | 卤化物钙钛矿带隙与稳定性 | 34 | 6 | 3 | 3 | 0 | 5 | 5 | 0 | Materials Project（无匹配） | 0.88 ~ 0.97 |
 | 4 | **thermoelectric** | 热电材料 ZT 优化 | 209 (160+49) | 7 | 3 | 4 | 0 | 5 | 4 | 1 | 无外部验证 | 0.33 ~ 0.87 |
 | 5 | **cathode** | 高镍正极容量保持率（锂离子电池） | 19 | 8 | 3 | 5 | 0 | 6 | 2 | 4 | 待核验 | 0.43 ~ 0.61 |
@@ -301,8 +301,10 @@
 | `workspace/outputs/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 1 validated） |
 | `workspace/outputs/mof_e2e_v4/literature_survey/gap_report.md` | 存在（12 Gaps） |
 | `workspace/outputs/mof_e2e_v4/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses） |
-| `workspace/outputs/mof_rerun/literature_survey/gap_report.md` | 待核实（outputs 目录当前不存在，仅 cache/logs/memory 留存） |
-| `workspace/outputs/mof_rerun/literature_survey/discovery/discovery_report.json` | 待核实（同上） |
+| `workspace/outputs/mof_rerun_v3/literature_survey/gap_report.md` | 存在（5 Gaps, 63 papers, 2026-08-11 重跑恢复） |
+| `workspace/outputs/mof_rerun_v3/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 2 validated, 2026-08-11 重跑） |
+| `workspace/outputs/mof_rerun/literature_survey/gap_report.md` | 已清理（quarantine 记录留存，原 8 Gaps/42 papers 不可复现） |
+| `workspace/outputs/mof_rerun/literature_survey/discovery/discovery_report.json` | 已清理（同上） |
 | `workspace/outputs/perovskite/literature_survey/gap_report.md` | 存在（6 Gaps, 34 papers） |
 | `workspace/outputs/perovskite/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 2026-08-10 补跑） |
 | `workspace/outputs/thermoelectric/literature_survey/gap_report.md` | 存在（7 Gaps, 209 papers） |
