@@ -1,6 +1,6 @@
 # 可复现性说明（Reproducibility）
 
-> 适用版本：Pi-Agent v2.0 代码库 ｜ 更新：2026-08
+> 适用版本：Pi-Agent v2.2.8 代码库 ｜ 更新：2026-08-11
 >
 > 本文件系统回答一个问题：**「重跑一遍，哪些结果应当完全一致，哪些结果可能不同，以及如何独立核验？」**
 >
@@ -67,8 +67,8 @@ LLM 调用（`pi_agent/llm.py::DeepSeekProvider.chat`）使用 `temperature=0.1`
 
 | 审计产物 | 路径 | 内容 |
 |---------|------|------|
-| 检索调用审计 | `workspace/logs/sciverse_skill_log.jsonl`（默认 `run_dir=survey`；其他 run_dir 见 `workspace/logs/<run_dir>/sciverse_skill_log.jsonl`） | 每条搜索的调用 ID、时间戳、参数 SHA256 哈希、结果数、`adapter_mode` |
-| 运行轨迹 | `workspace/logs/trajectory_survey.json`（默认）或 `workspace/logs/<run_dir>/trajectory_<run_dir>.json` | 每轮 `agent_thinking` / 工具调用序列 / 预算消耗 |
+| 检索调用审计 | `workspace/logs/<run-dir>/sciverse_skill_log.jsonl` | 每条搜索的调用 ID、时间戳、参数 SHA256 哈希、结果数、`adapter_mode` |
+| 运行轨迹 | `workspace/logs/<run-dir>/trajectory_<run-dir>.json` | 每轮 `agent_thinking` / 工具调用序列 / 预算消耗 |
 | LLM 搜索引导事件 | `workspace/outputs/<run_dir>/literature_survey/discovery/search_h*.json` 的 `llm_guidance` 字段 | `bayes_llm_guide` / `mcts_llm_guide` 事件（`suggestion`、候选数）、`bayes_llm_region_apply` 事件（`prune_regions` / `focus_regions` 及生效说明） |
 | LLM 假设评估 | `.../discovery/hypotheses.json` | 每条假设的 `llm_plausibility_score`、`llm_explanation`、置信度 |
 | 运行日志 | `workspace/logs/run_*.log`、`workspace/logs/<run_dir>/run_*.log` | `🧠 LLM 搜索引导: plausibility=…, suggestion=…` 与 `🧠 LLM plausibility: …` 行 |

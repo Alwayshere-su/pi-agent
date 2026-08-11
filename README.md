@@ -4,7 +4,7 @@
 >
 > **开源仓库**：[github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · 代码 MIT · 文档与运行产物 CC BY 4.0）
 >
-> **版本**：v2.2.1（初赛终版）｜**最后更新**：2026-08
+> **版本**：v2.2.8（初赛终版）｜**最后更新**：2026-08
 >
 > **核心成果**：一个以 LLM 为核心、端到端自主运行的文献驱动科学发现智能体。在有限时间预算内完成「文献检索 → 知识抽取 → Gap 识别 → 构效关系假设 → 贝叶斯/MCTS 搜索 → 外部验证 → 报告生成」全流程。针对 MOF 材料 CO₂ 捕获主题，经 11 轮迭代、546 篇次检索（去重后证据池 543 条、最终收录 46 篇），识别 10 项 Research Gap，生成 5 条构效关系假设，完成定量回归核验与 Materials Project / OQMD 外部交叉验证——流程完整、发现有效、引用干净、证据链可审计。
 
@@ -124,7 +124,7 @@ Gap/假设中的 p# 引用  →  paper_summaries.md（标题/DOI）
 
 - **运行轨迹**：`workspace/logs/literature_survey/trajectory_survey.json` 逐条记录每轮思考/工具调用/预算消耗
 - **审计机制说明**：`workspace/outputs/literature_survey/audit_trail.md`
-- **API 审计**：`workspace/logs/literature_survey/sciverse_skill_log.jsonl` 截至 2026-08 共 **149 条**调用记录（持续累积，以日志实际行为准）
+- **API 审计**：`workspace/logs/literature_survey/sciverse_skill_log.jsonl` 主案例 **149 条**调用记录；全部入库主题合计 314 条（持续累积，以日志实际行为准）
 - **零虚假引用**：所有引用经 Sciverse API 调用记录 + 论文 ID 双重验证；gap_report.md 中 49 处 p# 引用 46 处（94%）内联 DOI（经 Crossref/DataCite/doi.org 核验真实存在）
 
 ---
@@ -191,7 +191,7 @@ python scripts/baseline_random_search.py --iterations 40 --seeds 10
 ### 模块自测（离线，无需网络）
 
 ```bash
-python -m pytest tests/          # 项目级单元测试（122 项）
+python -m pytest tests/          # 项目级单元测试（125 项）
 python literature_agent/classical_models.py   # Slack/Vegard 参数恢复自检
 python literature_agent/symbolic_regression.py # 表达式恢复自检
 python literature_agent/extractor.py          # 数值 (x,y) 配对自测
@@ -232,15 +232,14 @@ utils/
 scripts/
 ├── baseline_random_search.py    # 随机探索参照系（v2 打分）
 ├── run_e2e_rerun.py / run_validation_pipeline.py / run_nico5_validation.py  # 重跑管线
-├── meta_analysis.py / prepare_scibase.py / verify_scoring.py 等
-├── budget_resume_test/  cache_isolation_test/  test_core_functions/  # 回归测试
-tests/                           # pytest 单元测试
-vendor/bash/                     # 内置 Git Bash（Windows 下 shell 工具运行时依赖）
+├── meta_analysis.py / prepare_scibase.py  # 元分析 / Sci-Base 数据集准备
+tests/                           # pytest 单元测试（125 项）
+docs/                            # 项目文档（架构 / 合规 / 可复现性 / 重跑指南）
 workspace/
 ├── outputs/<run-dir>/literature_survey/  # 各主题产出
 ├── memory/<run-dir>/                      # 跨轮记忆
 ├── logs/                                  # 运行轨迹 + 审计日志
-└── data/literature_cache/                 # 文献缓存（已 gitignore）
+└── data/literature_cache/                 # 文献缓存（search_log.jsonl 入库，其余 gitignore）
 ```
 
 ---
@@ -291,11 +290,13 @@ workspace/
 | v2.1.1 | 2026-08 | symbolic_regression 域保护（完整跑冒烟发现并修复）：`_NP_FUNCS` 的 log/log10/sqrt/tan/exp 对域外输入产生 NaN/Inf，导致 `predict` 抛"非有限值"异常、工具崩溃——改为截断到有限值（log 下限 EPS、sqrt 下限 0、tan/exp clip），不适用的表达式由 MSE 自然淘汰。冒烟验证：`--run-dir smoke_fix` 600s 完整跑通（30 轮、48 篇文献、3 条假设、LLM 搜索引导注入 6 次事件、双轨验证、发现报告），修复后 symbolic_regression 正常产出报告 |
 | v2.2.0 | 2026-08 | 冒烟运行暴露问题批量修复（4 并行 agent + 父级回归）：① `generate_hypotheses` LLM 假设生成双路径增强——`_extract_json_object` 增贪婪兜底提取、新增 `_hypotheses_from_json` 兼容 dict/裸数组、独立 API 路径复用 `_call_llm` 并增加 JSON 约束重试、异常全部带 `type(e).__name__` 诊断（不再静默失败）；② 预算超支 40s 修复——收尾白名单拆分 `_WRAPUP_LIGHT_TOOLS`（write/read/edit/stop/think + 一次性报告生成）与 `_WRAPUP_HEAVY_TOOLS`（搜索/验证/模型对比/符号回归/shell 预算耗尽后一律拒绝），`_inject_final_warning` 文案同步，`budget_resume_test` 断言更新为与新设计一致；③ 临时文件残留清理——删除 `smoke_fix/refs_tmp.md` 与主案例 `gap_report.md.bak`，prompts.py 新增「产物零临时文件残留」规则（用后必删、收尾前 list_files 自查）；④ stderr 降噪——Sci-Base 缺索引提示改为进程内仅首次完整打印（模块级标志 + 锁），后续只一行简短提示 |
 | v2.2.1 | 2026-08 | 开源上线：代码推送至公开 GitHub 仓库 [github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · MIT）；`.gitignore` 补齐排除（赛题 zip / 官方模板 / 会话副本 / `workspace/code/` Agent 运行时脚本 / `*.bak-*` 等）；README 头部与合规表新增开源仓库链接；初赛方案 docx 为本地提交物、不入公开仓库（README 索引已标注） |
-| v2.2.2 | 2026-08 | 仓库精简：内部/赛题文档（ARCHITECTURE / COMPLIANCE / REPRODUCIBILITY / RERUN_GUIDE / E2E_RERUN_GUIDE / CROSS_THEME_REPORT / problem_definition / 补充 / 赛题内容）移出公开仓库（本地保留，`.gitignore` 排除）；README 同步去除这些文档的引用死链（合规摘要、可复现性要点、MinerU 策略已内嵌 README），文档索引标注本地文档 |
+| v2.2.2 | 2026-08 | 仓库精简：内部/赛题文档移出公开仓库（本地保留，`.gitignore` 排除）；README 同步更新文档索引。注意：合规/复现/跨主题三文档后续已恢复入库（见 v2.2.6）并整合至 `docs/` |
 | v2.2.3 | 2026-08 | 仓库再瘦身：历史归档 `scripts/_archive_pid_work/`（33 个一次性核验脚本）与一次性回填脚本 `backfill_llm_guidance*`（2 个）移出公开仓库（本地保留）；README 项目结构同步移除归档目录行；冒烟主题产物（smoke_test/g3test/mof_rerun/mof_rerun_v2）保留作为泛化性过程证据 |
-| v2.2.4 | 2026-08 | 仓库精简（209→180）：docx 生成工具（`build_prelim_proposal.py`/`fill_initial_template.py`）与冒烟/旧版重跑主题产物（smoke_test / g3test / mof_rerun / mof_rerun_v2 三目录）移出公开仓库（本地保留，`.gitignore` 排除）；README 主题表述更新（保留主案例 + mof_e2e_v4 + 4 个正式主题：cathode / perovskite / thermoelectric / validation） |
-| v2.2.5 | 2026-08 | 复现性修缮（组委会复现扫描）：① `docker-compose.yml` 的 `env_file: .api_key` 改 `required: false`——无 `.api_key` 也能 `docker compose up`（与 README"缺失自动降级"承诺一致）；② 模块自检命令（`classical_models.py` / `extractor.py` / `symbolic_regression.py`）加 Windows UTF-8 输出兜底——GBK 控制台打印 `²`/`°C` 不再 UnicodeEncodeError，复现命令跨平台可跑；③ `DocumentParser` 补 `mineru_available` 属性（README 附录 D 的 `python literature_agent/parser.py` 诊断命令依赖，此前 AttributeError）；验证：pytest 122 passed、四个自检命令与 demo.py 全部 exit 0 |
-| v2.2.6 | 2026-08 | docx 对照一致性修复：恢复被初赛方案 docx 引用的 `COMPLIANCE.md`（合规披露，docx 5.3 引用）、`REPRODUCIBILITY.md`（复现说明，docx 5.1 引用）、`CROSS_THEME_REPORT.md`（跨主题泛化证据，docx 4.1.1 引用）入库；`workspace/data/literature_cache/search_log.jsonl`（四层追溯第 3 层审计记录，docx 证据链声明依赖）单独放行入库（`.gitignore` 精确例外，其余缓存仍排除）；仓库 180→184 |
+| v2.2.4 | 2026-08 | 仓库精简：docx 生成工具与冒烟/旧版重跑主题产物移出公开仓库（本地保留，`.gitignore` 排除）；README 主题表述更新（保留主案例 + mof_e2e_v4 + 4 个正式主题：cathode / perovskite / thermoelectric / validation） |
+| v2.2.5 | 2026-08 | 复现性修缮（组委会复现扫描）：① `docker-compose.yml` 的 `env_file: .api_key` 改 `required: false`；② 模块自检命令加 Windows UTF-8 输出兜底；③ `DocumentParser` 补 `mineru_available` 属性；验证：pytest 122 passed、四个自检命令与 demo.py 全部 exit 0 |
+| v2.2.6 | 2026-08 | docx 对照一致性修复：恢复被初赛方案 docx 引用的 `COMPLIANCE.md`、`REPRODUCIBILITY.md`、`CROSS_THEME_REPORT.md` 入库；`search_log.jsonl` 单独放行入库 |
+| v2.2.7 | 2026-08 | CI 修复 + 仓库规范：① 修复 CI 测试路径（三个 `scripts/` 子目录已废弃，统一为 `tests/`）；② 新增 `requirements-test.txt`（精简 CI 依赖，~46 MB vs ~1.2 GB）；③ 6 个指南文档移入 `docs/`（root tracked 15→10）；④ `.workbuddy/` 加入 `.gitignore`；⑤ 测试数 122→125（parser 增强测试） |
+| v2.2.8 | 2026-08 | 文档一致性审计修复：README / ARCHITECTURE / COMPLIANCE / CROSS_THEME / REPRODUCIBILITY / RERUN_GUIDE / E2E_RERUN_GUIDE 全部 7 个文档逐项对照代码库修正数字、路径、版本号 |
 
 ---
 
@@ -329,12 +330,15 @@ workspace/outputs/<run-dir>/literature_survey/
 ├── gap_report.md                # Research Gap 清单
 ├── survey_report.md             # 调研报告（六章 + 参考文献）
 └── discovery/
-    ├── hypotheses.json          # 5 条假设
-    ├── search_h0-4.json         # 每条假设的搜索记录（v2.0 含 llm_guidance 审计字段）
-    ├── quantitative_validation.md/.json  # 定量回归核验
-    ├── materials_project_validation.json # 外部数据库验证
-    ├── discovery_report.md/.json         # 发现报告
-    └── baseline_random.json             # 参照系结果（v2 打分）
+    ├── hypotheses.json          # 假设定义 + 置信度
+    ├── search_h*.json           # 每条假设的搜索记录（含 llm_guidance 审计字段）
+    ├── model_comparison_*.md    # 模型对比验证
+    ├── symbolic_*.md            # 符号回归结果
+    ├── discovery_report.md/.json # 发现报告
+    └── baseline_random.json     # 参照系结果
+
+# 已入库主题（6 个）：cathode / literature_survey / mof_e2e_v4 /
+#   perovskite / thermoelectric / validation
 ```
 
 ## 附录 D：MinerU PDF 解析引擎启用指南

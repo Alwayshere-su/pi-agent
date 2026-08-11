@@ -16,7 +16,7 @@
 | 真实 LLM 调用是否成功 | 取决于 `DEEPSEEK_API_KEY` 与网络；失败时**优雅降级**，不影响搜索 | `pi_agent/tools.py:668-687`（`_call_llm` 直接调 DeepSeek，失败回退 `_on_think`）；`tools.py:669-675`（LLM 不可用时原样返回候选并置默认分） |
 | LLM 建议是否真正影响采样 | ✅ v2 已实现：`_apply_llm_regions` 把 `prune_regions`/`focus_regions` 应用到 `_acquisition`（聚焦区间采样 + 剪枝剔除） | `literature_agent/discovery.py:1283-1327`（`_apply_llm_regions`）；`discovery.py:1342-1397`（`_acquisition` 中 focus/prune 生效）；触发节奏 `iteration % 5 == 4`（`discovery.py:1138`） |
 | run-dir 隔离 | ✅ `--run-dir <name>` 完全隔离 outputs / memory / logs / checkpoint / 文献缓存 | `utils/config.py:38-62`（`set_run_dir`）；`main.py:66-71, 86-88` |
-| 重跑建议 run-dir | `mof_e2e_v3`（当前确认不存在，见 `workspace/outputs`、`workspace/checkpoint` 等目录） | — |
+| 重跑建议 run-dir | `mof_e2e_v3`（当前确认不存在；已完成参考运行 `mof_e2e_v4` 的产出在 `workspace/outputs/mof_e2e_v4/`） | — |
 
 **为什么主案例会"回填"**：主案例运行时代码里 `_llm_guide` 未注入（或注入后仅记录事件、
 未应用 region），事后由 `scripts/backfill_llm_guidance.py` 真实调用
