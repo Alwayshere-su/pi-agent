@@ -4,7 +4,7 @@
 >
 > **开源仓库**：[github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · 代码 MIT · 文档与运行产物 CC BY 4.0）
 >
-> **版本**：v2.2.8（初赛终版）｜**最后更新**：2026-08
+> **版本**：v2.3.1（初赛终版 + 手册修订版对齐）｜**最后更新**：2026-08
 >
 > **核心成果**：一个以 LLM 为核心、端到端自主运行的文献驱动科学发现智能体。在有限时间预算内完成「文献检索 → 知识抽取 → Gap 识别 → 构效关系假设 → 贝叶斯/MCTS 搜索 → 外部验证 → 报告生成」全流程。针对 MOF 材料 CO₂ 捕获主题，经 11 轮迭代、546 篇次检索（去重后证据池 543 条、最终收录 46 篇），识别 10 项 Research Gap，生成 5 条构效关系假设，完成定量回归核验与 Materials Project / OQMD 外部交叉验证——流程完整、发现有效、引用干净、证据链可审计。
 
@@ -233,6 +233,9 @@ scripts/
 ├── baseline_random_search.py    # 随机探索参照系（v2 打分）
 ├── run_e2e_rerun.py / run_validation_pipeline.py / run_nico5_validation.py  # 重跑管线
 ├── meta_analysis.py / prepare_scibase.py  # 元分析 / Sci-Base 数据集准备
+├── build_bib.py                  # 登记表证据池 -> references.bib（Crossref 补全，主案例 LaTeX 链路）
+├── md2latex.py + templates/report.tex.j2  # Markdown 报告 -> report.tex（pandoc + 引用转换）
+├── compile_report.bat           # 一键编译 LaTeX 报告（build_bib -> md2latex -> tectonic）
 tests/                           # pytest 单元测试（125 项）
 docs/                            # 项目文档（架构 / 合规 / 可复现性 / 重跑指南）
 workspace/
@@ -275,6 +278,11 @@ workspace/
 | `workspace/outputs/literature_survey/paper_register.md` | 文献登记表（546 篇次口径说明 + 543 条证据池） |
 | `workspace/outputs/literature_survey/discovery/` | 假设、搜索记录、定量验证、参照系、外部验证（docx 全部数字的证据源） |
 | `workspace/outputs/literature_survey/audit_trail.md` | 证据链审计机制说明 |
+| `workspace/outputs/literature_survey/latex/report.pdf` | 主案例文献调研报告 PDF（28 页，含 71 条参考文献，`pdflatex/tectonic` 编译） |
+| `workspace/outputs/literature_survey/latex/report.tex` | 报告 LaTeX 源码（`survey_report.md + gap_report.md` 经 pandoc 转换生成） |
+| `workspace/outputs/literature_survey/latex/references.bib` | 71 条 BibTeX 参考文献（`build_bib.py` 从登记表/Crossref 自动生成，key 与正文引用一一对应） |
+| [`utils/resource_registry.py`](utils/resource_registry.py) | 外部资源注册表（12 项，来源/版本/用途/替代方案），对应方案 docx 5.3 节 Table 5 |
+| [`literature_agent/planned_capabilities.py`](literature_agent/planned_capabilities.py) | 复赛计划能力接口占位（混合检索/图谱库/自动二次核验），对应方案 docx 3.1.3 三项"为复赛计划" |
 
 ---
 
@@ -297,6 +305,8 @@ workspace/
 | v2.2.6 | 2026-08 | docx 对照一致性修复：恢复被初赛方案 docx 引用的 `COMPLIANCE.md`、`REPRODUCIBILITY.md`、`CROSS_THEME_REPORT.md` 入库；`search_log.jsonl` 单独放行入库 |
 | v2.2.7 | 2026-08 | CI 修复 + 仓库规范：① 修复 CI 测试路径（三个 `scripts/` 子目录已废弃，统一为 `tests/`）；② 新增 `requirements-test.txt`（精简 CI 依赖，~46 MB vs ~1.2 GB）；③ 6 个指南文档移入 `docs/`（root tracked 15→10）；④ `.workbuddy/` 加入 `.gitignore`；⑤ 测试数 122→125（parser 增强测试） |
 | v2.2.8 | 2026-08 | 文档一致性审计修复：README / ARCHITECTURE / COMPLIANCE / CROSS_THEME / REPRODUCIBILITY / RERUN_GUIDE / E2E_RERUN_GUIDE 全部 7 个文档逐项对照代码库修正数字、路径、版本号 |
+| v2.3.0 | 2026-08 | 主案例 LaTeX 报告链路（评审缺陷 #：报告零 LaTeX 产出）：① 新增 `scripts/build_bib.py`——从 `paper_register` 证据池（papers_pid_index.json + gap_report.md + paper_summaries.md）生成 `references.bib` 71 条，有 DOI 的 51 条调 Crossref API 拉标准 BibTeX（含 HTML 实体/月份/上下标清理），无 DOI 的 20 条降级 @misc 占位（零虚构）；② 新增 `scripts/md2latex.py` + `scripts/templates/report.tex.j2`——`survey_report.md + gap_report.md` 经 pandoc 结构转换 + 引用正则（p#/r#→\cite）后套 ctexart 模板生成 `report.tex`；③ 新增 `scripts/compile_report.bat` 一键编译（build_bib → md2latex → tectonic）；④ 交付 `latex/report.pdf`（28 页）`+ report.tex + references.bib`，71 条引用与 .bib 一一对应、零 Undefined citation、中文无缺字；⑤ 环境依赖：tectonic 0.17.0 与 pandoc 3.10.1 单二进制放 `vendor/`（本机无 TeX 发行版时的轻量替代） |
+| v2.3.1 | 2026-08 | 初赛手册修订版对齐：① 新增 `utils/resource_registry.py`——12 项外部资源来源/版本/用途注册表（含 DeepSeek/Sciverse/MinerU/arXiv/Semantic Scholar/Sci-Base/Crossref/Materials Project/OQMD/NOMAD/hMOF/TeX Live），对应方案 docx 5.3 节 Table 5 与赛题手册第 36 条；② 新增 `literature_agent/planned_capabilities.py`——三项复赛计划接口契约（HybridRetriever / GraphKnowledgeStore / AutoReVerifier），初赛阶段明确标注替代方案；③ `.gitignore` 追加 `_*.txt` 与 `GOAI_*.docx` 规则 |
 
 ---
 

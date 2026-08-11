@@ -25,6 +25,7 @@ workspace/logs/*.log
 
 # 本地临时/会话文件（不入库）
 _docx_dump.txt
+_*.txt
 11111.md
 尚未解决的问题.md
 
@@ -38,7 +39,8 @@ nul
 unpacked_*/
 
 # 赛题资料与官方模板（第三方内容，不入库）
-GOAI_初赛_Prospector.zip
+GOAI_*.docx
+GOAI_*.zip
 AI for reserach算法赛初赛模板.docx
 
 # 初赛方案提交物（docx，本地保留、不入公开仓库）
