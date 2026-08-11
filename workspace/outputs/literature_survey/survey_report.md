@@ -80,7 +80,7 @@ Agent 采用 11 轮迭代的自主检索策略：
 
 采用双引擎策略：
 - **MinerU Cloud v1**：远程 API，对学术论文 PDF 的表格/公式/参考文献解析精度高
-- **markitdown_utils**（本地回退引擎）：当 MinerU 不可用时，本地解析 HTML/text 格式
+- **markitdown**（本地回退引擎）：当 MinerU 不可用时，本地解析 HTML/text 格式
 
 解析结果汇总于 `paper_summaries.md`（46 篇完整摘要，含标题、DOI、摘要片段）。
 
