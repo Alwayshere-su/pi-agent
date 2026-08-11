@@ -265,9 +265,9 @@ workspace/
 
 | 文档 | 内容 |
 |------|------|
-| [`COMPLIANCE.md`](COMPLIANCE.md) | 合规披露文档（开源计划、商业 API、数据来源、第三方依赖）——初赛方案 docx 5.3 引用 |
-| [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）——docx 5.1 引用 |
-| [`CROSS_THEME_REPORT.md`](CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题、51 Gap、5 跨领域连接）——docx 4.1.1 引用 |
+| [`COMPLIANCE.md`](docs/COMPLIANCE.md) | 合规披露文档（开源计划、商业 API、数据来源、第三方依赖）——初赛方案 docx 5.3 引用 |
+| [`REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）——docx 5.1 引用 |
+| [`CROSS_THEME_REPORT.md`](docs/CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题、51 Gap、5 跨领域连接）——docx 4.1.1 引用 |
 | `初赛提交材料.md` | 完整方案说明、技术路线、实验结果、评审自查（**本地文档，不入公开仓库**） |
 | `初赛方案_修改清单.md` | docx 方案逐项核对清单（**本地文档，不入公开仓库**） |
 | `材料科学文献调研Agent_算法赛初赛方案.docx` | 初赛提交方案（**本地提交物，不入公开仓库**） |
