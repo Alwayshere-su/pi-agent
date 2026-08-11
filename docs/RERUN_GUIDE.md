@@ -378,7 +378,7 @@ ln -sf workspace/outputs/mof_rerun_v2/literature_survey/survey_report.md \
 
 **解决：**
 - MinerU 是外部云服务，偶发不可用是正常的
-- Agent 会自动回退到 arXiv/markitdown_utils 解析
+- Agent 会自动回退到 arXiv/markitdown 解析
 - 如果大量论文解析失败（>20%），检查网络连接
 - 启用稳定的 MinerU 通道（二选一）：
   - 云 API：在 `.api_key` 中配置 `MINERU_API_KEY=mineru-xxx`（注册 mineru.net），或设置环境变量 `MINERU_API_KEY`；

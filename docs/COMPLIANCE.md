@@ -13,7 +13,7 @@
 ### 1.1 初赛阶段
 
 - 初赛不强制提交代码，但已明确开源边界。
-- **开源仓库已于 2026-08 上线并公开**：<https://github.com/Alwayshere-su/pi-agent>（公开仓库，241 文件、16+ commits、MIT 许可），包含：
+- **开源仓库已于 2026-08 上线并公开**：<https://github.com/Alwayshere-su/pi-agent>（公开仓库，241 文件、21 commits、MIT 许可），包含：
   - `pi_agent/` + `literature_agent/` + `main.py` 核心代码
   - `requirements.txt` 依赖清单（精确版本锁定）
   - 配置文件说明（`.api_key` 模板、环境变量配置）
@@ -65,7 +65,7 @@
 | **状态** | 开源文档解析引擎（OpenDataLab），官网 <https://mineru.net>；云 API 建议配置 `MINERU_API_KEY`（环境变量或 `.api_key` 文件条目），未配置时 parser 仍会尝试连通公开端点但受网络/配额影响 |
 | **调用环节** | PDF 文档解析（`literature_agent/parser.py`） |
 | **接入模式** | 三种模式可选：Cloud v1（mineru.net，需 `MINERU_API_KEY` 认证通道）> 本地服务（`MINERU_LOCAL_URL` 环境变量，默认 `http://localhost:8888`，可 docker 部署）> pip 包（magic-pdf/mineru）。默认 `prefer_mineru=True` |
-| **替代方案** | 全部不可用时自动回退 markitdown_utils 本地引擎（离线免费，结果完全可复现）。回退原因记录于 `ParsedDocument.parse_engine` 字段。启用方式见 README.md 附录 D |
+| **替代方案** | 全部不可用时自动回退 markitdown 本地引擎（离线免费，结果完全可复现）。回退原因记录于 `ParsedDocument.parse_engine` 字段。启用方式见 README.md 附录 D |
 | **费用/配额** | 云 API 受服务商配额限制；本地部署（localhost:8888）不受配额影响 |
 
 ---
@@ -90,7 +90,7 @@
 | 引擎 | 类型 | 优先级 | 说明 |
 |------|------|--------|------|
 | **MinerU** | 推荐引擎（远程/本地服务） | 默认优先 | Cloud v1（mineru.net，配置 `MINERU_API_KEY` 启用）> 本地服务（`http://localhost:8888`，docker 部署）> pip 包。对中文论文和复杂表格/公式解析质量更优。`prefer_mineru=True` 默认启用 |
-| **markitdown_utils** | 本地回退引擎（离线） | 自动回退 | 离线免费，结果完全确定可复现。MinerU 全部不可用时自动切换 |
+| **markitdown** | 本地回退引擎（离线） | 自动回退 | 离线免费，结果完全确定可复现。MinerU 全部不可用时自动切换 |
 
 **启用方式**：
 - **云 API**：在 <https://mineru.net> 注册获取 `MINERU_API_KEY`，通过环境变量或项目根目录 `.api_key` 文件条目配置（读取逻辑见 `utils/config.py`，与 `SCIVERSE_API_KEY` 同模式）；
@@ -98,7 +98,7 @@
 - 完整步骤见 README.md「附录 D：MinerU PDF 解析引擎启用指南」。
 
 **回退行为对可复现性的影响**：
-- markitdown_utils 本地引擎的解析结果完全确定可复现；
+- markitdown 本地引擎的解析结果完全确定可复现；
 - MinerU 远程引擎受网络状况和 API 配额影响，解析结果可能因服务端更新而细微差异；
 - 建议在需要精确复现的实验中使用本地引擎（不设置 `MINERU_API_KEY` 和 `MINERU_LOCAL_URL` 时自动回退）；
 - 回退原因始终记录于 `ParsedDocument.parse_engine` 字段，可审计追溯。
