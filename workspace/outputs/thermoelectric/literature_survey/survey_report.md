@@ -1,5 +1,11 @@
 # 文献调研报告：热电材料 ZT 优化——从材料体系到构效关系的系统综述
 
+> **2026-08-11 量化验证补充**：本报告为阶段一（文献调研）产物。阶段二（构效关系发现）
+> 的量化验证结果见 `discovery/discovery_report.md`（量化验证结果汇总章节）与
+> `discovery/model_comparison_0/1/2/4.md`、`discovery/symbolic_0/1/2/4.md`、
+> `discovery/cross_theme_connections.md`。核心结论：跨材料温度-ZT 单变量建模
+> 无显著标度（负结果，强化 Gap 1），ZT 预测需多描述符（带隙/有效质量/声速）。
+
 **主题**: Thermoelectric Materials ZT Optimization
 **文献规模**: 209 篇（arxiv 160 + semantic_scholar 49）
 **日期**: 2026-08-02

@@ -1,7 +1,7 @@
 # Structure-Property Relationship Discovery
 
-**Generated:** 2026-08-02 19:32
-**Total candidates explored:** 53
+**Generated:** 2026-08-11 15:29
+**Total candidates explored:** 91
 **Validated:** 0 | **Refuted:** 0
 **Contested:** 1 | **Underexplored:** 0
 **Materials Project hits:** 0
@@ -14,10 +14,14 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 ## Discovered Structure-Property Relationships
 
-### 1. ⏳ 纳米晶尺寸调控 Si-Ge-P 超饱和固溶体的晶格热导率与 ZT
+### 1. ❓ 纳米晶尺寸调控 Si-Ge-P 超饱和固溶体的晶格热导率与 ZT
 
-**Confidence:** 0.87 | **Novelty:** 0.80 | **LLM Plausibility:** 0.45
+**Confidence:** 0.87 | **Novelty:** 0.80 | **LLM Plausibility:** 0.40
 **Consistency:** contested (争议 — 数据匹配但科学存疑)
+**Extractability:** 0.0/5
+
+**已知（prior work）:** 已有文献依据(evidence_chain 编号: TE002, TE057, TE009)，具体结论需人工/LLM 补写
+**新知（incremental claim）:** 相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)
 
 **Search Best Score:** 0.872 （文献数值证据 10 个）
 
@@ -41,7 +45,13 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
   - 综合验证分数: 1.00
 
 **Scientific Explanation (LLM):**
-> 理论基础方面，纳米晶界散射中长波声子降低晶格热导率符合声子输运理论，但Fe/P共掺杂调整电子结构的描述缺乏支撑，Fe在SiGe中易形成深能级，不利于载流子迁移；超饱和固溶体热力学稳定性存疑。文献一致性上，SiGe基热电材料实验ZT通常低于1.5，预期ZT>2.5过于乐观，与现有数据不符。可验证性良好，变温Hall与激光闪射等测试可明确验证。新颖性较高，查重无重叠，成分组合与超饱和策略有一定新意。综合而言，假设逻辑部分合理，但关键预期过于理想，材料选择存在潜在问题，评分中等偏低。；系统查重: 4 篇结果，重叠=none，新颖性 0.80->0.80
+> 理论基础：纳米晶界散射声子降低晶格热导率符合声子输运理论，但P含量高达10 at%远超Si/Ge固溶度，低温烧结时易析出第二相；Fe在Si基材料中通常形成深能级或沉淀，而非有利的电子结构调控。晶粒尺寸降至10 nm时载流子迁移率下降往往比假设更严重，ZT>2.5缺乏理论支持。文献一致性：现有纳米结构SiGe实验ZT最高约1.3-1.5，P超饱和及Fe共掺缺乏成功先例，宣称ZT>2.5与已有报道严重不符。可验证性：实验方案与测试手段明确，但超饱和固溶体的可控制备、微结构及物相表征难度大，存在较高实施风险。新颖性：该组成与晶粒尺寸调控的组合未见报道，新颖性较高，但新颖性无法弥补物理基础缺陷。综合看，假设有部分合理内核，但关键参数和性能预期过于乐观。；系统查重: 0 篇结果，重叠=none，新颖性 0.80->0.80
+
+**External Validation:**
+  - overall_match: False
+  - databases_checked: ['materials_project', 'oqmd', 'nomad']
+  - supporting_evidence: []
+  - details: {'materials_project': {'match': False, 'matching_entries': [], 'materials_found': [{'mp_id': 'mp-aaackksk', 'formula': '', 'band_gap_ev': None, 'formation_energy_ev_per_atom': None, 'energy_above_hull
 
 ---
 
@@ -49,6 +59,10 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 **Confidence:** 0.83 | **Novelty:** 0.74 | **LLM Plausibility:** 0.82
 **Consistency:** strong (强 — LLM与搜索一致高分)
+**Extractability:** 0.0/5
+
+**已知（prior work）:** 已有文献依据(evidence_chain 编号: TE082, TE085, TE090, 预测值 10–30%（待实验验证，建议方案：元素分析或TGA定量组成变化）)，具体结论需人工/LLM 补写
+**新知（incremental claim）:** 相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)
 
 **Search Best Score:** 0.833 （文献数值证据 10 个）
 
@@ -97,6 +111,10 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 **Confidence:** 0.85 | **Novelty:** 0.68 | **LLM Plausibility:** 0.72
 **Consistency:** strong (强 — LLM与搜索一致高分)
+**Extractability:** 0.0/5
+
+**已知（prior work）:** 已有文献依据(evidence_chain 编号: TE122, TE115, TE113)，具体结论需人工/LLM 补写
+**新知（incremental claim）:** 相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)
 
 **Search Best Score:** 0.850 （文献数值证据 10 个）
 
@@ -126,28 +144,14 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 ### 4. ⏳ 共振掺杂浓度与 DOS 局部异常及 Seebeck 增强的定量标度
 
-#### 新颖性验证 (Novelty Verification)
-
-**重叠评估:** none
-**原始新颖性分数:** 0.820
-**调整后新颖性分数:** 0.820
-
-**检索查询:**
-  1. `共振掺杂浓度与 共振掺杂浓度 但超过临界浓度后杂质带扩展会破坏共振态`
-  2. `HfZrCoSnSb HfZrCoSnSb:Al`
-  3. `HfZrCoSnSb HfZrCoSnSb:Al PbTe:K/Na contradictory evidence`
-
-**检索结果总数:** 0
-
-**潜在重叠论文:** 无
-
-**评估说明:** 根据已有文献重叠级别为“none”且最高文本相似度为0，现有工作并未提出或验证类似的主张。该假设首次将共振掺杂浓度与DOS局部异常及Seebeck增强建立定量标度，并具体应用于HfZrCoSnSb及PbTe:K/Na体系，涉及新的定量关系和材料组合，具有足够的新颖性。因此，该研究假设的新颖性仍然成立。
-
-
 **Confidence:** 0.68 | **Novelty:** 0.82 | **LLM Plausibility:** 0.65
 **Consistency:** strong (强 — LLM与搜索一致高分)
+**Extractability:** 0.0/5
 
-**Search Best Score:** N/A（无搜索记录）
+**已知（prior work）:** 已有文献依据(evidence_chain 编号: TE146, TE087, TE101)，具体结论需人工/LLM 补写
+**新知（incremental claim）:** 相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)
+
+**Search Best Score:** 0.329 （文献数值证据 0 个）
 
 **Description:** 针对共振掺杂缺乏定量标度规律的问题，提出在 half-Heusler HfZrCoSnSb 中，通过控制 Al 共振掺杂浓度（0–1.5 at%）并利用第一性原理计算费米能级附近态密度（DOS）的局部畸变幅度，再与实验测量的 Seebeck 系数和功率因子关联。假设共振杂质产生的 DOS 局部异常幅度越大，Seebeck 系数的增强越显著，但超过临界浓度后杂质带扩展会破坏共振态，导致 Seebeck 骤降。
 
@@ -157,7 +161,7 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 **Property:** Seebeck 系数与功率因子
 
 **Source Gap:** Gap 6
-**Search Method:** bayesian (0 iterations, 0 candidates)
+**Search Method:** bayesian (8 iterations, 19 candidates)
 
 **Evidence Chain:**
   - TE146
@@ -173,30 +177,16 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 ---
 
-### 5. ⏳ Yb 填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性
+### 5. ❓ Yb 填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性
 
-#### 新颖性验证 (Novelty Verification)
-
-**重叠评估:** none
-**原始新颖性分数:** 0.650
-**调整后新颖性分数:** 0.650
-
-**检索查询:**
-  1. `填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性 可定量降低晶格热导率 但过量填充会引入附加的电子散射并改变载流子浓度`
-  2. `YbyFe4Sb12 YbyCo4Sb12`
-  3. `YbyFe4Sb12 YbyCo4Sb12 CeyFe4Sb12 contradictory evidence`
-
-**检索结果总数:** 0
-
-**潜在重叠论文:** 无
-
-**评估说明:** 根据已有文献重叠信息，未发现任何工作提出或验证过类似的主张，因此该假设在现有数据库中是空白点。当前假设聚焦于Yb填充分数对两种方钴矿材料晶格热导率与迁移率的定量影响，并结合批次稳定性评估，体现了明确的定量关系和材料体系层面的新颖性。综上，该研究假设的新颖性依然成立，值得进一步探索。
-
-
-**Confidence:** 0.55 | **Novelty:** 0.65 | **LLM Plausibility:** 0.72
+**Confidence:** 0.79 | **Novelty:** 0.65 | **LLM Plausibility:** 0.65
 **Consistency:** strong (强 — LLM与搜索一致高分)
+**Extractability:** 0.0/5
 
-**Search Best Score:** N/A（无搜索记录）
+**已知（prior work）:** 已有文献依据(evidence_chain 编号: TE048, TE035, TE037, TE051)，具体结论需人工/LLM 补写
+**新知（incremental claim）:** 相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)
+
+**Search Best Score:** 0.786 （文献数值证据 2 个）
 
 **Description:** 针对填充方钴矿批次复现性差的问题，提出名义填充分数 y 与实际填充分数之间的偏差是导致 ZT 不一致的主要原因。假设 Yb 填充原子在方钴矿笼子中产生“rattling”效应，可定量降低晶格热导率；但过量填充会引入附加的电子散射并改变载流子浓度。通过制备一系列 y=0–0.4 的 Yb_yFe4Sb12/Yb_yCo4Sb12 样品，测定实际填充分数、晶格热导率、载流子迁移率和 ZT，可确定性能最优且对 y 不敏感的填充范围。
 
@@ -210,7 +200,7 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 **Property:** 晶格热导率与 ZT 的批次稳定性
 
 **Source Gap:** Gap 3
-**Search Method:** bayesian (0 iterations, 0 candidates)
+**Search Method:** bayesian (8 iterations, 19 candidates)
 
 **Evidence Chain:**
   - TE048
@@ -219,6 +209,7 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
   - TE051
   - 预测值 40–60%（待实验验证，建议方案：元素分析或TGA定量组成变化）
   - [Novelty Verification] Overlap: none | Novelty: 0.650 (was 0.650) | Queries: 3 | Results: 0
+  - 文献验证: 40–60% — 在 20 篇论文中检索到 4 条匹配记录 (来源: 3. 高温区（800-1000 K）— SnSe / half-Heusler / GeTe, 4. 新兴/二维/理论探索, 3. 高温区（800-1000 K）— SnSe / half-Heusler / GeTe)
 
 **Value Verification (数值文献验证):**
   - 综合验证分数: 0.00
@@ -226,6 +217,81 @@ Explored 5 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
   - 未查证值: 40–60%
 
 **Scientific Explanation (LLM):**
-> 理论基础扎实：填充原子在笼中的rattling散射声子降低晶格热导率是公认机制，过量填充引入额外电子散射并改变载流子浓度也符合物理原理。文献总体一致：Yb填充CoSb3等体系已有大量报道显示晶格热导率随填充分数降低、ZT在y≈0.2附近出现峰值，但具体下降幅度因体系而异（部分报道达70%以上），故40–60%的定量预测需谨慎看待。可验证性强：可通过控制合成、元素分析测定实际填充分数，并结合热导率、迁移率及ZT测试验证，也可用第一性原理计算辅助。新颖性一般：填充-性能关系本身非新概念，但将名义/实际填充分数偏差与批次稳定性联系起来，并寻找对y不敏感的合成窗口，具有一定应用视角新意；系统检索未发现直接相似工作。综合认为假设合理但定量普适性有待实验确认。；系统查重: 0 篇结果，重叠=none，新颖性 0.65->0.65
+> 理论基础基本合理：Yb填充方钴矿的rattling效应降低晶格热导率、过量填充引入额外散射影响迁移率，符合已知声子-电子输运机制；但笼统给出40-60%的定量下降并推断宽峰区间，缺少可依据的标度模型。文献一致性中等：填充方钴矿降低晶格热导率是成熟结论，Yb_yCo4Sb12研究很多，但预测的敏感窗口和ZT波动范围未得到检索结果直接支持，且Yb_yFe4Sb12相稳定性存疑。可验证性较好：可通过元素分析或TGA测定实际填充量，结合热导率、迁移率和ZT测试验证，也可用第一性原理计算缺陷形成能和声子谱。新颖性一般：系统查重无重叠，针对批次复现性提出‘对y不敏感窗口’具有一定新视角，但未揭示新机制或通用标度律。综合评分为0.65。；系统查重: 0 篇结果，重叠=none，新颖性 0.65->0.65
+
+**External Validation:**
+  - overall_match: False
+  - databases_checked: ['materials_project', 'oqmd', 'nomad']
+  - supporting_evidence: []
+  - details: {'materials_project': {'match': False, 'matching_entries': [], 'materials_found': [{'mp_id': 'mp-aaaaaabc', 'formula': '', 'band_gap_ev': None, 'formation_energy_ev_per_atom': None, 'energy_above_hull
 
 ---
+
+---
+
+# 量化验证结果汇总（Quantitative Validation Phase — 2026-08-11）
+
+> 本阶段对 5 条假设执行了经典模型对比（run_model_comparison）与符号回归
+> （symbolic_regression），数据来源为 knowledge_graph.md 新增的「七、量化建模数值表」
+> （20 个可追溯数值点，覆盖方钴矿/half-Heusler/SnSe/跨体系温度-ZT）。
+
+## 1. 模型对比总览（候选 vs 经典 Slack 模型）
+
+| 假设 | 数据点 | 候选模型 | 候选 R² | 经典 R² (Slack) | 候选 RMSE | 经典 RMSE | 嵌套 F 检验 | 结论 |
+|------|--------|---------|---------|-----------------|-----------|-----------|------------|------|
+| 0 (Si-Ge-P 晶粒) | 15 (温度-ZT) | 三次 | 0.2855 | -0.0000 | 0.638 | 0.755 | F=2.20, p=0.157 | 未显著优于经典 |
+| 1 (SnSe 卤素) | 17 (温度-ZT) | 三次 | 0.2620 | -0.0000 | 0.614 | 0.715 | F=2.31, p=0.139 | 未显著优于经典 |
+| 2 (双极掺杂) | 15 (温度-ZT) | 三次 | 0.2855 | -0.0000 | 0.638 | 0.755 | F=2.20, p=0.157 | 未显著优于经典 |
+| 3 (共振掺杂 Seebeck) | 0 | — | — | — | — | — | — | **数据不足**（文献无 half-Heusler Seebeck 数值） |
+| 4 (Yb 填充方钴矿) | 15 (温度-ZT) | 三次 | 0.2855 | -0.0000 | 0.638 | 0.755 | F=2.20, p=0.157 | 未显著优于经典 |
+
+**关键解读**：
+- 所有可执行假设的候选三次模型 R²≈0.26-0.29 均**数值上高于** Slack 经典模型
+  （R²=-0.0000，即经典模型对跨材料温度-ZT 数据完全失效——Slack 是带隙-温度模型，
+  本就不适用于 ZT 预测，此为预期内的负对照），但**嵌套 F 检验均不显著**
+  （p=0.14-0.16>0.05），bootstrap 95% CI 含负值，贝叶斯因子 BF≈0.16-0.19 反而支持常数模型。
+- **科学结论**：ZT 对工作温度**不存在简单普适标度**（跨材料温度-ZT 相关性弱），
+  这是诚实的负结果——支持 Gap 1（ML 预测-实验断层：ZT 高度依赖材料特异描述符，
+  单变量温度不足以预测）。
+
+## 2. 符号回归总览（遗传编程可解释表达式）
+
+| 假设 | 数据点 | R² | RMSE | 表达式形态 | 物理可解释性 |
+|------|--------|-----|------|-----------|-------------|
+| 0 (Si-Ge-P) | 15 | 0.789 | 0.347 | sqrt(log(x+c))+log嵌套/sin | **差**（12 参数过拟合） |
+| 1 (SnSe 卤素) | 17 | 0.662 | 0.416 | sqrt(exp(sin)+sin+exp(sin)) | **差**（9 参数，纯数值振荡） |
+| 2 (双极掺杂) | 15 | 0.789 | 0.347 | 同 idx 0 | **差**（过拟合） |
+| 3 (共振掺杂) | 0 | — | — | — | 数据不足 |
+| 4 (Yb 填充) | 15 | 0.789 | 0.347 | 同 idx 0 | **差**（过拟合） |
+
+**关键解读**：
+- 符号回归 R²（0.66-0.79）显著高于三次多项式（0.26-0.29），但表达式为
+  嵌套 log/sin/exp 的复杂函数（9-12 个自由参数拟合 15-17 个点），**参数数/样本数
+  比值过高，为典型过拟合**，无物理意义。
+- 说明跨材料温度-ZT 数据集中**不存在简单的低阶可解释表达式**——这与模型对比
+  的负结果相互印证。
+
+## 3. 外部数据库交叉验证
+
+| 假设 | Materials Project | OQMD | NOMAD | 状态 |
+|------|-------------------|------|-------|------|
+| 0 (Si-Ge-P) | 无命中 | 无命中 | 无命中 | inconclusive（ZT 需输运测量，计算库仅有电子结构） |
+| 4 (Yb 填充方钴矿) | 无命中 | 无命中 | 无命中 | inconclusive（同上） |
+
+**关键解读**：ZT 实验值不在 Materials Project / OQMD / NOMAD 中（这些库提供
+晶体结构、带隙、形成能等，不含完整热电输运数据）。外部验证不可行**本身即证据**：
+热电 ZT 的公开结构化数据库缺失正是 Gap 1（ML-实验断层）的数据层根源。
+
+## 4. 量化验证阶段新识别的研究空白
+
+- **Gap 7（新增，置信度 0.65）**：half-Heusler 共振掺杂文献（TE146/TE087/TE101）
+  报告了 ZT 提升与 PF 增益，但摘要层面几乎不报告 Seebeck 系数（µV/K）的
+  定量数值，导致"共振掺杂浓度-Seebeck"定量标度无法从现有文献直接建模。
+  验证方案：从全文（非摘要）提取 half-Heusler 变温 Seebeck 数据，或对
+  HfZrCoSnSb:Al 系列进行第一性原理输运计算补全数据点。
+- **Gap 1 强化**：跨材料温度-ZT 单变量模型 R²≈0.29（不显著）→ ZT 预测必须
+  引入材料描述符（带隙、有效质量、声速、德拜温度），单变量温度/掺杂不足。
+
+---
+
+*量化验证报告文件：model_comparison_0/1/2/4.md、symbolic_0/1/2/4.md*
