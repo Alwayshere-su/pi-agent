@@ -2,7 +2,7 @@
 
 > **项目**：Pi-Agent —— 材料科学文献驱动的构效关系自主发现智能体
 > **赛道**：GOAI 算法赛题 · 方向三 · 路线 A（构效关系发现）
-> **版本**：v1.0（初赛终版）｜**日期**：2026-08-03
+> **版本**：v2.2.8（初赛终版）｜**日期**：2026-08-11
 >
 > 本文档依据赛题要求（`赛题内容.md` 第五节"开源与合规要求"与 `补充.md` 评审标准），完整披露项目的开源计划、商业 API 使用、闭源模型说明、数据来源与授权、第三方依赖等信息。
 
@@ -13,7 +13,7 @@
 ### 1.1 初赛阶段
 
 - 初赛不强制提交代码，但已明确开源边界。
-- **开源仓库已于 2026-08 上线并公开**：<https://github.com/Alwayshere-su/pi-agent>（公开仓库，285 文件、1 commit、MIT 许可），包含：
+- **开源仓库已于 2026-08 上线并公开**：<https://github.com/Alwayshere-su/pi-agent>（公开仓库，241 文件、16+ commits、MIT 许可），包含：
   - `pi_agent/` + `literature_agent/` + `main.py` 核心代码
   - `requirements.txt` 依赖清单（精确版本锁定）
   - 配置文件说明（`.api_key` 模板、环境变量配置）
@@ -56,7 +56,7 @@
 | **接入模式** | **三层自动检测与降级**：REST API 直连（主模式）> 可选 JSON-RPC MCP 适配 > 可选外部 Skill 脚本。任一不可用自动降级；全部不可用时自动回退到纯 arXiv 检索（始终可用） |
 | **费用假设** | 需要 `SCIVERSE_API_KEY`（在 sciverse.opendatalab.com 注册获取） |
 | **替代方案** | 纯 arXiv 检索（开放获取，零成本，始终可用）——缺失 `SCIVERSE_API_KEY` 或不配置时自动回退 |
-| **审计机制** | 每次 Sciverse API 调用均生成标准化审计记录（`workspace/logs/sciverse_skill_log.jsonl`），包含调用 ID、时间戳、参数 SHA256 哈希、结果摘要、接入模式（`adapter_mode`）等字段。详见 `workspace/outputs/literature_survey/audit_trail.md` |
+| **审计机制** | 每次 Sciverse API 调用均生成标准化审计记录（`workspace/logs/<run-dir>/sciverse_skill_log.jsonl`），包含调用 ID、时间戳、参数 SHA256 哈希、结果摘要、接入模式（`adapter_mode`）等字段。详见 `workspace/outputs/literature_survey/audit_trail.md` |
 
 ### 2.3 MinerU（PDF 解析引擎）
 
@@ -140,7 +140,8 @@
 | `requests` | 2.32.5 | HTTP 请求（arXiv API、Sciverse API、REST 调用） | Apache 2.0 |
 | `charset-normalizer` | 3.4.6 | 字符编码检测 | MIT |
 | `magika` | 1.0.3 | 文件类型检测 | Apache 2.0 |
-| `beautifulsoup4` | 4.12.3 | HTML/XML 解析 | MIT |
+| `markitdown` | 0.1.7 | 文档转 Markdown（本地解析引擎） | MIT |
+| `beautifulsoup4` | 4.12.3 | HTML/XML 解析（markitdown 依赖） | MIT |
 | `markdownify` | 1.2.3 | HTML 转 Markdown | MIT |
 | `mammoth` | 1.12.0 | DOCX 转 Markdown | BSD-2-Clause |
 | `pdfplumber` | 0.11.10 | PDF 文本与表格提取 | MIT |
@@ -160,6 +161,14 @@
 | 包名 | 版本 | 用途 | 许可证 |
 |------|------|------|--------|
 | `datasets` | 4.8.4 | Sci-Base 数据集接入（可选，仅 `--download` 模式需要） | Apache 2.0 |
+
+### 拟实施阶段依赖（已在 requirements.txt 锁定，当前原型及 CI 测试不依赖）
+
+| 包名 | 版本 | 用途 | 许可证 |
+|------|------|------|--------|
+| `chromadb` | 1.5.9 | 向量数据库（混合检索，拟实施） | Apache 2.0 |
+| `sentence-transformers` | 5.6.1 | Embedding 模型加载（BGE-M3，拟实施） | Apache 2.0 |
+| `FlagEmbedding` | 1.4.0 | Reranker 模型（bge-reranker-v2-m3，拟实施） | MIT |
 
 > 所有依赖均为精确版本锁定（`==`），避免上游发布破坏可复现性。版本基于 Python 3.12 / 2026-06 实测环境（通过 `pip freeze` 验证）。
 
@@ -186,7 +195,7 @@
 
 ### 9.1 实际使用的接入模式
 
-本项目以 **REST API 直连为主**（设置 `SCIVERSE_API_KEY`，调用 `https://api.sciverse.space`），实现见 `literature_agent/sciverse_mcp.py` 的 `SciverseSearcherRestAdapter`。当前仓库历史审计记录（`workspace/logs/sciverse_skill_log.jsonl`）的全部调用的 `adapter_mode` 均为 `rest`。
+本项目以 **REST API 直连为主**（设置 `SCIVERSE_API_KEY`，调用 `https://api.sciverse.space`），实现见 `literature_agent/sciverse_mcp.py` 的 `SciverseSearcherRestAdapter`。当前仓库历史审计记录（`workspace/logs/literature_survey/sciverse_skill_log.jsonl`）的全部调用的 `adapter_mode` 均为 `rest`。
 
 ### 9.2 可选扩展接入模式
 
@@ -206,7 +215,7 @@
 
 ### 9.4 审计证据链
 
-无论实际使用何种接入模式，每次 Sciverse API 调用均生成标准化审计记录，持久化于 `workspace/logs/sciverse_skill_log.jsonl`，包含：
+无论实际使用何种接入模式，每次 Sciverse API 调用均生成标准化审计记录，持久化于 `workspace/logs/<run-dir>/sciverse_skill_log.jsonl`，包含：
 - 唯一调用 ID
 - 中国标准时间戳
 - 调用参数 SHA256 哈希（前 16 位）

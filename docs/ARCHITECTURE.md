@@ -1,7 +1,7 @@
 # Pi-Agent 系统架构文档
 
 > **项目名称**：Pi-Agent —— 材料科学文献驱动的构效关系自主发现智能体
-> **版本**：v2.0（初赛终版）
+> **版本**：v2.2.8（初赛终版）
 
 ---
 
@@ -11,7 +11,7 @@
 flowchart TB
     subgraph Phase1["阶段一：文献调研（基本任务）"]
         A1[自主检索<br/>arXiv + Sciverse + Crossref] --> A2[筛选去重<br/>DOI/标题相似度合并]
-        A2 --> A3[双引擎 PDF 解析<br/>MinerU 优先 → markitdown_utils 回退]
+        A2 --> A3[双引擎 PDF 解析<br/>MinerU 优先 → markitdown 回退]
         A3 --> A4[摘要整理<br/>paper_summaries.md]
         A4 --> A5[知识图谱撰写<br/>knowledge_graph.md<br/>材料/性质/数值/关系/矛盾]
         A5 --> A6[Research Gap 识别<br/>gap_report.md<br/>10 项，带置信度与证据链]
@@ -48,7 +48,7 @@ sequenceDiagram
     participant Main as main.py
     participant Agent as PiAgent
     participant LLM as DeepSeek LLM
-    participant Tools as 工具管线（19 工具）
+    participant Tools as 工具管线（23 工具）
     participant Memory as 跨轮记忆
 
     User->>Main: python main.py --topic "..." --budget 600
@@ -91,7 +91,7 @@ flowchart LR
 
     subgraph Processing["处理管道"]
         Search["文献检索<br/>search.py<br/>多源并发 + 去重合并"] --> Parse
-        Parse["文档解析<br/>parser.py<br/>MinerU + markitdown_utils<br/>PDF/DOCX/HTML → Markdown"] --> Extract
+        Parse["文档解析<br/>parser.py<br/>MinerU + markitdown<br/>PDF/DOCX/HTML → Markdown"] --> Extract
         Extract["知识抽取<br/>extractor.py<br/>entity/value extraction<br/>+ (x,y) pair extraction"] --> KG
     end
 
@@ -146,7 +146,7 @@ graph TD
     subgraph DataLayer["数据与工具层"]
         search["literature_agent/search.py<br/>arXiv + Sciverse<br/>Semantic Scholar + Sci-Base<br/>多源并发检索与缓存"]
         sciverse["literature_agent/sciverse_mcp.py<br/>Sciverse 适配层<br/>MCP > Skill > REST<br/>三层自动检测与降级"]
-        parser["literature_agent/parser.py<br/>双引擎 PDF 解析<br/>MinerU 优先 → markitdown_utils 回退"]
+        parser["literature_agent/parser.py<br/>双引擎 PDF 解析<br/>MinerU 优先 → markitdown 回退"]
         extractor["literature_agent/extractor.py<br/>实体/数值抽取<br/>四路径 (x,y) 配对提取"]
         discovery["literature_agent/discovery.py<br/>贝叶斯优化/MCTS<br/>外部数据库验证<br/>LLM 引导 + 审计"]
         classical["literature_agent/classical_models.py<br/>Slack Model / Vegard's Law<br/>线性/二次/幂律基线拟合"]
@@ -216,9 +216,9 @@ graph TD
 
 | 组件 | 文件 | 说明 |
 |------|------|------|
-| **文献检索** | `literature_agent/search.py` | 多源文献搜索引擎：arXiv API（免费）+ Sciverse REST API + Semantic Scholar + Sci-Base 数据集。多源并发检索，DOI/标题去重合并，检索审计日志 |
+| **文献检索** | `literature_agent/search.py` | 多源文献搜索引擎：arXiv API（免费）+ Sciverse REST API + Sci-Base 数据集（可选）。多源并发检索，DOI/标题去重合并，检索审计日志 |
 | **Sciverse 适配** | `literature_agent/sciverse_mcp.py` | Sciverse 三层接入适配：MCP（JSON-RPC 2.0 客户端）> Skill（subprocess 调用）> REST API 直连。自动检测与降级，全部不可用时回退纯 arXiv |
-| **文档解析** | `literature_agent/parser.py` | 双引擎 PDF/DOCX/HTML 解析：MinerU（Cloud > 本地服务 > pip 包）优先，markitdown_utils 本地引擎兜底。输出统一的 `ParsedDocument` 结构 |
+| **文档解析** | `literature_agent/parser.py` | 双引擎 PDF/DOCX/HTML 解析：MinerU（Cloud > 本地服务 > pip 包）优先，markitdown 本地引擎兜底。输出统一的 `ParsedDocument` 结构 |
 | **知识抽取** | `literature_agent/extractor.py` | 材料/性能/数值实体抽取，四路径 (x,y) 配对提取（Markdown 表格按列 / 句子序列 / 句对 / 笛卡尔兜底），知识图谱数据模型 |
 | **构效关系发现** | `literature_agent/discovery.py` | 贝叶斯优化（RBF-GP 代理，超参数 MLE 拟合 + UCB）+ MCTS 搜索。LLM 引导（可配置频率，默认每 5-10 轮），证据打分，外部数据库验证（Materials Project / OQMD），LLM 引导审计事件 |
 | **经典模型** | `literature_agent/classical_models.py` | 经典基线拟合：Slack 带隙-温度模型（Varshni-Einstein）、Vegard 定律（线性组分-晶格常数）、二次多项式、幂律模型。含多起点曲线拟合 + 纯 numpy 网格搜索兜底 |
@@ -239,7 +239,7 @@ graph TD
 | 设计决策 | 理由 |
 |---------|------|
 | 不构建 JSON 知识图谱，改由 Agent 撰写 Markdown 图谱 | LLM 从自然语言推理关系比填充结构化模板更可靠，且图谱质量可由领域专家直接阅读核验 |
-| 双引擎 PDF 解析（MinerU 优先 + markitdown_utils 回退） | 兼顾解析质量（MinerU 对中文论文/复杂表格/公式更优）与离线可复现（markitdown_utils 本地引擎） |
+| 双引擎 PDF 解析（MinerU 优先 + markitdown 回退） | 兼顾解析质量（MinerU 对中文论文/复杂表格/公式更优）与离线可复现（markitdown 本地引擎） |
 | Sciverse 三层接入（MCP > Skill > REST） | 满足赛题"鼓励 MCP/Skill 接入"要求，任一模式不可用自动降级，保证可运行 |
 | 确定性计算与 LLM 采样分离 | 搜索打分由文献数值确定性计算（固定 seed 可复现），LLM 负责推理与决策（采样随机但结论带证据链可独立核验） |
 | 跨轮记忆（MEMORY.md + 运行反思） | 让 Agent 在多次运行间继承结论、积累证据，而非每次从零开始 |
@@ -281,4 +281,4 @@ flowchart TD
 
 ---
 
-*本文档由项目初赛提交材料与源代码分析自动生成，所有图表使用 Mermaid 格式，在 GitHub 上可直接渲染。*
+*本文档基于项目源代码与初赛提交材料撰写，所有图表使用 Mermaid 格式，在 GitHub 上可直接渲染。*
