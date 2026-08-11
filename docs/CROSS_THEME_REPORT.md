@@ -11,7 +11,7 @@
 
 ## 1. 摘要
 
-本报告对 Agent 在 **8 个材料科学主题**上的文献调研产出（Gap 分析 + 假设发现）进行跨主题统一评估，检验同一套 Agent 代码在不同材料体系（MOF、钙钛矿、热电、电池正极、固态电解质）的泛化表现。
+本报告对 Agent 在 **10 个材料科学主题**上的文献调研产出（Gap 分析 + 假设发现）进行跨主题统一评估，检验同一套 Agent 代码在不同材料体系（MOF、钙钛矿、热电、电池正极、固态电解质）的泛化表现。
 
 **核心发现**：
 
@@ -19,11 +19,11 @@
 |---|---|
 | 总覆盖主题数 | 10（6 个研究主题 + 4 个验证/冒烟测试主题） |
 | 总检索文献数 | 1,000+（含 gitignored 主题） |
-| 总识别 Gap 数 | 51 |
+| 总识别 Gap 数 | 66（含 mof_e2e_v4 12；与 literature_survey 主题相同、Gap 有重叠；mof_rerun 8 待核实） |
 | 总生成假设数 | 31（分布在 6 个 tracked 主题中）；正式研究主题 21 条（MOF 5 + 钙钛矿 5 + 热电 5 + 正极 6） |
 | 正结果数（confidence >= 0.7） | 14（4 个正式研究主题：MOF 3 + 钙钛矿 5 + 热电 4 + 正极 2） |
 | 负/低置信度结果数 | 7（MOF 2 + 钙钛矿 0 + 热电 1 + 正极 4） |
-| 有外部数据库验证的主题 | 4/8（Materials Project / hMOF） |
+| 有外部数据库验证的主题 | 4/10（Materials Project / hMOF） |
 | 缺乏发现报告的主题 | 1/10（mof_rerun，gitignored 且本地无 outputs；tracked 6 主题全部有产出） |
 | Agent 泛化成功率（有假设产出） | 100%（tracked 6/6；含 gitignored 9/10） |
 | 最高正结果置信度 | 0.97（钙钛矿带隙-稳定性等假设） |
@@ -40,9 +40,9 @@
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **literature_survey** (主案例) | MOF 材料用于 CO2 捕获 | 546 (11 轮累计) | 10 | 4 | 5+1* | 0 | 5 | 3 | 2 | Materials Project (氧化物代理) | 0.66 ~ 0.91 |
 | 2 | **mof_rerun** (重跑) | MOF 材料 CO2 捕获（重跑验证） | 42 | 8 | 3 | 4 | 1 | 4 | 1 | 3 | Materials Project + hMOF/CoRE MOF | 0.0 ~ 0.62 |
-| 3 | **perovskite** | 卤化物钙钛矿带隙与稳定性 | 34 | 5 | 2 | 3 | 0 | 5 | 5 | 0 | Materials Project（无匹配） | 0.88 ~ 0.97 |
-| 4 | **thermoelectric** | 热电材料 ZT 优化 | 209 (160+49) | 6 | 2 | 4 | 0 | 5 | 4 | 1 | 无外部验证 | 0.33 ~ 0.87 |
-| 5 | **cathode** | 高镍正极容量保持率（锂离子电池） | 19 | 7 | 3 | 3+1* | 0 | 6 | 3 | 3 | 待核验 | 0.43 ~ 0.61 |
+| 3 | **perovskite** | 卤化物钙钛矿带隙与稳定性 | 34 | 6 | 3 | 3 | 0 | 5 | 5 | 0 | Materials Project（无匹配） | 0.88 ~ 0.97 |
+| 4 | **thermoelectric** | 热电材料 ZT 优化 | 209 (160+49) | 7 | 3 | 4 | 0 | 5 | 4 | 1 | 无外部验证 | 0.33 ~ 0.87 |
+| 5 | **cathode** | 高镍正极容量保持率（锂离子电池） | 19 | 8 | 3 | 5 | 0 | 6 | 2 | 4 | 待核验 | 0.43 ~ 0.61 |
 | 6 | **validation** | 固态锂电池电解质 | 85 (P001-P085) | 5 | 2 | 3 | 0 | 5 | — | — | 待核验 | 待核验 |
 | 7 | **smoke_test** | MOF 材料 CO2 捕获（冒烟测试，13 篇） | 13 | 5 | 2 | 3 | 0 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 |
 | 8 | **g3test** | 金属卤化物钙钛矿温度依赖带隙 | 35 | 5 | 2 | 3 | 0 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 |
@@ -103,7 +103,7 @@
 | perovskite | Gap 2 | 反常电子-声子耦合"存在 vs 不存在"直接矛盾 (conf=0.85) |
 | validation (固态电解质) | Gap 2 & 4 | 电导率-湿度稳定性权衡矛盾 + 聚合物 t+-σ 权衡机制矛盾 (conf=0.6-0.7) |
 
-**分析**：机理矛盾类 Gap 是 Agent 发现高影响力假设的重要来源。MOF/CO2 的 Gap 2（水-CO2 机理）是全部 51 个 Gap 中置信度最高的（0.97），且通过 11 轮迭代实现了机理级闭环（辫状链原子尺度证据 + 多体系实证）。这种"发现矛盾 -> 二分统一 -> 机理闭环"的模式是 Agent 的核心竞争力。
+**分析**：机理矛盾类 Gap 是 Agent 发现高影响力假设的重要来源。MOF/CO2 的 Gap 2（水-CO2 机理）是全部跨主题 Gap 中置信度最高的（0.97），且通过 11 轮迭代实现了机理级闭环（辫状链原子尺度证据 + 多体系实证）。这种"发现矛盾 -> 二分统一 -> 机理闭环"的模式是 Agent 的核心竞争力。
 
 ### 3.3 "Pareto 前沿/多目标权衡未刻画"（3/8 主题）
 
@@ -173,10 +173,10 @@
 
 | Pipeline 环节 | 成功主题数 | 成功率 | 评估 |
 |---|---|---|---|
-| 文献检索 | 8/8 | 100% | 跨主题一致，无失败 |
-| Gap 分析 (gap_report.md) | 8/8 | 100% | 所有主题均产出结构化 Gap 报告 |
+| 文献检索 | 10/10 | 100% | 跨主题一致，无失败 |
+| Gap 分析 (gap_report.md) | 10/10 | 100% | 所有主题均产出结构化 Gap 报告 |
 | 发现/假设生成 (discovery_report.json) | 6/6 tracked | 100% | tracked 6 主题均有产出（含 gitignored 9/10；mof_rerun 本地无 outputs） |
-| 外部数据库验证 | 4/8 | 50% | 有 DB 查询的主题仅限有 Materials Project 配置的 |
+| 外部数据库验证 | 4/10 | 40% | 有 DB 查询的主题仅限有 Materials Project 配置的（MOF 类主题 MP 覆盖为 0） |
 | 假设质量评估 (llm_plausibility) | 6/6 tracked | 100% | 依赖发现环节产出 |
 
 ### 5.2 假设质量对比（tracked 6 主题，2026-08-10/11 补跑后）
@@ -204,7 +204,7 @@
 
 | 因素 | 影响 | 证据 |
 |---|---|---|
-| 文献数量 | 强正相关 | 小规模主题 (<40 篇) 假设生成失败率达 75% |
+| 文献数量 | 强正相关 | 小规模主题 (<40 篇) 首次运行假设生成失败率较高，补跑可弥补 |
 | 迭代轮数 | 强正相关 | MOF/CO2 主案例 11 轮 -> Gap 置信度 0.83；smoke_test 1 轮 -> 0.65 |
 | 材料类型与外部数据库匹配度 | 中相关 | MOF 是杂化材料，MP 覆盖为 0，只能使用间接代理 |
 | 领域知识密度 | 中相关 | 热电领域"ZT 预测-实验鸿沟"是公认的系统性问题 (conf=0.92)，Agent 能高效识别 |
@@ -272,7 +272,7 @@
 
 ### 7.1 核心结论
 
-1. **Agent 泛化能力基本验证通过**：Gap 识别环节 100% 成功；补跑后 tracked 6/6 主题均有假设产出（100%），4 个正式研究主题正结果率 50%–100%。代码跨主题一致性良好。
+1. **Agent 泛化能力基本验证通过**：Gap 识别环节 100% 成功；补跑后 tracked 6/6 主题均有假设产出（100%），4 个正式研究主题正结果率 33%–100%。代码跨主题一致性良好。
 
 2. **文献密度影响首次运行质量**：perovskite（34 篇）、cathode（19 篇）初跑 discovery 未收敛，补跑（聚焦检索 + 重新生成）后均产出正式假设。仍建议设定文献量最低阈值（如 >= 50 篇）以提升首跑成功率。
 
@@ -291,7 +291,7 @@
 | P1 | 为"ML-实验闭环断裂"这一跨主题 Gap 建立统一闭环率评估指标 | 量化各领域的验证缺口，可作为竞赛亮点 |
 | P1 | 实现"缺陷工程"跨主题迁移（MOF -> 电池正极），完成至少一个实证案例 | 冲刺高分方向 |
 | P2 | 从 4 个"标度律缺失" Gap 中抽取统一的方法论 SOP | 提升新主题的 Gap-假设转化效率 |
-| P2 | 为 smoke_test / g3test / mof_rerun 补充 discovery_report 生成（cathode / validation 已于 2026-08-11 补跑完成） | 填补剩余数据空白，提升正结果率 |
+| P2 | 为 smoke_test / g3test / mof_rerun / smoke_fix 补充 discovery_report 生成（validation discovery_report 待生成，cathode 已于 2026-08-11 补跑完成） | 填补剩余数据空白，提升正结果率 |
 
 ### 7.3 数据完整性说明
 
@@ -299,14 +299,15 @@
 |---|---|
 | `workspace/outputs/literature_survey/gap_report.md` | 存在（10 Gaps, 546 papers） |
 | `workspace/outputs/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 1 validated） |
+| `workspace/outputs/mof_e2e_v4/literature_survey/gap_report.md` | 存在（12 Gaps） |
 | `workspace/outputs/mof_e2e_v4/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses） |
-| `workspace/outputs/mof_rerun/literature_survey/gap_report.md` | 存在（8 Gaps, 42 papers） |
-| `workspace/outputs/mof_rerun/literature_survey/discovery/discovery_report.json` | 存在（4 hypotheses, 2 validated） |
-| `workspace/outputs/perovskite/literature_survey/gap_report.md` | 存在（5 Gaps, 34 papers） |
+| `workspace/outputs/mof_rerun/literature_survey/gap_report.md` | 待核实（outputs 目录当前不存在，仅 cache/logs/memory 留存） |
+| `workspace/outputs/mof_rerun/literature_survey/discovery/discovery_report.json` | 待核实（同上） |
+| `workspace/outputs/perovskite/literature_survey/gap_report.md` | 存在（6 Gaps, 34 papers） |
 | `workspace/outputs/perovskite/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 2026-08-10 补跑） |
-| `workspace/outputs/thermoelectric/literature_survey/gap_report.md` | 存在（6 Gaps, 209 papers） |
+| `workspace/outputs/thermoelectric/literature_survey/gap_report.md` | 存在（7 Gaps, 209 papers） |
 | `workspace/outputs/thermoelectric/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 0 validated） |
-| `workspace/outputs/cathode/literature_survey/gap_report.md` | 存在（7 Gaps, 19 papers） |
+| `workspace/outputs/cathode/literature_survey/gap_report.md` | 存在（8 Gaps, 19 papers） |
 | `workspace/outputs/cathode/literature_survey/discovery/discovery_report.json` | 存在（6 hypotheses, 2026-08-11 补跑） |
 | `workspace/outputs/validation/literature_survey/gap_report.md` | 存在（5 Gaps, 85 papers） |
 | `workspace/outputs/validation/literature_survey/discovery/discovery_report.json` | hypotheses.json 存在（5 条）；discovery_report 待生成 |
