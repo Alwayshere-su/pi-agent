@@ -332,7 +332,18 @@
       "unverified_values": []
     },
     "degraded": false,
-    "degraded_reason": ""
+    "degraded_reason": "",
+    "model_comparison": {
+      "n_points": 31,
+      "best_r2": 0.1004,
+      "f_test_p": null,
+      "verdict": "insufficient",
+      "report_path": "workspace/outputs/cathode/literature_survey/discovery\\model_comparison_2.md"
+    },
+    "symbolic_regression": {
+      "r2": 0.104101,
+      "report_path": "workspace/outputs/cathode/literature_survey/discovery\\symbolic_2.md"
+    }
   },
   {
     "id": "hypo_4",
