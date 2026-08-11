@@ -298,7 +298,19 @@
       "unverified_values": []
     },
     "degraded": false,
-    "degraded_reason": ""
+    "degraded_reason": "",
+    "model_comparison": {
+      "n_points": 15,
+      "best_r2": 0.2855,
+      "f_test_p": 0.1574,
+      "verdict": "candidate_possible",
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\model_comparison_0.md"
+    },
+    "symbolic_regression": {
+      "r2": 0.789102,
+      "expr": "sqrt(log(((c0 + x) + c1))) + (((log(((x + c2) * ((((x * c3) / sin(c4)) / x) + c5))) / x) / ((((c6 + c7) * (x + x)) + ((c8 / c9) + x)) * ((c10 / x) + c11))) - c12)",
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\symbolic_0.md"
+    }
   },
   {
     "id": "hypo_2",
@@ -343,215 +355,15 @@
     "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
     "model_comparison": {
       "n_points": 17,
-      "x_label": "temperature",
-      "y_unit": "dimensionless",
-      "best_candidate": {
-        "name": "三次",
-        "kind": "cubic",
-        "k": 4,
-        "r2": 0.2619759895779582,
-        "rmse": 0.614313473941626,
-        "rss": 6.4154777525258915,
-        "params": "y = -7.79e-09x^3 + 2.12e-05x^2 + -0.01553x + 4.281"
-      },
-      "classical_model": "fit_slack_model (自 classical_models 模块)",
-      "classical_result": {
-        "name": "fit_slack_model",
-        "k": 2,
-        "r2": -7.72715225139109e-14,
-        "rmse": 0.715080269891138,
-        "rss": 8.692776470588907,
-        "expr": ""
-      },
-      "f_test": {
-        "valid": true,
-        "F": 2.3073015351945703,
-        "p_value": 0.1388219665458551,
-        "df_num": 2,
-        "df_den": 13,
-        "significant": false,
-        "full_side": "候选模型"
-      },
-      "verdict": {
-        "verdict": "candidate_possible",
-        "reason": "候选 R²=0.2620 高于经典 R²=-0.0000（ΔR²=+0.2620），但缺 F 检验/bootstrap CI 佐证，仅作弱证据提示",
-        "delta_r2": 0.262,
-        "f_supported": false,
-        "ci_supported": false
-      },
-      "bayesian": {
-        "n": 17,
-        "slope": {
-          "mean": 0.002368878001544901,
-          "std": 0.0010184916332843293,
-          "ci_low": 0.0002508087002275031,
-          "ci_high": 0.004486947302862299
-        },
-        "intercept": {
-          "mean": -0.38849010988217714,
-          "std": 0.8239764211554398,
-          "ci_low": -2.1020428830461952,
-          "ci_high": 1.3250626632818407
-        },
-        "sigma2": {
-          "mean": 0.3851987592643096,
-          "std": 0.13212208442495793
-        },
-        "r2": 0.21895095277800392,
-        "rmse": 0.631966342182069,
-        "mae": 0.5000608192980875,
-        "nu": 21.0,
-        "approximation": false,
-        "bayes_factor_vs_constant": 0.1872925854231317,
-        "log_bf_vs_constant": -1.6750832569513747,
-        "bf_evidence": "中等支持常数模型（BF ≤ 1/3）"
-      },
-      "diagnostics": {
-        "n": 17,
-        "fit": "poly1",
-        "ols": {
-          "r2": 0.21897139304003055,
-          "adjusted_r2": 0.1073958777600349,
-          "rmse": 0.6319580727640425,
-          "mae": 0.5006520497054323,
-          "slope": 0.0023916572685137743,
-          "intercept": -0.40718662787203613
-        },
-        "bootstrap": {
-          "n_boot": 300,
-          "n_ok": 300,
-          "seed": 42,
-          "approximation": false,
-          "r2": {
-            "mean": 0.05803500622228212,
-            "std": 0.19803659257637576,
-            "ci_low": -0.48336334548602006,
-            "ci_high": 0.2158352050052453
-          },
-          "rmse": {
-            "mean": 0.6909569695338612,
-            "std": 0.0651356323928346,
-            "ci_low": 0.6332256020869744,
-            "ci_high": 0.8709205295791422
-          },
-          "mae": {
-            "mean": 0.5247477818602452,
-            "std": 0.04373480257385072,
-            "ci_low": 0.4655547942036391,
-            "ci_high": 0.6272185101307486
-          },
-          "slope": {
-            "mean": 0.002646298816010209,
-            "std": 0.0017120928298092575,
-            "ci_low": -6.966739783229488e-05,
-            "ci_high": 0.006573377411902931
-          }
-        },
-        "loocv": {
-          "valid": true,
-          "method": "leave_one_out",
-          "n_folds": 17,
-          "n_ok": 17,
-          "oof_r2": -0.1413597869109986,
-          "oof_rmse": 0.7639520118950932,
-          "oof_mae": 0.5951201726345215,
-          "note": "逐点留一（同源点仍可能泄漏，建议结合 group_cv 看）"
-        },
-        "group_cv": {
-          "valid": true,
-          "method": "leave_one_group_out",
-          "n_groups": 6,
-          "n_folds": 6,
-          "n_predicted": 17,
-          "oof_r2": -0.04979392170171826,
-          "oof_rmse": 0.7326673228503244,
-          "oof_mae": 0.5551265032022358,
-          "per_fold": [
-            {
-              "group": "0",
-              "n_train": 15,
-              "n_test": 2
-            },
-            {
-              "group": "3",
-              "n_train": 13,
-              "n_test": 4
-            },
-            {
-              "group": "5",
-              "n_train": 13,
-              "n_test": 4
-            },
-            {
-              "group": "6",
-              "n_train": 14,
-              "n_test": 3
-            },
-            {
-              "group": "7",
-              "n_train": 15,
-              "n_test": 2
-            },
-            {
-              "group": "8",
-              "n_train": 15,
-              "n_test": 2
-            }
-          ],
-          "note": "组=数据点来源（近似 leave-one-paper-out，同组不跨折泄漏）"
-        },
-        "cooks": {
-          "valid": true,
-          "n": 17,
-          "max_cooks": 0.6446311091351525,
-          "max_cooks_index": 16,
-          "threshold": 0.23529411764705882,
-          "high_influence_indices": [
-            0,
-            14,
-            16
-          ],
-          "high_influence_count": 3,
-          "leverage_max": 0.5323064304577949,
-          "note": "阈值经验取 4/n；高影响点可能主导线性回归，需检查其来源"
-        }
-      },
-      "tiered_regression": {
-        "A": {
-          "n": 17,
-          "r2": 0.21897139304003055,
-          "slope": 0.002391657268513769,
-          "intercept": -0.4071866278720315
-        }
-      },
-      "quality_counts": {
-        "table": 17
-      },
-      "n_groups": 6,
-      "llm_explanation": "结论：候选模型（三次）的 R²=0.2620 虽高于经典模型的 R²=-0.0000（ΔR²=+0.2620），但嵌套 F 检验 p=0.1388>0.05，不显著；bootstrap 95% CI 包含负值，贝叶斯因子 BF=0.187，均不支持其稳健优于经典模型。因此只能视为弱证据，不能断言候选模型更优。\n\n经典模型失效的物理机制：\n\n1. **温度非线性**：ZT 在 400–1000 K 区间受声子软化、双极扩散及本征激发等影响，呈明显非线性甚至非单调变化，简单线性/指数形式无法描述。\n\n2. **组分偏离线性混合**：Cl/Br/I 取代 Se 时，离子半径和缺陷形成能差异导致固溶度有限，实际载流子浓度与掺杂量非线性；Sn 空位补偿进一步偏离线性关系。\n\n3. **缺陷/孔道效应**：卤素掺杂引入点缺陷和晶格畸变，增强声子散射以降低晶格热导率，但也会造成电离不完全、复合缺陷或迁移率与载流子浓度耦合变化，破坏经典模型对理想晶格和线性输运的假设。\n\n综上，在该数据范围内，候选模型没有统计显著的优越性；经典模型低 R² 源于其未能涵盖上述真实物理机制。",
-      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\model_comparison_1.md"
+      "best_r2": 0.262,
+      "f_test_p": 0.1388,
+      "verdict": "candidate_possible",
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\model_comparison_1.md"
     },
     "symbolic_regression": {
-      "n_points": 17,
-      "x_label": "temperature",
-      "y_unit": "dimensionless",
+      "r2": 0.661976,
       "expr": "sqrt(((exp(sin(((x + c0) / c1))) + sin(((x + (x - c2)) / c3))) + exp(sin((((x + ((sin(c4) * c5) / ((c6 / c7) * x))) / c8) / c9)))))",
-      "params": {
-        "c0": 2.3852324190457566,
-        "c1": 1.3966357323432228,
-        "c2": 0.25551573014040196,
-        "c3": 1.1196181202114968,
-        "c4": 1.8215699258124407,
-        "c5": 5.418383062504282,
-        "c6": 0.00013207920787489116,
-        "c7": 0.03958336393268231,
-        "c8": 2.041425468524792,
-        "c9": 2.042625004187769
-      },
-      "mse": 0.17284494188421523,
-      "rmse": 0.4157462469875287,
-      "r2": 0.6619763522076599,
-      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\symbolic_1.md"
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\symbolic_1.md"
     }
   },
   {
@@ -625,217 +437,15 @@
     "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
     "model_comparison": {
       "n_points": 15,
-      "x_label": "temperature",
-      "y_unit": "dimensionless",
-      "best_candidate": {
-        "name": "三次",
-        "kind": "cubic",
-        "k": 4,
-        "r2": 0.2855191373722714,
-        "rmse": 0.6379695406604933,
-        "rss": 6.105077022158412,
-        "params": "y = -1.369e-09x^3 + 8.467e-06x^2 + -0.007666x + 2.767"
-      },
-      "classical_model": "fit_slack_model (自 classical_models 模块)",
-      "classical_result": {
-        "name": "fit_slack_model",
-        "k": 2,
-        "r2": -8.992806499463768e-14,
-        "rmse": 0.7547526452789728,
-        "rss": 8.544773333334103,
-        "expr": ""
-      },
-      "f_test": {
-        "valid": true,
-        "F": 2.1978968754635524,
-        "p_value": 0.15737955169777904,
-        "df_num": 2,
-        "df_den": 11,
-        "significant": false,
-        "full_side": "候选模型"
-      },
-      "verdict": {
-        "verdict": "candidate_possible",
-        "reason": "候选 R²=0.2855 高于经典 R²=-0.0000（ΔR²=+0.2855），但缺 F 检验/bootstrap CI 佐证，仅作弱证据提示",
-        "delta_r2": 0.2855,
-        "f_supported": false,
-        "ci_supported": false
-      },
-      "bayesian": {
-        "n": 15,
-        "slope": {
-          "mean": 0.0023928567628011196,
-          "std": 0.001065798385788492,
-          "ci_low": 0.00016211510419625926,
-          "ci_high": 0.00462359842140598
-        },
-        "intercept": {
-          "mean": -0.4442457605230459,
-          "std": 0.8652688528989754,
-          "ci_low": -2.255274283170886,
-          "ci_high": 1.366782762124794
-        },
-        "sigma2": {
-          "mean": 0.42372923260709994,
-          "std": 0.15472403931550813
-        },
-        "r2": 0.22558648494922418,
-        "rmse": 0.6641881235703633,
-        "mae": 0.5235602998489892,
-        "nu": 19.0,
-        "approximation": false,
-        "bayes_factor_vs_constant": 0.1592402539679527,
-        "log_bf_vs_constant": -1.83734118597593,
-        "bf_evidence": "中等支持常数模型（BF ≤ 1/3）"
-      },
-      "diagnostics": {
-        "n": 15,
-        "fit": "poly1",
-        "ols": {
-          "r2": 0.22560397803736698,
-          "adjusted_r2": 0.09653797437692813,
-          "rmse": 0.6641806219147379,
-          "mae": 0.524063865083862,
-          "slope": 0.0024137760114640284,
-          "intercept": -0.4615035974180185
-        },
-        "bootstrap": {
-          "n_boot": 300,
-          "n_ok": 300,
-          "seed": 42,
-          "approximation": false,
-          "r2": {
-            "mean": 0.032749433216790795,
-            "std": 0.22865860891305473,
-            "ci_low": -0.6402761071831808,
-            "ci_high": 0.221101807048453
-          },
-          "rmse": {
-            "mean": 0.738029699677784,
-            "std": 0.07942261877807676,
-            "ci_low": 0.6661085074587925,
-            "ci_high": 0.9666363355906317
-          },
-          "mae": {
-            "mean": 0.5627298154788262,
-            "std": 0.060115175483718794,
-            "ci_low": 0.4818416076621559,
-            "ci_high": 0.6932122540740778
-          },
-          "slope": {
-            "mean": 0.0029262901153302547,
-            "std": 0.0018220890735764757,
-            "ci_low": 0.00022148050743870043,
-            "ci_high": 0.007111307900351132
-          }
-        },
-        "loocv": {
-          "valid": true,
-          "method": "leave_one_out",
-          "n_folds": 15,
-          "n_ok": 15,
-          "oof_r2": -0.18204759894072065,
-          "oof_rmse": 0.8205822649054091,
-          "oof_mae": 0.6382227217066679,
-          "note": "逐点留一（同源点仍可能泄漏，建议结合 group_cv 看）"
-        },
-        "group_cv": {
-          "valid": true,
-          "method": "leave_one_group_out",
-          "n_groups": 6,
-          "n_folds": 6,
-          "n_predicted": 15,
-          "oof_r2": -0.05019636481213596,
-          "oof_rmse": 0.773463633827747,
-          "oof_mae": 0.5906767352667502,
-          "per_fold": [
-            {
-              "group": "0",
-              "n_train": 14,
-              "n_test": 1
-            },
-            {
-              "group": "1",
-              "n_train": 13,
-              "n_test": 2
-            },
-            {
-              "group": "5",
-              "n_train": 12,
-              "n_test": 3
-            },
-            {
-              "group": "7",
-              "n_train": 11,
-              "n_test": 4
-            },
-            {
-              "group": "8",
-              "n_train": 12,
-              "n_test": 3
-            },
-            {
-              "group": "9",
-              "n_train": 13,
-              "n_test": 2
-            }
-          ],
-          "note": "组=数据点来源（近似 leave-one-paper-out，同组不跨折泄漏）"
-        },
-        "cooks": {
-          "valid": true,
-          "n": 15,
-          "max_cooks": 0.6242309675281332,
-          "max_cooks_index": 14,
-          "threshold": 0.26666666666666666,
-          "high_influence_indices": [
-            0,
-            14
-          ],
-          "high_influence_count": 2,
-          "leverage_max": 0.5460628280775102,
-          "note": "阈值经验取 4/n；高影响点可能主导线性回归，需检查其来源"
-        }
-      },
-      "tiered_regression": {
-        "A": {
-          "n": 15,
-          "r2": 0.22560397803736698,
-          "slope": 0.002413776011464024,
-          "intercept": -0.4615035974180158
-        }
-      },
-      "quality_counts": {
-        "table": 15
-      },
-      "n_groups": 6,
-      "llm_explanation": "**结论：候选模型不优于经典模型。**  \n虽然候选三次模型 R²=0.2855 高于经典模型的 R²=-0.0000（ΔR²=+0.2855），但嵌套 F 检验不显著（p=0.1574），贝叶斯因子 BF=0.159 反而支持常数模型，bootstrap R² 的 95% CI 包含负值，分组 CV 的 OOF R²=-0.0502，均说明候选模型的“优势”只是噪声。因此不能判定候选模型更优。\n\n**旧经典模型为何失效？**  \n1. **温度非线性**：经典模型可能假设 ZT 随温度线性或简单指数变化，但实际材料中本征激发加剧，双极效应使 Seebeck 系数下降、双极热导率上升，ZT 随温度呈非单调曲线（先升后降），简单线性函数无法拟合。  \n2. **组分偏离线性混合**：数据来自 Bi₂Te₃、Bi₀.₅Sb₁.₅Te₃、PbTe 等多种材料，其带隙、载流子有效质量不同，最优掺杂浓度及温度依赖差异大，合并拟合必然破坏线性/简单模型假设。  \n3. **缺陷/孔道效应**：真实样品的杂质散射、晶界及孔道会改变载流子迁移率和热导率，导致实验数据相对理想模型大幅离散，经典模型未考虑这些机制。  \n4. **数据本身异质性强**：15 个点横跨 400–1000 K、ZT 0.6–3.6，材料体系混杂，R² 低是结构性的，任何简单参数模型都难以描述。\n\n建议：按单一材料体系、严格可比条件重新建模，并引入双极效应物理项或机器学习方法。",
-      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\model_comparison_2.md"
+      "best_r2": 0.2855,
+      "f_test_p": 0.1574,
+      "verdict": "candidate_possible",
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\model_comparison_2.md"
     },
     "symbolic_regression": {
-      "n_points": 15,
-      "x_label": "temperature",
-      "y_unit": "dimensionless",
+      "r2": 0.789102,
       "expr": "sqrt(log(((c0 + x) + c1))) + (((log(((x + c2) * ((((x * c3) / sin(c4)) / x) + c5))) / x) / ((((c6 + c7) * (x + x)) + ((c8 / c9) + x)) * ((c10 / x) + c11))) - c12)",
-      "params": {
-        "c0": -124.74138393796785,
-        "c1": -118.3168792211632,
-        "c2": -3.600000000000003,
-        "c3": -0.32437628072308156,
-        "c4": 5.153644839082231,
-        "c5": 1.186953910895451,
-        "c6": 0.31799393290690836,
-        "c7": -0.11240960358347196,
-        "c8": -761.3710507450396,
-        "c9": 0.5847070400781191,
-        "c10": -176.78508447370416,
-        "c11": 0.17681176245892452,
-        "c12": 1.283613059298951
-      },
-      "mse": 0.12013811971582028,
-      "rmse": 0.3466094628192085,
-      "r2": 0.7891024459704056,
-      "report_path": "workspace\\outputs\\thermoelectric\\literature_survey\\discovery\\symbolic_2.md"
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\symbolic_2.md"
     }
   },
   {
@@ -1089,6 +699,18 @@
       "_confidence_adjusted": true
     },
     "degraded": false,
-    "degraded_reason": ""
+    "degraded_reason": "",
+    "model_comparison": {
+      "n_points": 15,
+      "best_r2": 0.2855,
+      "f_test_p": 0.1574,
+      "verdict": "candidate_possible",
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\model_comparison_4.md"
+    },
+    "symbolic_regression": {
+      "r2": 0.789102,
+      "expr": "sqrt(log(((c0 + x) + c1))) + (((log(((x + c2) * ((((x * c3) / sin(c4)) / x) + c5))) / x) / ((((c6 + c7) * (x + x)) + ((c8 / c9) + x)) * ((c10 / x) + c11))) - c12)",
+      "report_path": "workspace/outputs/thermoelectric/literature_survey/discovery\\symbolic_4.md"
+    }
   }
 ]
