@@ -1,0 +1,296 @@
+{
+  "hypothesis_index": 4,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 12,
+    "material_tokens": 52,
+    "property_keywords": [
+      "capacity",
+      "co2",
+      "loading",
+      "mmol",
+      "uptake",
+      "vs"
+    ],
+    "literature_values": [
+      0.17,
+      0.7,
+      2.01,
+      5.99,
+      6.61,
+      61.0,
+      273.0,
+      298.0
+    ]
+  },
+  "best_params": {
+    "property_value": 326.9280009687188,
+    "composition_x": 0.5325894325515859,
+    "temperature": 362.1882441869123
+  },
+  "best_score": 0.8158729357332293,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.6520479635902334,
+      "best_score": 0.7920104272883156,
+      "params": {
+        "property_value": 106.29746750232025,
+        "composition_x": 0.25024289816459533,
+        "temperature": 959.0719976473446
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.74505488437893,
+      "best_score": 0.7920104272883156,
+      "params": {
+        "property_value": 418.4612880249123,
+        "composition_x": 0.6350936508676438,
+        "temperature": 354.3648117264534
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.8158729357332293,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 326.9280009687188,
+        "composition_x": 0.5325894325515859,
+        "temperature": 362.1882441869123
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.7901140357948037,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 178.20522187702235,
+        "composition_x": 0.5950779307002548,
+        "temperature": 361.7109761811004
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.78300773017417,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 264.02001288357957,
+        "composition_x": 0.44869362262253065,
+        "temperature": 585.052957049193
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.7255671720254708,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 132.24388282202074,
+        "composition_x": 0.3677593508772896,
+        "temperature": 796.9557030347124
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.7587107868426968,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 70.82008591142731,
+        "composition_x": 0.38451132764481255,
+        "temperature": 885.2004823455173
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.7535444566887359,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 84.5073372264627,
+        "composition_x": 0.41364267491863527,
+        "temperature": 891.437501336936
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.7623226722320149,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 69.69428948814794,
+        "composition_x": 0.3927307432714162,
+        "temperature": 964.0454276997262
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.7094661053668421,
+      "best_score": 0.8158729357332293,
+      "params": {
+        "property_value": 292.1503233184724,
+        "composition_x": 0.8309491710550684,
+        "temperature": 443.8693121672545
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 15,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（>1000 K），远超MOF稳定温区，且选择性变化率数值不合理。应聚焦270–310 K的柔性MOF开孔温区，同时降低目标值范围至物理可能区间，并纳入开孔应变能作为约束。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            800.0,
+            1200.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            270.0,
+            310.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（355-408 K），CO2物理吸附显著减弱，且400ppm下容量难以达到6-8 mmol/g。建议将温度降至298-330 K，并控制composition_x在0.3-0.55以兼顾容量与湿度耐受，重点探索酰胺/超碱IL区域。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            350.0,
+            420.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            295.0,
+            330.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前候选温度过高（>500 K）多超出MOF稳定性，且property_value远高于已知低浓度容量，建议将温度限制在300-450 K，composition_x聚焦0.3-0.5，引入ΔE描述符探索酰胺/超碱IL体系。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            500.0,
+            900.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            300.0,
+            450.0
+          ],
+          [
+            0.3,
+            0.5
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度大多偏离假设最优窗口（120-140°C即393-413K），且性质值异常高。应剪枝低温及过高温度，聚焦390-420K区间并补充时长维度，探索中等温度与长时长的响应曲面。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            330.0,
+            370.0
+          ],
+          [
+            500.0,
+            1000.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            390.0,
+            420.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "当前温度（585-964 K）远超MOF-74(Ni)合成合理窗口，CO2容量数值也不符合实际。建议将搜索温度缩回120-140°C（393-413 K），并增加时长维度以验证响应面假设。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            500.0,
+            1000.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            380.0,
+            430.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      }
+    ]
+  }
+}

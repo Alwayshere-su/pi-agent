@@ -1,0 +1,1340 @@
+[
+  {
+    "id": "hypo_0",
+    "title": "湿度增强指数 η 与孔道化学描述符的定量关系（水竞争 vs 水增强的统一标度）",
+    "description": "文献中湿度对 MOF 的 CO₂ 捕获呈现方向性矛盾：NICS-24 湿态容量 −85%（水竞争，p36），Fe-dbai 在 60% RH 保持 94%（p41），PEI@MIL-101(Cr) 在 70% RH 容量反升 36%（p40），TYUT-ATZ-β 通过固定水获得超高选择性（p49）。假设存在统一描述符——孔道内强水结合位点密度与 CO₂ 结合位点的竞争比——决定湿度增强指数 η = 容量(RH)/容量(干) 的符号与大小。具体假设：η 随开放金属位点(OMS)密度升高而降低（OMS 是水的主要攻击/竞争位点），随受限稳定水合位点（如酰胺、固定水通道）密度升高而升高。",
+    "source_gap_id": "Gap 1",
+    "materials": [
+      "M-MOF-74",
+      "Fe-dbai",
+      "NICS-24",
+      "PEI@MIL-101(Cr)",
+      "TYUT-ATZ-beta"
+    ],
+    "property": "CO2 容量湿度保持率 η (%)",
+    "expected_relationship": "η = a - b·(OMS密度) + c·(水稳定位点密度)，其中 a≈94(基准), b≈0.5~1.0, c≈0.3~0.6；验证：η(Fe-dbai)=94%, η(NICS-24)=15%, η(PEI@MIL-101)=136%",
+    "confidence": 0.78,
+    "novelty_score": 0.72,
+    "search_method": "hybrid",
+    "search_iterations": 10,
+    "candidates_explored": 21,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p36: NICS-24 湿态容量 −85%（η≈15%），水优先于 CO₂ 吸附（强氢键）",
+      "p41: Fe-dbai 60%RH 工作容量保持 94%（η≈94%），酰胺基团 + 受限效应增强 CO₂ 亲和",
+      "p40: PEI@MIL-101(Cr) 70%RH 容量 1.43 vs 干 1.05 mmol/g（η≈136%）",
+      "p49: TYUT-ATZ-β 固定 H₂O 于扩散通道，CO₂/N₂=2031，湿态稳定 100+ 循环",
+      "p7/p32: M-MOF-74 中 H₂O/NH₃ 可置换 OMS 上的 CO₂，湿态不稳定",
+      "[Novelty Verification] Overlap: none | Adjusted novelty: 0.720 (was 0.720) | Queries: 3 | Results: 0 | Assessment: 已有文献未提出或验证类似主张，且未发现任何重叠研究。该假设首次尝试建立湿度增强指数η与孔道化学描述符之间的统一标度，涵盖水竞争与水增强两种对立机制，并引入多种MOF材料体系，具备明确的新机制和定量关系。因此，该假设的新颖性仍然成立。"
+    ],
+    "llm_plausibility_score": 0.42,
+    "llm_explanation": "1. 理论基础：水与CO2对吸附位点的竞争符合热力学原理，但将η归因于两种位点密度的线性叠加缺乏微观热力学依据，不同机制（竞争vs增强）的驱动力不同，难以统一为简单线性标度。2. 文献一致性：部分证据支持（如M-MOF-74水竞争、Fe-dbai受限效应），但PEI@MIL-101(Cr)的容量上升源于胺基与CO2反应且水促进胺基利用率，并非“稳定水合位点”；NICS-24与Fe-dbai测试条件（RH、温度）不同，直接比较η值不合理，证据链存在混淆。3. 可验证性：原则上可设计系列MOF调控OMS和稳定水合位点密度进行实验验证，但需明确“稳定水合位点密度”的量化定义，并控制孔径、孔环境等协变量，否则难以得到可靠标度。4. 新颖性：检索未见相同工作，但类似构效关系在其他多孔材料中已有研究，且该线性模型过于简化，并未揭示竞争/增强的微观本质，新颖性有限。综合其有合理内核但过度简化，评分较低。；系统查重: 0 篇结果，重叠=none，新颖性 0.72->0.72",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "MOF 湿态稳定性综述（p26, p32）指出水竞争是普遍问题，但未建立 η 与孔道化学描述符的定量标度；酰胺功能化 Fe-dbai（p41）与固定水策略（p49）为 2024-2025 年新发现，无统一模型",
+    "incremental_claim": "提出湿度增强指数 η 作为统一量纲，将竞争（η<100%）与增强（η>100%）两类现象纳入同一线性标度，并以 OMS 密度与水稳定位点密度为自变量建立可检验回归",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [
+        {
+          "material": "NICS-24",
+          "value": 15,
+          "unit": "%",
+          "condition": "70%RH 容量保持率",
+          "source": "p36"
+        },
+        {
+          "material": "Fe-dbai",
+          "value": 94,
+          "unit": "%",
+          "condition": "60%RH 工作容量保持率",
+          "source": "p41"
+        },
+        {
+          "material": "PEI@MIL-101(Cr)",
+          "value": 136,
+          "unit": "%",
+          "condition": "70%RH vs 干态 400ppm",
+          "source": "p40"
+        }
+      ],
+      "overall_verification_score": 0.83,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": ""
+  },
+  {
+    "id": "hypo_1",
+    "title": "Qst–容量非单调权衡：低压容量存在最优 Qst 窗口（火山型），高压容量随 Qst 饱和",
+    "description": "Cu(adci)-2 以极低 Qst₀=27.5 kJ/mol 在 15 kPa 达 2.01 mmol/g（p37）；MOF-74(Ni)-24-140 以 Qst 27–52 kJ/mol 在 1 bar 达 6.61 mmol/g（p61）；M-DOBDC/M-HKUST-1 金属取代筛选将 40–75 kJ/mol 定义为目标热力学窗口（p23）。假设低压(0.15 bar 烟气分压)容量对 Qst₀ 呈火山型（中等 Qst≈35–45 kJ/mol 最优，兼顾亲和与可逆），而 1 bar 容量随 Qst 单调上升但边际递减（受孔容上限约束）。",
+    "source_gap_id": "Gap 2",
+    "materials": [
+      "Cu(adci)-2",
+      "MOF-74(Ni)",
+      "M-MOF-74",
+      "NICS-24",
+      "CALF-20"
+    ],
+    "property": "CO2 吸附容量 (mmol/g) 与等量吸附热 Qst (kJ/mol)",
+    "expected_relationship": "容量(0.15bar) = α·Qst·exp(−β·Qst)（火山型，峰位 Qst*≈40 kJ/mol）；容量(1bar) = Cmax·(1−exp(−k·Qst))（饱和型）",
+    "confidence": 0.8720929370831658,
+    "novelty_score": 0.7,
+    "search_method": "bayesian",
+    "search_iterations": 10,
+    "candidates_explored": 21,
+    "external_validation": {
+      "overall_match": true,
+      "databases_checked": [
+        "materials_project",
+        "oqmd",
+        "hmof_core_mof",
+        "nomad"
+      ],
+      "supporting_evidence": [
+        "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+        "MOF-74: Qst = 20-50 kJ/mol (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+        "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+        "-M_lNgEcErBOq1-JIpuorcj9kXvp",
+        "01TyYe3qFF-2RRDHhMYOi_PDgS4w",
+        "0uSBjPKPHz6e11ZDprEhSsn3EQtv"
+      ],
+      "details": {
+        "materials_project": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [
+            {
+              "mp_id": "mp-aaaditcu",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaditde",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaadivan",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaevlpx",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaevorb",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaafhtqa",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaafzwcl",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacflio",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacggrr",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacicfr",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaadirox",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaadiuwe",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacitoz",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaabgii",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaabfyet",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaabfylb",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaabrgzi",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaceibf",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaceieo",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacevqw",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacfmhk",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacicgl",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacigyt",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacltys",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaabe",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaeinef",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaceptv",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacinyq",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacipiz",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacipve",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaackglt",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacpdat",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacpdav",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacpdax",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacqclz",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaovi",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaabxcek",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacpicf",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaacpicr",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaaeu",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaamrm",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaprp",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaceicv",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaafupqp",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            },
+            {
+              "mp_id": "mp-aaaaaafe",
+              "formula": "",
+              "band_gap_ev": null,
+              "formation_energy_ev_per_atom": null,
+              "energy_above_hull_ev": null,
+              "crystal_system": "",
+              "nsites": null,
+              "volume_a3": null
+            }
+          ],
+          "queries_attempted": [
+            "O",
+            "F",
+            "Cu",
+            "S",
+            "M"
+          ],
+          "oxide_proxy_used": [
+            "MOF-74(Ni) -> ['NiO'] (MOF节点氧化物代理)"
+          ],
+          "proxy_note": "Materials Project 主要收录无机晶体材料，不直接收录 MOF 结构。以上查询使用 MOF 金属节点的对应氧化物作为跨尺度代理：MOF 节点金属氧化态与对应无机氧化物相近，氧化物形成能可定性反映金属-氧键强度，从而作为 MOF 节点稳定性和吸附热力学偏好的参考。这是定性的、非定量的近似。"
+        },
+        "oqmd": {
+          "match": false,
+          "matching_entries": [],
+          "materials_found": [],
+          "queries_attempted": [
+            {
+              "formula": "NiO",
+              "source": "api"
+            }
+          ],
+          "status": "http_error",
+          "message": "OQMD 查询失败（status=http_error）：['查询 NiO 失败: HTTP 502 \\n<html><head>\\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\\n<title>502 Server E']。OQMD 本轮未参与交叉验证。",
+          "formation_energy_gain_ev": null,
+          "calibration_note": "跨尺度代理（氧化物形成能 → MOF 节点稳定性），物理基础是 MOF 金属节点的氧化态与对应氧化物相近，但这种映射是定性的而非定量的",
+          "confidence": "moderate (cross-scale proxy, not yet calibrated)",
+          "api_errors": [
+            "查询 NiO 失败: HTTP 502 \n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server E"
+          ]
+        },
+        "hmof_core_mof": {
+          "match": true,
+          "matching_entries": [
+            "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+            "MOF-74: Qst = 20-50 kJ/mol (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+            "MOF-74: CO2 吸附容量 = 3.0-8.6 mmol/g (文献 meta-analysis, CoRE MOF 2014 / hMOF)",
+            "MOF-74: Qst = 20-50 kJ/mol (文献 meta-analysis, CoRE MOF 2014 / hMOF)"
+          ],
+          "materials_found": [
+            {
+              "material": "MOF-74(Ni)",
+              "matched_mof": "MOF-74",
+              "known_properties": {
+                "co2_capacity_mmol_g": [
+                  3.0,
+                  8.6
+                ],
+                "qst_kj_mol": [
+                  20,
+                  50
+                ],
+                "bet_surface_area_m2_g": [
+                  800,
+                  1800
+                ]
+              },
+              "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+            },
+            {
+              "material": "M-MOF-74",
+              "matched_mof": "MOF-74",
+              "known_properties": {
+                "co2_capacity_mmol_g": [
+                  3.0,
+                  8.6
+                ],
+                "qst_kj_mol": [
+                  20,
+                  50
+                ],
+                "bet_surface_area_m2_g": [
+                  800,
+                  1800
+                ]
+              },
+              "note": "该材料属于已知 MOF 数据库中的 MOF-74 系列"
+            }
+          ],
+          "database": "hMOF/CoRE MOF (computed, literature meta-analysis)"
+        },
+        "nomad": {
+          "match": true,
+          "matching_entries": [
+            "-M_lNgEcErBOq1-JIpuorcj9kXvp",
+            "01TyYe3qFF-2RRDHhMYOi_PDgS4w",
+            "0uSBjPKPHz6e11ZDprEhSsn3EQtv"
+          ],
+          "materials_found": [
+            "NiO"
+          ],
+          "queries_attempted": [
+            {
+              "formula": "NiO",
+              "total_entries": 92
+            }
+          ],
+          "status": "ok",
+          "message": "NOMAD 查询完成：命中 1 个无机相代理（[{'formula': 'NiO', 'total_entries': 92}]）。NOMAD 以无机 DFT 计算数据为主，MOF 本体覆盖有限，命中结果作为金属节点无机相的跨尺度佐证。"
+        }
+      }
+    },
+    "validation_status": "validated",
+    "evidence_chain": [
+      "p37: Cu(adci)-2 Qst₀=27.5 kJ/mol，298K/15kPa 容量 2.01 mmol/g",
+      "p61: MOF-74(Ni) Qst 27–52 kJ/mol，1 bar 容量 6.61 mmol/g（最高）",
+      "p7: M-MOF-74 CO₂-OMS 结合能 38–48 kJ/mol",
+      "p23: vdW-DF 筛选 36 金属取代，13 种落入 40–75 kJ/mol 目标窗；OMS 部分电荷为 ΔH 描述符",
+      "[Novelty Verification] Overlap: none | Adjusted novelty: 0.700 (was 0.700) | Queries: 3 | Results: 10 | Assessment: 基于已有文献重叠级别为“none”，当前文献库中没有任何工作提出或验证过“Qst–容量非单调权衡”这一类似主张，因此该假设在机制层面是全新的。该假设不仅揭示了低压容量与Qst之间的火山型最优窗口，还区分了高压容量随Qst饱和的不同行为，并明确指向多种MOF材料体系，具有清晰的定量关系和材料拓展性。综上，该假设的新颖性成立，值得作为原创性研究问题进行验证。",
+      "预测值 27.5 kJ/mol（待实验验证，建议方案：微量热法测定零覆盖Qst，或DFT计算结合能作为代理验证）",
+      "文献验证: 2.01 mmol/g — 在 12 篇论文中检索到 2 条匹配记录 (来源: p61, p61)",
+      "文献验证: 27–52 kJ/mol — 在 12 篇论文中检索到 4 条匹配记录 (来源: p7, p61, p7)",
+      "文献验证: 1 bar — 在 12 篇论文中检索到 10 条匹配记录 (来源: P1, p41, p41)",
+      "文献验证: 6.61 mmol/g — 在 12 篇论文中检索到 4 条匹配记录 (来源: p23, p44, p23)",
+      "文献验证: 40–75 kJ/mol — 在 12 篇论文中检索到 6 条匹配记录 (来源: p7, p7, p61)",
+      "文献验证: 0.15 bar — 在 12 篇论文中检索到 2 条匹配记录 (来源: P1, P1)",
+      "文献验证: ≈35–45 kJ/mol — 在 12 篇论文中检索到 2 条匹配记录 (来源: p7, p7)",
+      "文献验证: 0.15bar — 在 12 篇论文中检索到 2 条匹配记录 (来源: P1, P1)",
+      "预测值 ≈40 kJ/mol（待实验验证，建议方案：微量热法测定零覆盖Qst，或DFT计算结合能作为代理验证）",
+      "文献验证: 1bar — 在 12 篇论文中检索到 10 条匹配记录 (来源: P1, p41, p41)"
+    ],
+    "llm_plausibility_score": 0.85,
+    "llm_explanation": "理论基础：符合热力学与吸附平衡原理。低压下吸附容量受亲和力（Qst）与可逆性（解吸能耗）共同控制，火山型关系合理；高压下接近孔容饱和，容量随Qst上升但受限于孔容，饱和型模型符合Langmuir型吸附行为。文献一致性：支持证据链中Cu(adci)-2低Qst低压容量、MOF-74(Ni)高压高容量、M-MOF-74结合能窗口等均与假设定性吻合；但未直接验证40kJ/mol为最优峰位，属于合理外推。可验证性：可通过微量热法测Qst、低压与高压等温线精确拟合两种函数，也可用DFT计算不同MOF的结合能并关联容量，验证路径清晰。新颖性：检索显示无重叠文献，首次提出‘Qst-容量非单调权衡’的定量标度关系，区分低压火山型与高压饱和型，具有机制层面新意。但火山峰位参数依赖有限数据，需更多体系检验，故扣分0.15。；系统查重: 10 篇结果，重叠=none，新颖性 0.70->0.70",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "Qst 被广泛用作亲和力指标（p37, p61），M-DOBDC 筛选给出目标窗口（p23），但未见 Qst-容量火山型曲线的定量验证；多数研究只报告单一 Qst 值而无跨体系回归",
+    "incremental_claim": "将 Qst 从'越高越好'的直觉修正为'最优窗口'的火山型标度，量化低压与高压两种操作条件的差异化最优 Qst，为吸附剂热力学设计提供可计算准则",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [
+        {
+          "material": "Cu(adci)-2",
+          "value": 27.5,
+          "unit": "kJ/mol",
+          "condition": "Qst0",
+          "source": "p37"
+        },
+        {
+          "material": "MOF-74(Ni)",
+          "value": 52,
+          "unit": "kJ/mol",
+          "condition": "Qst 上限",
+          "source": "p61"
+        },
+        {
+          "material": "M-MOF-74",
+          "value": 43,
+          "unit": "kJ/mol",
+          "condition": "CO2-OMS 结合能中值",
+          "source": "p7"
+        }
+      ],
+      "overall_verification_score": 0.75,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "model_comparison": {
+      "n_points": 33,
+      "x_label": "temperature",
+      "y_unit": "kj/mol",
+      "best_candidate": {
+        "name": "三次",
+        "kind": "cubic",
+        "k": 4,
+        "r2": 0.21514719690798767,
+        "rmse": 24.23181578190223,
+        "rss": 19376.969570905516,
+        "params": "y = 0.0002387x^3 + -0.2331x^2 + 74.69x + -7840"
+      },
+      "classical_model": "fit_slack_model (自 classical_models 模块)",
+      "classical_result": {
+        "name": "fit_slack_model",
+        "k": 2,
+        "r2": -4.6629367034256575e-15,
+        "rmse": 27.35217408172975,
+        "rss": 24688.667090909206,
+        "expr": ""
+      },
+      "f_test": {
+        "valid": true,
+        "F": 3.974801826375282,
+        "p_value": 0.0298146076456953,
+        "df_num": 2,
+        "df_den": 29,
+        "significant": true,
+        "full_side": "候选模型"
+      },
+      "verdict": {
+        "verdict": "candidate_better",
+        "reason": "候选 R²=0.2151 高于经典 R²=-0.0000（ΔR²=+0.2151），且嵌套 F 检验显著（p<0.05）",
+        "delta_r2": 0.2151,
+        "f_supported": true,
+        "ci_supported": false
+      },
+      "bayesian": {
+        "n": 33,
+        "slope": {
+          "mean": 0.27042008207912094,
+          "std": 0.10814390050416753,
+          "ci_low": 0.051299725955006814,
+          "ci_high": 0.48954043820323506
+        },
+        "intercept": {
+          "mean": -49.75831169846265,
+          "std": 32.57157182512934,
+          "ci_low": -115.754585039551,
+          "ci_high": 16.237961642625706
+        },
+        "sigma2": {
+          "mean": 621.7018746567317,
+          "std": 153.05242139228667
+        },
+        "r2": 0.14894546791086483,
+        "rmse": 25.233096363499236,
+        "mae": 22.6896650388377,
+        "nu": 37.0,
+        "approximation": false,
+        "bayes_factor_vs_constant": 0.005718067312479443,
+        "log_bf_vs_constant": -5.164124413119225,
+        "bf_evidence": "强支持常数模型（BF ≤ 1/20）"
+      },
+      "diagnostics": {
+        "n": 33,
+        "fit": "poly1",
+        "ols": {
+          "r2": 0.14894546791636676,
+          "adjusted_r2": 0.09220849911079121,
+          "rmse": 25.233096363417673,
+          "mae": 22.689662120971786,
+          "slope": 0.27042171222623823,
+          "intercept": -49.75880671481385
+        },
+        "bootstrap": {
+          "n_boot": 300,
+          "n_ok": 300,
+          "seed": 42,
+          "approximation": false,
+          "r2": {
+            "mean": 0.0943664730387076,
+            "std": 0.10896828494124282,
+            "ci_low": -0.11789715858805955,
+            "ci_high": 0.14852166754750076
+          },
+          "rmse": {
+            "mean": 25.994083323942856,
+            "std": 1.3599968181158646,
+            "ci_low": 25.239378254652088,
+            "ci_high": 28.90656887854106
+          },
+          "mae": {
+            "mean": 22.885419068881497,
+            "std": 0.9292980056588582,
+            "ci_low": 21.927395863601134,
+            "ci_high": 25.076591857258613
+          },
+          "slope": {
+            "mean": 0.2809249901267188,
+            "std": 0.11022275028066934,
+            "ci_low": 0.10235298082691872,
+            "ci_high": 0.5028493588409764
+          }
+        },
+        "loocv": {
+          "valid": true,
+          "method": "leave_one_out",
+          "n_folds": 33,
+          "n_ok": 33,
+          "oof_r2": 0.06735071970482498,
+          "oof_rmse": 26.415025334986638,
+          "oof_mae": 23.97468051492415,
+          "note": "逐点留一（同源点仍可能泄漏，建议结合 group_cv 看）"
+        },
+        "group_cv": {
+          "valid": true,
+          "method": "leave_one_group_out",
+          "n_groups": 4,
+          "n_folds": 4,
+          "n_predicted": 33,
+          "oof_r2": -0.867852360442662,
+          "oof_rmse": 37.3820509116574,
+          "oof_mae": 33.861388107368306,
+          "per_fold": [
+            {
+              "group": "1",
+              "n_train": 18,
+              "n_test": 15
+            },
+            {
+              "group": "2",
+              "n_train": 25,
+              "n_test": 8
+            },
+            {
+              "group": "3",
+              "n_train": 27,
+              "n_test": 6
+            },
+            {
+              "group": "5",
+              "n_train": 29,
+              "n_test": 4
+            }
+          ],
+          "note": "组=数据点来源（近似 leave-one-paper-out，同组不跨折泄漏）"
+        },
+        "cooks": {
+          "valid": true,
+          "n": 33,
+          "max_cooks": 0.08679119662260956,
+          "max_cooks_index": 9,
+          "threshold": 0.12121212121212122,
+          "high_influence_indices": [],
+          "high_influence_count": 0,
+          "leverage_max": 0.29103371226822605,
+          "note": "阈值经验取 4/n；高影响点可能主导线性回归，需检查其来源"
+        }
+      },
+      "tiered_regression": {
+        "A": {
+          "n": 7,
+          "r2": 0.053226004948098815,
+          "slope": 0.03320000000000009,
+          "intercept": -5.618171428571458
+        },
+        "B": {
+          "n": 22,
+          "r2": 0.09048556052940959,
+          "slope": 0.18440850062619918,
+          "intercept": -15.384383712790864
+        }
+      },
+      "quality_counts": {
+        "explicit": 22,
+        "table": 7,
+        "implicit": 4
+      },
+      "n_groups": 4,
+      "llm_explanation": "结论：(1) 候选三次模型统计上优于经典模型：R²由-0.000提升至0.215（ΔR²=+0.215），嵌套F检验F(2,29)=3.97，p=0.030<0.05，可拒绝经典模型。但候选模型绝对解释力仍弱（R²仅0.215，bootstrap 95%CI含负，BF=0.00572支持常数模型），仅代表“比经典稍好”，不可直接用于定量预测。\n\n(2) 旧经典模型失效的物理机制：它隐含Qst与温度/组分线性可加，但真实Qst由吸附质-孔壁作用、吸附质间相互作用及结构热响应共同决定。低温区覆盖度高，Qst随吸附量非线性下降或呈平台；高温区熵效应增强，偏离线性外推。MOF中开放金属位点、配体取代、缺陷和孔道限域使吸附位能分布不均，金属/配体组成偏离线性混合规则，故Qst随温度及组分呈非单调、饱和或火山型变化，经典线性模型无法描述该构效关系。",
+      "report_path": "workspace\\outputs\\mof_rerun_v3\\literature_survey\\discovery\\model_comparison_1.md"
+    },
+    "symbolic_regression": {
+      "n_points": 33,
+      "x_label": "temperature",
+      "y_unit": "kj/mol",
+      "expr": "(sqrt((sin(x) + c0)) / ((sin((((x + x) * c1) - ((x + x) * x))) / sin((sin(x) + c2))) + sqrt((c3 * (x * sin(x)))))) * x",
+      "params": {
+        "c0": -0.6802090059225118,
+        "c1": 0.09997027247864915,
+        "c2": -1.0018975628470121,
+        "c3": 0.22648850472067628
+      },
+      "mse": 422.21897487767654,
+      "rmse": 41.34199443333341,
+      "r2": -1.2845419890537144,
+      "report_path": "workspace\\outputs\\mof_rerun_v3\\literature_survey\\discovery\\symbolic_1.md"
+    }
+  },
+  {
+    "id": "hypo_2",
+    "title": "柔性 gate-opening MOF 的选择性-温度反常正相关（S 随 T 升高）由开孔阈值-温度耦合驱动",
+    "description": "刚性 MOF 遵循 van't Hoff 行为：容量与选择性随温度升高而下降（MOF-74(Ni)：8.29→6.61 mmol/g，273→298 K，p61）。但柔性 ZnDatzBdc 的 CO₂/N₂ 选择性从 273 K 的 107 升至 298 K 的 129（CO₂/CH₄：35→44）（p48）。假设该反常源于 gate-opening 的开孔阈值压力随温度变化：CO₂ 在更高温度下跨越开孔阈值（阈值压力下降），进入孔内吸附，而 N₂/CH₄ 始终低于阈值被排除，导致选择性净增。预测柔性 MOF 的选择性-温度斜率 dS/dT > 0 的温区与开孔应变能正相关。",
+    "source_gap_id": "Gap 3",
+    "materials": [
+      "ZnDatzBdc",
+      "ELM-11",
+      "MIL-53",
+      "柔性MOF"
+    ],
+    "property": "CO2/N2 选择性随温度的变化 dS/dT",
+    "expected_relationship": "S(T) = S0·exp(λ·(T−T0))，λ>0 反常；λ ∝ 开孔应变能/孔道柔性；刚性 MOF 的 λ<0 为对照",
+    "confidence": 0.7,
+    "novelty_score": 0.75,
+    "search_method": "mcts",
+    "search_iterations": 10,
+    "candidates_explored": 21,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p48: ZnDatzBdc CO₂/N₂=107(273K)→129(298K)；CO₂/CH₄=35(273K)→44(298K)；S 形等温线、gate-opening 开/闭相变",
+      "p61: MOF-74(Ni) 容量 8.29(273K)→6.61(298K)，经典负温度依赖",
+      "p14: 双胺 MOF 协同吸附滞后揭示一阶相变与链聚合机理（温度-占据曲线）",
+      "[Novelty Verification] Overlap: none | Adjusted novelty: 0.750 (was 0.750) | Queries: 3 | Results: 0 | Assessment: 已有文献检索显示该假设与现有工作无重叠，未有研究明确提出或验证“柔性MOF开孔阈值-温度耦合导致CO2/N2选择性随温度反常正相关”这一主张。该假设引入了新的机制解释（开孔阈值与温度耦合）及定量关系（dS/dT为正），并针对ZnDatzBdc、ELM-11、MIL-53等具体柔性MOF体系，具备足够的新颖性。因此，该研究假设的新颖性仍然成立。"
+    ],
+    "llm_plausibility_score": 0.78,
+    "llm_explanation": "该假设基于柔性MOF的gate-opening相变热力学提出合理机制：开孔阈值压力随温度下降可使CO2在高温下进入孔道而N2/CH4被排除，从而选择性反常升高，这符合相变压力与温度的关系（若开孔吸附总焓为正）。文献中ZnDatzBdc等体系确实表现出S型等温线和选择性随温度升高的现象，与假设一致，但普适性仍需更多体系验证。假设可通过变温等温线、原位PXRD和分子模拟直接检验，可验证性很高。新颖性检索显示无重叠，提出的dS/dT与开孔应变能正相关关系具有新意。综合看，机理与定量关系较新颖，但开孔阈值随温度变化的方向可能因体系而异，故评分适中偏高。；系统查重: 0 篇结果，重叠=none，新颖性 0.75->0.75",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "柔性 MOF 的 gate-opening 吸附研究（p48）报道了数据但未解释选择性-温度反常；p14 的滞后分析聚焦机理而非温度标度；刚性 MOF 温度标度律（p61）为经典对照",
+    "incremental_claim": "提出'开孔阈值-温度耦合'假说解释柔性 MOF 选择性随温度升高的反常，将 dS/dT 符号与开孔应变能关联，为 TSA 操作窗口设计提供新准则（热再生可增强分离度）",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [
+        {
+          "material": "ZnDatzBdc",
+          "value": 107,
+          "unit": "选择性",
+          "condition": "273K CO2/N2",
+          "source": "p48"
+        },
+        {
+          "material": "ZnDatzBdc",
+          "value": 129,
+          "unit": "选择性",
+          "condition": "298K CO2/N2",
+          "source": "p48"
+        },
+        {
+          "material": "ZnDatzBdc",
+          "value": 35,
+          "unit": "选择性",
+          "condition": "273K CO2/CH4",
+          "source": "p48"
+        },
+        {
+          "material": "ZnDatzBdc",
+          "value": 44,
+          "unit": "选择性",
+          "condition": "298K CO2/CH4",
+          "source": "p48"
+        }
+      ],
+      "overall_verification_score": 0.8,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": "",
+    "model_comparison": {
+      "n_points": 21,
+      "x_label": "temperature",
+      "y_unit": "k",
+      "best_candidate": {
+        "name": "三次",
+        "kind": "cubic",
+        "k": 4,
+        "r2": 0.26310816277068905,
+        "rmse": 114.97249082260012,
+        "rss": 277592.14656501025,
+        "params": "y = 0.0008153x^3 + -0.7878x^2 + 250x + -2.602e+04"
+      },
+      "classical_model": "fit_slack_model (自 classical_models 模块)",
+      "classical_result": {
+        "name": "fit_slack_model",
+        "k": 2,
+        "r2": -2.220446049250313e-16,
+        "rmse": 133.93437868975738,
+        "rss": 376706.7736952381,
+        "expr": ""
+      },
+      "f_test": {
+        "valid": true,
+        "F": 3.0349357538817654,
+        "p_value": 0.07463316147188441,
+        "df_num": 2,
+        "df_den": 17,
+        "significant": false,
+        "full_side": "候选模型"
+      },
+      "verdict": {
+        "verdict": "candidate_possible",
+        "reason": "候选 R²=0.2631 高于经典 R²=-0.0000（ΔR²=+0.2631），但缺 F 检验/bootstrap CI 佐证，仅作弱证据提示",
+        "delta_r2": 0.2631,
+        "f_supported": false,
+        "ci_supported": false
+      },
+      "bayesian": {
+        "n": 21,
+        "slope": {
+          "mean": 1.551884098812419,
+          "std": 0.5828461195922409,
+          "ci_low": 0.35149004518953997,
+          "ci_high": 2.7522781524352977
+        },
+        "intercept": {
+          "mean": -360.2607308994493,
+          "std": 173.86651283275535,
+          "ci_low": -718.3455171112848,
+          "ci_high": -2.1759446876137645
+        },
+        "sigma2": {
+          "mean": 13367.712960084247,
+          "std": 4125.365782145343
+        },
+        "r2": 0.2314474529367493,
+        "rmse": 117.41642426270995,
+        "mae": 97.4721540011783,
+        "nu": 25.0,
+        "approximation": false,
+        "bayes_factor_vs_constant": 0.0018460419474484193,
+        "log_bf_vs_constant": -6.29471141973147,
+        "bf_evidence": "强支持常数模型（BF ≤ 1/20）"
+      },
+      "diagnostics": {
+        "n": 21,
+        "fit": "poly1",
+        "ols": {
+          "r2": 0.23144745293677693,
+          "adjusted_r2": 0.1460527254853078,
+          "rmse": 117.41642426270785,
+          "mae": 97.47214860202055,
+          "slope": 1.5518846304335674,
+          "intercept": -360.2608909839579
+        },
+        "bootstrap": {
+          "n_boot": 300,
+          "n_ok": 300,
+          "seed": 42,
+          "approximation": false,
+          "r2": {
+            "mean": 0.15787052656719455,
+            "std": 0.21617698674263755,
+            "ci_low": -0.14426011248472595,
+            "ci_high": 0.23092523951327407
+          },
+          "rmse": {
+            "mean": 122.40108426982452,
+            "std": 11.155487506240195,
+            "ci_low": 117.45630817637443,
+            "ci_high": 143.26972748297084
+          },
+          "mae": {
+            "mean": 100.20821023034968,
+            "std": 12.702588809688953,
+            "ci_low": 84.11366031653024,
+            "ci_high": 128.69443596823265
+          },
+          "slope": {
+            "mean": 1.5307740838877952,
+            "std": 0.5904796519658249,
+            "ci_low": 0.3970175488329025,
+            "ci_high": 2.32046230206046
+          }
+        },
+        "loocv": {
+          "valid": true,
+          "method": "leave_one_out",
+          "n_folds": 21,
+          "n_ok": 21,
+          "oof_r2": 0.1398374516529175,
+          "oof_rmse": 124.21737062050381,
+          "oof_mae": 103.9565576636827,
+          "note": "逐点留一（同源点仍可能泄漏，建议结合 group_cv 看）"
+        },
+        "group_cv": {
+          "valid": true,
+          "method": "leave_one_group_out",
+          "n_groups": 4,
+          "n_folds": 4,
+          "n_predicted": 21,
+          "oof_r2": -0.4508509969124386,
+          "oof_rmse": 161.32566857423535,
+          "oof_mae": 149.07029789647424,
+          "per_fold": [
+            {
+              "group": "1",
+              "n_train": 15,
+              "n_test": 6
+            },
+            {
+              "group": "2",
+              "n_train": 13,
+              "n_test": 8
+            },
+            {
+              "group": "4",
+              "n_train": 15,
+              "n_test": 6
+            },
+            {
+              "group": "5",
+              "n_train": 20,
+              "n_test": 1
+            }
+          ],
+          "note": "组=数据点来源（近似 leave-one-paper-out，同组不跨折泄漏）"
+        },
+        "cooks": {
+          "valid": true,
+          "n": 21,
+          "max_cooks": 0.11830240773872583,
+          "max_cooks_index": 8,
+          "threshold": 0.19047619047619047,
+          "high_influence_indices": [],
+          "high_influence_count": 0,
+          "leverage_max": 0.43059128933708557,
+          "note": "阈值经验取 4/n；高影响点可能主导线性回归，需检查其来源"
+        }
+      },
+      "tiered_regression": {
+        "A": {
+          "n": 7,
+          "r2": 0.053226004948098815,
+          "slope": 0.03320000000000009,
+          "intercept": -5.618171428571458
+        },
+        "B": {
+          "n": 14,
+          "r2": 0.1746109395919413,
+          "slope": 1.2718731277178819,
+          "intercept": -241.33258911446396
+        }
+      },
+      "quality_counts": {
+        "explicit": 12,
+        "table": 7,
+        "sequence": 2
+      },
+      "n_groups": 4,
+      "llm_explanation": "结论：(1) 候选模型虽R²=0.2631优于经典R²=-0.0000（ΔR²=+0.2631），但嵌套F检验p=0.0746不显著，bootstrap R² CI含负值，分组CV的OOF R²=-0.451，故不能认定候选模型统计显著更优，仅呈弱证据。(2) 经典模型源于刚性MOF的van't Hoff假设，默认线性混合与理想热力学，未考虑柔性MOF的gate-opening效应：开孔阈值压力随温度升高而下降，CO₂在高温下可跨越阈值进入孔道，而N₂/CH₄始终低于阈值被排除，导致选择性随温度反常正相关。同时温度-应变的非线性、开孔能垒及缺陷/孔道不均匀性也无法由经典线性模型描述，故其失效。需引入开孔阈值-温度耦合的物理模型。",
+      "report_path": "workspace\\outputs\\mof_rerun_v3\\literature_survey\\discovery\\model_comparison_2.md"
+    },
+    "symbolic_regression": {
+      "n_points": 21,
+      "x_label": "temperature",
+      "y_unit": "k",
+      "expr": "(sin(((x / c0) * (exp(x) * c1))) * c2) + ((((c3 * ((c4 + x) / x)) * (((x * c5) * c6) + c7)) * c8) + c9)",
+      "params": {
+        "c0": 2.8604210981659897,
+        "c1": -1.6578097667510394,
+        "c2": -97.12241365626936,
+        "c3": 1.601520184258386,
+        "c4": -2.5422274953992656,
+        "c5": 0.7324819643451663,
+        "c6": -1.603827321962162,
+        "c7": -415.44471155605964,
+        "c8": -0.14436279165721308,
+        "c9": -11.653679389398235
+      },
+      "mse": 12359.536062292693,
+      "rmse": 176.70542910998182,
+      "r2": -0.7406668209961311,
+      "report_path": "workspace\\outputs\\mof_rerun_v3\\literature_survey\\discovery\\symbolic_2.md"
+    }
+  },
+  {
+    "id": "hypo_3",
+    "title": "胺功能化'低浓度容量 vs 湿度耐受'存在 Pareto 权衡，酰胺/超碱 IL 可突破前沿",
+    "description": "胺功能化提升低浓度容量（NICS-24 在 2 mbar 达 0.7 mmol/g，为 CALF-20 4 倍，CO₂/N₂ 8 倍，p36）但湿态容量 −85%；而酰胺功能化 Fe-dbai 湿态保持 94%（p41）、超碱 IL 复合 MOF 在 400 ppm 达 0.58 mmol/g 且循环稳定（p45）、PEI 负载 MIL-101 湿态容量反升（p40）。假设：伯胺/二胺接枝密度升高 → 容量(400ppm) 上升但湿度保持率下降，形成 Pareto 前沿；酰胺（氢键供体弱于伯胺）与超碱 IL（位阻 + 化学吸附）可突破前沿（右上角未占据区域）。",
+    "source_gap_id": "Gap 4",
+    "materials": [
+      "NICS-24",
+      "Fe-dbai",
+      "PEI@MIL-101(Cr)",
+      "超碱IL复合MOF",
+      "mmen-Mg2(dobpdc)"
+    ],
+    "property": "低浓度 CO2 容量 (mmol/g@400ppm) vs 湿度容量保持率 (%)",
+    "expected_relationship": "容量@400ppm = A·(胺密度)^m；保持率 = B·exp(−k·胺密度)；ΔE = E(CO2−胺) − E(H2O−胺) 为筛选描述符（ΔE>0 则保持率高）",
+    "confidence": 0.8166768608892216,
+    "novelty_score": 0.68,
+    "search_method": "bayesian",
+    "search_iterations": 10,
+    "candidates_explored": 21,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p36: NICS-24 0.7 mmol/g@2mbar（4×CALF-20），湿态 −85%",
+      "p41: Fe-dbai 酰胺功能化，60%RH 保持 94%，6.4 mmol/g@1bar",
+      "p45: 超碱 IL 复合 MOF，400ppm 下 0.58 mmol/g，循环稳定",
+      "p40: PEI@MIL-101(Cr)，−20°C 70%RH 容量 1.43 mmol/g（湿态反升）",
+      "p1: mmen-Mg₂(dobpdc) 中 H₂O 影响链式吸附",
+      "[Novelty Verification] Overlap: none | Adjusted novelty: 0.680 (was 0.680) | Queries: 3 | Results: 0 | Assessment: 已有文献未提出或验证“低浓度容量与湿度耐受存在 Pareto 权衡”这一主张，当前假设与现有工作无重叠。该假设引入了新的定量权衡关系，并提出了超碱 IL 复合 MOF 等突破性材料体系，具有机制与材料层面的双重新颖性。因此，该研究假设的新颖性仍然成立。"
+    ],
+    "llm_plausibility_score": 0.78,
+    "llm_explanation": "理论基础：符合吸附热力学与竞争吸附原理。伯胺接枝密度增加会提高CO2亲和位点数量，但强极性胺基同时增强水分子竞争吸附，导致湿度耐受性下降，符合ΔE描述符的物理逻辑。文献一致性：NICS-24、Fe-dbai、超碱IL复合MOF及PEI@MIL-101的证据链分别支持胺功能化容量提升、酰胺弱氢键保湿度、位阻型超碱IL抗水及聚合物湿态亲水增容，但PEI湿态反升可能源于低温水凝聚或载体孔道亲水协同，不完全支持单一Pareto权衡。可验证性：可通过控制接枝密度、湿度系列实验及DFT计算结合能ΔE直接验证，定量关系可拟合。新颖性：检索显示无重叠，提出'Pareto前沿'及超碱IL突破路径具有机制新颖性，但低浓度容量与湿度保持率的普适权衡在各类胺吸附剂中已有间接体现，故不完全全新。综合评分为0.78，假设方向合理但需细化PEI异常机制及ΔE适用范围。；系统查重: 0 篇结果，重叠=none，新颖性 0.68->0.68",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "胺功能化 DAC 吸附剂综述（p26, p22）指出胺-水竞争问题但未量化 Pareto 前沿；p36/p41/p45 为 2023-2025 个案，无跨体系对比",
+    "incremental_claim": "建立胺功能化 MOF 的'容量-湿度耐受' Pareto 前沿，定量评估酰胺/超碱 IL 策略的突破潜力，提出 ΔE 结合能差作为 DAC 吸附剂筛选描述符",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [
+        {
+          "material": "NICS-24",
+          "value": 0.7,
+          "unit": "mmol/g",
+          "condition": "2mbar 25C",
+          "source": "p36"
+        },
+        {
+          "material": "超碱IL-MOF",
+          "value": 0.58,
+          "unit": "mmol/g",
+          "condition": "400ppm 298K",
+          "source": "p45"
+        },
+        {
+          "material": "PEI@MIL-101",
+          "value": 1.05,
+          "unit": "mmol/g",
+          "condition": "400ppm -20C 干",
+          "source": "p40"
+        }
+      ],
+      "overall_verification_score": 0.7,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": ""
+  },
+  {
+    "id": "hypo_4",
+    "title": "MOF-74(Ni) 合成温度-时长响应曲面：容量与 Qst 存在非单调最优窗口",
+    "description": "MOF-74(Ni) 在 140°C/24 h 合成条件（冷凝回流）下达 8.29/6.61 mmol/g（273/298 K），为文献常规合成的 2.0/2.1 倍，Qst 可调 27–52 kJ/mol（p61）；CALF-20 微波合成时间缩短 12 倍、容量 +20%（p44）。假设：合成温度 T 与时长 t 对容量存在响应曲面容量 = f(T, t)，最优窗口位于中等温度×长时长（结晶度与缺陷/OMS 暴露的平衡）；Qst 随合成温度单调可调（缺陷密度调控）。预测 120–140°C 区间存在容量极大值，超出后因团聚/相变下降。",
+    "source_gap_id": "Gap 5",
+    "materials": [
+      "MOF-74(Ni)",
+      "CALF-20"
+    ],
+    "property": "CO2 容量 (mmol/g) vs 合成温度 (C) / 时长 (h)",
+    "expected_relationship": "容量 = a + b·T + c·t + d·T² + e·T·t（二次响应面，鞍点/极大值在 T*≈130±15°C）；Qst = q0 + q1·T（线性可调）",
+    "confidence": 0.8158729357332293,
+    "novelty_score": 0.65,
+    "search_method": "bayesian",
+    "search_iterations": 10,
+    "candidates_explored": 21,
+    "external_validation": {},
+    "validation_status": "pending",
+    "evidence_chain": [
+      "p61: MOF-74(Ni)-24-140 为 2.0/2.1× 文献值；Qst 27–52 kJ/mol 可调（合成条件调节）",
+      "p44: CALF-20 MW 合成 → 容量 +20%，时间 −12 倍，产率 97%",
+      "p12: Zr-MOF 凝胶形态设计（合成条件-形态-性能关联）",
+      "[Novelty Verification] Overlap: none | Adjusted novelty: 0.650 (was 0.650) | Queries: 3 | Results: 5 | Assessment: 已有文献未提出或验证类似主张，重叠级别为“none”，因此不存在直接竞争或重复。该假设以MOF-74(Ni)为对象，系统考察合成温度与时长对CO₂容量和吸附热（Qst）的非单调响应曲面，并明确“最优窗口”这一定量机制，具有材料体系与关系层面的新颖性。综上，该研究假设的新颖性仍然成立。"
+    ],
+    "llm_plausibility_score": 0.45,
+    "llm_explanation": "理论基础：中等温度×长时长有利于平衡结晶度与缺陷/OMS暴露，非单调响应在原理上可行，但二次响应面和Qst随T线性可调的假设缺乏坚实理论依据，属于经验拟合。文献一致性：所引MOF-74(Ni)容量为文献值2.0/2.1倍缺乏可信参考基准，与已知Ni-MOF-74高容量事实冲突；CALF-20微波合成属跨体系过程强化证据，不能直接支持该响应曲面。可验证性：可通过系统变温变时合成、CO2等温线和Clausius-Clapeyron计算Qst验证，实验路径明确。新颖性：检索显示无直接重叠，但‘合成条件-缺陷-性能’优化思路在MOF领域较普遍，且Qst线性调控和T*窗口未给出机制性标度律，新颖性有限。总体评分偏低，反映假设具备可检验性但定量表述和证据链可靠性不足。；系统查重: 5 篇结果，重叠=none，新颖性 0.65->0.65",
+    "extractability_score": 0.0,
+    "extractability_note": "",
+    "independent_materials": 0,
+    "data_points_available": 0,
+    "known_prior_work": "p61 报告了单一最优合成条件（140°C/24h）但无系统 DoE；p44 报告 MW 方法改进；未见 MOF-74 合成温度-时长-容量响应曲面文献",
+    "incremental_claim": "提出 MOF-74(Ni) 合成参数-性能的二次响应面模型，将离散'最佳条件'升级为连续可外推的合成-性能映射",
+    "best_score": 0.0,
+    "literature_values": [],
+    "search_warning": "",
+    "value_verification": {
+      "values_found": [
+        {
+          "material": "MOF-74(Ni)",
+          "value": 8.29,
+          "unit": "mmol/g",
+          "condition": "273K 1bar (140C/24h)",
+          "source": "p61"
+        },
+        {
+          "material": "MOF-74(Ni)",
+          "value": 6.61,
+          "unit": "mmol/g",
+          "condition": "298K 1bar (140C/24h)",
+          "source": "p61"
+        },
+        {
+          "material": "MOF-74-Ni-lit",
+          "value": 3.15,
+          "unit": "mmol/g",
+          "condition": "298K 常规合成 [推导=6.61/2.1]",
+          "source": "p61"
+        }
+      ],
+      "overall_verification_score": 0.6,
+      "unverified_values": []
+    },
+    "degraded": false,
+    "degraded_reason": ""
+  }
+]

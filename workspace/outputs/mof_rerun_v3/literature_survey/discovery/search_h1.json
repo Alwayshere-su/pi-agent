@@ -1,0 +1,167 @@
+{
+  "hypothesis_index": 1,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 12,
+    "material_tokens": 55,
+    "property_keywords": [
+      "adsorption",
+      "capacity",
+      "capture",
+      "co2",
+      "kj",
+      "loading",
+      "mmol",
+      "mol",
+      "qst",
+      "uptake"
+    ],
+    "literature_values": [
+      8.0,
+      48.0,
+      52.0,
+      75.0
+    ]
+  },
+  "best_params": {
+    "property_value": 48.096288584251326,
+    "composition_x": 0.5177116433847114,
+    "temperature": 405.4397989738
+  },
+  "best_score": 0.8720929370831658,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.8331213358994255,
+      "best_score": 0.8655633296178166,
+      "params": {
+        "property_value": 73.58296599315426,
+        "composition_x": 0.5357746840747585,
+        "temperature": 408.34772406529
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.8429771163605437,
+      "best_score": 0.8655633296178166,
+      "params": {
+        "property_value": 72.11555813833397,
+        "composition_x": 0.6350936508676438,
+        "temperature": 354.3648117264534
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.8636179136553545,
+      "best_score": 0.8655633296178166,
+      "params": {
+        "property_value": 54.263334052652056,
+        "composition_x": 0.5596403313082179,
+        "temperature": 486.288295116855
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.8662419250172302,
+      "best_score": 0.8662419250172302,
+      "params": {
+        "property_value": 42.76791567688548,
+        "composition_x": 0.5950779307002548,
+        "temperature": 361.7109761811004
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.8720929370831658,
+      "best_score": 0.8720929370831658,
+      "params": {
+        "property_value": 48.096288584251326,
+        "composition_x": 0.5177116433847114,
+        "temperature": 405.4397989738
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.8419974777299856,
+      "best_score": 0.8720929370831658,
+      "params": {
+        "property_value": 43.6277920608833,
+        "composition_x": 0.4135491015253515,
+        "temperature": 446.2633120043371
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.8432000449201835,
+      "best_score": 0.8720929370831658,
+      "params": {
+        "property_value": 34.28594570122956,
+        "composition_x": 0.4615574744197899,
+        "temperature": 311.197943792512
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.8386646780209702,
+      "best_score": 0.8720929370831658,
+      "params": {
+        "property_value": 40.70697787510892,
+        "composition_x": 0.5123637775457907,
+        "temperature": 425.0697633700172
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.8556112423410094,
+      "best_score": 0.8720929370831658,
+      "params": {
+        "property_value": 54.826071575691756,
+        "composition_x": 0.40710648912562764,
+        "temperature": 379.2118129682899
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.7879736092900689,
+      "best_score": 0.8720929370831658,
+      "params": {
+        "property_value": 57.979956015576946,
+        "composition_x": 0.20918546540792782,
+        "temperature": 359.9748343916145
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 4,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      }
+    ]
+  }
+}

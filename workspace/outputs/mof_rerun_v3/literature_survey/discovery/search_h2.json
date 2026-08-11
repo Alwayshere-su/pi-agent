@@ -1,0 +1,190 @@
+{
+  "hypothesis_index": 2,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 12,
+    "material_tokens": 54,
+    "property_keywords": [
+      "co2",
+      "ds",
+      "dt",
+      "n2",
+      "selectivity",
+      "separation factor"
+    ],
+    "literature_values": [
+      273.0,
+      298.0
+    ]
+  },
+  "best_params": {
+    "property_value": 282.00415773951283,
+    "composition_x": 0.5650219928590161,
+    "temperature": 1126.6623624601089
+  },
+  "best_score": 0.6635459064448671,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.5177040659684053,
+      "best_score": 0.6364076042512786,
+      "params": {
+        "property_value": 218.92735807397548,
+        "composition_x": 0.25024289816459533,
+        "temperature": 959.0719976473446
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.6140602841975981,
+      "best_score": 0.6364076042512786,
+      "params": {
+        "property_value": 241.23117212738924,
+        "composition_x": 0.36426986104807546,
+        "temperature": 904.1007250258283
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.6564724755084501,
+      "best_score": 0.6564724755084501,
+      "params": {
+        "property_value": 364.0696255291034,
+        "composition_x": 0.5325894325515859,
+        "temperature": 362.1882441869123
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.5706764029135298,
+      "best_score": 0.6564724755084501,
+      "params": {
+        "property_value": 420.65834731085005,
+        "composition_x": 0.5126885110165086,
+        "temperature": 576.8037740613104
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.6450415864288194,
+      "best_score": 0.6564724755084501,
+      "params": {
+        "property_value": 381.02955795588946,
+        "composition_x": 0.47918187762973097,
+        "temperature": 330.77047896772285
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.6109383868984937,
+      "best_score": 0.6564724755084501,
+      "params": {
+        "property_value": 436.8252013328854,
+        "composition_x": 0.5303021332491583,
+        "temperature": 350.34146811796353
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.6635459064448671,
+      "best_score": 0.6635459064448671,
+      "params": {
+        "property_value": 282.00415773951283,
+        "composition_x": 0.5650219928590161,
+        "temperature": 1126.6623624601089
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.6293193308741617,
+      "best_score": 0.6635459064448671,
+      "params": {
+        "property_value": 288.1142202933369,
+        "composition_x": 0.6771206397350094,
+        "temperature": 1026.9350993432286
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.5652061950575367,
+      "best_score": 0.6635459064448671,
+      "params": {
+        "property_value": 362.1490303380642,
+        "composition_x": 0.6877220424305607,
+        "temperature": 1167.2483492378742
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.5774755694922542,
+      "best_score": 0.6635459064448671,
+      "params": {
+        "property_value": 162.0388843494332,
+        "composition_x": 0.480890146603009,
+        "temperature": 1094.9208140412816
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 7,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "候选温度过高（>1000 K），远超MOF稳定温区，且选择性变化率数值不合理。应聚焦270–310 K的柔性MOF开孔温区，同时降低目标值范围至物理可能区间，并纳入开孔应变能作为约束。"
+      },
+      {
+        "iteration": 11,
+        "type": "bayes_llm_region_apply",
+        "prune_regions": [
+          [
+            800.0,
+            1200.0
+          ]
+        ],
+        "focus_regions": [
+          [
+            270.0,
+            310.0
+          ]
+        ],
+        "note": "LLM 建议已应用到搜索空间（_acquisition 采样阶段生效）"
+      }
+    ]
+  }
+}

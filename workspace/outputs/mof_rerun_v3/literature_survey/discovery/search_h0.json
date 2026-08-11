@@ -1,0 +1,150 @@
+{
+  "hypothesis_index": 0,
+  "search_method": "bayesian",
+  "iterations": 10,
+  "evidence": {
+    "source": "knowledge_graph.md",
+    "blocks": 12,
+    "material_tokens": 55,
+    "property_keywords": [
+      "capacity",
+      "co2",
+      "loading",
+      "uptake"
+    ],
+    "literature_values": [
+      0.17,
+      0.7,
+      2.01,
+      5.99,
+      6.61
+    ]
+  },
+  "best_params": {
+    "property_value": 5.855723454551405,
+    "composition_x": 0.47918187762973097,
+    "temperature": 330.77047896772285
+  },
+  "best_score": 0.6624971635205261,
+  "iteration_log": [
+    {
+      "iteration": 0,
+      "score": 0.4939182801886087,
+      "best_score": 0.6509593933818544,
+      "params": {
+        "property_value": 1.7654534042871797,
+        "composition_x": 0.25024289816459533,
+        "temperature": 959.0719976473446
+      }
+    },
+    {
+      "iteration": 1,
+      "score": 0.5750657600156924,
+      "best_score": 0.6509593933818544,
+      "params": {
+        "property_value": 2.328238009898934,
+        "composition_x": 0.36426986104807546,
+        "temperature": 904.1007250258283
+      }
+    },
+    {
+      "iteration": 2,
+      "score": 0.6437746961785304,
+      "best_score": 0.6509593933818544,
+      "params": {
+        "property_value": 5.706918409137893,
+        "composition_x": 0.6114542354346478,
+        "temperature": 321.73222058500863
+      }
+    },
+    {
+      "iteration": 3,
+      "score": 0.6025919809438718,
+      "best_score": 0.6509593933818544,
+      "params": {
+        "property_value": 6.855663309438653,
+        "composition_x": 0.5126885110165086,
+        "temperature": 576.8037740613104
+      }
+    },
+    {
+      "iteration": 4,
+      "score": 0.6624971635205261,
+      "best_score": 0.6624971635205261,
+      "params": {
+        "property_value": 5.855723454551405,
+        "composition_x": 0.47918187762973097,
+        "temperature": 330.77047896772285
+      }
+    },
+    {
+      "iteration": 5,
+      "score": 0.6376822717308199,
+      "best_score": 0.6624971635205261,
+      "params": {
+        "property_value": 7.2635960756904145,
+        "composition_x": 0.5303021332491583,
+        "temperature": 350.34146811796353
+      }
+    },
+    {
+      "iteration": 6,
+      "score": 0.5932775052024838,
+      "best_score": 0.6624971635205261,
+      "params": {
+        "property_value": 8.841387537210796,
+        "composition_x": 0.5542265141320166,
+        "temperature": 306.2755362514953
+      }
+    },
+    {
+      "iteration": 7,
+      "score": 0.6475344585703287,
+      "best_score": 0.6624971635205261,
+      "params": {
+        "property_value": 2.3356692922070157,
+        "composition_x": 0.5165726284459791,
+        "temperature": 306.606958992505
+      }
+    },
+    {
+      "iteration": 8,
+      "score": 0.613081578899877,
+      "best_score": 0.6624971635205261,
+      "params": {
+        "property_value": 3.9271701953451217,
+        "composition_x": 0.3717392949063303,
+        "temperature": 301.6243508585618
+      }
+    },
+    {
+      "iteration": 9,
+      "score": 0.5882658661184428,
+      "best_score": 0.6624971635205261,
+      "params": {
+        "property_value": 2.309586950057106,
+        "composition_x": 0.5911303032585165,
+        "temperature": 523.3630773040175
+      }
+    }
+  ],
+  "llm_guidance": {
+    "enabled": true,
+    "injected": true,
+    "n_events": 2,
+    "events": [
+      {
+        "iteration": 4,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      },
+      {
+        "iteration": 9,
+        "type": "bayes_llm_guide",
+        "n_candidates": 5,
+        "suggestion": "LLM 不可用，跳过评估"
+      }
+    ]
+  }
+}
