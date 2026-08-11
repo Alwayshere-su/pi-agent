@@ -134,7 +134,7 @@
 
 | 文献规模 | 主题 | Gap 数 | 假设数 | 假设质量 |
 |---|---|---|---|---|
-| 大规模 (>100 篇) | literature_survey (376), thermoelectric (209) | 10, 6 | 5, 5 | 高质量 (7/10 正结果) |
+| 大规模 (>100 篇) | literature_survey (546), thermoelectric (209) | 10, 6 | 5, 5 | 高质量 (7/10 正结果) |
 | 中规模 (40-90 篇) | mof_rerun (42), validation (85) | 8, 5 | 4, 数据缺失 | 中等 (1/4 正结果); validation 无发现 |
 | 小规模 (<40 篇) | perovskite (34), cathode (19), smoke_test (13), g3test (35) | 5, 7, 5, 5 | 1, 数据缺失, 数据缺失, 数据缺失 | 低质量; perovskite 仅产出占位假设 (conf=0.40) |
 
@@ -288,7 +288,7 @@
 
 | 文件 | 状态 |
 |---|---|
-| `workspace/outputs/literature_survey/gap_report.md` | 存在（10 Gaps, 376 papers） |
+| `workspace/outputs/literature_survey/gap_report.md` | 存在（10 Gaps, 546 papers） |
 | `workspace/outputs/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 1 validated） |
 | `workspace/outputs/mof_rerun/literature_survey/gap_report.md` | 存在（8 Gaps, 42 papers） |
 | `workspace/outputs/mof_rerun/literature_survey/discovery/discovery_report.json` | 存在（4 hypotheses, 2 validated） |
@@ -305,4 +305,4 @@
 
 ---
 
-*报告基于 2026-08-03 磁盘上实际存在的文件生成。所有数值均从文件中提取，缺失即标注。*
+*报告基于 2026-08-11 磁盘上实际存在的文件生成。所有数值均从文件中提取，缺失即标注。*

@@ -104,7 +104,7 @@ Gap 排序逻辑：严重程度 × 置信度 × 与已有发现的关联度。To
 | 亮点 | 说明 |
 |------|------|
 | **事件驱动 + 状态机 + 工具管线** | PiAgent 主循环以事件驱动、状态机（IDLE→RUN→DONE）管理生命周期，**23 个工具**注入管线，各层解耦 |
-| **双引擎 PDF 解析** | MinerU 默认优先（Cloud > 本地服务 > pip 包），不可用时自动回退 markitdown_utils 本地引擎。回退原因记录于 `parse_engine` 字段 |
+| **双引擎 PDF 解析** | MinerU 默认优先（Cloud > 本地服务 > pip 包），不可用时自动回退 markitdown 本地引擎。回退原因记录于 `parse_engine` 字段 |
 | **三层 Sciverse 接入** | MCP > Skill > REST 三模式依次检测、自动降级，全部不可用时回退纯 arXiv（始终可用）。审计日志标注当前激活模式 |
 | **贝叶斯 + MCTS 搜索** | RBF-GP 代理（超参数 MLE 拟合）+ UCB 采集函数；MCTS 默认每 10 轮 LLM 引导（频率可配置）。LLM 引导事件写入 `_llm_events` / `llm_guidance` 审计字段 |
 | **跨轮记忆** | MEMORY.md + 运行反思 + 记忆质量自动审计（五维评分，低质量条目标记归档），让 Agent 在多轮之间继承结论、积累证据 |
@@ -250,7 +250,7 @@ workspace/
 |----|------|
 | **开源仓库** | [github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开，2026-08 上线） |
 | **商业 API** | DeepSeek（`deepseek-v4-flash`，推理）、Sciverse（文献检索）。替代方案：任意 OpenAI 兼容端点、纯 arXiv 检索（零成本） |
-| **PDF 解析** | MinerU（推荐：云 API `mineru.net` / 本地部署 `localhost:8888`，启用见[附录 D](#附录-dmineru-pdf-解析引擎启用指南)）+ markitdown_utils（本地回退，结果确定可复现） |
+| **PDF 解析** | MinerU（推荐：云 API `mineru.net` / 本地部署 `localhost:8888`，启用见[附录 D](#附录-dmineru-pdf-解析引擎启用指南)）+ markitdown（本地回退，结果确定可复现） |
 | **数据来源** | arXiv（开放获取）、Sciverse（仅标题+摘要内部使用）、Sci-Base（HuggingFace）、Materials Project / OQMD / NOMAD（公开数据库） |
 | **密钥管理** | `.api_key` 已 gitignore，不入库 |
 | **许可证** | 代码 MIT；文档与运行产物 CC BY 4.0 |

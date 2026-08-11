@@ -129,7 +129,7 @@ for f in sorted(glob.glob('workspace/outputs/mof_rerun_v2/literature_survey/disc
 "
 
 # ── 第 4 步：检索调用审计核验 ──
-head -5 workspace/logs/sciverse_skill_log.jsonl          # 每条含 parameters_hash 与 adapter_mode
+head -5 workspace/logs/literature_survey/sciverse_skill_log.jsonl  # 每条含 parameters_hash 与 adapter_mode；替换 literature_survey 为实际 run-dir
 
 # ── 第 5 步：确定性 vs LLM 环节分离比对（两次重跑之间）──
 # 5a. 确定性部分应一致：对比两次运行 search_h*.json 的 iteration_log 数值序列
