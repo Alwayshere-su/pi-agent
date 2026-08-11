@@ -88,5 +88,9 @@ workspace/memory/g3test/
 scripts/build_prelim_proposal.py
 scripts/fill_initial_template.py
 
+# LaTeX 编译中间产物（.log / .blg 不入库，仅保留源码 .tex + .bib + 产出 .pdf）
+workspace/outputs/*/literature_survey/latex/*.log
+workspace/outputs/*/literature_survey/latex/*.blg
+
 # Vendor binaries
 vendor/

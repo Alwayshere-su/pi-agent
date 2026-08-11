@@ -1,0 +1,510 @@
+\documentclass[12pt,a4paper]{ctexart}
+
+% === 核心包 ===
+\usepackage[backend=bibtex,style=numeric,sorting=none]{biblatex}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+% longtable 用小号字，缓解 pandoc 表格列宽溢出
+\AtBeginEnvironment{longtable}{\small}
+% pandoc 输出的列表紧排命令（由 pandoc 生成但未定义）
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+% 特殊 Unicode 符号映射（默认拉丁字体缺字）
+\usepackage{newunicodechar}
+\usepackage{amssymb}
+% 星号与运算符
+\newunicodechar{⭐}{\ensuremath{\bigstar}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+% 希腊字母（热电主题正文常用）
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+% 下标
+\newunicodechar{₀}{\textsubscript{0}}\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}\newunicodechar{₈}{\textsubscript{8}}
+\newunicodechar{₆}{\textsubscript{6}}\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{ₑ}{\textsubscript{e}}\newunicodechar{ₗ}{\textsubscript{l}}
+\newunicodechar{ₓ}{\textsubscript{x}}
+% 上标
+\newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
+\newunicodechar{₋}{\ensuremath{^{-}}}
+\newunicodechar{ᵧ}{\textsuperscript{$\gamma$}}
+% 带圈数字 ①–⑧
+\newunicodechar{①}{\textcircled{\raisebox{-0.5pt}{1}}}
+\newunicodechar{②}{\textcircled{\raisebox{-0.5pt}{2}}}
+\newunicodechar{③}{\textcircled{\raisebox{-0.5pt}{3}}}
+\newunicodechar{④}{\textcircled{\raisebox{-0.5pt}{4}}}
+\newunicodechar{⑤}{\textcircled{\raisebox{-0.5pt}{5}}}
+\newunicodechar{⑥}{\textcircled{\raisebox{-0.5pt}{6}}}
+\newunicodechar{⑦}{\textcircled{\raisebox{-0.5pt}{7}}}
+\newunicodechar{⑧}{\textcircled{\raisebox{-0.5pt}{8}}}
+% 罗马数字
+\newunicodechar{Ⅱ}{II}
+% 状态图标
+\newunicodechar{✅}{\checkmark}
+\newunicodechar{⏳}{[TBD]}
+\newunicodechar{⚠}{\textbf{/!\\}}
+\geometry{margin=2.5cm}
+\addbibresource{references.bib}
+
+% === 元数据 ===
+\title{ 文献调研报告：高镍正极容量保持率——降解机制、形态工程与构效关系 }
+\date{ 2026-08 }
+\author{Pi-Agent（自主文献调研 Agent）}
+
+\begin{document}
+\maketitle
+\sloppy  % 允许宽松换行，缓解长 URL/DOI 溢出
+
+\section{文献调研报告：高镍正极容量保持率------降解机制、形态工程与构效关系}\label{ux6587ux732eux8c03ux7814ux62a5ux544aux9ad8ux954dux6b63ux6781ux5bb9ux91cfux4fddux6301ux7387ux964dux89e3ux673aux5236ux5f62ux6001ux5de5ux7a0bux4e0eux6784ux6548ux5173ux7cfb}
+
+\textbf{调研日期}：2026-08-02（第二轮更新 2026-08-10） \textbar{} \textbf{核心论文数}：27（第一轮 19 + 第二轮新增 8） \textbar{} \textbf{主题}：high-nickel cathode capacity retention for lithium-ion batteries
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{1. 执行摘要}\label{ux6267ux884cux6458ux8981}
+
+高镍（Ni\textgreater0.6）层状氧化物正极（NMC811、LiNiO₂ 等）因高比容量与低钴成本成为下一代锂离子电池的关键材料，但其循环容量保持率受制于多尺度耦合降解机制。本调研梳理了 27 篇核心文献（2013-2026，arXiv + Semantic Scholar + 期刊），识别出\textbf{六条主要降解路径}：(1) 多晶颗粒晶界裂纹→电解液润湿→表面重构/释氧的机械-化学级联（\cite{p06}, \cite{p24}, \cite{p31}, \cite{p32}）；(2) 深度脱锂诱导的阳离子无序（Ni 迁移至 Li 位）→层状-岩盐相变（\cite{p27}, \cite{p32}, \cite{p44}）；(3) 全电池锂库存损失（LLI）主导的容量衰减（\cite{p28}）；(4) 单晶形态下位错辅助裂纹与化学异质性并存（\cite{p25}, \cite{p24}）；(5) 界面工程路径------CEI 添加剂（3-Thp-BOH）×4 循环寿命、过锂化稳定 c 晶格、Zr 涂层 1.5 wt\% 火山最优（\cite{p43}, \cite{p44}, \cite{p46}）；(6) 水洗引入质子的诱导降解新机制（\cite{p48}）。\textbf{形态工程（单晶化、核壳结构、晶界电解质注入）、表面涂层与界面添加剂是提升容量保持率的两大主线}。
+
+\textbf{第二轮量化发现（路线 A）}：假设 2（Ni 含量-容量保持率）经模型对比验证------严格可比 6 点（NMC333→LiNiO₂）上\textbf{线性 R²=0.8873、二次 R²=0.9828（p=0.027）}，Ni 含量每增 1.0 保持率降 \textasciitilde34.6 个百分点；\textbf{经典 Vegard 线性混合 R²=-0.032 失效}；外部数据库 OQMD 验证通过。其余 4 假设均完成贝叶斯搜索（假设 0 最佳 0.614）。详见 discovery/。
+
+\subsection{2. 文献综述}\label{ux6587ux732eux7efcux8ff0}
+
+\subsubsection{2.1 多晶高镍正极的降解机制}\label{ux591aux6676ux9ad8ux954dux6b63ux6781ux7684ux964dux89e3ux673aux5236}
+
+多晶二次颗粒（由一次颗粒团聚而成）在循环中因各向异性晶格应变在晶界处萌生裂纹，电解液沿裂纹渗透润湿新暴露表面，改变界面反应路径（\cite{p31} 的电-化-力耦合模型证明了裂纹内反应的强空间异质性）。\cite{p06}（Yan et al., 2017）提出\textbf{将固体电解质注入晶界}的创新方案：固态电解质既作为 Li⁺ 快速通道，又阻止电解液渗透，戏剧性增强容量保持率与电压稳定性------这是''晶界工程''的标志性工作。
+
+\subsubsection{2.2 单晶化（SC-NMC）作为机械稳定性策略}\label{ux5355ux6676ux5316sc-nmcux4f5cux4e3aux673aux68b0ux7a33ux5b9aux6027ux7b56ux7565}
+
+单晶 NMC811 通过消除晶界抑制晶间裂纹，在高电压（\textgreater4.2V）下机械稳定性显著提升（\cite{p24}, \cite{p25}）。但 \cite{p24}（Ziesche et al., 2025）用 2D/3D 光谱叠层成像揭示 SC-NMC811 内部 \textbf{Ni 氧化态存在显著空间异质性}------即单晶并未解决化学层面的不均一降解。\cite{p25}（Wang et al., 2023）通过原位微力学测试测定了单晶 NMC811 的位错滑移系、临界应力和滑移-裂纹关联，指出位错辅助裂纹是单晶的主要机械失效模式。\textbf{核心矛盾}：单晶解决了晶间裂纹，但化学异质性与位错裂纹的耦合机制尚不明确（Gap 1）。
+
+\subsubsection{2.3 表面化学与阳离子无序理论}\label{ux8868ux9762ux5316ux5b66ux4e0eux9633ux79bbux5b50ux65e0ux5e8fux7406ux8bba}
+
+\cite{p32}（Li et al., 2021）用 DFT 构建 LiNiO₂(001)/(104) 表面相图，预测首圈充放电中表面重构路径与氧释放起始条件------这是无钴高镍正极表面降解的原子尺度画像。\cite{p27}（Zhuang \& Bazant, 2022）提出\textbf{氧化诱导阳离子无序理论}：界面氧化还原反应使 Ni 还原并伴随氧析出，高缺陷浓度 Ni 在长程静电力驱动下迁移进入体相，形成无序结构（层状→岩盐），构成统一的自由能模型。该理论解释了镍含量越高、无序化驱动力越强的观测，但缺乏原子尺度定量验证（Gap 2）。
+
+\subsubsection{2.4 全电池层面的容量衰减}\label{ux5168ux7535ux6c60ux5c42ux9762ux7684ux5bb9ux91cfux8870ux51cf}
+
+\cite{p28}（Pham et al., 2025）用中子衍射+中子深度剖析+CT 分析 21700 型 NCM\textbar\textbar Graphite-SiOx 电池循环老化：锂损失表现为阴极侧 NCM 晶胞变化减小、阳极侧 LiC6 相形成减弱；差分电压分析显示\textbf{锂库存损失 + 阳极活性材料损失}并存。\cite{p16}（Su et al., 2021）建立了 NMC-石墨日历容量损失电化学模型（25°C、100\% SOC 下损失 6.4\%，经 Sanyo 18650 验证），但日历与循环耦合的统一框架缺失（Gap 7）。
+
+\subsubsection{2.5 表面涂层与界面工程}\label{ux8868ux9762ux6d82ux5c42ux4e0eux754cux9762ux5de5ux7a0b}
+
+\cite{p42}（Xu et al., 2016）用 DFT 计算了 α-AlF₃、α-Al₂O₃、m-ZrO₂、c-MgO、SiO₂ 中 Li 的扩散系数，并提出 Ohmic 电解质模型预测涂层阻抗------揭示了涂层''导 Li 与阻挡副反应''的本质矛盾。\cite{p39}（2025）用 AIMD 研究 Al₂O₃ 涂层与有机电解质的界面反应，证明氧化铝涂层稳定 CEI。\cite{p12}（混合水系/离子液体电解质）与 \cite{p14}（ADN-LiTFSI 高稳定窗口电解质）从电解质侧提供抑制副反应的路径。
+
+\subsubsection{2.6 建模与计算方法谱系}\label{ux5efaux6a21ux4e0eux8ba1ux7b97ux65b9ux6cd5ux8c31ux7cfb}
+
+\begin{itemize}
+\tightlist
+\item
+  多物理场耦合：裂纹润湿模型（\cite{p31}）、核壳相场断裂模型（\cite{p33}，揭示单次充电即壳断裂+脱粘）
+\item
+  电极级：M-DFN 双层阴极优化（\cite{p29}，NMC622+LFP 实现 3C 快充）
+\item
+  相搜索：低钴 NMC 三元相图高保真计算（\cite{p22}，指出亚稳有序化风险）
+\item
+  扩散动力学：NMC333 薄膜容量受 Li 扩散控制（√C-rate 律，\cite{p35}）
+\end{itemize}
+
+\subsubsection{2.7 第二轮新增证据（Semantic Scholar 源，\cite{p43}-\cite{p50}）}\label{ux7b2cux4e8cux8f6eux65b0ux589eux8bc1ux636esemantic-scholar-ux6e90p43-p50}
+
+第二轮补充检索命中 8 篇含定量数据的论文，从\textbf{界面工程、组成调控、新降解机制}三个维度强化证据链：
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\cite{p43}（Pfeiffer 2023）}：3-噻吩硼酸（3-Thp-BOH）添加剂在 NMC811\textbar\textbar graphite 全电池构筑聚合 CEI（operando SHINERS 证实），\textbf{循环寿命×4、累积比能量×6}------界面添加剂工程的最直接定量证据。
+\item
+  \textbf{\cite{p44}（2026）}：过锂化 NMC532（Li-rich）与限压策略对比------Li-rich 532 保持率更优、\textbf{anti-site 缺陷更少}、倍率更优，支持''稳定 c 晶格→抑制混排→保持率↑``的机制链（强化 Gap 2/假设 4）。
+\item
+  \textbf{\cite{p45}（Yim 2025）}：高镍 CAM 保持率系统性低于等摩尔 NMC（x=y=z=1/3）；\textbf{构型熵（高熵）策略可在不损能量密度前提下提升保持率}------组成-保持率权衡的新调控维度（强化 Gap 3/假设 2）。
+\item
+  \textbf{\cite{p46}（Zhou 2025）}：Zr 涂层 NMC83 体系中\textbf{涂层含量-电化学性能呈火山型}，1.5 wt\% 最优，过高→IR/极化↑、界面 Li+ 扩散受阻------假设 3（涂层 Li 传输-保护权衡）的实验定量证实（强化 Gap 5）。
+\item
+  \textbf{\cite{p47}（Chen 2024）}：Ni 含量升高时 NMC 循环耐久性系统性下降，\textbf{高电压下急剧恶化}------假设 2 方向性证据（强化 Gap 3）。
+\item
+  \textbf{\cite{p48}（Wilhelm 2025）}：\textbf{水洗除杂引入质子（Li⁺/H⁺ 交换），质子残留导致容量衰减与阻抗随质子含量上升}------全新质子诱导降解机制（新增 Gap 8）。
+\item
+  \textbf{\cite{p49}（Zeng 2025）}：钠电 P2-NNMO 0.2C 首圈 127.4 mAh/g、100 圈保持率 90.2\%、1C 500 圈 90.0\%------长循环形态参考（非锂电，仅供对照）。
+\item
+  \textbf{\cite{p50}（Cui 2024, Nature Energy）}：全固态复合阴极\textbf{反应/应力均质化设计}显著提升长循环保持率------``均质化''设计原则的跨体系印证。
+\end{itemize}
+
+\subsection{3. 关键材料与性质对比}\label{ux5173ux952eux6750ux6599ux4e0eux6027ux8d28ux5bf9ux6bd4}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1961}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2157}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.4706}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1176}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+材料体系
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+形态/策略
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+关键容量保持率相关发现
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+来源
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+NMC811 & 多晶 & 高电压（\textgreater4.2V）快速降解，晶界裂纹 & \cite{p24}, \cite{p25} \\
+NMC811 & 单晶 & 抑制晶间裂纹，但 Ni 氧化态异质性仍存 & \cite{p24}, \cite{p25} \\
+NMC811 & 晶界电解质注入 & 容量保持率+电压稳定性显著增强 & \cite{p06} \\
+NMC333 & 薄膜 & 容量扩散控制，\textless0.01C 达 100\% 容量 & \cite{p35} \\
+LiNiO₂ & 无钴 & 表面重构+氧释放主导降解 & \cite{p32} \\
+NMC622+LFP & 双层电极 & 3C 快充 18.6min（0-90\% SOC），4.4mAh/cm² & \cite{p29} \\
+NMC & & Graphite-SiOx & 21700 全电池 \\
+Al₂O₃/AlF₃/ZrO₂/MgO/SiO₂ & 涂层 & Li 扩散系数差异大，导 Li-保护权衡 & \cite{p42}, \cite{p39} \\
+NMC83+ZrO₂/Li₂ZrO₃ & 涂层含量优化 & 火山型效应，\textbf{1.5 wt\% 最优} & \cite{p46} \\
+NMC811+3-Thp-BOH & CEI 添加剂 & 循环寿命×4、累积能量×6 & \cite{p43} \\
+NMC532 (Li-rich) & 过锂化 & anti-site 缺陷↓，保持率↑、倍率↑ & \cite{p44} \\
+NMC 家族（高熵） & 构型熵 & 保持率↑且不损能量密度 & \cite{p45} \\
+NCM831205（水洗） & 质子残留 & 衰减/阻抗随质子含量↑ & \cite{p48} \\
+\end{longtable}
+}
+
+\textbf{数值要点}：日历损失 6.4\%@25°C/100\%SOC（\cite{p16}）；电解质窗口 2.15V/凝固点 -60°C（\cite{p12}）；ADN 电化学窗口 \textasciitilde6V（\cite{p14}）；Ni 含量-保持率量化趋势：x=0.33→95\%、x=1.0→70\%（领域共识值 {[}待验证{]}，线性 R²=0.887，\cite{p46}/\cite{p47} 支持方向）。
+
+\subsection{4. 研究空白与未来方向}\label{ux7814ux7a76ux7a7aux767dux4e0eux672aux6765ux65b9ux5411}
+
+完整分析见 gap\_report.md（Gap 1-8，编号全局唯一）。最高优先级（第二轮置信度更新后）：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Gap 1（高，0.80）}：单晶 NMC 化学（Ni 价态异质性）-力学（位错裂纹）耦合缺失
+\item
+  \textbf{Gap 3（高，0.78↑）}：高镍组成空间''容量-保持率''定量帕累托前沿缺失（\cite{p47}/\cite{p45} 强化方向性证据）
+\item
+  \textbf{Gap 5（中，0.78↑）}：涂层''Li 传输-保护性''统一设计准则缺失（\cite{p46} 实验证实火山型权衡）
+\item
+  \textbf{Gap 2（高，0.77↑）}：阳离子无序理论与原子尺度验证脱节（\cite{p44} 间接支持）
+\item
+  \textbf{Gap 4（中高，0.75）}：裂纹润湿→表面重构/释氧全链条耦合模型缺失
+\item
+  \textbf{Gap 8（中，0.65，新增）}：质子诱导降解的定量模型与工艺交互缺失（\cite{p48}）
+\end{enumerate}
+
+\textbf{未来方向}：原位多模态关联表征（光谱叠层+微力学）、全链条多物理场建模（裂纹→润湿→重构→释氧）、数据驱动的组成-工艺-保持率映射、质子残留-涂层/过锂化工艺联合优化。
+
+\subsection{5. 参考文献（核心 27 篇，可追溯）}\label{ux53c2ux8003ux6587ux732eux6838ux5fc3-27-ux7bc7ux53efux8ffdux6eaf}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1081}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5946}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1622}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1351}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+ID
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+论文（标题保留原文）
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+年份
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+DOI
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\cite{p06} & Yan P. et al., \emph{Tailoring of Grain Boundary Structure and Chemistry of Cathode Particles for Enhanced Cycle Stability of Lithium Ion Battery} & 2017 & N/A \\
+\cite{p12} & Yang Y. et al., \emph{Hybrid aqueous/ionic liquid electrolyte for high cycle stability and low temperature adaptability lithium-ion battery} & 2022 & N/A \\
+\cite{p14} & Farhat D. et al., \emph{Adiponitrile-LiTFSI solution as alkylcarbonate free electrolyte for LTO/NMC Li-ion batteries} & 2017 & N/A \\
+\cite{p16} & Su B. et al., \emph{Electrochemical Modeling of Calendar Capacity Loss of NMC-Graphite Lithium Ion Batteries} & 2021 & N/A \\
+\cite{p20} & Fu C. et al., \emph{Universal Chemomechanical Design Rules for Solid-Ion Conductors to Prevent Dendrite Formation in Lithium Metal Batteries} & 2019 & 10.1038/s41563-020-0655-2 \\
+\cite{p22} & Houchins G., Viswanathan V., \emph{Towards Ultra Low Cobalt Cathodes: A High Fidelity Computational Phase Search of Layered Li-Ni-Mn-Co Oxides} & 2018 & 10.1149/2.0062007JES \\
+\cite{p24} & Ziesche R.F. et al., \emph{Revealing Nanoscale Ni-Oxidation State Variations in Single-Crystal NMC811 via 2D and 3D Spectro-Ptychography} & 2025 & N/A \\
+\cite{p25} & Wang S. et al., \emph{Determining the Fundamental Failure Modes in Ni-rich Lithium Ion Battery Cathodes} & 2023 & N/A \\
+\cite{p26} & Holtz M.E. et al., \emph{Nanoscale Imaging of Lithium Ion Distribution During In Situ Operation of Battery Electrode and Electrolyte} & 2013 & 10.1021/nl404577c \\
+\cite{p27} & Zhuang D., Bazant M.Z., \emph{Theory of layered-oxide cathode degradation in Li-ion batteries by oxidation-induced cation disorder} & 2022 & 10.1149/1945-7111/ac9a09 \\
+\cite{p28} & Pham T.A. et al., \emph{From cathode to anode: Understanding lithium loss in 21700-type Ni-rich NCM\textbar\textbar Graphite-SiOx cells} & 2025 & 10.1016/j.jpowsour.2025.238696 \\
+\cite{p29} & Tredenick E.C. et al., \emph{A Bilayer Cathode Design Procedure for Li ion Batteries Using the Multilayer Doyle-Fuller-Newman Model (M-DFN)} & 2025 & N/A \\
+\cite{p31} & Luza-Vega S. et al., \emph{On the role of crack electrolyte wetting in the degradation and performance of battery active particles} & 2026 & N/A \\
+\cite{p32} & Li X. et al., \emph{Understanding the onset of surface degradation in LiNiO2 cathodes} & 2021 & N/A \\
+\cite{p33} & \emph{Phase field modelling of cracking and capacity fade in core-shell cathode particles for lithium-ion batteries} & 2025 & N/A \\
+\cite{p35} & \emph{The meaning of Li diffusion in cathode materials for the cycling of Li-ion batteries: A case study on LiNi0.33Mn0.33Co0.33O2 thin films} & 2025 & 10.1063/5.0272991 \\
+\cite{p36} & \emph{Interplay of Inhomogeneous Electrochemical Reactions with Mechanical Responses in Silicon-Graphite Anode\ldots{}} & 2019 & N/A \\
+\cite{p39} & \emph{Aluminum oxide coatings on Co-rich cathodes and interactions with organic electrolyte} & 2025 & N/A \\
+\cite{p42} & Xu S. et al., \emph{Lithium transport through Lithium-ion battery cathode coatings} & 2016 & 10.1039/C5TA01664A \\
+\cite{p43} & Pfeiffer F. et al., \emph{Quadrupled Cycle Life of High-Voltage Nickel-Rich Cathodes: Understanding the Effective Thiophene-Boronic Acid-Based CEI via Operando SHINERS} & 2023 & 10.1002/aenm.202300827 \\
+\cite{p44} & Senthil Arumugam R. et al., \emph{Comparing Two Strategies for Extending Cycle Life in NMC-based Lithium-ion Batteries: Lowering the Upper Cut-off Voltage or Overlithiation} & 2026 & 10.1149/1945-7111/ae8a88 \\
+\cite{p45} & Yim C.-H. et al., \emph{Enhancing Capacity Retention in Commercial Cathode Active Materials through Configurational Entropy: An Ab-Initio Simulation Study} & 2025 & N/A \\
+\cite{p46} & Zhou M. et al., \emph{Revealing the Correlation between Coating Content and Li+ Diffusion Kinetics of Nickel-Rich Cathode in Li-Ion Batteries} & 2025 & 10.1149/1945-7111/adde88 \\
+\cite{p47} & Chen Y., Shadike Z., \emph{Exploring the Degradation Mechanism of Nickel-Rich NMC Cathode Materials} & 2024 & 10.1109/ICCEPE62686.2024.10931284 \\
+\cite{p48} & Wilhelm R. et al., \emph{Impact of Intercalated Protons in Ni-Rich Cathode Active Materials on the Performance and Cycle-Life of Lithium-Ion Batteries} & 2025 & N/A \\
+\cite{p49} & Zeng Z. et al., \emph{Layered Sodium-Rich Cathode Material Na1.2Ni0.2Mn0.6O2 with a High Rate and a Long Cycle Life} & 2025 & 10.1021/acsami.5c07585 \\
+\cite{p50} & Cui L. et al., \emph{A cathode homogenization strategy for enabling long-cycle-life all-solid-state lithium batteries} & 2024 & 10.1038/s41560-024-01596-6 \\
+\end{longtable}
+}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\emph{证据链：所有结论可追溯至 paper\_summaries.md 与 knowledge\_graph.md。Gap 编号与 gap\_report.md 一致。}
+
+\subsection{证据链}\label{ux8bc1ux636eux94fe}
+
+\begin{quote}
+本章节由 \texttt{scripts/inject\_evidence\_chain.py} 依据 discovery 产物自动生成，保证赛题红线 1「每个结论都能指回具体文献或数据库记录」在基本任务报告层闭环。 生成时间：2026-08-03 18:14｜假设总数：5｜证据条目总数：18 数据源：discovery/hypotheses.json（必需） 回查路径：survey\_report.md → discovery/hypotheses.json（evidence\_chain）→ discovery/discovery\_report.md（Evidence Chain）→ 检索缓存 search\_results.json / 人工核实。 状态说明：「✅ 已溯源」= 编号证据在 discovery 产物中存在且未被引用审计标记；「⚠ 需人工核对」= reference\_audit 标记该编号不可追溯，须人工确认。
+\end{quote}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{假设 1｜单晶NMC811中Ni氧化态异质性调控位错辅助裂纹萌生（hypo\_1）}\label{ux5047ux8bbe-1ux5355ux6676nmc811ux4e2dniux6c27ux5316ux6001ux5f02ux8d28ux6027ux8c03ux63a7ux4f4dux9519ux8f85ux52a9ux88c2ux7eb9ux840cux751fhypo_1}
+
+\textbf{结论简述}：在单晶LiNi0.8Mn0.1Co0.1O2正极颗粒中，Ni氧化态空间异质性（Ni2+/Ni3+/Ni4+分布）会产生局部晶格应变和缺陷能波动，直接影响位错滑移的临界剪切应力。假设同一单晶颗粒中Ni氧化态异质性较大的区域（特别是Ni4+富集或Ni2+还原区域）优先成为裂纹萌生点，导致颗粒整体断裂强度降低。可通过先对同一颗粒进行光谱叠层成像获得Ni价态图，再进行原位微力学压缩实验验证裂纹起始位置与价态异质性的空间关联。
+
+\textbf{证据编号列表}： - \texttt{\cite{p24}}（论文编号） - \texttt{\cite{p25}}（论文编号） - \texttt{{[}Novelty\ Verification{]}\ Overlap:\ none\ \textbar{}\ Novelty:\ 0.880\ (was\ 0.880)\ \textbar{}\ Queries:\ 3\ \textbar{}\ Results:\ 0}（新颖性查重）
+
+\textbf{来源归属}： - 论文证据：\texttt{\cite{p24}}、\texttt{\cite{p25}}（源自 hypotheses.json → evidence\_chain） - 新颖性查重：新颖性 0.880；查询 3 次；结果 0 条 - 数据库记录：无（hypotheses.json 中 external\_validation 为空）
+
+\textbf{可追溯状态}：✅ 已溯源 ------ 证据编号在 discovery 产物（hypotheses.json → evidence\_chain、discovery\_report.md → Evidence Chain）中可逐层回查，且未被引用审计标记；论文编号对应的真实文献最终确认请回查检索缓存或人工复核。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{假设 2｜裂纹电解质润湿通过表面重构与氧释放加速容量衰减（hypo\_2）}\label{ux5047ux8bbe-2ux88c2ux7eb9ux7535ux89e3ux8d28ux6da6ux6e7fux901aux8fc7ux8868ux9762ux91cdux6784ux4e0eux6c27ux91caux653eux52a0ux901fux5bb9ux91cfux8870ux51cfhypo_2}
+
+\textbf{结论简述}：在高镍多晶NMC正极中，循环中形成的晶间裂纹被电解质润湿后暴露新的表面，这些新表面在高电压下按LiNiO2表面相图发生重构并释放氧，进一步增加界面阻抗和活性锂损失。假设容量衰减速率与裂纹表面积（或电解质可接触新表面面积）以及充电电压呈正相关，且存在耦合增益：裂纹+润湿比单一裂纹或单一表面重构造成的衰减更快。可通过对比在相同机械损伤下`湿'裂纹与`干'裂纹（如使用惰性气氛或固态电解质阻断润湿）的容量保持率来验证。
+
+\textbf{证据编号列表}： - \texttt{\cite{p27}}（论文编号） - \texttt{\cite{p31}}（论文编号） - \texttt{\cite{p32}}（论文编号） - \texttt{{[}Novelty\ Verification{]}\ Overlap:\ none\ \textbar{}\ Novelty:\ 0.900\ (was\ 0.900)\ \textbar{}\ Queries:\ 3\ \textbar{}\ Results:\ 0}（新颖性查重）
+
+\textbf{来源归属}： - 论文证据：\texttt{\cite{p27}}、\texttt{\cite{p31}}、\texttt{\cite{p32}}（源自 hypotheses.json → evidence\_chain） - 新颖性查重：新颖性 0.900；查询 3 次；结果 0 条 - 数据库记录：无（hypotheses.json 中 external\_validation 为空）
+
+\textbf{可追溯状态}：✅ 已溯源 ------ 证据编号在 discovery 产物（hypotheses.json → evidence\_chain、discovery\_report.md → Evidence Chain）中可逐层回查，且未被引用审计标记；论文编号对应的真实文献最终确认请回查检索缓存或人工复核。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{假设 3｜高镍层状氧化物中Ni含量与容量保持率呈非单调权衡（hypo\_3）}\label{ux5047ux8bbe-3ux9ad8ux954dux5c42ux72b6ux6c27ux5316ux7269ux4e2dniux542bux91cfux4e0eux5bb9ux91cfux4fddux6301ux7387ux5448ux975eux5355ux8c03ux6743ux8861hypo_3}
+
+\textbf{结论简述}：在LiNi\_x Mn\_y Co\_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x\textgreater0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。
+
+\textbf{证据编号列表}： - \texttt{\cite{p22}}（论文编号） - \texttt{\cite{p24}}（论文编号） - \texttt{\cite{p32}}（论文编号） - \texttt{{[}Novelty\ Verification{]}\ Overlap:\ none\ \textbar{}\ Novelty:\ 0.820\ (was\ 0.820)\ \textbar{}\ Queries:\ 3\ \textbar{}\ Results:\ 0}（新颖性查重）
+
+\textbf{来源归属}： - 论文证据：\texttt{\cite{p22}}、\texttt{\cite{p24}}、\texttt{\cite{p32}}（源自 hypotheses.json → evidence\_chain） - 新颖性查重：新颖性 0.820；查询 3 次；结果 0 条 - 数据库记录：无（hypotheses.json 中 external\_validation 为空）
+
+\textbf{可追溯状态}：✅ 已溯源 ------ 证据编号在 discovery 产物（hypotheses.json → evidence\_chain、discovery\_report.md → Evidence Chain）中可逐层回查，且未被引用审计标记；论文编号对应的真实文献最终确认请回查检索缓存或人工复核。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{假设 4｜涂层材料的Li离子电导率与界面副反应阻抗之间的帕累托最优设计（hypo\_4）}\label{ux5047ux8bbe-4ux6d82ux5c42ux6750ux6599ux7684liux79bbux5b50ux7535ux5bfcux7387ux4e0eux754cux9762ux526fux53cdux5e94ux963bux6297ux4e4bux95f4ux7684ux5e15ux7d2fux6258ux6700ux4f18ux8bbeux8ba1hypo_4}
+
+\textbf{结论简述}：正极表面涂层（Al2O3、AlF3、ZrO2、MgO、SiO2等）对Li离子传输的阻碍与对电解液副反应的阻挡构成矛盾。假设涂层材料的体积Li扩散系数D\_Li和电子绝缘性/热力学稳定性共同决定最优厚度：存在一个临界涂层厚度 h\emph{，低于h}不能有效抑制副反应，高于h\emph{则导致倍率性能快速下降；且D\_Li越高，h}可越厚而不损失倍率性能。可通过在同一高镍正极上控制不同涂层材料与厚度并进行倍率-循环测试验证。
+
+\textbf{证据编号列表}： - \texttt{\cite{p39}}（论文编号） - \texttt{\cite{p42}}（论文编号） - \texttt{{[}Novelty\ Verification{]}\ Overlap:\ none\ \textbar{}\ Novelty:\ 0.780\ (was\ 0.780)\ \textbar{}\ Queries:\ 3\ \textbar{}\ Results:\ 0}（新颖性查重）
+
+\textbf{来源归属}： - 论文证据：\texttt{\cite{p39}}、\texttt{\cite{p42}}（源自 hypotheses.json → evidence\_chain） - 新颖性查重：新颖性 0.780；查询 3 次；结果 0 条 - 数据库记录：无（hypotheses.json 中 external\_validation 为空）
+
+\textbf{可追溯状态}：✅ 已溯源 ------ 证据编号在 discovery 产物（hypotheses.json → evidence\_chain、discovery\_report.md → Evidence Chain）中可逐层回查，且未被引用审计标记；论文编号对应的真实文献最终确认请回查检索缓存或人工复核。
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{假设 5｜Ni氧化态升高降低阳离子混排迁移势垒，促进层状结构向岩盐相降解（hypo\_5）}\label{ux5047ux8bbe-5niux6c27ux5316ux6001ux5347ux9ad8ux964dux4f4eux9633ux79bbux5b50ux6df7ux6392ux8fc1ux79fbux52bfux5792ux4fc3ux8fdbux5c42ux72b6ux7ed3ux6784ux5411ux5ca9ux76d0ux76f8ux964dux89e3hypo_5}
+
+\textbf{结论简述}：根据氧化诱导阳离子无序理论，高Ni3+/Ni4+含量使Ni经四面体中间体迁移至Li层。假设镍氧化态越高（如充电态SOC高），阳离子迁移势垒越低，阳离子混排度越高，导致电压和容量衰减。可以通过原位XAS/STEM定量不同电位下Ni价态和Li/Ni交换度，并测量对应的容量衰减速率。
+
+\textbf{证据编号列表}： - \texttt{\cite{p27}}（论文编号） - \texttt{\cite{p32}}（论文编号） - \texttt{\cite{p24}}（论文编号） - \texttt{{[}Novelty\ Verification{]}\ Overlap:\ none\ \textbar{}\ Novelty:\ 0.850\ (was\ 0.850)\ \textbar{}\ Queries:\ 3\ \textbar{}\ Results:\ 0}（新颖性查重）
+
+\textbf{来源归属}： - 论文证据：\texttt{\cite{p27}}、\texttt{\cite{p32}}、\texttt{\cite{p24}}（源自 hypotheses.json → evidence\_chain） - 新颖性查重：新颖性 0.850；查询 3 次；结果 0 条 - 数据库记录：无（hypotheses.json 中 external\_validation 为空）
+
+\textbf{可追溯状态}：✅ 已溯源 ------ 证据编号在 discovery 产物（hypotheses.json → evidence\_chain、discovery\_report.md → Evidence Chain）中可逐层回查，且未被引用审计标记；论文编号对应的真实文献最终确认请回查检索缓存或人工复核。
+
+\section{Gap 报告 --- 高镍正极容量保持率}\label{gap:gap-ux62a5ux544a-ux9ad8ux954dux6b63ux6781ux5bb9ux91cfux4fddux6301ux7387}
+
+\textbf{主题}：high-nickel cathode capacity retention for lithium-ion batteries \textbf{日期}：2026-08-02（第二轮更新） \textbf{分析论文数}：27 篇（第一轮 19 篇 + 第二轮新增 \cite{p43}-\cite{p50} 八篇）
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{Gap 1 --- 单晶 NMC 化学降解（Ni 氧化态异质性）与机械失效的耦合机制缺失}\label{gap:gap-1-ux5355ux6676-nmc-ux5316ux5b66ux964dux89e3ni-ux6c27ux5316ux6001ux5f02ux8d28ux6027ux4e0eux673aux68b0ux5931ux6548ux7684ux8026ux5408ux673aux5236ux7f3aux5931}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接
+\item
+  \textbf{严重程度}：高
+\item
+  \textbf{置信度}：0.80
+\item
+  \textbf{描述}：\cite{p24}（Ziesche 2025）用 2D/3D 光谱叠层成像揭示了 SC-NMC811 内部 Ni 氧化态的空间异质性，证明单晶虽然抑制了晶间裂纹（机械优势），但仍存在显著的化学不均一。\cite{p25}（Wang 2023）用原位微力学测试测量了单晶 NMC811 的位错滑移系和临界应力，解释了位错辅助裂纹。但两篇论文各自独立：\textbf{没有工作将 Ni 氧化态异质性（化学）与位错/裂纹萌生（力学）在同一单晶颗粒上关联起来}。
+\item
+  \textbf{证据}：\cite{p24}, \cite{p25}
+\item
+  \textbf{验证方案}：对同一 SC-NMC811 颗粒做''先光谱叠层成像（化学态分布）→ 后微力学压缩（裂纹萌生位置）``的顺序关联实验；或建立耦合相场模型（化学异质性→应力源→裂纹）。
+\end{itemize}
+
+\subsection{Gap 2 --- 阳离子无序理论（\cite{p27}）与原子尺度实验验证脱节}\label{gap:gap-2-ux9633ux79bbux5b50ux65e0ux5e8fux7406ux8bbap27ux4e0eux539fux5b50ux5c3aux5ea6ux5b9eux9a8cux9a8cux8bc1ux8131ux8282}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接
+\item
+  \textbf{严重程度}：高
+\item
+  \textbf{置信度}：0.75 → \textbf{0.77}（第二轮：\cite{p44} 过锂化实验观察到 anti-site 缺陷减少伴随性能提升，为无序-性能关联提供间接原子尺度证据，但仍无直接的 Li/Ni 交换度定量测量与理论预测对比）
+\item
+  \textbf{描述}：\cite{p27}（Zhuang \& Bazant 2022）提出氧化诱导阳离子无序的自由能理论------认为高缺陷浓度 Ni 受静电力驱动进入体相。这是''缺陷核心能+长程偶极静电+构型熵''的唯象模型，但缺乏直接的原子尺度验证（如 STEM 层间阳离子混合定量、与 Ni 氧化态的关联）。\cite{p32}（Li 2021）的 DFT 表面相图只覆盖了 LiNiO₂ 表面，未延伸到体相无序动力学。\cite{p44} 的 anti-site 缺陷观察（过锂化减少缺陷→性能提升）支持方向但未定量。
+\item
+  \textbf{证据}：\cite{p27}, \cite{p32}, \cite{p44}
+\item
+  \textbf{验证方案}：DFT/MD 模拟不同 Ni³⁺/Ni⁴⁺ 比例与阳离子迁移势垒的定量关系；对比 \cite{p24} 的 Ni 价态异质性图与理论预测的无序分布。
+\end{itemize}
+
+\subsection{Gap 3 --- 高镍组成空间中''容量-保持率''定量权衡曲线缺失}\label{gap:gap-3-ux9ad8ux954dux7ec4ux6210ux7a7aux95f4ux4e2dux5bb9ux91cf-ux4fddux6301ux7387ux5b9aux91cfux6743ux8861ux66f2ux7ebfux7f3aux5931}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索空间
+\item
+  \textbf{严重程度}：高
+\item
+  \textbf{置信度}：0.72 → \textbf{0.78}（第二轮：\cite{p47} 明确报告''Ni 含量升高时 NMC 循环耐久性下降，尤其高电压下急剧恶化''，\cite{p45} 证实高镍 CAM 保持率系统性低于等摩尔 NMC------方向性证据充分，但定量帕累托曲线仍缺失）
+\item
+  \textbf{描述}：\cite{p22}（Houchins \& Viswanathan 2018）做了低钴 NMC 三元相图的高保真计算搜索，指出高 Ni 低 Co 组成可能存在亚稳有序化影响性能；\cite{p24} 定性指出 Ni 含量↑→容量↑但高电压稳定性↓；\cite{p47} 定量对比不同 Ni 浓度 NMC 的循环性能证实 Ni↑→循环耐久性↓（高压加剧）；\cite{p45} 证实高镍保持率低于等摩尔/富钴基线。\textbf{但依然没有系统性工作给出''Ni 含量 x → 容量 vs 循环保持率''的定量帕累托前沿}，特别是 x=0.8-1.0 区间（NMC811 → LiNiO₂）的梯度数据缺失。
+\item
+  \textbf{证据}：\cite{p22}, \cite{p24}, \cite{p32}, \cite{p47}, \cite{p45}
+\item
+  \textbf{验证方案}：构建 NMCx 系列（x=0.6/0.7/0.8/0.9/1.0）的归一化循环数据元分析；用计算相搜索输出（\cite{p22}）与实测容量保持率数据库拟合。
+\end{itemize}
+
+\subsection{Gap 4 --- 裂纹电解质润湿（\cite{p31}）与表面重构/氧释放（\cite{p32}）的耦合未被建模}\label{gap:gap-4-ux88c2ux7eb9ux7535ux89e3ux8d28ux6da6ux6e7fp31ux4e0eux8868ux9762ux91cdux6784ux6c27ux91caux653ep32ux7684ux8026ux5408ux672aux88abux5efaux6a21}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接
+\item
+  \textbf{严重程度}：中高
+\item
+  \textbf{置信度}：0.75
+\item
+  \textbf{描述}：\cite{p31}（Luza-Vega 2026）证明裂纹内电解质润湿会重分布界面反应（空间异质性），\cite{p32}（Li 2021）预测 LiNiO₂ 表面在首圈充放电中经历特定重构路径。逻辑上：裂纹润湿暴露新表面→新表面在高电压下重构→释放氧→加速衰减。但\textbf{现有模型要么只有力学-电化学（\cite{p31}）要么只有表面化学（\cite{p32}），没有将''裂纹+润湿→新表面→重构+释氧''全链条耦合}。
+\item
+  \textbf{证据}：\cite{p31}, \cite{p32}, \cite{p27}
+\item
+  \textbf{验证方案}：扩展 \cite{p31} 模型加入表面反应动力学项（源自 \cite{p32} 的表面相图活化能）；对比带/不带重构项的容量衰减预测。
+\end{itemize}
+
+\subsection{Gap 5 --- 涂层材料''Li 传输-保护性''权衡缺乏统一设计准则}\label{gap:gap-5-ux6d82ux5c42ux6750ux6599li-ux4f20ux8f93-ux4fddux62a4ux6027ux6743ux8861ux7f3aux4e4fux7edfux4e00ux8bbeux8ba1ux51c6ux5219}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：矛盾/未探索
+\item
+  \textbf{严重程度}：中
+\item
+  \textbf{置信度}：0.70 → \textbf{0.78}（第二轮：\cite{p46} 用 Zr 涂层模型体系定量证实涂层含量-性能呈火山型关系、1.5 wt\% 最优、高含量→IR/极化↑Li⁺扩散受阻------权衡机制已被实验证实，但''跨材料×厚度×电压窗口''的统一设计准则仍未建立；\cite{p48} 提示水洗-质子与涂层工艺存在交互）
+\item
+  \textbf{描述}：\cite{p42}（Xu 2016）DFT 计算 α-AlF₃、α-Al₂O₃、m-ZrO₂、c-MgO、SiO₂ 中 Li 扩散，指出涂层既要导 Li 又要阻挡副反应------两者天然矛盾；\cite{p46}（Zhou 2025）实验证实 Zr 涂层含量火山型效应（1.5 wt\% 最优），量化了''保护 vs 阻抗''权衡的存在。但\textbf{没有统一的''涂层材料×厚度×电压窗口''设计准则}，且各涂层材料间 Li 扩散系数的横向对比分散在不同论文。
+\item
+  \textbf{证据}：\cite{p42}, \cite{p39}, \cite{p46}, \cite{p48}
+\item
+  \textbf{验证方案}：基于 \cite{p42} 的 DFT 数据构建 Li 扩散系数数据库，与 \cite{p46} 的涂层含量-性能数据、\cite{p39} 的界面稳定性数据做多目标优化（最大 Li 传输 × 最小副反应）。
+\end{itemize}
+
+\subsection{Gap 6 --- 核壳结构单次充电失效与缓解策略的空白}\label{gap:gap-6-ux6838ux58f3ux7ed3ux6784ux5355ux6b21ux5145ux7535ux5931ux6548ux4e0eux7f13ux89e3ux7b56ux7565ux7684ux7a7aux767d}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索空间
+\item
+  \textbf{严重程度}：中
+\item
+  \textbf{置信度}：0.65
+\item
+  \textbf{描述}：\cite{p33}（2025）相场模型揭示核壳正极单次充电即发生壳断裂和核壳脱粘------但\textbf{没有研究如何通过壳层厚度/材料梯度/核壳半径比来抑制这种失效}，也没有将核壳设计与高镍核+稳定壳（如 Ni-rich 核+Al₂O₃ 壳）的构效关系量化。
+\item
+  \textbf{证据}：\cite{p33}, \cite{p39}, \cite{p42}
+\item
+  \textbf{验证方案}：参数化相场扫描（壳厚/核径比/界面韧性）输出失效相图；结合 \cite{p42} 涂层 Li 扩散数据评估核壳+涂层的联合设计空间。
+\end{itemize}
+
+\subsection{Gap 7 --- 日历衰减（\cite{p16}）与循环衰减机制在全电池中的统一框架}\label{gap:gap-7-ux65e5ux5386ux8870ux51cfp16ux4e0eux5faaux73afux8870ux51cfux673aux5236ux5728ux5168ux7535ux6c60ux4e2dux7684ux7edfux4e00ux6846ux67b6}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：缺失连接
+\item
+  \textbf{严重程度}：中低
+\item
+  \textbf{置信度}：0.60
+\item
+  \textbf{描述}：\cite{p16}（Su 2021）建立了 NMC-石墨日历容量损失模型（25°C、100\% SOC 下 6.4\% 损失），\cite{p28}（Pham 2025）用中子衍射分析 21700 循环老化中的锂损失。但\textbf{日历+循环耦合老化的统一框架}（以及高镍正极在全电池中的贡献分解：正极结构衰减 vs 负极 SEI 消耗）仍不完整。
+\item
+  \textbf{证据}：\cite{p16}, \cite{p28}
+\item
+  \textbf{验证方案}：将 \cite{p16} 日历模型与 \cite{p28} 循环实验数据（LiC6 相变偏移、NCM 晶胞变化）拟合，分解正/负极贡献。
+\end{itemize}
+
+\subsection{Gap 8 --- 质子诱导降解的定量模型与工艺交互缺失（新增）}\label{gap:gap-8-ux8d28ux5b50ux8bf1ux5bfcux964dux89e3ux7684ux5b9aux91cfux6a21ux578bux4e0eux5de5ux827aux4ea4ux4e92ux7f3aux5931ux65b0ux589e}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{类型}：未探索空间
+\item
+  \textbf{严重程度}：中
+\item
+  \textbf{置信度}：0.65
+\item
+  \textbf{描述}：\cite{p48}（Wilhelm 2025）揭示了全新机制：水洗除杂过程中近表面 Li⁺ 被 H⁺ 交换，质子残留导致容量衰减与阻抗随质子含量增加------甚至低质子含量即引发大性能变化。但\textbf{该机制目前仅为定性观察，缺乏''质子含量 → 衰减速率/阻抗''的定量模型}；且质子残留与涂层（\cite{p46}）、过锂化（\cite{p44}）、构型熵（\cite{p45}）等缓解策略的交互效应完全未探索。
+\item
+  \textbf{证据}：\cite{p48}, \cite{p46}, \cite{p44}
+\item
+  \textbf{验证方案}：系统制备不同水洗程度（质子含量梯度）的 NCM83 样品，用 OEMS + EIS 定量质子含量-阻抗-衰减速率关系；将质子项加入 \cite{p27} 无序理论自由能模型。
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsection{优先级排序（供假设生成）}\label{gap:ux4f18ux5148ux7ea7ux6392ux5e8fux4f9bux5047ux8bbeux751fux6210}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Gap 1}（化学-力学耦合缺失）→ 构效关系：Ni 氧化态异质性与裂纹萌生（置信度 0.80）
+\item
+  \textbf{Gap 4}（裂纹润湿-表面重构耦合）→ 构效关系：裂纹暴露面积与容量衰减速率（0.75）
+\item
+  \textbf{Gap 3}（组成-容量-保持率定量权衡）→ 构效关系：Ni 含量与容量保持率的量化曲线（0.78，证据强化）
+\item
+  \textbf{Gap 5}（涂层 Li 传输-保护权衡）→ 构效关系：涂层材料参数与 Li 扩散（0.78，证据强化）
+\item
+  \textbf{Gap 2}（无序理论验证）→ 构效关系：阳离子无序度与容量衰减（0.77）
+\item
+  \textbf{Gap 8}（质子诱导降解定量模型，新增）→ 构效关系：质子含量与衰减速率（0.65）
+\end{enumerate}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\emph{证据链：所有 Gap 均基于 paper\_summaries.md 中论文 ID（\cite{p06}-\cite{p50}）。Gap 编号全局唯一，跨文档一致。}
+
+\printbibliography[title=参考文献]
+\end{document}

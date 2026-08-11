@@ -1,23 +1,29 @@
 @echo off
 REM ============================================================
-REM compile_report.bat - Build main-case LaTeX report pipeline
+REM compile_report.bat - Build LaTeX report pipeline for a theme
+REM
+REM Usage: compile_report.bat [theme]
+REM   theme defaults to "literature_survey"
 REM
 REM Pipeline:
-REM   paper_register evidence pool -> scripts/build_bib.py -> references.bib
-REM   survey_report.md + gap_report.md
-REM     -> pandoc + scripts/md2latex.py -> report.tex
-REM     -> tectonic -> report.pdf
-REM
-REM Prereqs:
-REM   vendor\tectonic\tectonic.exe (tectonic 0.17.0, download from
-REM     https://github.com/tectonic-typesetting/tectonic/releases)
-REM   vendor\pandoc\pandoc-3.10.1\pandoc.exe (pandoc 3.10.1)
+REM   build_bib.py -> references.bib
+REM   md2latex.py  -> report.tex
+REM   tectonic     -> report.pdf
 REM ============================================================
 setlocal
 
+set THEME=%1
+if "%THEME%"=="" set THEME=literature_survey
+
 set ROOT=%~dp0..
 set TEC=%ROOT%\vendor\tectonic\tectonic.exe
-set OUT=%ROOT%\workspace\outputs\literature_survey\latex
+
+REM Resolve OUT path: main theme has no subdir, others at {theme}/literature_survey/
+if "%THEME%"=="literature_survey" (
+  set OUT=%ROOT%\workspace\outputs\literature_survey\latex
+) else (
+  set OUT=%ROOT%\workspace\outputs\%THEME%\literature_survey\latex
+)
 
 if not exist "%TEC%" (
   echo [ERROR] tectonic not found: %TEC%
@@ -25,15 +31,20 @@ if not exist "%TEC%" (
   exit /b 1
 )
 
-echo [1/3] build references.bib via Crossref (about 2 min) ...
-python "%ROOT%\scripts\build_bib.py" --out "%OUT%\references.bib"
+echo ============================================================
+echo Compiling LaTeX report for theme: %THEME%
+echo Output: %OUT%
+echo ============================================================
+
+echo [1/3] build references.bib ...
+python "%ROOT%\scripts\build_bib.py" --theme "%THEME%" --out "%OUT%\references.bib"
 if errorlevel 1 exit /b 1
 
 echo [2/3] generate report.tex ...
-python "%ROOT%\scripts\md2latex.py" --out "%OUT%\report.tex"
+python "%ROOT%\scripts\md2latex.py" --theme "%THEME%" --out "%OUT%\report.tex"
 if errorlevel 1 exit /b 1
 
-echo [3/3] compile report.pdf with tectonic (first run downloads packages) ...
+echo [3/3] compile report.pdf with tectonic ...
 pushd "%OUT%"
 "%TEC%" report.tex --keep-logs
 set RC=%ERRORLEVEL%
@@ -46,7 +57,7 @@ if %RC% neq 0 (
 
 echo.
 echo ============================================================
-echo Done. Artifacts:
+echo Done. Artifacts for theme "%THEME%":
 echo   %OUT%\report.tex
 echo   %OUT%\references.bib
 echo   %OUT%\report.pdf

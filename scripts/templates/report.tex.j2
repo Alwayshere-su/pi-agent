@@ -20,15 +20,34 @@
 % 特殊 Unicode 符号映射（默认拉丁字体缺字）
 \usepackage{newunicodechar}
 \usepackage{amssymb}
+% 星号与运算符
 \newunicodechar{⭐}{\ensuremath{\bigstar}}
 \newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
 \newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+% 希腊字母（热电主题正文常用）
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+% 下标
 \newunicodechar{₀}{\textsubscript{0}}\newunicodechar{₁}{\textsubscript{1}}
 \newunicodechar{₂}{\textsubscript{2}}\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{₄}{\textsubscript{4}}\newunicodechar{₈}{\textsubscript{8}}
 \newunicodechar{₆}{\textsubscript{6}}\newunicodechar{₇}{\textsubscript{7}}
+\newunicodechar{ₑ}{\textsubscript{e}}\newunicodechar{ₗ}{\textsubscript{l}}
 \newunicodechar{ₓ}{\textsubscript{x}}
+% 上标
 \newunicodechar{⁺}{\ensuremath{^{+}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{⁴}{\textsuperscript{4}}
+\newunicodechar{⁶}{\textsuperscript{6}}
+\newunicodechar{⁷}{\textsuperscript{7}}
 \newunicodechar{₋}{\ensuremath{^{-}}}
+\newunicodechar{ᵧ}{\textsuperscript{$\gamma$}}
+% 带圈数字 ①–⑧
 \newunicodechar{①}{\textcircled{\raisebox{-0.5pt}{1}}}
 \newunicodechar{②}{\textcircled{\raisebox{-0.5pt}{2}}}
 \newunicodechar{③}{\textcircled{\raisebox{-0.5pt}{3}}}
@@ -37,6 +56,12 @@
 \newunicodechar{⑥}{\textcircled{\raisebox{-0.5pt}{6}}}
 \newunicodechar{⑦}{\textcircled{\raisebox{-0.5pt}{7}}}
 \newunicodechar{⑧}{\textcircled{\raisebox{-0.5pt}{8}}}
+% 罗马数字
+\newunicodechar{Ⅱ}{II}
+% 状态图标
+\newunicodechar{✅}{\checkmark}
+\newunicodechar{⏳}{[TBD]}
+\newunicodechar{⚠}{\textbf{/!\\}}
 \geometry{margin=2.5cm}
 \addbibresource{references.bib}
 
