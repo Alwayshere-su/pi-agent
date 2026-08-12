@@ -273,6 +273,7 @@ workspace/
 
 | 文档 | 内容 |
 |------|------|
+| [`ARCHITECTURE.md`](docs/ARCHITECTURE.md) | **系统说明文档（初赛提交物 #4）**——完整系统架构（Mermaid 图表 × 7）、23 工具管线全景表、组件分层说明、设计决策、运行流程、LaTeX 编译管线、路线 A 文档管线、仓库目录总览 |
 | [`COMPLIANCE.md`](docs/COMPLIANCE.md) | 合规披露文档（开源计划、商业 API、数据来源、第三方依赖）——初赛方案 docx 5.3 引用 |
 | [`REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）——docx 5.1 引用 |
 | [`CROSS_THEME_REPORT.md`](docs/CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题、51 Gap、5 跨领域连接）——docx 4.1.1 引用 |
