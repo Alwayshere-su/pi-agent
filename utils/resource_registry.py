@@ -27,6 +27,7 @@ class ExternalResource:
     license_: str                          # 许可证/协议
     required: bool                         # 是否必需（False 表示可降级/替代）
     fallback: Optional[str] = None         # 不可用时的替代方案
+    used_in: str = ""                      # 使用该资源的代码模块（逗号分隔），用于代码→注册表的交叉引用
 
 
 # ── 初赛提交时的外部资源清单（12 项） ──────────────────────────────
@@ -42,6 +43,7 @@ RESOURCES: list[ExternalResource] = [
         license_="商业 API",
         required=False,
         fallback="vLLM 本地部署开源模型（改 DEEPSEEK_BASE_URL 即可）",
+        used_in="pi_agent/llm.py, utils/config.py",
     ),
 
     # ── 检索 ──
@@ -54,6 +56,7 @@ RESOURCES: list[ExternalResource] = [
         license_="商业 API（注册获取）",
         required=False,
         fallback="arXiv API + Semantic Scholar + Crossref",
+        used_in="literature_agent/sciverse_mcp.py, literature_agent/search.py, utils/config.py",
     ),
 
     # ── PDF 解析 ──
@@ -66,6 +69,7 @@ RESOURCES: list[ExternalResource] = [
         license_="开源",
         required=False,
         fallback="markitdown + pdfplumber（本地解析，无需 API Key）",
+        used_in="literature_agent/parser.py, utils/config.py",
     ),
 
     # ── 文献数据 ──
@@ -78,6 +82,7 @@ RESOURCES: list[ExternalResource] = [
         license_="CC / free",
         required=True,
         fallback=None,  # 降级后的主要检索源
+        used_in="literature_agent/search.py",
     ),
 
     ExternalResource(
@@ -89,6 +94,7 @@ RESOURCES: list[ExternalResource] = [
         license_="免费 API",
         required=False,
         fallback="Crossref API",
+        used_in="literature_agent/search.py",
     ),
 
     ExternalResource(
@@ -100,6 +106,7 @@ RESOURCES: list[ExternalResource] = [
         license_="数据集许可",
         required=False,
         fallback="arXiv + Semantic Scholar 在线检索",
+        used_in="literature_agent/search.py",
     ),
 
     ExternalResource(
@@ -111,6 +118,7 @@ RESOURCES: list[ExternalResource] = [
         license_="免费 API",
         required=False,
         fallback=None,
+        used_in="literature_agent/search.py, scripts/build_bib.py",
     ),
 
     # ── 材料数据库 ──
@@ -123,6 +131,7 @@ RESOURCES: list[ExternalResource] = [
         license_="开放数据库",
         required=False,
         fallback="OQMD / NOMAD",
+        used_in="literature_agent/discovery.py, utils/config.py",
     ),
 
     ExternalResource(
@@ -134,6 +143,7 @@ RESOURCES: list[ExternalResource] = [
         license_="开放数据库",
         required=False,
         fallback="Materials Project",
+        used_in="literature_agent/discovery.py",
     ),
 
     ExternalResource(
@@ -145,6 +155,7 @@ RESOURCES: list[ExternalResource] = [
         license_="开放数据库",
         required=False,
         fallback=None,
+        used_in="literature_agent/discovery.py",
     ),
 
     ExternalResource(
@@ -156,18 +167,32 @@ RESOURCES: list[ExternalResource] = [
         license_="公开数据",
         required=False,
         fallback=None,
+        used_in="literature_agent/discovery.py",
     ),
 
     # ── 报告编译 ──
     ExternalResource(
-        name="TeX Live / MiKTeX",
+        name="Pandoc",
         category="编译工具",
-        url="https://tug.org/texlive",
-        version="2026 发行版",
-        purpose="LaTeX→PDF 文献调研报告编译（提交格式要求）",
-        license_="开源",
+        url="https://github.com/jgm/pandoc",
+        version="3.10.1 (vendor/, 2026-08)",
+        purpose="Markdown → LaTeX 结构转换（调研报告/路线 A 文档编译）",
+        license_="GPL-2.0-or-later",
         required=True,
-        fallback=None,  # 提交格式强制要求，无替代
+        fallback="系统级 pandoc 安装",
+        used_in="scripts/md2latex.py, scripts/compile_route_a_pdf.py",
+    ),
+
+    ExternalResource(
+        name="Tectonic",
+        category="编译工具",
+        url="https://github.com/tectonic-typesetting/tectonic",
+        version="0.17.0 (vendor/, 2026-08)",
+        purpose="XeTeX 引擎，LaTeX → PDF 编译（TeX Live 的轻量替代）",
+        license_="MIT",
+        required=True,
+        fallback="系统级 TeX Live / MiKTeX 安装",
+        used_in="scripts/compile_report.bat, scripts/compile_route_a_pdf.py",
     ),
 ]
 

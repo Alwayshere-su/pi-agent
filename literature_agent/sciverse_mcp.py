@@ -5,6 +5,11 @@ Sciverse MCP/Skill 适配层
 为 Sciverse 科学文献检索提供 MCP (Model Context Protocol) 和 Skill 两种接入模式，
 同时保留 REST API 直连作为兜底方案。
 
+@external: utils/resource_registry.py → "Sciverse API"
+  来源: https://sciverse.opendatalab.com (商业 API, 2026-08)
+  用途: 跨出版商语义检索（2500 万+篇文献全文定位）
+  替代: arXiv API + Semantic Scholar + Crossref
+
 设计原则：
   - 轻量级：零外部依赖，仅使用标准库 + requests
   - 审计优先：每次调用自动生成带时间戳、参数哈希、结果摘要的审计日志

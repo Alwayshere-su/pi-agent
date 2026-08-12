@@ -102,6 +102,10 @@ def seed_everything(seed: int = SEED) -> int:
     return seed
 
 # ── API Key ──
+# @external: utils/resource_registry.py → "DeepSeek API"
+#   来源: https://platform.deepseek.com (商业 API, deepseek-chat, 2026-08)
+#   用途: LLM 推理、假设生成、报告撰写
+#   替代: vLLM 本地部署开源模型（改 DEEPSEEK_BASE_URL 即可）
 # 方式1: 环境变量 DEEPSEEK_API_KEY
 # 方式2: 项目根目录创建 .api_key 文件，写入 DeepSeek API Key
 
@@ -135,6 +139,10 @@ def _resolve_api_key() -> str:
     return _load_api_key_file().get("DEEPSEEK_API_KEY", "")
 
 # 加载 Sciverse key（支持 SCIVERSE_API_KEY 和 SCIVERSE_API_TOKEN 两种名称）
+# @external: utils/resource_registry.py → "Sciverse API"
+#   来源: https://sciverse.opendatalab.com (商业 API, 2026-08)
+#   用途: 跨出版商语义检索
+#   替代: arXiv API + Semantic Scholar + Crossref
 _SCIVERSE_KEY = (
     os.environ.get("SCIVERSE_API_KEY", "")
     or os.environ.get("SCIVERSE_API_TOKEN", "")
@@ -149,6 +157,9 @@ if _SCIVERSE_KEY:
     os.environ.setdefault("SCIVERSE_API_KEY", _SCIVERSE_KEY)
 
 # ── MinerU PDF 解析 API Key ──
+# @external: utils/resource_registry.py → "MinerU"
+#   来源: https://mineru.net (开源, Cloud/pip, 2026-08)
+#   替代: markitdown + pdfplumber（本地解析，无需 API Key）
 # 方式1: 环境变量 MINERU_API_KEY
 # 方式2: .api_key 文件中写入 MINERU_API_KEY=your_key
 # MinerU 是 OpenDataLab 的开源文档解析引擎（PDF→结构化内容），官网/注册:
@@ -172,6 +183,10 @@ MINERU_LOCAL_URL = os.environ.get("MINERU_LOCAL_URL", "http://localhost:8888")
 DEEPSEEK_API_KEY = _resolve_api_key()
 
 # ── Materials Project API Key ──
+# @external: utils/resource_registry.py → "Materials Project"
+#   来源: https://materialsproject.org (开放数据库, API, 2026-08)
+#   用途: DFT 结构/能量数据交叉验证
+#   替代: OQMD / NOMAD
 # 方式1: 环境变量 MATERIALS_PROJECT_API_KEY 或 MP_API_KEY
 # 方式2: .api_key 文件中写入 MATERIALS_PROJECT_API_KEY=your_key 或 MP_API_KEY=your_key
 # 注册地址: https://materialsproject.org/api
@@ -194,6 +209,7 @@ if _MATERIALS_PROJECT_KEY:
 MATERIALS_PROJECT_API_KEY = _MATERIALS_PROJECT_KEY
 
 # DeepSeek V4 Flash
+# @external: utils/resource_registry.py → "DeepSeek API"
 # Context window: 1M input, 384K output
 # https://api-docs.deepseek.com/quick_start/pricing/
 DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")

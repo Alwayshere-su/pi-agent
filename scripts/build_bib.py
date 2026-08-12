@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """build_bib.py — 从主题证据池生成 references.bib
 
+@external: utils/resource_registry.py → "Crossref API"
+  来源: https://api.crossref.org (免费 API, 实时, 2026-08)
+  用途: DOI → 标准 BibTeX 条目（含 HTML 实体/月份/上下标清理）
+  降级: 无 DOI 的论文使用 @misc 占位（零虚构）
+
 链路（主案例，有 paper_register）：
   paper_register.md / papers_pid_index.json / gap_report.md / paper_summaries.md
     --> Crossref API (有 DOI) + @misc (无 DOI) --> references.bib
