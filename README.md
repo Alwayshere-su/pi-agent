@@ -4,7 +4,7 @@
 >
 > **开源仓库**：[github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · 代码 MIT · 文档与运行产物 CC BY 4.0）
 >
-> **版本**：v2.3.2（初赛终版 + 跨主题 LaTeX 报告全覆盖）｜**最后更新**：2026-08
+> **版本**：v2.3.3（初赛终版 + 路线 A 构效关系提交文档）｜**最后更新**：2026-08
 >
 > **核心成果**：一个以 LLM 为核心、端到端自主运行的文献驱动科学发现智能体。在有限时间预算内完成「文献检索 → 知识抽取 → Gap 识别 → 构效关系假设 → 贝叶斯/MCTS 搜索 → 外部验证 → 报告生成」全流程。针对 MOF 材料 CO₂ 捕获主题，经 11 轮迭代、546 篇次检索（去重后证据池 543 条、最终收录 46 篇），识别 10 项 Research Gap，生成 5 条构效关系假设，完成定量回归核验与 Materials Project / OQMD 外部交叉验证——流程完整、发现有效、引用干净、证据链可审计。
 
@@ -236,10 +236,16 @@ scripts/
 ├── build_bib.py                  # 证据池 -> references.bib（--theme 跨主题，Crossref API + @misc 降级）
 ├── md2latex.py + templates/report.tex.j2  # Markdown 报告 -> report.tex（pandoc + 引用转换 + Unicode 映射）
 ├── compile_report.bat           # 一键 LaTeX 编译（build_bib -> md2latex -> tectonic），支持 theme 参数
+├── build_route_a_docs.py        # 路线 A 构效关系文档生成（31 条假设 → SP 清单 + 科学解释）
+├── compile_route_a_pdf.py       # 路线 A Markdown → PDF 编译（pandoc → Jinja2 → tectonic）
+├── templates/route_a.tex.j2     # 路线 A LaTeX 模板（ctexart + Unicode 映射）
 tests/                           # pytest 单元测试（125 项）
 docs/                            # 项目文档（架构 / 合规 / 可复现性 / 重跑指南）
 workspace/
-├── outputs/<run-dir>/literature_survey/  # 各主题产出
+├── outputs/
+│   ├── <run-dir>/literature_survey/       # 各主题产出
+│   ├── ROUTE_A_SP_LIST.md/.tex/.pdf       # 路线 A 构效关系清单（31 条假设）
+│   └── ROUTE_A_EXPLANATION.md/.tex/.pdf   # 路线 A 科学解释文档
 ├── memory/<run-dir>/                      # 跨轮记忆
 ├── logs/                                  # 运行轨迹 + 审计日志
 └── data/literature_cache/                 # 文献缓存（search_log.jsonl 入库，其余 gitignore）
@@ -270,6 +276,10 @@ workspace/
 | [`COMPLIANCE.md`](docs/COMPLIANCE.md) | 合规披露文档（开源计划、商业 API、数据来源、第三方依赖）——初赛方案 docx 5.3 引用 |
 | [`REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）——docx 5.1 引用 |
 | [`CROSS_THEME_REPORT.md`](docs/CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题、51 Gap、5 跨领域连接）——docx 4.1.1 引用 |
+| [`ROUTE_A_SP_LIST.md`](workspace/outputs/ROUTE_A_SP_LIST.md) | 路线 A 构效关系清单（31 条假设、6 主题统一 SPR 编号、逐条证据链）——初赛提交物 #3 |
+| [`ROUTE_A_EXPLANATION.md`](workspace/outputs/ROUTE_A_EXPLANATION.md) | 路线 A 科学解释文档（分主题学科背景 + 逐假设 LLM 解释 + 已知/新知判定）——初赛提交物 #3 |
+| [`ROUTE_A_SP_LIST.pdf`](workspace/outputs/ROUTE_A_SP_LIST.pdf) | 路线 A 构效关系清单 PDF（LaTeX 编译，539 KB） |
+| [`ROUTE_A_EXPLANATION.pdf`](workspace/outputs/ROUTE_A_EXPLANATION.pdf) | 路线 A 科学解释文档 PDF（LaTeX 编译，664 KB） |
 | `初赛提交材料.md` | 完整方案说明、技术路线、实验结果、评审自查（**本地文档，不入公开仓库**） |
 | `初赛方案_修改清单.md` | docx 方案逐项核对清单（**本地文档，不入公开仓库**） |
 | `材料科学文献调研Agent_算法赛初赛方案.docx` | 初赛提交方案（**本地提交物，不入公开仓库**） |
@@ -309,6 +319,7 @@ workspace/
 | v2.3.0 | 2026-08 | 主案例 LaTeX 报告链路（评审缺陷 #：报告零 LaTeX 产出）：① 新增 `scripts/build_bib.py`——从 `paper_register` 证据池（papers_pid_index.json + gap_report.md + paper_summaries.md）生成 `references.bib` 71 条，有 DOI 的 51 条调 Crossref API 拉标准 BibTeX（含 HTML 实体/月份/上下标清理），无 DOI 的 20 条降级 @misc 占位（零虚构）；② 新增 `scripts/md2latex.py` + `scripts/templates/report.tex.j2`——`survey_report.md + gap_report.md` 经 pandoc 结构转换 + 引用正则（p#/r#→\cite）后套 ctexart 模板生成 `report.tex`；③ 新增 `scripts/compile_report.bat` 一键编译（build_bib → md2latex → tectonic）；④ 交付 `latex/report.pdf`（28 页）`+ report.tex + references.bib`，71 条引用与 .bib 一一对应、零 Undefined citation、中文无缺字；⑤ 环境依赖：tectonic 0.17.0 与 pandoc 3.10.1 单二进制放 `vendor/`（本机无 TeX 发行版时的轻量替代） |
 | v2.3.1 | 2026-08 | 初赛手册修订版对齐：① 新增 `utils/resource_registry.py`——12 项外部资源来源/版本/用途注册表（含 DeepSeek/Sciverse/MinerU/arXiv/Semantic Scholar/Sci-Base/Crossref/Materials Project/OQMD/NOMAD/hMOF/TeX Live），对应方案 docx 5.3 节 Table 5 与赛题手册第 36 条；② 新增 `literature_agent/planned_capabilities.py`——三项复赛计划接口契约（HybridRetriever / GraphKnowledgeStore / AutoReVerifier），初赛阶段明确标注替代方案；③ `.gitignore` 追加 `_*.txt` 与 `GOAI_*.docx` 规则 |
 | v2.3.2 | 2026-08 | 跨主题 LaTeX 报告流水线（6 主题全覆盖）：① `build_bib.py` 新增 `--theme` 参数，支持 dict 格式条目（perovskite/cathode paper_summaries）、数学模式保护（`esc_title()` 不转义 `$...$` 内下划线）、截断标题正则兜底；② `md2latex.py` 新增 `--theme` + `---` 表格歧义修复（→`***`）+ `\label` 保护（避免 `\cite` 进入 `\csname`）+ YAML 元数据块禁用；③ 模板新增 21 条 `\newunicodechar`（αβκσχ≥≠⁴⁶⁷⁻ᵧ₄₈ₑₗ✅⏳⚠Ⅱ）；④ 产出 5 个跨主题 PDF（perovskite 308K/thermoelectric 440K/cathode 480K/mof 411K/validation 391K）+ 主案例重生成 578K，6 主题全部零编译错误、零 Unicode 缺字 |
+| v2.3.3 | 2026-08 | 路线 A 构效关系提交文档：① 新增 `scripts/build_route_a_docs.py`——从 6 主题 discovery 子目录提取 31 条假设，生成统一 SPR 编号体系（SPR-{THEME}-{NN}）的 SP 清单（69 KB / 694 行）与科学解释文档（73 KB / ~720 行），含已知/新知判定、证据链格式清理、LLM 解释增强；② 新增 `scripts/compile_route_a_pdf.py` + `scripts/templates/route_a.tex.j2`——pandoc → Jinja2 → tectonic 编译链路，补充 ²³₅×ΔΩ–—↑→↓∝ 等 20 条 Unicode 映射；③ 产出 `ROUTE_A_SP_LIST.pdf`（539 KB）与 `ROUTE_A_EXPLANATION.pdf`（664 KB），零编译错误；④ `CROSS_THEME_REPORT.md` 头部新增路线 A 文档索引 |
 
 ---
 
