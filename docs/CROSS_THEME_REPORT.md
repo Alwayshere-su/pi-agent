@@ -1,11 +1,12 @@
 # 跨主题泛化性验证统一报告
 
-> 更新日期：2026-08-11
+> 更新日期：2026-08-12
 > 覆盖主题：10 个（tracked 6 个：literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation；gitignored 4 个：mof_rerun / smoke_test / g3test / smoke_fix）
 > 原则：所有数据均从实际文件中提取；缺失即标注"数据缺失"，不虚构
 > **公开仓库数据可用性**：smoke_test / g3test / mof_rerun 的 outputs 已 gitignore（本地保留），
 > 公开仓库中仅 logs 和 memory 可见；cathode / literature_survey / mof_e2e_v4 /
 > perovskite / thermoelectric / validation 的 outputs 完整入库
+> **路线 A 提交文档**：详见 [`ROUTE_A_SP_LIST.md`](../workspace/outputs/ROUTE_A_SP_LIST.md) 与 [`ROUTE_A_EXPLANATION.md`](../workspace/outputs/ROUTE_A_EXPLANATION.md)（含 PDF，共 31 条假设、6 主题统一 SPR 编号体系）
 
 ---
 
