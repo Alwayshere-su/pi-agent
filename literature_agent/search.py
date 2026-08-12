@@ -6,6 +6,14 @@
   2. Sci-Base      — HuggingFace 开放数据集，2500万+篇论文（本地/远程）
   3. arXiv API     — 免费开放获取论文检索（兜底方案）
 
+@external: utils/resource_registry.py
+  本模块使用以下外部资源（详见注册表）：
+  - "Sciverse API"    — 语义检索主引擎 (sciverse_mcp.py, LiteratureSearcher)
+  - "arXiv API"       — 兜底检索 (ArxivSearcher, BASE_URL: export.arxiv.org)
+  - "Semantic Scholar API" — 免费文献元数据与引用关系 (api.semanticscholar.org)
+  - "Sci-Base"        — 全文语料离线检索 (HuggingFace 数据集)
+  - "Crossref API"    — DOI 校验与元数据补全 (api.crossref.org)
+
 检索结果统一为 SearchResult dataclass，包含标题、作者、摘要、
 全文链接、来源数据库、相关度分数等字段。
 

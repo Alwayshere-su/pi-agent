@@ -7,6 +7,11 @@
   3. MinerU pip 包 (magic-pdf / mineru) — 本地 Python 包直接调用
   4. markitdown (本地引擎) — PDF/DOCX/HTML → Markdown
 
+@external: utils/resource_registry.py → "MinerU"
+  来源: https://mineru.net (开源, Cloud/pip, 2026-08)
+  用途: PDF 高精度解析（正文/图表/表格/SI 结构化提取）
+  替代: markitdown + pdfplumber（本地解析，无需 API Key）
+
 自动选择策略（优先级递减）：
   - MinerU Cloud API (需要 MINERU_API_KEY)
   - MinerU localhost:8888 (需要本地部署)

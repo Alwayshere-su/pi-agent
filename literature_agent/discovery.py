@@ -4,6 +4,14 @@
 基于文献知识图谱的 Research Gap，利用搜索算法 + LLM 深度融合，
 自主发现材料-性质关联，并通过外部数据库交叉验证。
 
+@external: utils/resource_registry.py
+  本模块使用以下外部数据库进行交叉验证（详见注册表）：
+  - "Materials Project" — DFT 结构/能量数据 (api.materialsproject.org, 需 API Key)
+  - "OQMD"              — 形成能/热力学数据 (oqmd.org, REST API, 免 Key)
+  - "NOMAD"             — 计算材料科学数据仓库 (nomad-lab.eu, REST API, 公开)
+  - "hMOF"              — MOF 结构-吸附数据 (文献快照, MOF 体系专项)
+  所有数据库均为可选——单库异常自动降级，不中断 discovery 流程。
+
 核心流程：
   Phase 1: Hypothesis Generation    — 从 Gap 中生成候选构效关系假设
   Phase 2: Guided Search            — 贝叶斯优化/MCTS 探索材料空间

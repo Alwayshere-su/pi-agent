@@ -92,5 +92,6 @@ scripts/fill_initial_template.py
 workspace/outputs/*/literature_survey/latex/*.log
 workspace/outputs/*/literature_survey/latex/*.blg
 
-# Vendor binaries
-vendor/
+# Vendor binaries（二进制不入库，README 文档入库存证）
+vendor/*
+!vendor/README.md

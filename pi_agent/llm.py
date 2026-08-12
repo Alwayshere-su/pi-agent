@@ -3,6 +3,11 @@ LLM 调用抽象层 — Pi-Agent Layer 1
 ===================================
 提供统一的 LLM 调用接口，封装 DeepSeek API。
 
+@external: utils/resource_registry.py → "DeepSeek API"
+  来源: https://platform.deepseek.com (商业 API, 2026-08)
+  模型: deepseek-v4-flash (OpenAI 兼容接口)
+  替代: vLLM 本地部署开源模型（改 DEEPSEEK_BASE_URL 即可）
+
 特性：
   - Tool call 参数 JSON 自动修复（LLM 输出格式错误时）
   - API 调用期间心跳动画（防止看起来卡死）
