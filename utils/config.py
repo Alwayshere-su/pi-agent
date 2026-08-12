@@ -77,6 +77,9 @@ def seed_everything(seed: int = SEED) -> int:
     """固定全局随机种子，保证确定性计算可复现。
 
     设置 random.seed 与 numpy.random.seed（numpy 缺失时自动跳过，不强依赖）。
+    此函数由 main.py 在工具管线启动前调用，确保 literature_agent/discovery.py 等
+    下游模块中所有 np.random.uniform() / random.* 调用使用固定种子。
+    如需独立运行依赖随机数的模块（如测试/基准对比脚本），请在模块入口处手动调用。
     PYTHONHASHSEED 须在解释器启动前设置才生效，运行时设置无效，故仅作提示。
 
     Args:
