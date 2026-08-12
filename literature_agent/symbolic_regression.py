@@ -395,7 +395,7 @@ def _mutate_subtree_op(node: _Node, rng: random.Random) -> _Node:
 # ═══════════════════════════════════════════════════════════════
 
 def fit(X, y, max_generations: int = 100, pop_size: int = 50,
-        seed: int = None, verbose: bool = False):
+        seed: int = 42, verbose: bool = False):
     """运行遗传编程符号回归。
 
     Args:
@@ -403,7 +403,7 @@ def fit(X, y, max_generations: int = 100, pop_size: int = 50,
         y: 目标值，一维 (n,) 数组。
         max_generations: 最大进化代数（默认 100）。
         pop_size: 种群规模（默认 50）。
-        seed: 随机种子（None 表示不固定）。
+        seed: 随机种子（默认 42，与项目全局 SEED 一致；None 表示不固定）。
         verbose: 是否打印进化日志。
 
     Returns:

@@ -4,6 +4,10 @@
 基于文献知识图谱的 Research Gap，利用搜索算法 + LLM 深度融合，
 自主发现材料-性质关联，并通过外部数据库交叉验证。
 
+@seed: utils/config.py SEED=42 — 由 main.py 在工具管线启动前调用 seed_everything()
+  设置 random.seed(42) + numpy.random.seed(42)，确保本模块中所有 np.random.uniform()
+  调用使用固定种子。如需独立运行本模块，请在调用前手动执行 seed_everything(42)。
+
 @external: utils/resource_registry.py
   本模块使用以下外部数据库进行交叉验证（详见注册表）：
   - "Materials Project" — DFT 结构/能量数据 (api.materialsproject.org, 需 API Key)
@@ -1096,6 +1100,7 @@ class BayesianOptimizer:
             return raw_score
 
         # Phase A: Random exploration
+        # @seed: np.random seeded by seed_everything(SEED=42) called in main.py
         X = np.random.uniform(bounds[:, 0], bounds[:, 1], size=(n_initial, len(param_names)))
         y = np.array([_blend_score(
             objective_fn(self._vec_to_dict(param_names, x)),
@@ -1355,6 +1360,7 @@ class BayesianOptimizer:
         # LLM 剪枝/聚焦（2026-10）：有 focus 区间时在其中采样一半候选点，
         # 有 prune 区间时丢弃落入其中的候选点——LLM 建议真正引导搜索空间。
         prune = self._llm_prune_regions
+        # @seed: 以下 np.random.uniform() 调用均由 seed_everything(SEED=42) in main.py 固定
         focus = self._llm_focus_regions
         pidx = self._llm_property_idx
         rand_candidates = np.random.uniform(
