@@ -1,11 +1,12 @@
 # 跨主题泛化性验证统一报告
 
 > 更新日期：2026-08-12
-> 覆盖主题：10 个（tracked 6 个：literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation；gitignored 4 个：mof_rerun / smoke_test / g3test / smoke_fix）
+> 覆盖主题：10 个（tracked 6 个：literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation；gitignored 2 个：smoke_test / g3test / smoke_fix；已清理 2 个：mof_rerun / mof_rerun_v2）
 > 原则：所有数据均从实际文件中提取；缺失即标注"数据缺失"，不虚构
-> **公开仓库数据可用性**：smoke_test / g3test / mof_rerun 的 outputs 已 gitignore（本地保留），
-> 公开仓库中仅 logs 和 memory 可见；cathode / literature_survey / mof_e2e_v4 /
-> perovskite / thermoelectric / validation 的 outputs 完整入库
+> **公开仓库数据可用性**：mof_rerun / mof_rerun_v2（logs + memory + outputs）已从公开仓库清理（v3 取代）；
+> mof_rerun_v3（logs + memory + discovery outputs）完整入库作为复现性证据；
+> cathode / literature_survey / mof_e2e_v4 / perovskite / thermoelectric / validation 的 outputs 完整入库；
+> smoke_test / g3test / smoke_fix 的 outputs 已 gitignore（本地保留）
 > **路线 A 提交文档**：详见 [`ROUTE_A_SP_LIST.md`](../workspace/outputs/ROUTE_A_SP_LIST.md) 与 [`ROUTE_A_EXPLANATION.md`](../workspace/outputs/ROUTE_A_EXPLANATION.md)（含 PDF，共 31 条假设、6 主题统一 SPR 编号体系）
 
 ---
@@ -51,7 +52,7 @@
 
 > \* 标注为"中高/中→高"级别的 Gap，按发现潜力接近高严重度
 > "Best Score" 为假设发现环节的 bayesian search best_score（不是 confidence）；0.0 表示未执行搜索或搜索未收敛
-> tracked 主题 6 个：literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation（outputs 完整入库）；mof_rerun / smoke_test / g3test / smoke_fix 为 gitignored（本地留存）
+> tracked 主题 6 个：literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation（outputs 完整入库）；mof_rerun_v3 作为复现性补充证据入库；smoke_test / g3test / smoke_fix 为 gitignored（本地留存）；mof_rerun / mof_rerun_v2 已清理（v3 取代）
 
 ### 2.2 主案例 (literature_survey) Gap 详情
 
