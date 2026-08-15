@@ -275,11 +275,11 @@ workspace/
 |------|------|
 | [`ARCHITECTURE.md`](docs/ARCHITECTURE.md) | **系统说明文档**——完整系统架构（Mermaid 图表 × 7）、23 工具管线全景表、组件分层说明、设计决策、运行流程、LaTeX 编译管线、路线 A 文档管线、仓库目录总览 |
 | [`COMPLIANCE.md`](docs/COMPLIANCE.md) | **合规披露文档**——开源计划、商业 API、数据来源、第三方依赖、密钥管理、已有项目声明；对照修订版规则逐条自查 |
-| [`EXTERNAL_RESOURCES.md`](docs/EXTERNAL_RESOURCES.md) | **外部资源披露清单（初赛提交物 #4）**——13 项外部资源（数据库/API/模型/编译工具）来源、版本、许可证、替代方案；与 `resource_registry.py` 代码注册表同步 |
+| [`EXTERNAL_RESOURCES.md`](docs/EXTERNAL_RESOURCES.md) | **外部资源披露清单（随代码仓库提交）**——13 项外部资源（数据库/API/模型/编译工具）来源、版本、许可证、替代方案；与 `resource_registry.py` 代码注册表同步 |
 | [`REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）——docx 5.1 引用 |
 | [`CROSS_THEME_REPORT.md`](docs/CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题、51 Gap、5 跨领域连接）——docx 4.1.1 引用 |
-| [`ROUTE_A_SP_LIST.md`](workspace/outputs/ROUTE_A_SP_LIST.md) | 路线 A 构效关系清单（31 条假设、6 主题统一 SPR 编号、逐条证据链）——初赛提交物 #3 |
-| [`ROUTE_A_EXPLANATION.md`](workspace/outputs/ROUTE_A_EXPLANATION.md) | 路线 A 科学解释文档（分主题学科背景 + 逐假设 LLM 解释 + 已知/新知判定）——初赛提交物 #3 |
+| [`ROUTE_A_SP_LIST.md`](workspace/outputs/ROUTE_A_SP_LIST.md) | 路线 A 构效关系清单（31 条假设、6 主题统一 SPR 编号、逐条证据链） |
+| [`ROUTE_A_EXPLANATION.md`](workspace/outputs/ROUTE_A_EXPLANATION.md) | 路线 A 科学解释文档（分主题学科背景 + 逐假设 LLM 解释 + 已知/新知判定） |
 | [`ROUTE_A_SP_LIST.pdf`](workspace/outputs/ROUTE_A_SP_LIST.pdf) | 路线 A 构效关系清单 PDF（LaTeX 编译，539 KB） |
 | [`ROUTE_A_EXPLANATION.pdf`](workspace/outputs/ROUTE_A_EXPLANATION.pdf) | 路线 A 科学解释文档 PDF（LaTeX 编译，664 KB） |
 | `初赛提交材料.md` | 完整方案说明、技术路线、实验结果、评审自查（**本地文档，不入公开仓库**） |

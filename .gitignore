@@ -45,6 +45,7 @@ AI for reserach算法赛初赛模板.docx
 
 # 初赛方案提交物（docx，本地保留、不入公开仓库）
 方案说明文档.docx
+pi-agent.zip
 
 # 内部/赛题文档（本地保留、不入公开仓库）
 problem_definition.md
@@ -97,3 +98,15 @@ workspace/outputs/literature_survey/latex/*.blg
 # Vendor binaries（二进制不入库，README 文档入库存证）
 vendor/*
 !vendor/README.md
+
+# 初赛提交物③④：文献调研报告 / 路线A文档（编译产物，随平台单独上传，不入代码仓库）
+文献调研报告/
+路线A_构效关系清单与解释文档/
+
+# 赛题资料（第三方内容，不入库）
+赛题文件/
+
+# 本地提交准备文档与一次性脚本/备份（不入库）
+初赛提交物整理.md
+/_*.py
+/_*.docx
