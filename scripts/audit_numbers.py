@@ -90,6 +90,34 @@ def _count_hypotheses(hyp_json: str) -> int:
     return -1
 
 
+def _theme_paper_count(survey_md: str) -> int:
+    """从 survey_report.md 提取"文献规模/论文数"（各主题写法不一，逐优先级匹配）。"""
+    if not os.path.exists(survey_md):
+        return -1
+    text = open(survey_md, encoding="utf-8").read()
+    for pat in (
+        r"(?:文献规模|核心论文数|文献库|文献基础)[^\n]{0,30}?(\d+)\s*篇",  # 主案例/热电/v4/validation/rerun
+        r"(\d+)\s*篇\s*(?:论文|文献)",                                   # 钙钛矿 "71 篇论文"
+        r"核心论文数[^0-9]{0,10}(\d+)",                                 # 正极 "核心论文数：27（"
+    ):
+        m = re.search(pat, text)
+        if m:
+            return int(m.group(1))
+    return -1
+
+
+# 7 个正式主题的 survey_report.md（累计检索篇次口径）
+RETRIEVAL_THEMES = {
+    "主案例MOF": os.path.join(OUT, "literature_survey", "survey_report.md"),
+    "钙钛矿": os.path.join(OUT, "perovskite", "literature_survey", "survey_report.md"),
+    "热电": os.path.join(OUT, "thermoelectric", "literature_survey", "survey_report.md"),
+    "正极": os.path.join(OUT, "cathode", "literature_survey", "survey_report.md"),
+    "mof_e2e_v4": os.path.join(OUT, "mof_e2e_v4", "literature_survey", "survey_report.md"),
+    "validation": os.path.join(OUT, "validation", "literature_survey", "survey_report.md"),
+    "mof_rerun_v3": os.path.join(OUT, "mof_rerun_v3", "literature_survey", "survey_report.md"),
+}
+
+
 # =================================================================
 # 审计项定义：每个函数返回 (真值说明, 真值, [文档中应出现的字符串...])
 # 字符串用于在"文档文本"里检索口径是否被写入，供人工核对数值是否一致。
@@ -104,19 +132,13 @@ def audit_tools(doc: str, submit: str):
 
 
 def audit_roles(doc: str, submit: str):
-    """角色数量 = 文档自述的八类角色；真值取自 build_prelim_proposal.py 角色表行数。"""
-    path = os.path.join(ROOT, "scripts", "build_prelim_proposal.py")
-    if not os.path.exists(path):
-        return ("角色数（build_prelim_proposal.py 为本地 docx 生成工具，未入库）",
-                "本地文件未入库", ["八类角色", "八类 Agent"])
-    src = open(path, encoding="utf-8").read()
-    # 角色表在 ["Agent 角色", ...] 之后，逐行数数据行（以 [" 开头且含逗号）
-    m = re.search(r"\[\"Agent 角色\".*?\],\s*(\[[^\]]*\]\s*,){0,20}", src, re.DOTALL)
-    # 兜底：从文档句"八类角色任务（…）"里数顿号分隔的 8 项
+    """角色数量 = 文档自述的八类角色；真值取自 docs/ARCHITECTURE.md §5.4（入库可复现）。"""
+    src = open(os.path.join(ROOT, "docs", "ARCHITECTURE.md"), encoding="utf-8").read()
+    # 从"八类角色任务（…）"里数顿号分隔的 8 项
     eight = re.search(r"八类角色任务（([^）]+)）", src)
     roles = eight.group(1).split("、") if eight else []
     n = len(roles) if roles else -1
-    return ("角色数（build_prelim_proposal.py '八类角色任务' 顿号项数）", str(n),
+    return ("角色数（docs/ARCHITECTURE.md '八类角色任务' 顿号项数）", str(n),
             ["八类角色", "八类 Agent"])
 
 
@@ -229,6 +251,42 @@ def audit_mof_main_quant(doc: str, submit: str):
             ["0.6919", "0.0254", "0.7694", "-0.1530", "+0.92", "5.46", "0.0121"])
 
 
+def audit_total_retrieval(doc: str, submit: str):
+    """累计检索篇次 = 7 主题 survey_report.md 文献规模求和；文档声称 1000+。"""
+    per = {name: _theme_paper_count(path) for name, path in RETRIEVAL_THEMES.items()}
+    total = sum(v for v in per.values() if v > 0)
+    ok = "≥1000 ✓" if total >= 1000 else "<1000 ✗"
+    return ("累计检索篇次（7 主题 survey_report.md 文献规模求和）",
+            f"{total} {ok}（{' + '.join(f'{k}{v}' for k, v in per.items())}）",
+            ["1000+ 篇次", "累计检索 1000+", "1000+ 篇"])
+
+
+def audit_spr_count(doc: str, submit: str):
+    """路线 A 构效关系假设总数 = ROUTE_A_SP_LIST.md 唯一 SPR 编号数（含 SPR-MOFv4）。"""
+    src = open(os.path.join(OUT, "ROUTE_A_SP_LIST.md"), encoding="utf-8").read()
+    ids = set(re.findall(r"SPR-[A-Za-z0-9]+-\d{2}", src))
+    return ("路线 A 构效关系假设数（ROUTE_A_SP_LIST.md 唯一 SPR 编号）", f"{len(ids)} 条",
+            ["31 条假设", "31 条"])
+
+
+def audit_arch_diagrams(doc: str, submit: str):
+    """架构图数量 = docs/ARCHITECTURE.md 的 mermaid 块数。"""
+    src = open(os.path.join(ROOT, "docs", "ARCHITECTURE.md"), encoding="utf-8").read()
+    n = len(re.findall(r"^```mermaid", src, re.MULTILINE))
+    return ("架构图数量（docs/ARCHITECTURE.md mermaid 块计数）", f"{n} 幅",
+            ["架构图 × 7", "架构图 ×7", "架构图 7"])
+
+
+def audit_compilers(doc: str, submit: str):
+    """LaTeX 编译器版本 = vendor/README.md 中的 Pandoc/Tectonic 版本号。"""
+    src = open(os.path.join(ROOT, "vendor", "README.md"), encoding="utf-8").read()
+    pandoc = "3.10.1" in src
+    tectonic = "0.17.0" in src
+    status = "齐全" if (pandoc and tectonic) else f"缺失 pandoc={pandoc} tectonic={tectonic}"
+    return ("LaTeX 编译器版本（vendor/README.md）", f"Pandoc 3.10.1 / Tectonic 0.17.0（{status}）",
+            ["Pandoc 3.10.1", "Tectonic 0.17.0"])
+
+
 def audit_pytest(doc: str, submit: str, run: bool = False):
     if not run:
         return ("pytest 测试数（跳过，用 --pytest 运行）", "未运行", ["125 项", "125"])
@@ -271,6 +329,7 @@ def main() -> int:
     audits = [
         audit_tools, audit_roles, audit_resources,
         audit_main_case, audit_formal_hypotheses, audit_total_gaps,
+        audit_total_retrieval, audit_spr_count, audit_arch_diagrams, audit_compilers,
         audit_mof_rerun_v3, audit_cathode_quant, audit_mof_main_quant,
     ]
 
