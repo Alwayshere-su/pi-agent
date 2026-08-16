@@ -100,7 +100,7 @@
         }
       ]
     },
-    "known_prior_work": "已有文献确立双金属 MOF 比例-容量峰值结构：CoMn-MOF-74 最佳 Co/Mn=1:1（p65）、Fe/Cu 双金属>单金属（p67）、MIL-101(Cr,Mg) 高容量+高选择性（p147）、Ni-Cu-MOF-74 MMM 3188 Barrer/35.1 选择性（p22）、双金属 NiCo-MOF-74 8.30 mmol/g 高于单金属 Ni 3.99/Co 5.03（p24）；但跨金属组合的比例→容量连续倒 U 定量标度律未见报道",
+    "known_prior_work": "已有文献确立开放金属位点（OMS）密度与 CO₂ 容量/选择性正相关（p22 钴基 MOF 吡啶位点+OMS、p24 ZIF-8@Zn-MOF-74 核壳），离子液体复合与膜分离可调 CO₂/N₂ 选择性（p65、p67），TSA 循环给出工艺侧权衡（p147）；但双金属组分比例→容量的连续倒 U 定量标度律未见报道",
     "redline2_complete": false,
     "incremental_claim": "将双金属 MOF-74 金属比例与 CO₂ 容量关系定量化为倒 U 型标度律（峰值位置随金属对迁移、选择性同步变化），并给出双金属优于单金属的协同机制"
   },
@@ -324,7 +324,7 @@
         }
       ]
     },
-    "known_prior_work": "已有文献确立 Qst 与选择性/再生能耗同向权衡的方向（MOF-74(Ni) Qst 可调 p27、胺化 SBA-15 Qst p129），缺陷工程（p117）与锂掺杂（p116）可调节 Qst；但容量-选择性-再生能耗三维 Pareto 的 Qst 定量窗口未见系统建立",
+    "known_prior_work": "已有文献确立 Qst 与选择性/再生能耗同向权衡的方向（p27 等温吸附热计算方法、p129 DAC 挑战综述），缺陷/核壳工程可调节 Qst（p117、p116）；但容量-选择性-再生能耗三维 Pareto 的 Qst 定量窗口未见系统建立",
     "redline2_complete": false,
     "incremental_claim": "提出 Qst 甜点区（25–40 kJ/mol）并建立容量-选择性-再生能耗三维 Pareto 前沿，为吸附剂筛选提供热力学定量约束"
   },
@@ -540,7 +540,7 @@
         }
       ]
     },
-    "known_prior_work": "已有文献确立 NO₂ 杂质对 gate-opening 型 MOF（ELM-11）CO₂ 容量的影响（p216），以及烟气杂质导致 CO₂ 纯度下降对下游压缩功的工艺代价（p52/p55）；但容量衰减率与 OMS 密度/孔道亲水性的定量关联未建立",
+    "known_prior_work": "已有文献确立酸性气体（NO₂/SO₂）与 OMS 强配位或反应导致容量衰减、疏水/配位饱和骨架更稳定的方向（p216、p52、p55）；但衰减率与 OMS 密度/孔道亲水性的定量关联未建立",
     "redline2_complete": false,
     "incremental_claim": "给出 NO₂/SO₂ 暴露后容量保持率与 OMS 密度（负相关）/孔道疏水性（正相关）的定量关联，为含杂质烟气的 MOF 筛选提供依据"
   }
