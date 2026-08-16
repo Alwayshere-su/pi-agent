@@ -153,7 +153,7 @@ SPR-TE-04 & 热电材料 & 共振掺杂浓度与 DOS 局部异常及 Seebeck 增
 SPR-TE-05 & 热电材料 & Yb 填充方钴矿填充分数对晶格热导率与迁移率的定量影响及批次稳定性 & 0.79 & 0.65 & bayesian & inconclusive & materials\_project, oqmd, nomad \\
 SPR-NMC-01 & 高镍正极 & 单晶NMC811中Ni氧化态异质性调控位错辅助裂纹萌生 & 0.72 & 0.88 & bayesian & inconclusive & materials\_project, oqmd, nomad \\
 SPR-NMC-02 & 高镍正极 & 裂纹电解质润湿通过表面重构与氧释放加速容量衰减 & 0.70 & 0.90 & bayesian & pending & --- \\
-SPR-NMC-03 & 高镍正极 & 高镍层状氧化物中Ni含量与容量保持率呈非单调权衡 & 0.68 & 0.82 & bayesian & validated & materials\_project, oqmd, nomad \\
+SPR-NMC-03 & 高镍正极 & 高镍层状氧化物中Ni含量与容量保持率呈强负相关（高镍端加速） & 0.68 & 0.82 & bayesian & validated & materials\_project, oqmd, nomad \\
 SPR-NMC-04 & 高镍正极 & 涂层材料的Li离子电导率与界面副反应阻抗之间的帕累托最优设计 & 0.65 & 0.78 & bayesian & pending & --- \\
 SPR-NMC-05 & 高镍正极 & Ni氧化态升高降低阳离子混排迁移势垒，促进层状结构向岩盐相降解 & 0.63 & 0.85 & bayesian & pending & --- \\
 SPR-NMC-06 & 高镍正极 & 水洗引入的质子残留通过近表面Li/H交换加速高镍正极容量衰减与阻抗增长 & 0.65 & 0.85 & bayesian & validated & materials\_project, oqmd, nomad \\
@@ -925,7 +925,7 @@ SPR-SE-05 & 固态电解质 & 亲锂成核层+电子阻挡层双层界面设计�
 \end{longtable}
 }
 
-\subsubsection{SPR-NMC-03 --- 高镍层状氧化物中Ni含量与容量保持率呈非单调权衡}\label{spr-nmc-03-ux9ad8ux954dux5c42ux72b6ux6c27ux5316ux7269ux4e2dniux542bux91cfux4e0eux5bb9ux91cfux4fddux6301ux7387ux5448ux975eux5355ux8c03ux6743ux8861}
+\subsubsection{SPR-NMC-03 --- 高镍层状氧化物中Ni含量与容量保持率呈强负相关（高镍端加速）}\label{spr-nmc-03-ux9ad8ux954dux5c42ux72b6ux6c27ux5316ux7269ux4e2dniux542bux91cfux4e0eux5bb9ux91cfux4fddux6301ux7387ux5448ux5f3aux8d1fux76f8ux5173ux9ad8ux954dux7aefux52a0ux901f}
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
@@ -943,19 +943,19 @@ SPR-SE-05 & 固态电解质 & 亲锂成核层+电子阻挡层双层界面设计�
 \endlastfoot
 \textbf{主题/材料体系} & 高镍正极：LiNi0.6Mn0.2Co0.2O2、LiNi0.7Mn0.1Co0.2O2、LiNi0.8Mn0.1Co0.1O2、LiNi0.9Mn0.05Co0.05O2、LiNiO2 \\
 \textbf{性能属性} & 循环容量保持效率 (\%) \\
-\textbf{构效关系陈述} & 放电容量（0.1C, 2.5-4.3V）随Ni含量线性增加，而300圈循环保持率随Ni含量分段下降：x≤0.8下降平缓，x\textgreater0.9出现加速下降，形成明确拐点；最佳折衷在x≈0.8-0.9区间。 \\
+\textbf{构效关系陈述} & 100 圈容量保持率随 Ni 含量 x∈{[}0.33,1.0{]} 单调下降（线性 y=-34.59x+109.08，R²=0.887，p\textless0.01），高镍端（x\textgreater0.8）加速下降（二次项显著 p=0.027）；原假设 x≈0.8-0.9 帕累托最优窗口未获数据支持。 \\
 \textbf{置信度} & 0.680 \\
 \textbf{新颖性} & 0.82 --- 新知（高新颖性） \\
 \textbf{搜索方法} & bayesian \\
 \textbf{Best Score} & 0.000 \\
 \textbf{验证状态} & validated \\
-\textbf{模型比较} & insufficient, R²=0.100 \\
+\textbf{模型比较} & A 层 n=6（共识值）：线性 R²=0.887 / 二次 R²=0.983（嵌套 F p=0.027）；全量 n=31 受 B 层噪声稀释 R²≈0.105；Vegard 端点基线 R²=-0.032 失效 \\
 \textbf{外部数据库} & materials\_project, oqmd, nomad \\
-\textbf{可提取数据点} & 0 点 / 0 种独立材料 \\
+\textbf{可提取数据点} & 6 点（A 层领域共识值）/ 6 种独立材料 \\
 \textbf{证据链} & p22, p24, p32 \\
-\textbf{已知工作} & 已有文献依据(evidence\_chain 编号: p22, p24, p32)，具体结论需人工/LLM 补写 \\
-\textbf{增量贡献} & 相对已确立结论的具体增量待补写(本假设的 expected\_relationship 即拟验证的新规律) \\
-\textbf{描述} & 在LiNi\_x Mn\_y Co\_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x\textgreater0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。 \\
+\textbf{已知工作} & 已有文献依据（evidence\_chain 编号: p22, p24, p32）支撑 Ni↑→保持率↓ 方向；定量结论已由第二轮 quant\_supplement\_h2 补写（表 3 六点共识值，佐证 p 编号见 knowledge\_graph 表 3） \\
+\textbf{增量贡献} & 给出 Ni 含量-容量保持率的定量线性/二次标度律（A 层 6 点：线性 R²=0.887、二次 R²=0.983），并证伪原假设的帕累托最优窗口（数据显示整体单调下降） \\
+\textbf{描述} & 在LiNi\_x Mn\_y Co\_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x\textgreater0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。第二轮量化验证：A 层 6 点共识值显示整体单调下降、原假设帕累托窗口未获支持（详见 quant\_supplement\_h2.md）。 \\
 \end{longtable}
 }
 
