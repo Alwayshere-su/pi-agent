@@ -753,7 +753,7 @@
     "data_points_available": 0,
     "known_prior_work": "单金属 MOF-74 Qst 排序（Caskey 2008）已确立；但双金属组分-容量连续标度函数未见报道",
     "incremental_claim": "给出倒U的定量函数形式（高斯参数 mu/sigma/A/B）并预测峰值位置与曲率随金属对的迁移规律",
-    "best_score": 0.0,
+    "best_score": 0.8684467372691156,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -989,7 +989,7 @@
     "data_points_available": 0,
     "known_prior_work": "Marshall 2024 定性确立 RH 效应；跨材料定量标度未见报道",
     "incremental_claim": "将诱导效应定量化为 I(RH) 函数并给出临界 RHc 与胺结构/孔径的关联",
-    "best_score": 0.0,
+    "best_score": 0.7984962218694236,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -1056,7 +1056,7 @@
     "data_points_available": 0,
     "known_prior_work": "单一胺化学吸附机理已确立（Forse 2018）；双机理突破上限仅 pip2 单点报道",
     "incremental_claim": "建立胺拓扑结构与化学计量上限的定量关系，指导高容量胺设计",
-    "best_score": 0.0,
+    "best_score": 0.8554842961006367,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -1126,7 +1126,7 @@
     "data_points_available": 0,
     "known_prior_work": "Caskey/Koh 确立金属种类排序；双描述符连续函数形式未见报道",
     "incremental_claim": "给出 Qst=f(Nd, chi) 的定量函数并外推预测 Ca/Mn/Cu/Ti",
-    "best_score": 0.0,
+    "best_score": 0.8664380646847296,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -1872,7 +1872,7 @@
     "data_points_available": 0,
     "known_prior_work": "单材料能耗报道多；跨材料 Qst-E_reg 线性标度未见",
     "incremental_claim": "建立 Qst-E_reg 跨材料标度并给出最优 Qst 窗口",
-    "best_score": 0.0,
+    "best_score": 0.907476696432277,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {

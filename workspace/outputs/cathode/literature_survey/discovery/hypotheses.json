@@ -67,7 +67,7 @@
     "data_points_available": 0,
     "known_prior_work": "已有文献用 2D/3D 光谱叠层成像揭示单晶 NMC811 纳米尺度 Ni 氧化态空间异质性（p24），原位微力学测试确定位错滑移系/临界应力及裂纹（p25）；但氧化态异质性程度与临界应力/裂纹萌生位置的空间定量关联未建立",
     "incremental_claim": "将 Ni 氧化态空间异质性（价态方差/局部 Ni⁴⁺ 分数）与临界应力、裂纹萌生位置定量关联（异质性↑→临界应力↓，裂纹从价态突变界面萌生）",
-    "best_score": 0.0,
+    "best_score": 0.6143616210240455,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -105,7 +105,7 @@
     ],
     "llm_plausibility_score": 0.5,
     "llm_explanation": "LLM 评估失败，采用默认评分 0.5",
-    "best_score": 0.0,
+    "best_score": 0.4881341850855799,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -323,7 +323,7 @@
     "data_points_available": 6,
     "known_prior_work": "已有文献依据（evidence_chain 编号: p22, p24, p32）支撑 Ni↑→保持率↓ 方向；定量结论已由第二轮 quant_supplement_h2 补写（表 3 六点共识值，佐证 p 编号见 knowledge_graph 表 3）",
     "incremental_claim": "给出 Ni 含量-容量保持率的定量线性/二次标度律（A 层 6 点：线性 R²=0.887、二次 R²=0.983），并证伪原假设的帕累托最优窗口（数据显示整体单调下降）",
-    "best_score": 0.0,
+    "best_score": 0.5483312992468194,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -378,7 +378,7 @@
     ],
     "llm_plausibility_score": 0.5,
     "llm_explanation": "LLM 评估失败，采用默认评分 0.5",
-    "best_score": 0.0,
+    "best_score": 0.4333229975637739,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -418,7 +418,7 @@
     ],
     "llm_plausibility_score": 0.5,
     "llm_explanation": "LLM 评估失败，采用默认评分 0.5",
-    "best_score": 0.0,
+    "best_score": 0.5084742532268066,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -583,7 +583,7 @@
     "data_points_available": 0,
     "known_prior_work": "已有文献确立水洗 Li⁺/H⁺ 交换引入的质子残留显著影响容量/阻抗（p48），Zr 涂层含量火山型影响 Li⁺ 动力学（p46）、过锂化策略（p44）；但质子含量与衰减/阻抗的定量阈值关系及与涂层/过锂化的交互未系统化",
     "incremental_claim": "给出质子含量（ppm 每增一个数量级）与 100 圈衰减/阻抗近似线性上升、低含量即显著的阈值标度，并考察质子×涂层/过锂化的交互效应",
-    "best_score": 0.0,
+    "best_score": 0.46727272727272723,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {

@@ -248,4 +248,35 @@
 
 ---
 
+## 十一、2026-08-16 完整性审计补充披露
+
+本节记录 2026-08-16 完整性与证据链审计（见 `项目完整性扫描报告.md` 与
+`HARNESS_FIX_FRAMEWORK.md`）之后的补充披露。已修复项（Best Score 回填、SP 清单/解释
+文档占位符清除、主案例 references.bib 16 个键→论文映射修复、重复条目合并、测试真实化、
+CI 声明更新）不在此重复，仅披露**无法在当前环境完全消除、需评审知悉**的事项：
+
+1. **mof_e2e_v4 证据链引用键追溯**：该主题证据链包含 `v3s#`（e2e v4 内部轮次键）与
+   DOI 形式引用（如 `10.1021/jacs.8b10203`），其中 v3s# 键与 DOI 未全部落入其
+   `references.bib`（bib 含「未在 paper_summaries 中找到标题」的诚实占位条目）。
+   DOI 均可通过 Crossref 独立核验；v3s# 键可回溯至该主题 `paper_summaries.md` /
+   `search_log.jsonl`。评审如需逐条展开，以 DOI 与摘要条目为准。
+2. **主案例少量引用键的残余疑点**：经 2026-08-16 审计修复后，主案例 `references.bib`
+   的 71 条与 report.tex 正文 `\cite` 一一对应且 23 个带 DOI 标注的键已全部与 bib 对齐；
+   但 `p13`（当前条目 "Intrinsic direct air capture"，用于缺陷/OMS 语境）与
+   `p62`（当前条目为 ZIF-8 负载 UiO-66-NH₂ 染料吸附，正文用作 NiCo/Ni/Co-MOF-74 容量
+   数据源）两条未被 report.tex 内联 DOI 标注覆盖，疑似仍存在语义偏差，建议评审以
+   paper_summaries 摘要与 DOI 为准；已列入复赛前核对清单。
+3. **检索日志留存限制**：thermoelectric 主题检索日志仅留存 6 条轮次记录，其 209 篇为
+   汇总期计数、逐条日志不可完全复现（已在 `gap_report.md` / `paper_summaries.md` /
+   `CROSS_THEME_REPORT.md` 增加口径说明）。主案例 "546 篇次检索" 为 11 轮累计篇次口径
+   （search_log 208 行，含批内多结果；paper_summaries 收录 46 篇）。
+4. **密钥历史核查**：2026-08-16 执行 `git log --all -- .api_key`，确认 `.api_key`
+   从未进入任何历史提交；`.gitignore`/`.dockerignore` 均覆盖。出于预防，复赛前仍建议
+   轮换 4 条密钥（本仓库无法代操作）。
+5. **统计结论样本量口径**：README §3.4 的 F=9.909/p=0.0254 基于 8 点（含 5 个估计点）
+   数据集；独立 5 实测点 F 检验 p=0.158 不显著，已如实标注（README §3.4 附注 +
+   `quantitative_validation_nico5.md`）。
+
+---
+
 *本文档依据赛题要求撰写，所有信息和声明均为如实披露。复赛阶段将随代码仓库同步更新。*

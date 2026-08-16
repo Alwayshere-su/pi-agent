@@ -96,6 +96,7 @@ Gap 排序逻辑：严重程度 × 置信度 × 与已有发现的关联度。To
 
 - **贝叶斯 vs 随机参照系（v2 打分，10 种子 × 40 评估）**：同预算公平对比——**5 条假设全部 bayesian_wins**（diff_median +0.014~+0.039，见 `baseline_random.json`）。v2 增强打分（打分函数分段线性拉伸）修复了初赛版 10 种子 3:2 区分度不足的问题；初赛版结论如实记录于提交材料。
 - **统计验证**：嵌套 F 检验（hypo_1 二次 vs 线性，F=9.909, p=0.0254）在 α=0.05 下显著；NiCo-MOF-74 五个独立实测点（archive_v3_realdata）二次 R²=0.7694 vs 经典 Vegard 线性基线 R²=-0.1530（ΔR²=+0.92）。"候选 vs 经典模型"正面对比因数据不足尚未达成，达成路径（表格化知识图谱）已明确并列入复赛计划。
+  - **样本量口径说明**：上述 F=9.909/p=0.0254 基于 8 点数据集（含 5 个估计点）；独立 5 实测点的 F 检验 p=0.158 不显著（详见 `quantitative_validation_nico5.md` 的诚实披露）。31 条假设中 validated 7 条、inconclusive 3 条，其余为 pending。
 
 ---
 
@@ -191,7 +192,7 @@ python scripts/baseline_random_search.py --iterations 40 --seeds 10
 ### 模块自测（离线，无需网络）
 
 ```bash
-python -m pytest tests/          # 项目级单元测试（125 项）
+python -m pytest tests/          # 项目级单元测试（127 项）
 python literature_agent/classical_models.py   # Slack/Vegard 参数恢复自检
 python literature_agent/symbolic_regression.py # 表达式恢复自检
 python literature_agent/extractor.py          # 数值 (x,y) 配对自测
@@ -240,7 +241,7 @@ scripts/
 ├── build_route_a_docs.py        # 路线 A 构效关系文档生成（31 条假设 → SP 清单 + 科学解释）
 ├── compile_route_a_pdf.py       # 路线 A Markdown → PDF 编译（pandoc → Jinja2 → tectonic）
 ├── templates/route_a.tex.j2     # 路线 A LaTeX 模板（ctexart + Unicode 映射）
-tests/                           # pytest 单元测试（125 项）
+tests/                           # pytest 单元测试（127 项）
 docs/                            # 项目文档（架构 / 合规 / 可复现性 / 重跑指南）
 workspace/
 ├── outputs/

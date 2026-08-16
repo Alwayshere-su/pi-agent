@@ -4,6 +4,11 @@
 **分析基准**: 209 篇文献摘要（arxiv 160 + semantic_scholar 49）
 **日期**: 2026-08-02
 
+> **检索日志口径说明（2026-08-16 审计）**：本轮运行仅留存 6 条 search_log 轮次记录
+> （`workspace/data/literature_cache/thermoelectric/search_log.jsonl`）；上述 209 篇为
+> 汇总期（含批量多结果检索与历史记忆）的入库计数，**逐条日志不可完全复现**。全部摘要
+> 条目见 `paper_summaries.md`，DOI 可追溯。
+
 ---
 
 ## Gap 1：ML 预测 ZT 与实验验证之间的系统性断层

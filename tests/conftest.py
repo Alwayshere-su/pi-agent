@@ -1,6 +1,15 @@
 """
 pytest 配置与共享 fixtures。
 """
+import sys
+from pathlib import Path
+
+# 保证从仓库根可导入 utils / pi_agent / literature_agent（W-4 P1-1：
+# 测试从 scripts/ 子目录迁入 tests/ 后，sys.path 需显式注入仓库根）
+ROOT = str(Path(__file__).resolve().parents[1])
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)
+
 import pytest
 
 

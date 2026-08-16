@@ -45,13 +45,14 @@
 | 3 | **perovskite** | 卤化物钙钛矿带隙与稳定性 | 34 | 6 | 3 | 3 | 0 | 5 | 5 | 0 | Materials Project（无匹配） | 0.88 ~ 0.97 |
 | 4 | **thermoelectric** | 热电材料 ZT 优化 | 209 (160+49) | 7 | 3 | 4 | 0 | 5 | 4 | 1 | 无外部验证 | 0.33 ~ 0.87 |
 | 5 | **cathode** | 高镍正极容量保持率（锂离子电池） | 19 | 8 | 3 | 5 | 0 | 6 | 2 | 4 | 待核验 | 0.43 ~ 0.61 |
-| 6 | **validation** | 固态锂电池电解质 | 85 (P001-P085) | 5 | 2 | 3 | 0 | 5 | 0（5 条 insufficient_data） | 0 | 无外部验证 | 0.0（搜索未收敛） |
+| 6 | **validation** | 固态锂电池电解质 | 85 (P001-P085) | 5 | 2 | 3 | 0 | 5 | 0（5 条 insufficient_data） | 0 | 无外部验证 | 0.27 ~ 0.84 |
 | 7 | **smoke_test** | MOF 材料 CO2 捕获（冒烟测试，13 篇） | 13 | 5 | 2 | 3 | 0 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 |
 | 8 | **g3test** | 金属卤化物钙钛矿温度依赖带隙 | 35 | 5 | 2 | 3 | 0 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 |
 | 9 | **mof_e2e_v4** (e2e 重跑) | MOF 材料 CO2 捕获（e2e 全量重跑，归档） | 149 | 12 | — | — | — | 5 | — | — | Materials Project（氧化物代理） | 0.80 ~ 0.91 |
 
 > \* 标注为"中高/中→高"级别的 Gap，按发现潜力接近高严重度
 > "Best Score" 为假设发现环节的 bayesian search best_score（不是 confidence）；0.0 表示未执行搜索或搜索未收敛
+> 非零低分（thermoelectric 0.33 / cathode 0.43~0.61 / validation 0.27~0.31）为该主题知识图谱中可抽取的单篇数值对（literature_values）较少或为空所致的**数据覆盖不足**，属诚实记录、非搜索失败或打分异常；对应假设的模型比较/置信度另见各主题报告
 > tracked 主题 6 个：literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation（outputs 完整入库）；mof_rerun_v3 作为复现性补充证据入库；smoke_test / g3test / smoke_fix 为 gitignored（本地留存）；mof_rerun / mof_rerun_v2 已清理（v3 取代）
 
 ### 2.2 主案例 (literature_survey) Gap 详情
@@ -293,13 +294,13 @@
 | P1 | 为"ML-实验闭环断裂"这一跨主题 Gap 建立统一闭环率评估指标 | 量化各领域的验证缺口，可作为竞赛亮点 |
 | P1 | 实现"缺陷工程"跨主题迁移（MOF -> 电池正极），完成至少一个实证案例 | 冲刺高分方向 |
 | P2 | 从 4 个"标度律缺失" Gap 中抽取统一的方法论 SOP | 提升新主题的 Gap-假设转化效率 |
-| P2 | 为 smoke_test / g3test / mof_rerun / smoke_fix 补充 discovery_report 生成（validation 定量核验产物已于 2026-08-16 补跑完成——5 条假设均 insufficient_data，discovery_report 待生成；cathode 已于 2026-08-11 补跑完成） | 填补剩余数据空白，提升正结果率 |
+| P2 | 为 smoke_test / g3test / mof_rerun / smoke_fix 补充 discovery_report 生成（validation 定量核验产物已于 2026-08-16 补跑完成——5 条假设均 insufficient_data，discovery_report 已生成；cathode 已于 2026-08-11 补跑完成） | 填补剩余数据空白，提升正结果率 |
 
 ### 7.3 数据完整性说明
 
 | 文件 | 状态 |
 |---|---|
-| `workspace/outputs/literature_survey/gap_report.md` | 存在（10 Gaps, 546 papers） |
+| `workspace/outputs/literature_survey/gap_report.md` | 存在（10 Gaps）；"546" 为 11 轮累计篇次口径（search_log 208 行，含批内多结果；paper_summaries 收录 46 篇），口径见 paper_register.md |
 | `workspace/outputs/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 1 validated） |
 | `workspace/outputs/mof_e2e_v4/literature_survey/gap_report.md` | 存在（12 Gaps） |
 | `workspace/outputs/mof_e2e_v4/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses） |
@@ -309,12 +310,12 @@
 | `workspace/outputs/mof_rerun/literature_survey/discovery/discovery_report.json` | 已清理（同上） |
 | `workspace/outputs/perovskite/literature_survey/gap_report.md` | 存在（6 Gaps, 34 papers） |
 | `workspace/outputs/perovskite/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 2026-08-10 补跑） |
-| `workspace/outputs/thermoelectric/literature_survey/gap_report.md` | 存在（7 Gaps, 209 papers） |
+| `workspace/outputs/thermoelectric/literature_survey/gap_report.md` | 存在（7 Gaps, 209 papers）；检索日志仅留存 6 条轮次记录（2026-08-16 审计），209 为汇总期计数，逐条日志不可完全复现 |
 | `workspace/outputs/thermoelectric/literature_survey/discovery/discovery_report.json` | 存在（5 hypotheses, 0 validated） |
 | `workspace/outputs/cathode/literature_survey/gap_report.md` | 存在（8 Gaps, 19 papers） |
 | `workspace/outputs/cathode/literature_survey/discovery/discovery_report.json` | 存在（6 hypotheses, 2026-08-11 补跑） |
 | `workspace/outputs/validation/literature_survey/gap_report.md` | 存在（5 Gaps, 85 papers） |
-| `workspace/outputs/validation/literature_survey/discovery/discovery_report.json` | hypotheses.json 存在（5 条，均 insufficient_data，2026-08-16 核验补跑）；model_comparison_0..4 + symbolic_0..4 已生成；discovery_report 待生成 |
+| `workspace/outputs/validation/literature_survey/discovery/discovery_report.json` | 存在（5 条，均 insufficient_data，2026-08-16 核验补跑）；model_comparison_0..4 + symbolic_0..4 已生成；discovery_report.json/md 已生成 |
 | `workspace/outputs/smoke_test/literature_survey/gap_report.md` | 存在（5 Gaps, 13 papers） |
 | `workspace/outputs/g3test/literature_survey/gap_report.md` | 存在（5 Gaps, 35 papers） |
 

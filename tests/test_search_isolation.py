@@ -23,8 +23,8 @@ import shutil
 import sys
 import tempfile
 
-# 项目根（scripts/cache_isolation_test/ → 上两级）
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# 项目根（tests/ → 上两级；文件曾位于 scripts/cache_isolation_test/，移入 tests/ 后修正）
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ROOT not in sys.path:
     sys.path.insert(0, ROOT)
 
@@ -222,6 +222,12 @@ def main() -> int:
         return 1
     print("\n✅ ALL TESTS PASSED — 跨主题文献缓存隔离生效")
     return 0
+
+
+def test_search_isolation():
+    """pytest 收集入口（W-4 P1-1）：复用 main() 全部断言，失败即 pytest 失败。"""
+    rc = main()
+    assert rc == 0, "search isolation 测试存在失败项（详见上方输出）"
 
 
 if __name__ == "__main__":

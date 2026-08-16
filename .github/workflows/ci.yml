@@ -57,8 +57,11 @@ jobs:
       # 设计意图：pytest 失败即 CI 失败（不设 continue-on-error），
       # 作为真正的质量闸门拦截回归。
       # 所有测试已集中到 tests/（67ca04f reorganize repo structure），
-      # 共 125 项，覆盖 config、discovery、extractor、search、parser_engine、
-      # core functions、budget resume、search isolation。
+      # 共 127 项（2026-08-16 实测 python -m pytest tests/ --collect-only -q），
+      # 覆盖 config、discovery、extractor、search、parser_engine、
+      # core functions（test_core）、budget resume、search isolation（test_search_isolation）。
+      # test_core.py / test_search_isolation.py 通过文件底部 pytest 可见封装被收集；
+      # scipy 不可用时这两文件会优雅 SKIP 相关分组（CI 正常安装后全量运行）。
       - name: Run tests
         run: |
           python -m pytest tests/ -v

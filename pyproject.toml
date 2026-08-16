@@ -7,6 +7,11 @@ name = "pi-agent"
 version = "0.2.0"
 description = "材料科学文献驱动的构效关系自主发现智能体"
 requires-python = ">=3.10"
+# 注（2026-08-16，P2-3 对齐）：本文件为打包/开发元数据档，依赖用 `>=` 宽松约束；
+# 运行/CI 以 `requirements.txt`（全 `==` 精确锁定）与 `requirements-test.txt` 为准。
+# 大型 ML 依赖（chromadb / sentence-transformers / FlagEmbedding）未列入本文件，
+# 仅存在于 requirements.txt（Docker/完整运行档），避免开发环境强制安装 ~3GB。
+# pytest 按 ci.yml 设计为 CI 专用工具单独安装，不写入任何依赖清单。
 dependencies = [
     "openai>=1.108",
     "requests>=2.32",
@@ -33,6 +38,6 @@ pi-agent = "main:main"
 line-length = 100
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"  # 与 CI 矩阵（3.11/3.12）对齐
 warn_return_any = true
 warn_unused_configs = true
