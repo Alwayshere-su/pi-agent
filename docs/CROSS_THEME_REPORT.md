@@ -45,7 +45,7 @@
 | 3 | **perovskite** | 卤化物钙钛矿带隙与稳定性 | 34 | 6 | 3 | 3 | 0 | 5 | 5 | 0 | Materials Project（无匹配） | 0.88 ~ 0.97 |
 | 4 | **thermoelectric** | 热电材料 ZT 优化 | 209 (160+49) | 7 | 3 | 4 | 0 | 5 | 4 | 1 | 无外部验证 | 0.33 ~ 0.87 |
 | 5 | **cathode** | 高镍正极容量保持率（锂离子电池） | 19 | 8 | 3 | 5 | 0 | 6 | 2 | 4 | 待核验 | 0.43 ~ 0.61 |
-| 6 | **validation** | 固态锂电池电解质 | 85 (P001-P085) | 5 | 2 | 3 | 0 | 5 | — | — | 待核验 | 待核验 |
+| 6 | **validation** | 固态锂电池电解质 | 85 (P001-P085) | 5 | 2 | 3 | 0 | 5 | 0（5 条 insufficient_data） | 0 | 无外部验证 | 0.0（搜索未收敛） |
 | 7 | **smoke_test** | MOF 材料 CO2 捕获（冒烟测试，13 篇） | 13 | 5 | 2 | 3 | 0 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 |
 | 8 | **g3test** | 金属卤化物钙钛矿温度依赖带隙 | 35 | 5 | 2 | 3 | 0 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 | 数据缺失 |
 | 9 | **mof_e2e_v4** (e2e 重跑) | MOF 材料 CO2 捕获（e2e 全量重跑，归档） | 149 | 12 | — | — | — | 5 | — | — | Materials Project（氧化物代理） | 0.80 ~ 0.91 |
@@ -139,7 +139,7 @@
 | 文献规模 | 主题 | Gap 数 | 假设数 | 假设质量 |
 |---|---|---|---|---|
 | 大规模 (>100 篇) | literature_survey (546), thermoelectric (209) | 10, 6 | 5, 5 | 高质量 (7/10 正结果) |
-| 中规模 (40-90 篇) | mof_rerun (42), validation (85) | 8, 5 | 4, 5 | 中等 (1/4 正结果); validation 待核验 |
+| 中规模 (40-90 篇) | mof_rerun (42), validation (85) | 8, 5 | 4, 5 | 中等 (1/4 正结果); validation 5 条均 insufficient_data（2026-08-16 核验补跑） |
 | 小规模 (<40 篇) | perovskite (34), cathode (19), smoke_test (13), g3test (35) | 5, 7, 5, 5 | 5, 6, —, — | 补跑后 perovskite/cathode 均产出假设（perovskite 正结果率 100%） |
 
 **关键发现**：首次运行的假设生成质量存在文献密度阈值效应——perovskite（34 篇）与 cathode（19 篇）初跑 discovery 均未收敛。2026-08-10/11 补跑（聚焦检索 + 重新生成）后，两者分别产出 5 条与 6 条正式假设（perovskite 置信度 0.88–0.97、正结果率 100%；cathode 置信度 0.63–0.72、正结果率 33%），说明阈值效应主要影响首次运行，补跑可弥补。
@@ -164,7 +164,7 @@
 - **MOF/CO2**：外部数据库覆盖为 0（MP 不收有机-无机杂化材料），只能用氧化物代理做间接热力学参考。这是最成熟但受外部工具限制最严重的主题。
 - **Thermoelectric**：论文量大（209 篇），Gap 置信度高；2026-08-11 已补全定量核验（+4 model_comparison + 4 symbolic_regression），5 条假设均有有效搜索（best_score 0.33–0.87，无 0.0），置信度 0.68–0.87。仍完全缺失外部数据库验证环节。
 - **Perovskite**：论文量 34 篇处于阈值边缘，初跑 discovery 失败；2026-08-10 补跑后产出 5 条正式假设（置信度 0.88–0.97：带隙-稳定性 trade-off、电子-声子耦合矛盾、ML 预测脱节等），正结果率 100%。
-- **Cathode / Validation**：Gap 报告质量良好（各有 5-7 个有意义的 Gap）。cathode 于 2026-08-11 补跑产出 6 条假设（化学-力学耦合、Ni 含量-容量-保持率、缺陷分类等，置信度 0.63–0.72），定量核验 6 条均生成 model_comparison + symbolic 产物——其中 1 条（Ni 含量-容量保持率）完成量化验证（表 3 六点为领域共识典型值、非单篇实测，已逐点核实佐证 p 编号；线性 R²=0.887、二次 R²=0.983、Vegard 端点基线 R²=−0.032，嵌套 F 检验 p=0.0266），5 条机制性假设因支撑文献摘要无 (x,y) 定量数据如实标注数据不足（需全文解析补全）；validation 已产出 5 条假设（卤化物 SSE 数据稀缺、界面策略二分等），正/负结果待核验。
+- **Cathode / Validation**：Gap 报告质量良好（各有 5-7 个有意义的 Gap）。cathode 于 2026-08-11 补跑产出 6 条假设（化学-力学耦合、Ni 含量-容量-保持率、缺陷分类等，置信度 0.63–0.72），定量核验 6 条均生成 model_comparison + symbolic 产物——其中 1 条（Ni 含量-容量保持率）完成量化验证（表 3 六点为领域共识典型值、非单篇实测，已逐点核实佐证 p 编号；线性 R²=0.887、二次 R²=0.983、Vegard 端点基线 R²=−0.032，嵌套 F 检验 p=0.0266），5 条机制性假设因支撑文献摘要无 (x,y) 定量数据如实标注数据不足（需全文解析补全）；validation 已产出 5 条假设（卤化物 SSE 数据稀缺、界面策略二分等），2026-08-16 完成定量核验补跑：知识图谱无可提取 (x,y) 配对（0 组），5 条均如实标注数据不足（insufficient_data，产物 model_comparison_0..4 + symbolic_0..4，未虚构数值），正/负结果判定不适用。
 - **Smoke_test / G3test**：作为验证性测试主题，Gap 报告达到了基本的可用水平，证明 Agent 在极少文献下仍能识别有意义的 Gap，但发现环节不可用。
 
 ---
@@ -189,10 +189,10 @@
 | perovskite | 5 | 5 | 0 | 100% |
 | thermoelectric | 5 | 4 | 1 | 80% |
 | cathode | 6 | 2 | 4 | 33% |
-| validation | 5 | — | — | — |
+| validation | 5 | 0（5 条 insufficient_data） | 0 | N/A |
 | mof_e2e_v4 | 5 | — | — | — |
 
-> "—" 表示正/负结果尚未按新置信度完成核验（validation / mof_e2e_v4）。
+> "—" 表示正/负结果尚未按新置信度完成核验（现仅 mof_e2e_v4）。validation 于 2026-08-16 完成核验补跑，5 条均为 insufficient_data（数据不足，非正亦非负）。
 > 正/负结果按各主题 hypotheses.json 的 confidence >= 0.7 判定。
 
 **分析**：
@@ -200,7 +200,7 @@
 - perovskite 补跑后正结果率 100%（5/5，置信度 0.88–0.97），是补跑收益最明显的主题。
 - thermoelectric 补跑后 4/5 为正结果（80%），5 条假设均有有效搜索（best_score 无 0.0）。
 - cathode 补跑后 2/6 为正结果（33%），假设质量整体偏中低（置信度 0.63–0.72，仅 2 条 ≥0.7）。
-- validation 与 mof_e2e_v4 的假设正/负结果待核验。
+- validation 于 2026-08-16 完成核验补跑，5 条假设均因知识图谱无 (x,y) 数值对而如实标注 insufficient_data；mof_e2e_v4 的假设正/负结果仍待核验。
 
 ### 5.3 影响泛化能力的制约因素
 
@@ -293,7 +293,7 @@
 | P1 | 为"ML-实验闭环断裂"这一跨主题 Gap 建立统一闭环率评估指标 | 量化各领域的验证缺口，可作为竞赛亮点 |
 | P1 | 实现"缺陷工程"跨主题迁移（MOF -> 电池正极），完成至少一个实证案例 | 冲刺高分方向 |
 | P2 | 从 4 个"标度律缺失" Gap 中抽取统一的方法论 SOP | 提升新主题的 Gap-假设转化效率 |
-| P2 | 为 smoke_test / g3test / mof_rerun / smoke_fix 补充 discovery_report 生成（validation discovery_report 待生成，cathode 已于 2026-08-11 补跑完成） | 填补剩余数据空白，提升正结果率 |
+| P2 | 为 smoke_test / g3test / mof_rerun / smoke_fix 补充 discovery_report 生成（validation 定量核验产物已于 2026-08-16 补跑完成——5 条假设均 insufficient_data，discovery_report 待生成；cathode 已于 2026-08-11 补跑完成） | 填补剩余数据空白，提升正结果率 |
 
 ### 7.3 数据完整性说明
 
@@ -314,7 +314,7 @@
 | `workspace/outputs/cathode/literature_survey/gap_report.md` | 存在（8 Gaps, 19 papers） |
 | `workspace/outputs/cathode/literature_survey/discovery/discovery_report.json` | 存在（6 hypotheses, 2026-08-11 补跑） |
 | `workspace/outputs/validation/literature_survey/gap_report.md` | 存在（5 Gaps, 85 papers） |
-| `workspace/outputs/validation/literature_survey/discovery/discovery_report.json` | hypotheses.json 存在（5 条）；discovery_report 待生成 |
+| `workspace/outputs/validation/literature_survey/discovery/discovery_report.json` | hypotheses.json 存在（5 条，均 insufficient_data，2026-08-16 核验补跑）；model_comparison_0..4 + symbolic_0..4 已生成；discovery_report 待生成 |
 | `workspace/outputs/smoke_test/literature_survey/gap_report.md` | 存在（5 Gaps, 13 papers） |
 | `workspace/outputs/g3test/literature_survey/gap_report.md` | 存在（5 Gaps, 35 papers） |
 
