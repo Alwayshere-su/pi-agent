@@ -100,9 +100,9 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p65, p67, p22, p147)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立双金属 MOF 比例-容量峰值结构：CoMn-MOF-74 最佳 Co/Mn=1:1（p65）、Fe/Cu 双金属>单金属（p67）、MIL-101(Cr,Mg) 高容量+高选择性（p147）、Ni-Cu-MOF-74 MMM 3188 Barrer/35.1 选择性（p22）、双金属 NiCo-MOF-74 8.30 mmol/g 高于单金属 Ni 3.99/Co 5.03（p24）；但跨金属组合的比例→容量连续倒 U 定量标度律未见报道",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "将双金属 MOF-74 金属比例与 CO₂ 容量关系定量化为倒 U 型标度律（峰值位置随金属对迁移、选择性同步变化），并给出双金属优于单金属的协同机制"
   },
   {
     "id": "hypo_2",
@@ -204,9 +204,9 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p210, p224, p201, p186)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献用分子模拟确立水在 OMS 上竞争/水解离占据位点（p186/p182），疏水化功能化可调控胺型 MOF 湿态容量（p224/p210/p201）；但胺型先增后减与 OMS 型单调衰减两类矛盾结论缺乏统一的 RH 定量标度",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "以 RH 为统一变量整合水促进/抑制两类现象，给出胺型容量峰值（30–50% RH）与 OMS 型单调衰减的定量关系"
   },
   {
     "id": "hypo_3",
@@ -324,9 +324,9 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p27, p117, p129, p116)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立 Qst 与选择性/再生能耗同向权衡的方向（MOF-74(Ni) Qst 可调 p27、胺化 SBA-15 Qst p129），缺陷工程（p117）与锂掺杂（p116）可调节 Qst；但容量-选择性-再生能耗三维 Pareto 的 Qst 定量窗口未见系统建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "提出 Qst 甜点区（25–40 kJ/mol）并建立容量-选择性-再生能耗三维 Pareto 前沿，为吸附剂筛选提供热力学定量约束"
   },
   {
     "id": "hypo_4",
@@ -438,9 +438,9 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p13, p7, p192, p9)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立缺陷可调控 OMS 密度与吸附、金属取代的热力学筛选（p7、p13），溶剂衍生甲酸盐会消除 OMS 抑制吸附（Nature Commun 2023，p192 语境）；但缺陷类型对 OMS/容量的方向性二分与双向标度律未系统化",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "建立「缺陷类型→OMS 密度→容量」双向标度律，区分缺失配体型（正相关、先升后降拐点）与溶剂甲酸盐型（负相关）两类方向"
   },
   {
     "id": "hypo_5",
@@ -540,8 +540,8 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p216, p52, p55)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立 NO₂ 杂质对 gate-opening 型 MOF（ELM-11）CO₂ 容量的影响（p216），以及烟气杂质导致 CO₂ 纯度下降对下游压缩功的工艺代价（p52/p55）；但容量衰减率与 OMS 密度/孔道亲水性的定量关联未建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "给出 NO₂/SO₂ 暴露后容量保持率与 OMS 密度（负相关）/孔道疏水性（正相关）的定量关联，为含杂质烟气的 MOF 筛选提供依据"
   }
 ]

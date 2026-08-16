@@ -37,9 +37,9 @@
     },
     "degraded": false,
     "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: P040, P070, P006)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立卤化物 SSE 的电导率-湿度稳定性权衡与材料化学（P006），ML 预测 Li₃YCl₆₋ₓBrₓ 结构与电导率（P070），SSE 低类玻璃热导率（P040）；但 Br 取代量 x 与室温电导率（火山型）/湿度稳定性的定量关系未系统验证",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "给出室温电导率随 Br 取代 x 的火山型（峰值 x≈1.0–1.5）与湿度稳定性单调下降的定量关系，定位电导率>1 mS/cm 且稳定性可接受的最优 x"
   },
   {
     "id": "hypo_2",
@@ -91,9 +91,9 @@
     },
     "degraded": false,
     "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: P024, P031, P027, P023)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立硫银锗矿 Li₆PS₅Cl 水解产 H₂S 的路径（P023 拉曼、P027 隔膜水解）与表面工程提升湿度稳定性（P031），Mo-O 双掺杂实现稳定全固态电池（P024）；但 O/Mo-O 掺杂浓度-电导率/H₂S 释放的双目标优化窗口未定量",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "给出 O 含量 0.1–0.3 时电导率≥1 mS/cm 且 H₂S 释放降 50%+ 的双目标窗口，并论证 Mo-O 双掺杂优于单氧掺杂"
   },
   {
     "id": "hypo_3",
@@ -134,9 +134,9 @@
     },
     "degraded": false,
     "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: P068, P080, P079, P074)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献建立 ML/LLM 预测 SSE 离子电导率的框架与 OBELiX 实验数据集（P068、P080、P079），MD 方法对比（P074）；但构型熵 S_cfg 与电导率的火山型定量关系及 ML 预测-实验闭环未建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "提出电导率随构型熵先升后降的火山型关系，并以局域配位环境为特征的 ML 模型预测-实验验证形成闭环"
   },
   {
     "id": "hypo_4",
@@ -199,9 +199,9 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: P038, P039, P059, P001)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立弱配位/配位性阴离子对聚合物电解质 t+ 与 σ 的权衡（P038），Lewis 酸性聚合物增强阳离子扩散/抑制阴离子扩散（P039），聚合物界面工程（P059、P001）；但 Lewis 酸基团浓度对 t+-σ 的非单调调控定量未建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "给出 Lewis 酸基团浓度使 t+（~0.2→0.5+）单调上升而 σ 先升后降的定量关系，定位 t+ 与 σ 同时优于未改性 PEO 的最优浓度"
   },
   {
     "id": "hypo_5",
@@ -268,8 +268,8 @@
         }
       ]
     },
-    "known_prior_work": "已有文献依据(evidence_chain 编号: P047, P017, P060, P058)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献确立 Ag 键合界面 0.25 Ω cm²（P047）、LiF 富集 SEI 稳定硫化物/锂界面（P017）、LiCux 三维网络宿主（P060）等单策略，DFT 界面稳定性（P058）与硫化物阳极界面策略（P046）；但「亲锂成核+电子阻挡」双层设计的普适性未提炼",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "将多种界面工程提炼为 Ag/LiF 双层普适设计，论证其可将界面电阻从 >100 Ω cm² 降至 <10 Ω cm²，且与 SSE 阴离子种类无关（越不稳定 SSE 受益越大）"
   }
 ]
