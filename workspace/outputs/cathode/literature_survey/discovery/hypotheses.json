@@ -65,8 +65,8 @@
     "extractability_note": "",
     "independent_materials": 0,
     "data_points_available": 0,
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p24, p25)，具体结论需人工/LLM 补写",
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "known_prior_work": "已有文献用 2D/3D 光谱叠层成像揭示单晶 NMC811 纳米尺度 Ni 氧化态空间异质性（p24），原位微力学测试确定位错滑移系/临界应力及裂纹（p25）；但氧化态异质性程度与临界应力/裂纹萌生位置的空间定量关联未建立",
+    "incremental_claim": "将 Ni 氧化态空间异质性（价态方差/局部 Ni⁴⁺ 分数）与临界应力、裂纹萌生位置定量关联（异质性↑→临界应力↓，裂纹从价态突变界面萌生）",
     "best_score": 0.0,
     "literature_values": [],
     "search_warning": "",
@@ -115,9 +115,9 @@
     },
     "degraded": false,
     "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p27, p31, p32)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献建立氧化诱导阳离子无序/表面重构理论（p27）、裂纹电解质润湿的空间异质性电化学模型（p31）、LiNiO₂ 表面相图/氧释放（p32）；但裂纹润湿+表面重构+氧释放的耦合增益（衰减超出单独贡献之和）定量未建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "给出容量衰减速率与裂纹暴露面积×表面重构动力学的正比关系，并提出「湿/干裂纹」对照以验证耦合增益"
   },
   {
     "id": "hypo_3",
@@ -388,9 +388,9 @@
     },
     "degraded": false,
     "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p39, p42)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献用 DFT 确立绝缘涂层（α-AlF₃/α-Al₂O₃/m-ZrO₂/c-MgO/SiO₂）中 Li 扩散系数与传输机制（p42），Al₂O₃ 涂层抑制副反应但引入界面问题（p39）；但涂层厚度-倍率保持 vs 副反应抑制的最优厚度 h* 定量未建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "建立 log(倍率保持) 随厚度线性下降、副反应抑制随厚度上升的双目标模型，给出最优厚度 h*=f(D_Li, 界面反应速率) 的定量设计"
   },
   {
     "id": "hypo_5",
@@ -428,9 +428,9 @@
     },
     "degraded": false,
     "degraded_reason": "",
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p27, p32, p24)，具体结论需人工/LLM 补写",
+    "known_prior_work": "已有文献建立氧化诱导阳离子无序/表面重构理论（p27、p32），并成像 Ni 氧化态空间分布（p24）；但 Ni 平均价态增量与 Li 层 Ni 占据分数的指数型定量关系（及衰减速率-混排线性关联）未建立",
     "redline2_complete": false,
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)"
+    "incremental_claim": "给出 Ni 平均价态每 +0.1 → Li 层 Ni 占据分数指数增长、衰减速率与混排度线性正相关的定量标度"
   },
   {
     "id": "hypo_6",
@@ -581,8 +581,8 @@
     "extractability_note": "",
     "independent_materials": 0,
     "data_points_available": 0,
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p48, p46, p44)，具体结论需人工/LLM 补写",
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "known_prior_work": "已有文献确立水洗 Li⁺/H⁺ 交换引入的质子残留显著影响容量/阻抗（p48），Zr 涂层含量火山型影响 Li⁺ 动力学（p46）、过锂化策略（p44）；但质子含量与衰减/阻抗的定量阈值关系及与涂层/过锂化的交互未系统化",
+    "incremental_claim": "给出质子含量（ppm 每增一个数量级）与 100 圈衰减/阻抗近似线性上升、低含量即显著的阈值标度，并考察质子×涂层/过锂化的交互效应",
     "best_score": 0.0,
     "literature_values": [],
     "search_warning": "",
