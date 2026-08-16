@@ -8,45 +8,45 @@
 - **持久化证据池** = 本表三层去重合计 **543 条**（p# 历史论文 180 + r# 最终收录 46 + 检索缓存命中 317）；
 - **最终收录** = `paper_summaries.md` 46 篇（第 11 轮 r# 摘要，评审重点）。
 
-## 1. 历史轮次 p# 论文（180 篇，含 DOI/摘要，见 papers_pid_index.json）
+## 1. p# 论文登记（历史 180 篇 + 交付 bib 追加 14 篇，含 DOI/摘要，见 papers_pid_index.json）
 
 | p# | 标题 | DOI |
 |----|------|-----|
 | p1 | Amine-modified Ni-DOBDC MOF for CO2 capture: CO2 adsorption capacity a | 10.61511/eam.v2i2.2024.1431 |
-| p2 | Metallic and MOF Adsorbents for CO2 Capture | 10.1201/9781003476191-8 |
+| p2 | ZIF-8@Zn-MOF-74 core–shell metal–organic framework (MOF) with open metal sites: Synthesis, characterization, and gas adsorption performance | 10.1016/j.fuel.2023.127463 |
 | p3 | CO2 Capture and Adsorption Technologies | 10.1201/9781003476191-1 |
 | p4 | CO2 capture by adsorption: Materials and process development | 10.1016/s1750-5836(07)00031-x |
 | p5 | Graph Neural Network Predictions of Metal Organic Framework CO2 Adsorp | 10.1016/j.commatsci.2022.111388 |
-| p6 | Decoding local framework dynamics in the ultra-small pore MOF MIL-120( | — |
-| p7 | Thermodynamic Screening of Metal-Substituted MOFs for Carbon Capture | 10.1039/c3cp50622c |
+| p6 | Decoding local framework dynamics in the ultra-small pore MOF MIL-120(Al) CO2 sorbent with Machine Learned Potentials | （bib 无 DOI） |
+| p7 | Thermodynamic screening of metal-substituted MOFs for carbon capture | 10.1039/c3cp50622c |
 | p8 | Designing of Organic Bridging Linkers of Metal-Organic Frameworks for  | — |
 | p9 | Abnormal CO2 and H2O Diffusion in CALF-20(Zn) Metal-Organic Framework  | — |
-| p10 | CRAFTED -- An exploratory database of simulated adsorption isotherms o | 10.1038/s41597-023-02116-z |
+| p10 | CRAFTED: An exploratory database of simulated adsorption isotherms of metal-organic frameworks | 10.1038/s41597-023-02116-z |
 | p11 | A generative artificial intelligence framework based on a molecular di | 10.1038/s42004-023-01090-2 |
 | p12 | Quantum simulation of carbon capture in periodic metal-organic framewo | — |
-| p13 | Intrinsic Direct Air Capture | 10.1039/D5SC06099K |
+| p13 | Intrinsic direct air capture | 10.1039/d5sc06099k |
 | p14 | A combined statistical mechanical and ab initio approach to understand | — |
 | p15 | LitMOF: An LLM Multi-Agent for Literature-Validated Metal-Organic Fram | — |
-| p16 | Amino-impregnated MOF materials for CO2 capture at post-combustion con | 10.1016/j.ces.2015.11.033 |
-| p17 | Taming structure and modulating carbon dioxide (CO2) adsorption isoste | 10.1016/j.jcis.2021.12.163 |
+| p16 | Amino-impregnated MOF materials for CO2 capture at post-combustion conditions | 10.1016/j.ces.2015.11.033 |
+| p17 | Understanding the Carbon Dioxide Binding Potential Landscape near Open Metal Sites in M-MOF-74 (M = Mg, Mn, Fe, Ni, Zn) | 10.1021/acs.langmuir.5c04277 |
 | p18 | Carbon Dioxide Capture and Conversion Using Metal–Organic Framework (M | 10.3390/nano14161340 |
 | p19 | MOF based CO2 capture: Adsorption and membrane separation | 10.1016/j.inoche.2023.110722 |
-| p20 | MCM-41, MOF and UiO-67/MCM-41 adsorbents for pre-combustion CO2 captur | 10.1007/s10450-012-9395-1 |
+| p20 | MCM-41, MOF and UiO-67/MCM-41 adsorbents for pre-combustion CO2 capture by PSA: adsorption equilibria | 10.1007/s10450-012-9395-1 |
 | p21 | Modeling CO2 Adsorption in Flexible MOFs with Open Metal Sites via Fra | 10.60893/figshare.jcp.29595122.v1 |
-| p22 | A microporous 2D cobalt-based MOF with pyridyl sites and open metal si | 10.1016/j.micromeso.2022.112098 |
+| p22 | Synthesis and CO2/N2 Separation Performance Analysis of Mixed Matrix Membrane (MMM) Based on Different Bimetallic Metal–Organic Frameworks (Ni-Cu-MOF-74, Ni-Co-MOF-74, and Ni-Zn-MOF-74) | 10.3390/membranes15120385 |
 | p23 | Selective CO2 and H2 adsorption in a chiral magnesium-based metal orga | 10.1039/c0jm01125h |
-| p24 | ZIF-8@Zn-MOF-74 core–shell metal–organic framework (MOF) with open met | 10.1016/j.fuel.2023.127463 |
+| p24 | Microwave-assisted synthesis of bimetallic NiCo-MOF-74 with enhanced open metal site for efficient CO2 capture | 10.1016/j.efmat.2023.01.002 |
 | p25 | Adsorption and Diffusion of Benzene in Mg-MOF-74 with Open Metal Sites | 10.1021/acsami.8b20447 |
 | p26 | Isosteric heat of hydrogen adsorption on MOFs: comparison between adso | 10.1007/s00339-015-9484-6 |
-| p27 | Comparative analysis of calculation method of adsorption isosteric hea | 10.1016/j.micromeso.2020.110053 |
-| p28 | Adsorption and separation of CO2 on Fe(II)-MOF-74: Effect of the open  | 10.1016/j.jssc.2014.03.005 |
-| p29 | Microwave-assisted synthesis of bimetallic NiCo-MOF-74 with enhanced o | 10.1016/j.efmat.2023.01.002 |
-| p30 | A molecular study of humid CO2 adsorption capacity by Mg-MOF-74 surfac | 10.1016/j.commatsci.2022.111407 |
-| p31 | CO2 Adsorption in Metal-Organic Framework Mg-MOF-74: Effects of Inter- | 10.3390/nano10112274 |
+| p27 | Taming structure and modulating carbon dioxide (CO2) adsorption isosteric heat of nickel-based metal organic framework (MOF-74(Ni)) for remarkable CO2 capture | 10.1016/j.jcis.2021.12.163 |
+| p28 | Adsorption and separation of CO2 on Fe(II)-MOF-74: Effect of the open metal coordination site | 10.1016/j.jssc.2014.03.005 |
+| p29 | Microwave-assisted synthesis of bimetallic NiCo-MOF-74 with enhanced o（键位已迁移 → p24，见溯源备注 §2） | 10.1016/j.efmat.2023.01.002 |
+| p30 | Microscopic adsorption of CO2 in metal organic frameworks (MOF-5, ZIF-8 and UiO-66) by grand canonical Monte Carlo simulation: A comparative analysis | 10.1007/s10450-025-00664-x |
+| p31 | The utility of MOF-based materials in direct air capture (DAC) application to ppm-level CO2 | 10.1016/j.envres.2024.119985 |
 | p32 | Enhancing CO2 Adsorption Capacity and Cycling Stability of Mg-MOF-74 | 10.1007/s13369-020-04946-0 |
 | p33 | Two open metal sites on the same metal: Dynamics of CO2 in MOF UTSA-74 | 10.1016/j.mrl.2021.100023 |
 | p34 | Influence of chemical composition of the open bimetallic sites of MOF- | 10.1007/s10450-015-9707-3 |
-| p35 | Destructive Adsorption of Nitrogen Trifluoride (NF<sub>3</sub>) Using  | 10.1021/cbe.3c00096 |
+| p35 | MOF‑carbon fiber composites for electrically driven CO2 regeneration under direct air capture conditions | 10.1016/j.cej.2025.170309 |
 | p36 | Defective MOF-74 with ancillary open metal sites for the enhanced adso | 10.1039/d3dt02025h |
 | p37 | CO2 capture by metal organic frameworks | 10.5281/zenodo.5775432 |
 | p38 | Polyethyleneimine Incorporated Metal-Organic Frameworks Adsorbent for  | 10.1038/srep01859 |
@@ -61,9 +61,9 @@
 | p47 | Sulfone-functionalized metal–organic framework aerogels for selective  | 10.1016/j.cej.2023.147291 |
 | p48 | Diamino-functionalized metal-organic framework for selective capture o | 10.1016/j.chemosphere.2024.142686 |
 | p49 | Water-enhanced CO2 capture in metal–organic frameworks | 10.3389/fchem.2025.1634637 |
-| p50 | In-situ grafted amine functionalized metal-organic frameworks for CO2  | 10.1016/j.mtcomm.2023.105927 |
+| p50 | Nanomaterials for Direct Air Capture of CO2: Current State of the Art, Challenges and Future Perspectives | 10.3390/molecules30143048 |
 | p51 | Advances in amine-functionalized metal organic frameworks for carbon c | 10.1039/d5ta04991a |
-| p52 | Bifunctionality of amine-modified metal-organic frameworks for CO2 cap | 10.1016/j.ccst.2024.100262 |
+| p52 | Bifunctionality of amine-modified metal-organic frameworks for CO2 capture and selective utilization in cycloaddition | 10.1016/j.ccst.2024.100262 |
 | p53 | CO2 Capture using functionalized metal organic frameworks: A review | 10.1016/j.surfin.2025.107381 |
 | p54 | Metal-Organic Frameworks (MOFs) for CO2 Capture | 10.1007/978-3-642-54646-4_3 |
 | p55 | Selective Benzene Capture by Metal‐Organic Frameworks | 10.1002/adfm.202507286 |
@@ -71,14 +71,14 @@
 | p57 | Improving CO2 adsorption capacity and CO2/N2 selectivity of UiO-66-NH2 | 10.1016/j.micromeso.2024.113038 |
 | p58 | UiO-66-NH2及ZIF-8复合材料的制备及催化性能研究进展  \|  Research Progress on Preparation  | 10.3969/j.issn.1001-9677.2020.13.003 |
 | p59 | Enhancing CO2/N2 adsorption selectivity via post-synthetic modificatio | 10.1016/j.micromeso.2017.08.043 |
-| p60 | Fabrication of cellulose nanofibrils/UiO-66-NH2 composite membrane for | 10.1016/j.memsci.2018.09.055 |
+| p60 | Fabrication of cellulose nanofibrils/UiO-66-NH2 composite membrane for CO2/N2 separation | 10.1016/j.memsci.2018.09.055 |
 | p61 | Nanostructured membranes containing UiO-66 (Zr) and MIL-101 (Cr) for O | 10.1016/j.seppur.2017.10.024 |
-| p62 | Selective Dye Adsorption by Zeolitic Imidazolate Framework-8 Loaded Ui | 10.3390/nano9091283 |
+| p62 | Selective Dye Adsorption by Zeolitic Imidazolate Framework-8 Loaded UiO-66-NH2 | 10.3390/nano9091283 |
 | p63 | Use of metal-organic framework to remove chromium (VI) from aqueous so | 10.1007/s40201-019-00385-8 |
 | p64 | CO2/N2 Separation Properties of Polyimide-Based Mixed-Matrix Membranes | 10.3390/membranes10070154 |
-| p65 | One pot synthesis of UiO-66@IL composite for fabrication of CO2 select | 10.1016/j.chemosphere.2022.135122 |
+| p65 | Efficient Adsorption of Arsenic from Smelting Wastewater by CoMn-MOF-74 Bimetallic Composites | 10.3390/su17073060 |
 | p66 | A comparative study of the physical and chemical properties of pelleti | 10.1016/j.heliyon.2020.e04883 |
-| p67 | Boosting the CO2/N2 selectivity of MMMs by vesicle shaped ZIF-8 with h | 10.1016/j.seppur.2022.121594 |
+| p67 | Comparative Evaluation of Fe-MOF, Cu-MOF, and Bimetallic Fe/Cu-MOF for Enhanced CO₂ Adsorption: Synthesis, Characterization, and Performance Analysis | 10.9767/bcrec.20658 |
 | p68 | Polyvinylamine/ZIF-8-decorated metakaolin composite membranes for CO2/ | 10.1016/j.seppur.2021.118800 |
 | p69 | A Novel Composite Material UiO-66@HNT/Pebax Mixed Matrix Membranes for | 10.3390/membranes11090693 |
 | p70 | CO2 and N2 adsorption and separation using aminated UiO-66 and Cu3(BTC | 10.1007/s11814-019-0433-5 |
@@ -87,7 +87,7 @@
 | p73 | Synthesis and characterization of advanced Ad-UiO-66@NGO composite for | 10.1016/j.envres.2025.120819 |
 | p74 | Photocatalytic degradation of aquatic organic pollutants with Zn- and  | 10.55730/1300-0527.3444 |
 | p75 | Research on Metal-organic Frameworks for CO2 Capture | 10.2991/mcei-17.2017.32 |
-| p76 | Porous NbO-type metal–organic framework with inserted acylamide groups | 10.1039/c3ce26177h |
+| p76 | Porous NbO-type metal–organic framework with inserted acylamide groups exhibiting highly selective CO2 capture | 10.1039/c3ce26177h |
 | p77 | “Click”-extended nitrogen-rich metal–organic frameworks and their high | 10.1039/c3cc49457h |
 | p78 | High and selective capture of low-concentration CO2 with an anion-func | 10.1007/s40843-020-1471-0 |
 | p79 | Flexible metal-organic framework compounds: In situ studies for select | 10.1016/j.jallcom.2015.05.148 |
@@ -115,7 +115,7 @@
 | p101 | Machine Learning-Assisted High-Throughput Screening of Covalent Organi | 10.1021/acs.iecr.5c02487 |
 | p102 | Simulation, prediction and optimization of heavy metal adsorption by m | 10.1016/j.envres.2025.122612 |
 | p103 | Machine learning models for prediction of CO2 adsorption capacity of m | 10.1016/j.jics.2025.101904 |
-| p104 | MOF-BasedChemi-/Physi-Relay Sorbents for High PerformanceCO<sub>2</sub | 10.1021/acsmaterialslett.5c00904.s001 |
+| p104 | MOF-BasedChemi-/Physi-Relay Sorbents for High PerformanceCO2 Capture under Flue Gas Humidity | 10.1021/acsmaterialslett.5c00904.s001 |
 | p105 | Membranes for CO2 Capture from Flue Gas | 10.1007/978-3-642-40872-4_1333-12 |
 | p106 | Capture of CO2 from high humidity flue gas by vacuum swing adsorption  | 10.1007/s10450-007-9100-y |
 | p107 | Water-stable MOFs and hydrophobically encapsulated MOFs for CO2 captur | 10.1016/j.mattod.2023.03.004 |
@@ -127,20 +127,20 @@
 | p113 | Effect of water vapor from power station flue gas on CO2 capture by va | 10.1016/s1872-5813(11)60016-9 |
 | p114 | An experimental study of membranes for capturing water vapor from flue | 10.1016/j.joei.2017.02.007 |
 | p115 | CO2 Capture from High-Humidity Flue Gas Using a Stable Metal–Organic F | 10.3390/molecules27175608 |
-| p116 | MOF@MOF core-shell hybrid adsorbents with controlled water vapor affin | 10.1016/j.ccst.2024.100356 |
-| p117 | Discovering the impact of targeted defects in SP-MOF for CO2 capture f | 10.1016/j.jcou.2022.102264 |
-| p118 | Simulation of the Membrane Process of CO2 Capture from Flue Gas via Co | 10.3390/membranes13080692 |
+| p116 | MOF@MOF core-shell hybrid adsorbents with controlled water vapor affinity towards enhanced and steady CO2 capture in moist conditions | 10.1016/j.ccst.2024.100356 |
+| p117 | A practical guide to calculate the isosteric heat/enthalpy of adsorption via adsorption isotherms in metal–organic frameworks, MOFs | 10.1039/d0dt01784a |
+| p118 | Simulation of the Membrane Process of CO2 Capture from Flue Gas via Commercial Membranes While Accounting for the Presence of Water Vapor | 10.3390/membranes13080692 |
 | p119 | Selectivity of MOFs and Silica Nanoparticles in CO2 Capture from Flue  | 10.3390/nano13192637 |
 | p120 | Adaptabilities of promoters in hydrate-based CO2 capture from simulate | 10.1016/j.jcou.2025.103231 |
 | p121 | Solvent-derived defects suppress adsorption in MOF-74 | 10.1038/s41467-023-38155-8 |
-| p122 | Boosting the CO2 adsorption performance by defect-rich hierarchical po | 10.1016/j.cej.2023.144052 |
+| p122 | Boosting the CO2 adsorption performance by defect-rich hierarchical po（键位已迁移 → p192，见溯源备注 §2） | 10.1016/j.cej.2023.144052 |
 | p123 | Enhanced selective CO2 adsorption in MOFs: Balance between open metal  | 10.1016/j.seppur.2025.134465 |
 | p124 | CO2: DIRECT AIR CAPTURE (DAC) | 10.13140/rg.2.2.27253.84960 |
 | p125 | Machine Learned Force Field Modeling of Metal Organic Frameworks for C | 10.2172/2426624 |
 | p126 | Design of Amine-functionalized Oxide Sorbents for Direct Air Capture o | 10.48448/dcn4-gz78 |
 | p127 | Metal Organic Framework Screening for Direct Air Capture of Ppm-Level  | 10.2139/ssrn.4676495 |
-| p128 | Direct Air Carbon Capture Using Metal-Organic Frameworks (MOFs) | 10.36561/ing.28.16 |
-| p129 | Challenges and Opportunities: Metal–Organic Frameworks for Direct Air  | 10.1002/adfm.202307478 |
+| p128 | Direct Air Carbon Capture Using Metal-Organic Frameworks (MOFs): Techno-Economic Performance of Temperature Vacuum Swing Adsorption (TVSA) Systems | 10.36561/ing.28.16 |
+| p129 | Isosteric Enthalpy Behavior of CO2 Adsorption on Micro-Mesoporous Materials: Carbon Microfibers (CMFs), SBA-15, and Amine-Functionalized SBA-15 | 10.3390/jcs5040102 |
 | p130 | Modified metal–organic framework by a novel coordinatively unsaturated | 10.1016/j.cej.2022.140431 |
 | p131 | Suitability of a diamine functionalized metal–organic framework for di | 10.1039/d3sc02554c |
 | p132 | Cold Temperature Direct Air CO<sub>2</sub> Capture with Amine-Loaded M | 10.1021/acsami.3c13528 |
@@ -150,7 +150,7 @@
 | p136 | Efficient and stable direct air capture with amine-functionalized MIL- | 10.1016/j.efmat.2025.02.003 |
 | p137 | Evaluating metal–organic frameworks for post-combustion carbon dioxide | 10.1039/c1ee01720a |
 | p138 | Advanced metal–organic framework materials for efficient CO2/CH4 separ | 10.1007/s10450-026-00672-5 |
-| p139 | Discrimination of Hexane Isomers by Temperature Swing Adsorption in a  | 10.1021/acsmaterialslett.6c00119 |
+| p139 | Discrimination of Hexane Isomers by Temperature Swing Adsorption in a Rigid Aluminum Metal–Organic Framework | 10.1021/acsmaterialslett.6c00119 |
 | p140 | Metal-Organic Framework Targeting for Optimal Pressure Swing Adsorptio | 10.1016/b978-0-323-85159-6.50049-x |
 | p141 | Tailoring Electrical Conductivity of Metal-Organic Frameworks for Elec | 10.7939/81886 |
 | p142 | Machine Learning the Hydrogen Adsorption Capacity of Metal Organic Fra | 10.26434/chemrxiv-2025-mccz2 |
@@ -158,7 +158,7 @@
 | p144 | Modeling of CO2 adsorption capacity by porous metal organic frameworks | 10.1038/s41598-021-04168-w |
 | p145 | Evaluation of diamine-appended metal-organic frameworks for post-combu | 10.1016/j.seppur.2018.10.015 |
 | p146 | Mesoporous Metal–Organic Frameworks with Exceptionally High Working Ca | 10.1002/adma.201704350 |
-| p147 | A metal-organic framework (MOF)-based temperature swing adsorption cyc | 10.1016/j.ces.2021.117399 |
+| p147 | A novel bimetallic MIL-101(Cr, Mg) with high CO2 adsorption capacity and CO2/N2 selectivity | 10.1016/j.ces.2016.03.035 |
 | p148 | Estimation of CO2 adsorption in high capacity metal−organic frameworks | 10.1016/j.jcou.2020.101256 |
 | p149 | Computational exploration of metal–organic frameworks for CO2/CH4 sepa | 10.1016/j.ces.2014.08.003 |
 | p150 | Experimental Results of Pressure Swing Adsorption (PSA) for Pre-combus | 10.1016/j.egypro.2017.03.1364 |
@@ -167,7 +167,7 @@
 | p153 | Hydrogen Adsorption on PCN‐250(Fe) Metal Organic Framework: Temperatur | 10.1002/masy.202300036 |
 | p154 | Charting the CO2 capture performance of a phase-change metal-organic f | 10.26434/chemrxiv-2023-zx95t |
 | p155 | Data-driven design of metal–organic frameworks for wet flue gas CO2 ca | 10.1038/s41586-019-1798-7 |
-| p156 | Identification of Metal-Organic Frameworks for CO2 Capture from Humid  | 10.26434/chemrxiv.15004247/v1 |
+| p156 | Identification of Metal-Organic Frameworks for CO2 Capture from Humid Flue Gas: Integrating Molecular Simulation, Machine Learning, and Experimental Synthesis | 10.26434/chemrxiv.15004247/v1 |
 | p157 | Carbon dioxide capture from humid flue gas using amino-functionalised  | 10.2139/ssrn.5703670 |
 | p158 | Carbon Dioxide Capture Chemistry of Amino Acid Functionalized Metal–Or | 10.1021/jacs.1c13368 |
 | p159 | Functionalization of Metal–Organic Frameworks for Enhanced Stability u | 10.1002/cssc.201500580 |
@@ -179,19 +179,33 @@
 | p165 | Fluorido-bridged iron-based metal-organic frameworks for carbon dioxid | 10.1016/j.fuel.2024.131669 |
 | p166 | Metal−Organic Frameworks for Capturing Carbon Dioxide from Flue Gas | 10.1021/bk-2021-1393.ch014 |
 | p167 | Cooperative insertion of CO2 in diamine-appended metal-organic framewo | 10.1038/nature14327 |
-| p168 | Optimum relative humidity enhances CO2 uptake in diamine-appended M2(d | 10.1016/j.cej.2023.147119 |
-| p169 | Amine Dynamics in Diamine-Appended Mg&lt;sub&gt;2&lt;/sub&gt;(dobpdc)\ | 10.1021/acs.jpclett.9b02883.s004 |
+| p168 | Optimum relative humidity enhances CO2 uptake in diamine-appended M2(dobpdc) | 10.1016/j.cej.2023.147119 |
+| p169 | Amine Dynamics in Diamine-Appended Mg<sub>2</sub>(dobpdc) Metal–Organic Frameworks | 10.1021/acs.jpclett.9b02883.s004 |
 | p170 | Controlling Cooperative CO<sub>2</sub> Adsorption in Diamine-Appended  | 10.1021/jacs.7b05858 |
 | p171 | Overcoming double-step CO<sub>2</sub> adsorption and minimizing water  | 10.1039/c7sc04266c |
 | p172 | Kinetics of cooperative CO<sub>2</sub> adsorption in diamine-appended  | 10.1039/d0sc01087a |
-| p173 | Adsorption Properties and Microscopic Mechanism of CO<sub>2</sub> Capt | 10.1021/acsami.0c01927 |
+| p173 | Adsorption Properties and Microscopic Mechanism of CO2 Capture in 1,1-Dimethyl-1,2-ethylenediamine-Grafted Metal–Organic Frameworks | 10.1021/acsami.0c01927 |
 | p174 | Amine Dynamics in Diamine-Appended Mg<sub>2</sub>(dobpdc) Metal–Organi | 10.1021/acs.jpclett.9b02883 |
 | p175 | CO2 adsorption and CO2/CH4 separation using fibrous amine-containing a | 10.1007/s11356-023-26913-6 |
-| p176 | Mechanistic Studies of Oxidative Degradation in Diamine-Appended Metal | 10.26434/chemrxiv-2025-w107k |
+| p176 | An efficient temperature swing adsorption (TSA) process for separating CO2 from CO2/N2 mixture using Mg-MOF-74 | 10.1016/j.enconman.2017.11.010 |
 | p177 | Laboratory Scale-up, Optimisation, and Characterisation of Ce-based Me | 10.5285/93d01edb-aa49-474f-a799-b67553a119d4 |
-| p178 | Model-based techno-economic analysis for integrated synthetic natural  | 10.1016/b978-0-443-28824-1.50338-0 |
+| p178 | Energy and productivity efficient vacuum pressure swing adsorption process to separate CO2 from CO2/N2 mixture using Mg-MOF-74: A CFD simulation | 10.1016/j.apenergy.2017.10.098 |
 | p179 | Techno-economic assessment of scale-up of metal-organic framework prod | 10.1016/j.jics.2025.102316 |
 | p180 | Sustainable Metal-Organic Framework Technologies for CO2 Capture | 10.1201/9781003162780-5 |
+| p182 | A molecular study of humid CO2 adsorption capacity by Mg-MOF-74 surfaces with ligand functionalization | 10.1016/j.commatsci.2022.111407 |
+| p185 | CO2 adsorption and separation properties of M-MOF-74 materials determined by molecular simulation | 10.46690/capi.2023.01.02 |
+| p186 | A molecular study of CO2 adsorption performance of functionalized Mg-MOF-74 at different water vapor concentrations and pressures | 10.1016/j.commatsci.2024.113462 |
+| p188 | A metal-organic framework (MOF)-based temperature swing adsorption cycle for postcombustion CO2 capture from wet flue gas | 10.1016/j.ces.2021.117399 |
+| p189 | （报告引用编号 p189 的文献） | （bib 无 DOI） |
+| p191 | Universal Prediction of CO2 Adsorption on Zeolites Using Machine Learning: A Comparative Analysis with Langmuir Isotherm Models | 10.3390/chemengineering9040080 |
+| p192 | Boosting the CO2 adsorption performance by defect-rich hierarchical porous Mg-MOF-74 | 10.1016/j.cej.2023.144052 |
+| p193 | 胺改性 Mg-MOF-74 饱和/动态容量. 超微孔体积 0.46 cm3/g | （bib 无 DOI） |
+| p196 | Adsorption breakthrough and cycling stability of carbon dioxide separation from CO2/N2/H2O mixture under ambient conditions using 13X and Mg-MOF-74 | 10.1016/j.apenergy.2018.09.069 |
+| p197 | （报告引用编号 p197 的文献） | （bib 无 DOI） |
+| p201 | Ecofriendly novel hydrophobic core-shell zeolite@MOF nanoadsorbent for CO2 capture | 10.1016/j.jcou.2025.103183 |
+| p206 | （报告引用编号 p206 的文献） | （bib 无 DOI） |
+| p216 | Effects of NO2 Gas on CO2 Capture by an Elastic Layer-Structured MOF (ELM-11) | 10.3390/gases6020024 |
+| p224 | Hydrophobic functionalized amine-impregnated resin for CO2 capture in humid air | 10.1016/j.seppur.2023.123606 |
 
 ## 2. 最终收录 r# 论文（46 篇，见 paper_summaries.md）
 
@@ -457,3 +471,167 @@
 ---
 
 *登记表覆盖主案例三层持久化证据；检索命中但未持久化的历史条目不再可逐条恢复（早期轮次摘要文件已归档）。*
+
+## 溯源备注
+
+> 本节记录 paper_register 与交付 `references.bib`（`文献调研报告/主案例_MOF-CO2/references.bib`）同步时的追溯说明。同步原则：p# → DOI 映射以交付 bib 为权威，登记表逐字镜像 bib 的 title/DOI，零虚构。
+
+### 1. 本次同步动作
+
+- **更新 36 个键**（p# 相同、title/DOI 与 bib 不一致）：以 bib 真实 title/DOI 覆盖登记表原值。
+- **追加 14 个键**（bib 有、register 原无）：p182, p185, p186, p188, p189, p191, p192, p193, p196, p197, p201, p206, p216, p224。
+- **保留 139 个键**（register 有、bib 已无引用）：见下方清单，仅历史留存、非交付引用，DOI 为登记时原值、未改动。
+- **bib 无 DOI 的条目**：p6、p189、p193、p197、p206，登记表 DOI 列标为「（bib 无 DOI）」。
+
+### 2. 需人工复核：键位漂移（同一论文在 register 旧键 vs bib 新键）
+
+| register 旧键 | bib 新键 | DOI |
+|--------------|---------|-----|
+| p29 | p24 | 10.1016/j.efmat.2023.01.002 |
+| p122 | p192 | 10.1016/j.cej.2023.144052 |
+
+> 上述两篇论文在登记表中同时存在于旧键（未删）与新键（同步后），DOI 相同、p# 不同，属历史键位漂移；已在旧键 p29/p122 行加交叉引用注记（→ p24/p192），追索无歧义，物理合并旧键仍为可选项。
+
+### 3. bib 已无引用、仅 register 留存的键（139 个）
+
+| p# | DOI |
+|----|-----|
+| p1 | 10.61511/eam.v2i2.2024.1431 |
+| p3 | 10.1201/9781003476191-1 |
+| p4 | 10.1016/s1750-5836(07)00031-x |
+| p5 | 10.1016/j.commatsci.2022.111388 |
+| p8 | — |
+| p9 | — |
+| p11 | 10.1038/s42004-023-01090-2 |
+| p12 | — |
+| p14 | — |
+| p15 | — |
+| p18 | 10.3390/nano14161340 |
+| p19 | 10.1016/j.inoche.2023.110722 |
+| p21 | 10.60893/figshare.jcp.29595122.v1 |
+| p23 | 10.1039/c0jm01125h |
+| p26 | 10.1007/s00339-015-9484-6 |
+| p29 | 10.1016/j.efmat.2023.01.002 |
+| p32 | 10.1007/s13369-020-04946-0 |
+| p33 | 10.1016/j.mrl.2021.100023 |
+| p34 | 10.1007/s10450-015-9707-3 |
+| p36 | 10.1039/d3dt02025h |
+| p37 | 10.5281/zenodo.5775432 |
+| p38 | 10.1038/srep01859 |
+| p39 | 10.1039/c2cc17593b |
+| p40 | 10.1016/j.jece.2021.105523 |
+| p41 | 10.1016/j.jcou.2022.101932 |
+| p42 | 10.1007/s11705-020-1961-6 |
+| p43 | 10.1088/2053-1591/ab3ff8 |
+| p44 | 10.1039/c3dt50997d |
+| p45 | 10.1039/c7qm00414a |
+| p46 | 10.1007/s11356-019-06717-3 |
+| p47 | 10.1016/j.cej.2023.147291 |
+| p48 | 10.1016/j.chemosphere.2024.142686 |
+| p49 | 10.3389/fchem.2025.1634637 |
+| p51 | 10.1039/d5ta04991a |
+| p53 | 10.1016/j.surfin.2025.107381 |
+| p56 | 10.11949/j.issn.0438-1157.20190538 |
+| p57 | 10.1016/j.micromeso.2024.113038 |
+| p58 | 10.3969/j.issn.1001-9677.2020.13.003 |
+| p59 | 10.1016/j.micromeso.2017.08.043 |
+| p61 | 10.1016/j.seppur.2017.10.024 |
+| p63 | 10.1007/s40201-019-00385-8 |
+| p64 | 10.3390/membranes10070154 |
+| p66 | 10.1016/j.heliyon.2020.e04883 |
+| p68 | 10.1016/j.seppur.2021.118800 |
+| p69 | 10.3390/membranes11090693 |
+| p70 | 10.1007/s11814-019-0433-5 |
+| p71 | 10.1016/j.talanta.2024.126400 |
+| p72 | 10.1007/978-981-16-4513-6_21 |
+| p73 | 10.1016/j.envres.2025.120819 |
+| p74 | 10.55730/1300-0527.3444 |
+| p77 | 10.1039/c3cc49457h |
+| p78 | 10.1007/s40843-020-1471-0 |
+| p79 | 10.1016/j.jallcom.2015.05.148 |
+| p80 | 10.3390/cleantechnol5010001 |
+| p81 | 10.54227/elab.20240022 |
+| p82 | 10.1134/s1070427214100188 |
+| p83 | 10.1016/b978-0-323-85777-2.00008-1 |
+| p84 | 10.1007/978-3-642-33497-9_8 |
+| p85 | 10.54097/1ab8v510 |
+| p86 | 10.1038/s41524-025-01617-2 |
+| p87 | 10.1088/1742-6596/3197/1/012051 |
+| p88 | 10.1021/acs.jpcc.3c01749 |
+| p89 | 10.19965/j.cnki.iwt.2025-0499 |
+| p90 | 10.1117/12.3031229 |
+| p91 | 10.1039/c4cs00070f |
+| p92 | 10.1039/d0me00005a |
+| p93 | 10.1016/j.cej.2022.136783 |
+| p94 | 10.1016/j.jenvman.2023.119065 |
+| p95 | 10.1021/acs.energyfuels.0c03063 |
+| p96 | 10.1038/s43246-023-00409-9 |
+| p97 | 10.1016/j.commatsci.2021.110383 |
+| p98 | 10.1021/acs.iecr.2c02374 |
+| p99 | 10.1063/5.0222154 |
+| p100 | 10.1016/j.cej.2025.160766 |
+| p101 | 10.1021/acs.iecr.5c02487 |
+| p102 | 10.1016/j.envres.2025.122612 |
+| p103 | 10.1016/j.jics.2025.101904 |
+| p105 | 10.1007/978-3-642-40872-4_1333-12 |
+| p106 | 10.1007/s10450-007-9100-y |
+| p107 | 10.1016/j.mattod.2023.03.004 |
+| p108 | 10.1016/j.fuel.2017.03.079 |
+| p109 | 10.1016/j.ijggc.2012.08.002 |
+| p110 | 10.1007/s11814-010-0398-x |
+| p111 | 10.1016/j.ces.2022.118390 |
+| p112 | 10.1016/j.ijggc.2016.04.023 |
+| p113 | 10.1016/s1872-5813(11)60016-9 |
+| p114 | 10.1016/j.joei.2017.02.007 |
+| p115 | 10.3390/molecules27175608 |
+| p119 | 10.3390/nano13192637 |
+| p120 | 10.1016/j.jcou.2025.103231 |
+| p121 | 10.1038/s41467-023-38155-8 |
+| p122 | 10.1016/j.cej.2023.144052 |
+| p123 | 10.1016/j.seppur.2025.134465 |
+| p124 | 10.13140/rg.2.2.27253.84960 |
+| p125 | 10.2172/2426624 |
+| p126 | 10.48448/dcn4-gz78 |
+| p127 | 10.2139/ssrn.4676495 |
+| p130 | 10.1016/j.cej.2022.140431 |
+| p131 | 10.1039/d3sc02554c |
+| p132 | 10.1021/acsami.3c13528 |
+| p133 | 10.1016/j.ccst.2023.100145 |
+| p134 | 10.1016/j.cjsc.2024.100267 |
+| p135 | 10.1021/acsami.5c11754 |
+| p136 | 10.1016/j.efmat.2025.02.003 |
+| p137 | 10.1039/c1ee01720a |
+| p138 | 10.1007/s10450-026-00672-5 |
+| p140 | 10.1016/b978-0-323-85159-6.50049-x |
+| p141 | 10.7939/81886 |
+| p142 | 10.26434/chemrxiv-2025-mccz2 |
+| p143 | 10.1039/c3cc43352h |
+| p144 | 10.1038/s41598-021-04168-w |
+| p145 | 10.1016/j.seppur.2018.10.015 |
+| p146 | 10.1002/adma.201704350 |
+| p148 | 10.1016/j.jcou.2020.101256 |
+| p149 | 10.1016/j.ces.2014.08.003 |
+| p150 | 10.1016/j.egypro.2017.03.1364 |
+| p151 | 10.1039/c3ce41119b |
+| p152 | 10.3389/fmats.2022.825592 |
+| p153 | 10.1002/masy.202300036 |
+| p154 | 10.26434/chemrxiv-2023-zx95t |
+| p155 | 10.1038/s41586-019-1798-7 |
+| p157 | 10.2139/ssrn.5703670 |
+| p158 | 10.1021/jacs.1c13368 |
+| p159 | 10.1002/cssc.201500580 |
+| p160 | 10.1016/j.xcrp.2023.101470 |
+| p161 | 10.1016/j.cjche.2023.03.002 |
+| p162 | 10.1016/j.seppur.2022.122058 |
+| p163 | 10.3390/membranes12070700 |
+| p164 | 10.1002/adma.202410500 |
+| p165 | 10.1016/j.fuel.2024.131669 |
+| p167 | 10.1038/nature14327 |
+| p170 | 10.1021/jacs.7b05858 |
+| p171 | 10.1039/c7sc04266c |
+| p172 | 10.1039/d0sc01087a |
+| p174 | 10.1021/acs.jpclett.9b02883 |
+| p175 | 10.1007/s11356-023-26913-6 |
+| p177 | 10.5285/93d01edb-aa49-474f-a799-b67553a119d4 |
+| p179 | 10.1016/j.jics.2025.102316 |
+| p180 | 10.1201/9781003162780-5 |

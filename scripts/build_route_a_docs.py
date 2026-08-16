@@ -85,7 +85,7 @@ class Hypothesis:
     expected_relationship: str
     confidence: float
     novelty_score: float
-    best_score: float
+    best_score: Optional[float]
     search_method: str
     validation_status: str
     known_prior_work: str
@@ -99,6 +99,25 @@ class Hypothesis:
     data_points: int = 0
     independent_materials: int = 0
     llm_explanation: str = ''
+
+
+def _load_search_scores(cfg: ThemeConfig) -> dict[int, float]:
+    """读 search_h*.json 的 {hypothesis_index: best_score}，供 best_score 兜底（P0-1 自愈）。"""
+    import glob
+    base = discovery_base(cfg)
+    scores: dict[int, float] = {}
+    for path in glob.glob(os.path.join(base, 'search_h*.json')):
+        try:
+            with open(path, encoding='utf-8') as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        if isinstance(data, dict) and 'hypothesis_index' in data:
+            try:
+                scores[int(data['hypothesis_index'])] = float(data.get('best_score', 0.0))
+            except (TypeError, ValueError):
+                pass
+    return scores
 
 
 def load_hypotheses(cfg: ThemeConfig) -> list[Hypothesis]:
@@ -122,9 +141,19 @@ def load_hypotheses(cfg: ThemeConfig) -> list[Hypothesis]:
     else:
         return []
 
+    scores = _load_search_scores(cfg)
     hyps = []
     for i, h in enumerate(raw_list):
         hid = h.get('id', f'hypo_{i+1}')
+
+        # best_score 兜底：缺失/为 0 时从 search_h{i}.json 自愈（P0-1，避免 0.000）
+        bs = h.get('best_score')
+        try:
+            bs_val = float(bs) if bs is not None else None
+        except (TypeError, ValueError):
+            bs_val = None
+        if bs_val is None or bs_val <= 0:
+            bs_val = scores.get(i)
         # 统一编号：SPR-{prefix}-{序号}
         spr_idx = i + 1
         spr_id = f'SPR-{cfg.prefix}-{spr_idx:02d}'
@@ -152,7 +181,7 @@ def load_hypotheses(cfg: ThemeConfig) -> list[Hypothesis]:
             expected_relationship=h.get('expected_relationship', ''),
             confidence=float(h.get('confidence', 0)),
             novelty_score=float(h.get('novelty_score', h.get('novelty', 0))),
-            best_score=float(h.get('best_score', 0)),
+            best_score=bs_val,
             search_method=h.get('search_method', 'bayesian'),
             validation_status=h.get('validation_status', 'pending'),
             known_prior_work=h.get('known_prior_work', ''),
@@ -200,27 +229,62 @@ def count_inconclusive(hyps: list[Hypothesis]) -> int:
     return sum(1 for h in hyps if h.validation_status == 'inconclusive')
 
 
+# ── 证据链引用键解析（W-2b：兼容描述性长串） ──────────────────
+
+# 纯键形态：p65 / TE002 / P040 / v3s0_c795f15f9d35 / r10s1_a9ed68d1734e / DOI
+_EVIDENCE_KEY_FULL = re.compile(
+    r'^(?:p\d+|TE\d+|P\d+|v\d+s\d+(?:_[0-9a-f]+)?|r\d+s\d+(?:_[0-9a-f]+)?|10\.\d{4,}/[^\s()]+)$'
+)
+# 长串内提取（带词边界，避免 pip2 误报 p2；DOI 不含括号）
+_EVIDENCE_KEY_RE = re.compile(
+    r'\b(?:p\d+|TE\d+|P\d+|v\d+s\d+(?:_[0-9a-f]+)?|r\d+s\d+(?:_[0-9a-f]+)?|10\.\d{4,}/[^\s()]+)\b'
+)
+_SKIP_EVIDENCE_TOKENS = ('Novelty', 'Overlap', 'LLM', 'Assessment')
+
+
 def format_evidence_list(ev: list) -> str:
     """将证据链列表格式化为紧凑引用字符串。
-    过滤掉非论文 ID 的条目（如 Novelty Verification、LLM 评估等）。"""
+    过滤掉非论文 ID 的条目（如 Novelty Verification、LLM 评估等）。
+
+    W-2b 兼容三种条目形态：
+      1. 纯引用键（p65 / TE002 / r10s1_a9ed... / v3s0_c795...）；
+      2. dict 条目（id/ref/paper_id 字段）；
+      3. 描述性长串（"Marshall 2024 (p35) 突破实验…"）→ 提取括号内引用键或 DOI。
+    无法解析出引用键的条目丢弃并在 stderr 计数警告；结果去重、最多保留 8 键。
+    """
     if not ev:
         return '—'
+    if isinstance(ev, dict):
+        ev = list(ev.values())
     ids = []
+    dropped = 0
     for e in ev:
         if isinstance(e, dict):
             eid = e.get('id', e.get('ref', e.get('paper_id', '')))
         else:
             eid = str(e)
-        # 跳过非引用条目
-        if not eid or 'Novelty' in str(eid) or 'Overlap' in str(eid) or 'LLM' in str(eid):
-            continue
         eid = str(eid).strip()
-        # 只保留 p#、TE#、P#、r# 等标准引用格式
-        if re.match(r'^(p\d+|TE\d+|P\d+|r\d+s\d+_[0-9a-f]+)$', eid):
+        if not eid:
+            continue
+        # 跳过非引用条目（新颖性/重叠/LLM 评估等）
+        if any(tok in eid for tok in _SKIP_EVIDENCE_TOKENS):
+            continue
+        # 形态 1/2：纯引用键
+        if _EVIDENCE_KEY_FULL.match(eid):
             if eid not in ids:
                 ids.append(eid)
+            continue
+        # 形态 3：从描述性长串提取括号内引用键 / DOI
+        found = _EVIDENCE_KEY_RE.findall(eid)
+        if found:
+            for k in found:
+                if k not in ids:
+                    ids.append(k)
+        else:
+            dropped += 1
     if not ids:
-        return '（证据链条目存在，但需清理格式）'
+        print(f'  WARNING: evidence chain 无可用引用键（{dropped} 条描述性条目被丢弃）', file=sys.stderr)
+        return '—'
     if len(ids) <= 8:
         return ', '.join(ids)
     return ', '.join(ids[:8]) + f' …(+{len(ids)-8})'
@@ -260,16 +324,49 @@ def format_ext_db(ext: dict) -> str:
 
 
 def format_mc_summary(mc: Optional[dict]) -> str:
-    """格式化模型比较摘要（一句话）。"""
-    if not mc:
+    """格式化模型比较摘要（一句话）。
+
+    W-2c 兼容多种结构：
+      - verdict 为字符串（旧结构）；
+      - verdict 为嵌套 dict：{'verdict', 'reason', 'delta_r2', 'f_supported', 'ci_supported'}；
+      - 顶层 best_r2 / f_test_p（其他主题结构）。
+    返回纯文本，绝不输出 Python dict 原文。
+    """
+    if not mc or not isinstance(mc, dict):
         return '—'
     verdict = mc.get('verdict', mc.get('model_verdict', ''))
+    reason = ''
+    delta_r2 = None
+    f_supported = None
+    ci_supported = None
+    if isinstance(verdict, dict):
+        reason = str(verdict.get('reason', '')).strip()
+        delta_r2 = verdict.get('delta_r2')
+        f_supported = verdict.get('f_supported')
+        ci_supported = verdict.get('ci_supported')
+        verdict = verdict.get('verdict', verdict.get('model_verdict', ''))
+    label_map = {
+        'insufficient': '无法判定',
+        'no_improvement': '无显著提升',
+        'supported': '支持',
+        'strong_support': '强支持',
+        'improvement': '有提升',
+    }
+    label = label_map.get(str(verdict), str(verdict))
+    parts = [label] if label and str(label) != 'None' else []
+    if delta_r2 is not None:
+        try:
+            parts.append(f'ΔR²={float(delta_r2):+.3f}')
+        except (TypeError, ValueError):
+            pass
+    if f_supported is not None:
+        parts.append('F 检验通过' if f_supported else 'F 检验未通过')
+    elif ci_supported is not None:
+        parts.append('CI 支持' if ci_supported else 'CI 不支持')
+    # 旧结构数值（best_r2 / f_test_p）
     r2 = mc.get('best_r2', mc.get('r2', ''))
     f_test = mc.get('f_test_p', mc.get('f_test', ''))
-    parts = []
-    if verdict:
-        parts.append(str(verdict))
-    if r2:
+    if r2 and delta_r2 is None:
         try:
             parts.append(f'R²={float(r2):.3f}')
         except (ValueError, TypeError):
@@ -279,7 +376,11 @@ def format_mc_summary(mc: Optional[dict]) -> str:
             parts.append(f'p={float(f_test):.3f}')
         except (ValueError, TypeError):
             pass
-    return ', '.join(parts) if parts else '有模型比较'
+    # 无数值/标志可给时才附 reason（避免与 ΔR²/F 表述重复）
+    if reason and delta_r2 is None and f_supported is None and ci_supported is None \
+            and not r2 and not f_test:
+        parts.append(reason)
+    return '，'.join(parts) if parts else '有模型比较'
 
 
 def check_novelty(h: Hypothesis) -> str:
@@ -294,6 +395,33 @@ def check_novelty(h: Hypothesis) -> str:
 
 
 # ── Markdown 生成 ─────────────────────────────────────────
+
+def _fmt_score(bs: Optional[float]) -> str:
+    """Best Score 显示：None → —（无 search 数据），否则 3 位小数。"""
+    if bs is None:
+        return '—'
+    return f'{bs:.3f}'
+
+
+# W-2d 占位符哨兵：命中即致命退出，防坏文档再次入库
+# 注意：用完整占位短语（如「需人工/LLM 补写」）而非裸「需人工」，
+# 避免误伤正常科学表述（如「需人工解读」）。
+BLOCKED_PLACEHOLDERS = ('待补写', '需人工/LLM 补写', '需人工补写', '需清理格式', '待生成', 'TBD', 'xxx', '占位符')
+
+
+def _check_placeholders(text: str, what: str) -> None:
+    hits = [w for w in BLOCKED_PLACEHOLDERS if w in text]
+    if hits:
+        print(f'FATAL: {what} 含占位文本 {hits}', file=sys.stderr)
+        sys.exit(1)
+
+
+def _check_raw_dict_leak(text: str, what: str) -> None:
+    """检测 Python dict 原文泄漏（{'xxx': ...} 形态），命中即致命退出。"""
+    if re.search(r"\{\s*'", text) or re.search(r"'\s*:\s*'", text):
+        print(f'FATAL: {what} 含 Python dict 原文泄漏（raw dict）', file=sys.stderr)
+        sys.exit(1)
+
 
 def generate_sp_list(all_hyps: list[Hypothesis], output_path: str):
     """生成构效关系清单（Markdown 表格）。"""
@@ -337,7 +465,7 @@ def generate_sp_list(all_hyps: list[Hypothesis], output_path: str):
         lines.append(f'| **置信度** | {h.confidence:.3f} |')
         lines.append(f'| **新颖性** | {h.novelty_score:.2f} — {check_novelty(h)} |')
         lines.append(f'| **搜索方法** | {h.search_method} |')
-        lines.append(f'| **Best Score** | {h.best_score:.3f} |')
+        lines.append(f'| **Best Score** | {_fmt_score(h.best_score)} |')
         lines.append(f'| **验证状态** | {h.validation_status} |')
         lines.append(f'| **模型比较** | {format_mc_summary(h.model_comparison)} |')
         lines.append(f'| **外部数据库** | {format_ext_db(h.external_validation)} |')
@@ -395,6 +523,16 @@ def generate_sp_list(all_hyps: list[Hypothesis], output_path: str):
     lines.append('---')
     lines.append(f'*本文档由 `scripts/build_route_a_docs.py` 自动生成（{DATE_FULL}），'
                  f'数据源为 {len(THEMES)} 个主题的 `discovery/hypotheses.json`。*')
+
+    # P4 哨兵：仍有 Best Score 为 0/负（未被 search 文件自愈）→ 致命退出，防坏文档入库
+    bad = [h.spr_id for h in all_hyps if h.best_score is not None and h.best_score <= 0]
+    if bad:
+        print(f'FATAL: {len(bad)} 条假设 Best Score 仍为 0/负（{", ".join(bad)}）', file=sys.stderr)
+        sys.exit(1)
+
+    # W-2d 哨兵：占位文本 + raw dict 泄漏检测
+    _check_placeholders('\n'.join(lines), 'SP_LIST')
+    _check_raw_dict_leak('\n'.join(lines), 'SP_LIST')
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines) + '\n')
@@ -587,6 +725,10 @@ def generate_explanation(all_hyps: list[Hypothesis], discovery_reports: dict[str
     lines.append('')
     lines.append('*本报告不包含任何杜撰的数值或结论——所有定量数据（confidence/novelty/best_score/'
                'R²/p-value/数据库匹配结果）均来自可追溯的 discovery JSON/Markdown 产物。*')
+
+    # W-2d 哨兵：占位文本 + raw dict 泄漏检测
+    _check_placeholders('\n'.join(lines), 'EXPLANATION')
+    _check_raw_dict_leak('\n'.join(lines), 'EXPLANATION')
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines) + '\n')

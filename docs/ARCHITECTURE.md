@@ -484,7 +484,7 @@ pi-agent/                              # 项目根目录
 │       ├── report.tex.j2              #     调研报告模板（65 条 Unicode 映射）
 │       └── route_a.tex.j2             #     路线 A 模板（85 条 Unicode 映射）
 │
-├── tests/                             # 单元测试（125 项，pytest）
+├── tests/                             # 单元测试（127 项，pytest）
 ├── docs/                              # 项目文档
 │   ├── ARCHITECTURE.md                #   系统说明文档（本文件）
 │   ├── COMPLIANCE.md                  #   合规披露

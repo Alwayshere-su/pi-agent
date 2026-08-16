@@ -71,6 +71,8 @@ scripts/inject_evidence_chain.py
 scripts/reference_audit.py
 scripts/backfill_redline2.py
 scripts/verify_scoring.py
+# 根目录一次性核验脚本归档（2026-08-16，原 /_*.py 迁移至此，本地保留不入库）
+scripts/_archive/
 
 # 历史归档与一次性回填脚本（本地保留不入库）
 scripts/_archive_pid_work/

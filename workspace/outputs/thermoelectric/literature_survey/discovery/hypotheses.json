@@ -289,7 +289,7 @@
     "data_points_available": 0,
     "known_prior_work": "已有文献报道超饱和 Si-Ge-P 固溶体 ZT>3.6（TE002）、Graphdiyne 二维高 ZT（TE009），ML 策略指导高 ZT 实验发现（TE057）；但纳米晶尺寸对晶格热导率/功率因子/ZT 的定量标度与实验验证缺口仍在",
     "incremental_claim": "以 Si-Ge-P 为模型体系，给出晶粒尺寸（5–50 nm）与晶格热导率/功率因子/ZT 的定量标度（最优 ~10 nm），逼近并实验验证 ML 预测的 ZT>2.5",
-    "best_score": 0.0,
+    "best_score": 0.8718697784409518,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -340,7 +340,7 @@
     ],
     "llm_plausibility_score": 0.72,
     "llm_explanation": "理论上，卤素取代Se位作为n型掺杂符合价电子规则，缺陷形成能与离子半径的关联也符合热力学和电子结构基本逻辑；Br的离子半径与Se接近，预期固溶度较高，推理合理。文献中已有SnSe卤素掺杂及Sn空位调控载流子浓度的研究，该假设是合理延伸，但缺乏对具体实验数据的直接比对，且ZT 1.8–2.2的预测偏乐观。该假设可通过第一性原理缺陷化学计算和变温Hall、输运测量明确验证，可操作性强。新颖性检索显示无重叠，但卤素掺杂n型SnSe并非全新方向，机制上未提出新的定量标度律，故新颖性一般。综合评分为0.72。；系统查重: 0 篇结果，重叠=none，新颖性 0.68->0.68",
-    "best_score": 0.0,
+    "best_score": 0.8500996791078536,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -398,7 +398,7 @@
     ],
     "llm_plausibility_score": 0.82,
     "llm_explanation": "该假设在理论上符合半导体载流子统计与双极效应机制。温度升高导致本征激发增强，电子-空穴对贡献使Seebeck系数被抵消并产生双极热导率，提高掺杂浓度可移动费米能级至带内，延迟本征激发，因此n*(T)随温度上移是物理预期的必然结果。文献方面，已有广泛共识表明高掺杂可抑制双极效应，尽管未检索到直接量化支撑，但该假设是现有理论的合理延伸，且针对Bi2Te3和PbTe的具体定量预测具有探索价值。实验可验证性强：可通过系列掺杂样品测量300–700K电热输运，绘制n*(T)相图，也可用第一性原理计算验证。新颖性方面，核心机制并非全新，但系统绘制n*(T)并耦合分段掺杂设计的定量优化目标尚属首次，检索未发现直接重叠，新颖性中等。综合各维度，假设科学合理性较高，但具体10–30%和15–30%的幅度依赖实验确认，故给予0.82。；系统查重: 2 篇结果，重叠=none，新颖性 0.74->0.74（2 篇潜在重叠）",
-    "best_score": 0.0,
+    "best_score": 0.8330163397145358,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -481,7 +481,7 @@
     "data_points_available": 0,
     "known_prior_work": "已有文献确立共振掺杂/共掺杂提升 Seebeck 与 ZT（TE087 PbTe K/Na 共掺杂）、掺杂剂对宿主能带对称性的影响（TE101）、half-Heusler 优化（TE146）；但共振杂质 DOS 局部异常幅度与 Seebeck 增强的定量标度缺失",
     "incremental_claim": "建立 Al 共振掺杂浓度（0–1.5 at%）与费米能级 DOS 畸变幅度、Seebeck/功率因子的定量标度（峰值 0.5–0.8 at%，>1 at% 杂质带扩展致骤降）",
-    "best_score": 0.0,
+    "best_score": 0.32887002193210296,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {
@@ -680,7 +680,7 @@
     "data_points_available": 0,
     "known_prior_work": "已有文献确立填充方钴矿 rattling 散射降晶格热导率与填充分数控制（TE035 Yb 溶解度、TE037/TE051 Ce 填充优化），并指出批次复现性问题（TE048）；但名义/实际填充分数偏差与 ZT 波动（0.67–0.89）的定量关联未建立",
     "incremental_claim": "给出实际填充分数 y 与晶格热导率（y≈0.25 降 40–60%）/迁移率的定量关系，定位 ZT 宽峰（y≈0.20–0.25）且对 y 不敏感的合成窗口以解释批次波动",
-    "best_score": 0.0,
+    "best_score": 0.7863219595047535,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {

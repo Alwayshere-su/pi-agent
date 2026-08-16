@@ -334,7 +334,7 @@
     "data_points_available": 8,
     "known_prior_work": "Cu-In 钙钛矿论文（jacs.7b02120）提出稳定性与光电性能可能互相矛盾；阳离子变换（jacs.6b09645）设计稳定无铅体系",
     "incremental_claim": "将 trade-off 从定性矛盾提升为定量标度律（Eg-分解能幂律/指数关系），并给出 Pareto 前沿边界",
-    "best_score": 0.0,
+    "best_score": 0.9642038253584586,
     "literature_values": [
       1.4,
       1.55,
@@ -597,7 +597,7 @@
     "data_points_available": 4,
     "known_prior_work": "Slack 1971 带隙-温度模型、Varshni 方程广泛应用于半导体；Patrick & Thygesen (2015) 已发现 CsSnI3 非谐稳定化",
     "incremental_claim": "用文献数值系统对比 Slack 模型与候选模型在卤化物钙钛矿上的 R²/RMSE，定量证明经典模型失效并给出非谐标度形式",
-    "best_score": 0.0,
+    "best_score": 0.9642038253584586,
     "literature_values": [
       0.11,
       0.24,
@@ -1103,7 +1103,7 @@
     "data_points_available": 4,
     "known_prior_work": "PhysRevMaterials.2.055401 (p11) 报道 Pb²⁺ 掺杂间接→直接转变；1611.05426v2 (p1) 预测 Cs2InAgCl6 直接带隙",
     "incremental_claim": "统一比较 In 替代/无序/Pb 掺杂三条调控路径，提出带隙类型转变的组成阈值规律",
-    "best_score": 0.0,
+    "best_score": 0.9657911269457602,
     "literature_values": [
       1.72,
       1.98,
@@ -1319,7 +1319,7 @@
     "data_points_available": 5,
     "known_prior_work": "c9nr07030c 报道 Cs2AgBiBr6 压力带隙演化；1674-1056/adce9e 报道 MA2PtI6 分段闭合",
     "incremental_claim": "将两体系的压力响应统一为分段线性标度框架，分段点与结构转变关联",
-    "best_score": 0.0,
+    "best_score": 0.9602355713902045,
     "literature_values": [
       0.0,
       0.038,
@@ -1365,7 +1365,7 @@
     "data_points_available": 0,
     "known_prior_work": "Landini et al. ML 筛选双钙钛矿 (p64)；solener.2021.09.030 联合预测 (p19)",
     "incremental_claim": "从'ML 能预测'推进到'带隙与稳定性在描述符空间可分离'的结构性结论",
-    "best_score": 0.0,
+    "best_score": 0.8824577936124268,
     "literature_values": [],
     "search_warning": "",
     "value_verification": {},
