@@ -18,7 +18,7 @@
     "search_iterations": 6,
     "candidates_explored": 17,
     "external_validation": {},
-    "validation_status": "pending",
+    "validation_status": "insufficient_data",
     "evidence_chain": [
       "P040",
       "P070",
@@ -60,7 +60,7 @@
     "search_iterations": 5,
     "candidates_explored": 16,
     "external_validation": {},
-    "validation_status": "pending",
+    "validation_status": "insufficient_data",
     "evidence_chain": [
       "P024",
       "P031",
@@ -114,7 +114,7 @@
     "search_iterations": 5,
     "candidates_explored": 16,
     "external_validation": {},
-    "validation_status": "pending",
+    "validation_status": "insufficient_data",
     "evidence_chain": [
       "P068",
       "P080",
@@ -151,7 +151,7 @@
     "expected_relationship": "预期随着Lewis酸基团浓度增加，t+从~0.2单调上升至0.5以上，而σ先升后降。原因是适量Lewis酸增强盐解离并促进Li+传输，但过量Lewis酸会提高玻璃化转变温度或形成交联网络，降低链段运动能力。因此t+-σ权衡曲线存在一个最优Lewis酸浓度，使t+与σ同时优于未改性PEO。",
     "confidence": 0.62,
     "novelty_score": 0.8,
-    "validation_status": "pending",
+    "validation_status": "insufficient_data",
     "source_gap_id": "Gap 4",
     "evidence_chain": [
       "P038",
@@ -219,7 +219,7 @@
     "expected_relationship": "预期在多种SSE上，Ag亲锂层负责诱导均匀锂沉积、降低成核过电位，LiF电子阻挡层负责抑制电子跨界面传输、减少副反应，二者协同可将界面电阻从>100 Ω cm²降至<10 Ω cm²，且该效应与SSE阴离子种类无关。界面电阻降低幅度还可能与SSE的还原稳定性相关，即越不稳定的SSE受益越大。",
     "confidence": 0.66,
     "novelty_score": 0.75,
-    "validation_status": "pending",
+    "validation_status": "insufficient_data",
     "source_gap_id": "Gap 5",
     "evidence_chain": [
       "P047",

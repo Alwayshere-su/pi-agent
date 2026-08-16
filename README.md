@@ -232,6 +232,7 @@ utils/
 scripts/
 ├── baseline_random_search.py    # 随机探索参照系（v2 打分）
 ├── run_e2e_rerun.py / run_validation_pipeline.py / run_nico5_validation.py  # 重跑管线
+├── complete_cathode_verification.py / complete_validation_verification.py  # 主题级定量核验补跑（数据不足如实标注）
 ├── meta_analysis.py / prepare_scibase.py  # 元分析 / Sci-Base 数据集准备
 ├── build_bib.py                  # 证据池 -> references.bib（--theme 跨主题，Crossref API + @misc 降级）
 ├── md2latex.py + templates/report.tex.j2  # Markdown 报告 -> report.tex（pandoc + 引用转换 + Unicode 映射）
@@ -322,6 +323,7 @@ workspace/
 | v2.3.1 | 2026-08 | 初赛手册修订版对齐：① 新增 `utils/resource_registry.py`——12 项外部资源来源/版本/用途注册表（含 DeepSeek/Sciverse/MinerU/arXiv/Semantic Scholar/Sci-Base/Crossref/Materials Project/OQMD/NOMAD/hMOF/TeX Live），对应方案 docx 5.3 节 Table 5 与赛题手册第 36 条；② 新增 `literature_agent/planned_capabilities.py`——三项复赛计划接口契约（HybridRetriever / GraphKnowledgeStore / AutoReVerifier），初赛阶段明确标注替代方案；③ `.gitignore` 追加 `_*.txt` 与 `GOAI_*.docx` 规则 |
 | v2.3.2 | 2026-08 | 跨主题 LaTeX 报告流水线（6 主题全覆盖）：① `build_bib.py` 新增 `--theme` 参数，支持 dict 格式条目（perovskite/cathode paper_summaries）、数学模式保护（`esc_title()` 不转义 `$...$` 内下划线）、截断标题正则兜底；② `md2latex.py` 新增 `--theme` + `---` 表格歧义修复（→`***`）+ `\label` 保护（避免 `\cite` 进入 `\csname`）+ YAML 元数据块禁用；③ 模板新增 21 条 `\newunicodechar`（αβκσχ≥≠⁴⁶⁷⁻ᵧ₄₈ₑₗ✅⏳⚠Ⅱ）；④ 产出 5 个跨主题 PDF（perovskite 308K/thermoelectric 440K/cathode 480K/mof 411K/validation 391K）+ 主案例重生成 578K，6 主题全部零编译错误、零 Unicode 缺字 |
 | v2.3.3 | 2026-08 | 路线 A 构效关系提交文档：① 新增 `scripts/build_route_a_docs.py`——从 6 主题 discovery 子目录提取 31 条假设，生成统一 SPR 编号体系（SPR-{THEME}-{NN}）的 SP 清单（69 KB / 694 行）与科学解释文档（73 KB / ~720 行），含已知/新知判定、证据链格式清理、LLM 解释增强；② 新增 `scripts/compile_route_a_pdf.py` + `scripts/templates/route_a.tex.j2`——pandoc → Jinja2 → tectonic 编译链路，补充 ²³₅×ΔΩ–—↑→↓∝ 等 20 条 Unicode 映射；③ 产出 `ROUTE_A_SP_LIST.pdf`（539 KB）与 `ROUTE_A_EXPLANATION.pdf`（664 KB），零编译错误；④ `CROSS_THEME_REPORT.md` 头部新增路线 A 文档索引 |
+| v2.3.4 | 2026-08 | validation（固态电解质）主题定量核验补跑：① 确认知识图谱无可提取 (x,y) 配对（0 组），5 条假设均为机制性/定性假设；② 新增 `scripts/complete_validation_verification.py`——仿 cathode 补跑模式为 5 条假设生成"数据不足（insufficient_data）"诚实核验产物（model_comparison_0..4.md + symbolic_0..4.md，未虚构数值）；③ hypotheses.json 5 条 validation_status 同步更新为 insufficient_data；④ `CROSS_THEME_REPORT.md` 七处表述同步更新（主表/中规模表/假设质量表/行动项与完整性说明），validation 由"待核验"改为"5 条 insufficient_data" |
 
 ---
 
