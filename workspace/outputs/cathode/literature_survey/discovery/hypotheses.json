@@ -121,8 +121,8 @@
   },
   {
     "id": "hypo_3",
-    "title": "高镍层状氧化物中Ni含量与容量保持率呈非单调权衡",
-    "description": "在LiNi_x Mn_y Co_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x>0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。",
+    "title": "高镍层状氧化物中Ni含量与容量保持率呈强负相关（高镍端加速）",
+    "description": "在LiNi_x Mn_y Co_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x>0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。第二轮量化验证：A 层 6 点共识值显示整体单调下降、原假设帕累托窗口未获支持（详见 quant_supplement_h2.md）。",
     "source_gap_id": "Gap 3",
     "materials": [
       "LiNi0.6Mn0.2Co0.2O2",
@@ -132,7 +132,7 @@
       "LiNiO2"
     ],
     "property": "循环容量保持效率 (%)",
-    "expected_relationship": "放电容量（0.1C, 2.5-4.3V）随Ni含量线性增加，而300圈循环保持率随Ni含量分段下降：x≤0.8下降平缓，x>0.9出现加速下降，形成明确拐点；最佳折衷在x≈0.8-0.9区间。",
+    "expected_relationship": "100 圈容量保持率随 Ni 含量 x∈[0.33,1.0] 单调下降（线性 y=-34.59x+109.08，R²=0.887，p<0.01），高镍端（x>0.8）加速下降（二次项显著 p=0.027）；原假设 x≈0.8-0.9 帕累托最优窗口未获数据支持。",
     "confidence": 0.68,
     "novelty_score": 0.82,
     "search_method": "bayesian",
@@ -319,10 +319,10 @@
     "llm_explanation": "LLM 评估异常（'list' object has no attribute 'get'），采用默认评分 0.5",
     "extractability_score": 0.0,
     "extractability_note": "",
-    "independent_materials": 0,
-    "data_points_available": 0,
-    "known_prior_work": "已有文献依据(evidence_chain 编号: p22, p24, p32)，具体结论需人工/LLM 补写",
-    "incremental_claim": "相对已确立结论的具体增量待补写(本假设的 expected_relationship 即拟验证的新规律)",
+    "independent_materials": 6,
+    "data_points_available": 6,
+    "known_prior_work": "已有文献依据（evidence_chain 编号: p22, p24, p32）支撑 Ni↑→保持率↓ 方向；定量结论已由第二轮 quant_supplement_h2 补写（表 3 六点共识值，佐证 p 编号见 knowledge_graph 表 3）",
+    "incremental_claim": "给出 Ni 含量-容量保持率的定量线性/二次标度律（A 层 6 点：线性 R²=0.887、二次 R²=0.983），并证伪原假设的帕累托最优窗口（数据显示整体单调下降）",
     "best_score": 0.0,
     "literature_values": [],
     "search_warning": "",
@@ -335,10 +335,14 @@
     "degraded_reason": "",
     "model_comparison": {
       "n_points": 31,
-      "best_r2": 0.1004,
-      "f_test_p": null,
-      "verdict": "insufficient",
-      "report_path": "workspace/outputs/cathode/literature_survey/discovery\\model_comparison_2.md"
+      "verdict": "A 层 n=6（共识值）：线性 R²=0.887 / 二次 R²=0.983（嵌套 F p=0.027）；全量 n=31 受 B 层噪声稀释 R²≈0.105；Vegard 端点基线 R²=-0.032 失效",
+      "report_path": "workspace/outputs/cathode/literature_survey/discovery\\model_comparison_2.md",
+      "a_layer": {
+        "n": 6,
+        "linear_r2": 0.8873,
+        "quadratic_r2": 0.9828,
+        "nested_f_p": 0.0266
+      }
     },
     "symbolic_regression": {
       "r2": 0.104101,

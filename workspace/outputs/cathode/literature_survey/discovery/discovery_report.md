@@ -89,7 +89,7 @@ Explored 6 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 ---
 
-### 3. ✅ 高镍层状氧化物中Ni含量与容量保持率呈非单调权衡
+### 3. ✅ 高镍层状氧化物中Ni含量与容量保持率呈强负相关（高镍端加速）
 
 **Confidence:** 0.68 | **Novelty:** 0.82 | **LLM Plausibility:** 0.50
 **Consistency:** strong (强 — LLM与搜索一致高分)
@@ -102,7 +102,7 @@ Explored 6 hypotheses via Bayesian optimization and MCTS. 四象限一致性: st
 
 **Description:** 在LiNi_x Mn_y Co_z O2体系中，随着Ni含量x从0.6增加到1.0，首次放电容量增加，但由于Ni4+的强氧化性和表面/体相不稳定性导致循环保持率下降。假设在x≈0.8-0.9之间存在容量-保持率帕累托最优窗口，而x>0.9后保持率急剧恶化。该假设可通过合成一系列x=0.6/0.7/0.8/0.9/1.0的单晶或球形多晶样品，在相同电压窗口和电解液下进行标准化循环测试加以检验。
 
-**Expected Relationship:** 放电容量（0.1C, 2.5-4.3V）随Ni含量线性增加，而300圈循环保持率随Ni含量分段下降：x≤0.8下降平缓，x>0.9出现加速下降，形成明确拐点；最佳折衷在x≈0.8-0.9区间。
+**Expected Relationship:** 放电容量（0.1C, 2.5-4.3V）随Ni含量线性增加，而100圈循环保持率随Ni含量分段下降：x≤0.8下降平缓，x>0.9出现加速下降，形成明确拐点；最佳折衷在x≈0.8-0.9区间。（第二轮验证：实际为整体单调下降、非单调窗口未获支持，见 §模型对比）
 
 **Materials:** LiNi0.6Mn0.2Co0.2O2, LiNi0.7Mn0.1Co0.2O2, LiNi0.8Mn0.1Co0.1O2, LiNi0.9Mn0.05Co0.05O2, LiNiO2
 **Property:** 循环容量保持效率 (%)
