@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Docs: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSE-docs)
 [![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](requirements.txt)
-[![Version](https://img.shields.io/badge/version-v2.3.4-success.svg)](https://github.com/Alwayshere-su/pi-agent/releases)
+[![Version](https://img.shields.io/badge/version-v2.3.4-success.svg)](README.md#十版本与更新记录)
 
 > **GOAI 赛道三** | **方向三** · 材料科学文献驱动的科学发现智能体 | **路线 A** · 构效关系发现
 >
