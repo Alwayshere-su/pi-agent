@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use Pi-Agent in academic work, please cite it as below."
+title: "Pi-Agent: A Literature-Driven Autonomous Discovery Agent for Materials Science"
+abstract: >-
+  Pi-Agent is an LLM-centered agent that autonomously runs a complete
+  literature-driven scientific discovery loop: literature search, knowledge
+  extraction, research-gap identification, structure-property hypothesis
+  generation, Bayesian/MCTS search, external database validation, and report
+  generation. The public case study targets MOF materials for CO2 capture and
+  ships with an auditable four-layer evidence chain and reproducible outputs.
+authors:
+  - name: "Pi-Agent Contributors"
+repository-code: "https://github.com/Alwayshere-su/pi-agent"
+url: "https://github.com/Alwayshere-su/pi-agent"
+license: MIT
+version: 2.3.4
+date-released: 2026-10-20
+keywords:
+  - llm-agent
+  - scientific-discovery
+  - materials-science
+  - literature-mining
+  - bayesian-optimization
+  - mcts
+  - python

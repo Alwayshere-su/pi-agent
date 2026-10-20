@@ -1,14 +1,50 @@
 # Pi-Agent —— 材料科学文献驱动的构效关系自主发现智能体
 
+[![CI](https://github.com/Alwayshere-su/pi-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/Alwayshere-su/pi-agent/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Docs: CC BY 4.0](https://img.shields.io/badge/docs-CC%20BY%204.0-lightgrey.svg)](LICENSE-docs)
+[![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue.svg)](requirements.txt)
+[![Version](https://img.shields.io/badge/version-v2.3.4-success.svg)](https://github.com/Alwayshere-su/pi-agent/releases)
+
 > **GOAI 赛道三** | **方向三** · 材料科学文献驱动的科学发现智能体 | **路线 A** · 构效关系发现
 >
 > **开源仓库**：[github.com/Alwayshere-su/pi-agent](https://github.com/Alwayshere-su/pi-agent)（公开 · 代码 MIT · 文档与运行产物 CC BY 4.0）
 >
-> **版本**：v2.3.3（初赛终版 + 路线 A 构效关系提交文档）｜**最后更新**：2026-08
+> **版本**：v2.3.4（初赛终版 + 路线 A + validation 补跑）｜**最后更新**：2026-08｜**README 整理**：2026-10
 >
 > **核心成果**：一个以 LLM 为核心、端到端自主运行的文献驱动科学发现智能体。在有限时间预算内完成「文献检索 → 知识抽取 → Gap 识别 → 构效关系假设 → 贝叶斯/MCTS 搜索 → 外部验证 → 报告生成」全流程。针对 MOF 材料 CO₂ 捕获主题，经 11 轮迭代、546 篇次检索（去重后证据池 543 条、最终收录 46 篇），识别 10 项 Research Gap，生成 5 条构效关系假设，完成定量回归核验与 Materials Project / OQMD 外部交叉验证——流程完整、发现有效、引用干净、证据链可审计。
 
 > **文档维护约定**：本 README 与代码/产物同步更新；每次修改项目（代码、依赖、配置、产物口径、工具数量等）后，必须同步更新本文件（含「版本与更新记录」一节）。不一致即视为缺陷。
+
+## 5 分钟看懂
+
+| 你想知道 | 一句话答案 |
+|---|---|
+| **这是什么** | 一个端到端自主运行的 LLM Agent：从文献检索到科学发现报告，中间不靠人工脚本编排 |
+| **做成什么** | MOF CO₂ 捕获案例：11 轮迭代、546 篇次检索、10 项 Research Gap、5 条构效关系假设 |
+| **效果如何** | 同等预算下 5/5 假设优于随机搜索；定量核验与不显著结果均在正文如实披露 |
+| **凭什么信** | 四层证据链（报告 → 摘要 → 检索日志 → API 调用），零虚假引用；127 项测试 + CI 全绿 |
+| **怎么跑** | `python main.py --topic "MOF materials for CO2 capture" --budget 600`，见[快速开始](#六快速开始) |
+| **先看什么** | [主报告 PDF](workspace/outputs/literature_survey/latex/report.pdf) · [知识图谱](workspace/outputs/literature_survey/knowledge_graph.md) · [审计轨迹](workspace/outputs/literature_survey/audit_trail.md) · [架构文档](docs/ARCHITECTURE.md) |
+
+## 目录
+
+- [5 分钟看懂](#5-分钟看懂)
+- [一、科学问题与动机](#一科学问题与动机)
+- [二、系统概览](#二系统概览)
+- [三、核心产出](#三核心产出)
+- [四、架构亮点](#四架构亮点)
+- [五、证据链与审计](#五证据链与审计)
+- [六、快速开始](#六快速开始)
+- [七、项目结构](#七项目结构)
+- [八、合规披露（摘要）](#八合规披露摘要)
+- [九、引用本项目的文档索引](#九引用本项目的文档索引)
+- [十、版本与更新记录](#十版本与更新记录)
+- [附录 A：Sciverse 三层接入方式详解](#附录-asciverse-三层接入方式详解)
+- [附录 B：参照系复现步骤](#附录-b参照系复现步骤)
+- [附录 C：输出结构](#附录-c输出结构)
+- [附录 D：MinerU PDF 解析引擎启用指南](#附录-dmineru-pdf-解析引擎启用指南)
+- [许可证与引用](#许可证与引用)
 
 ---
 
@@ -30,22 +66,23 @@
 
 Agent 按两阶段自主运行，共 **23 个工具**，事件驱动 + 状态机 + 工具管线架构：
 
-```
-阶段一：文献调研（基本任务）
-  自主检索 → 筛选去重 → 双引擎 PDF 解析 → 摘要整理
-    → 知识图谱撰写（Markdown，材料/性质/数值/关系/矛盾）
-    → Research Gap 识别（10 项，带置信度与证据链）
-    → 调研报告生成（六章结构 + 参考文献）
-
-阶段二：路线 A 构效关系发现
-  假设生成（5 条，材料×性质×预期关系×置信度）
-    → 贝叶斯优化（RBF-GP 代理 + MLE 超参数 + UCB）/ MCTS 搜索
-    → 定量回归核验（二次/线性/LOOCV + 嵌套 F 检验）
-    → 外部数据库验证（Materials Project / OQMD / NOMAD）
-    → 参照系对比（同预算随机搜索，10 种子）
-    → 发现报告（正结果/负结果/异常/反例四类信号）
-
-    ↑ 跨轮记忆（MEMORY.md + 运行反思 + 记忆质量审计）驱动下一轮迭代（共 11 轮）
+```mermaid
+flowchart TD
+    T["主题输入<br/>例如：MOF for CO₂ capture"] --> P1["阶段一：文献调研"]
+    P1 --> S1["自主检索<br/>Sciverse / arXiv"]
+    S1 --> S2["筛选去重 + 双引擎解析<br/>MinerU / markitdown"]
+    S2 --> S3["知识图谱<br/>材料 · 性质 · 数值 · 关系"]
+    S3 --> S4["Research Gap 识别<br/>10 项 + 置信度 + 证据链"]
+    S4 --> S5["调研报告<br/>六章 + 71 条参考文献"]
+    S5 --> P2["阶段二：构效关系发现"]
+    P2 --> H1["假设生成<br/>5 条 · 材料×性质×关系"]
+    H1 --> H2["贝叶斯优化 / MCTS<br/>RBF-GP + UCB + LLM 引导"]
+    H2 --> H3["定量回归核验<br/>二次/线性/LOOCV/F 检验"]
+    H3 --> H4["外部数据库验证<br/>MP / OQMD / NOMAD"]
+    H4 --> H5["参照系对比<br/>同预算随机搜索 × 10 种子"]
+    H5 --> H6["发现报告<br/>正结果/负结果/异常/反例"]
+    H6 --> M["跨轮记忆<br/>MEMORY.md + 质量审计"]
+    M --> P1
 ```
 
 Agent 的检索策略、知识图谱组织、Gap 排序、假设方向、补检索时机均为 Agent 自主决策，非固定脚本。
@@ -406,4 +443,10 @@ docker run -d --name mineru-local -p 8888:8888 mineru/mineru-service:latest
 
 ---
 
-*许可证：代码 MIT；文档与运行产物 CC BY 4.0（不含第三方 API 数据）。*
+## 许可证与引用
+
+- **代码**：[MIT](LICENSE)
+- **文档与运行产物**：[CC BY 4.0](LICENSE-docs)
+- 第三方 API 数据与论文版权归原权利人所有；仓库中的检索摘要仅用于研究复现。
+
+如本仓库对你的研究有帮助，引用信息见 [`CITATION.cff`](CITATION.cff)；GitHub 右侧 About 区域的 “Cite this repository” 可直接导出 BibTeX。
