@@ -87,6 +87,22 @@ flowchart TD
 
 Agent 的检索策略、知识图谱组织、Gap 排序、假设方向、补检索时机均为 Agent 自主决策，非固定脚本。
 
+### 2.1 赛题要求对照
+
+赛题（方向三）要求「一个基本任务 + 一条进阶路线」；本项目完成基本任务，并选择**路线 A：构效关系发现**。
+
+| 赛题要求 | 本项目落实 | 主要证据 |
+|---------|-----------|---------|
+| 基本任务 · 文献检索与筛选 | 多源自主检索（Sciverse / arXiv / Semantic Scholar），去重后按主题相关性筛选，迭代补检索 | `literature_agent/search.py`；主案例 546 篇次检索、543 条证据池、46 篇收录 |
+| 基本任务 · 知识抽取 | 表格 / 序列 / 句对 / 笛卡尔四路径抽取材料、性质、数值、方法与合成条件 | `literature_agent/extractor.py`；`paper_summaries.md`、`knowledge_graph.md` |
+| 基本任务 · Research Gap 识别 | 按「缺失连接 / 矛盾结论 / 未探索空间」分类，附严重程度、置信度与 p# 证据链 | 主案例 10 项 Gap，`gap_report.md` |
+| 基本任务 · 调研报告生成 | 六章结构化报告 + 71 条参考文献，LaTeX 编译为 PDF | `workspace/outputs/literature_survey/latex/report.pdf` |
+| 路线 A · 搜索与发现方法 | 贝叶斯优化（RBF-GP + UCB）、MCTS、符号回归、经典模型（Vegard / Slack）对照 | `literature_agent/discovery.py`、`symbolic_regression.py`、`classical_models.py` |
+| 路线 A · LLM 深度融合 | LLM 生成候选假设、周期性引导 MCTS 搜索方向、撰写逐假设科学解释；引导事件写入 `llm_guidance` 审计字段 | `pi_agent/llm.py`、`literature_agent/discovery.py`；端到端实证见 `mof_e2e_v4` |
+| 路线 A · 可信性与新颖性 | 四层证据链、随机搜索参照系（10 种子 × 40 评估）、已知/新知判定、多数据库交叉验证 | §五；`ROUTE_A_SP_LIST.md` 逐条标注已知工作与增量贡献 |
+| 路线 A · 领域理解与可解释性 | 8 章科学解释：6 个材料体系全景、逐假设机制解释、Vegard/Slack 失效机制 | `ROUTE_A_EXPLANATION.md/.pdf` |
+| 加分项 · 材料数据库验证 | Materials Project / OQMD / NOMAD / hMOF 四源交叉验证；MOF 覆盖为 0 的瓶颈如实披露 | `literature_agent/discovery.py`；§3.3 负结果 |
+
 ---
 
 ## 三、核心产出
@@ -134,6 +150,17 @@ Gap 排序逻辑：严重程度 × 置信度 × 与已有发现的关联度。To
 - **贝叶斯 vs 随机参照系（v2 打分，10 种子 × 40 评估）**：同预算公平对比——**5 条假设全部 bayesian_wins**（diff_median +0.014~+0.039，见 `baseline_random.json`）。v2 增强打分（打分函数分段线性拉伸）修复了初赛版 10 种子 3:2 区分度不足的问题；初赛版结论如实记录于提交材料。
 - **统计验证**：嵌套 F 检验（hypo_1 二次 vs 线性，F=9.909, p=0.0254）在 α=0.05 下显著；NiCo-MOF-74 五个独立实测点（archive_v3_realdata）二次 R²=0.7694 vs 经典 Vegard 线性基线 R²=-0.1530（ΔR²=+0.92）。"候选 vs 经典模型"正面对比因数据不足尚未达成，达成路径（表格化知识图谱）已明确并列入复赛计划。
   - **样本量口径说明**：上述 F=9.909/p=0.0254 基于 8 点数据集（含 5 个估计点）；独立 5 实测点的 F 检验 p=0.158 不显著（详见 `quantitative_validation_nico5.md` 的诚实披露）。31 条假设中 validated 7 条、inconclusive 3 条，其余为 pending。
+
+### 3.5 初赛提交物（4 件套）
+
+| # | 提交物 | 内容 | 规模 |
+|---|--------|------|------|
+| ① | `方案说明文档.docx` | 方向选择、科学问题、技术方案（8 类 Agent × 23 工具）、路线 A 九步管线、初步验证、仓库链接、13 项外部资源披露、团队分工 | 35,349 B |
+| ② | `pi-agent.zip` | GitHub 仓库源码快照（含系统说明、合规披露、外部资源披露） | 5.6 MB / 329 个文件（387 条目含目录） |
+| ③ | `文献调研报告/` | 6 个主题的 PDF + LaTeX 源码 + BibTeX：主案例_MOF-CO2 / mof_e2e_v4 / perovskite_钙钛矿 / thermoelectric_热电 / cathode_高镍正极 / validation_固态电解质，附 `report.tex.j2` 编译模板 | 19 个文件 / 2.9 MB；参考文献 71 + 24 + 41 + 48 + 27 + 44 = 255 条 |
+| ④ | `路线A_构效关系清单与解释文档/` | `ROUTE_A_SP_LIST`（31 条假设，`SPR-{THEME}-{NN}` 统一编号：MOF×5、MOFv4×5、PVSK×5、TE×5、NMC×6、SE×5）与 `ROUTE_A_EXPLANATION`（8 章科学解释），各含 md / tex / pdf | 6 个文件 / 1.5 MB |
+
+> 提交物原件保存在本地 `初赛材料/`（已 `.gitignore` 排除）；公开仓库提供可运行代码、7 个入库主题的运行产物，以及路线 A 文档源码与 PDF。逐项对照、赛题目录结构与提交方式见 `初赛材料/初赛提交物整理.md`。
 
 ---
 
@@ -209,7 +236,7 @@ python main.py --topic "MOF materials for CO2 capture" --budget 600
 
 ### 多主题运行（Agent 泛化性验证）
 
-同一 Agent 在 **8 个主题**上独立调研（产物与记忆互不干扰）。公开仓库保留主案例与正式主题产物；冒烟/重跑主题（smoke_test / g3test / mof_rerun / mof_rerun_v2）产物本地留存、不入库：
+同一 Agent 在 **10 个主题**上独立调研（产物与记忆互不干扰；口径见 `docs/CROSS_THEME_REPORT.md`）。其中 7 个主题的产物入库——6 个正式研究主题（literature_survey / mof_e2e_v4 / perovskite / thermoelectric / cathode / validation）加复现性重跑 `mof_rerun_v3`；3 个冒烟/验证主题（smoke_test / g3test / smoke_fix）仅保留在本地归档，不入库：
 
 ```bash
 python main.py --topic "MOF materials for CO2 capture" --budget 600
@@ -218,7 +245,7 @@ python main.py --topic "thermoelectric materials ZT optimization" --run-dir ther
 python main.py --topic "high-nickel cathode capacity retention" --run-dir cathode --budget 600 --fresh
 ```
 
-> 已归档运行：`validation`（固态电解质）、`mof_e2e_v4`（e2e 全量重跑，含 llm_guidance 审计实证）；冒烟验证（`smoke_test` / `g3test`）与旧版重跑（`mof_rerun` / `mof_rerun_v2`）产物本地留存。
+> 入库主题：`literature_survey`（主案例）、`mof_e2e_v4`（e2e 全量重跑，含 llm_guidance 审计实证）、`mof_rerun_v3`（复现性重跑）、`perovskite`、`thermoelectric`、`cathode`、`validation`。`validation` 的 5 条假设均为 `insufficient_data`（数据不足，诚实标注，未虚构数值）；`smoke_test` / `g3test` / `smoke_fix` 的产物仅保留在本地归档。
 
 ### 参照系复现
 
@@ -279,7 +306,7 @@ scripts/
 ├── compile_route_a_pdf.py       # 路线 A Markdown → PDF 编译（pandoc → Jinja2 → tectonic）
 ├── templates/route_a.tex.j2     # 路线 A LaTeX 模板（ctexart + Unicode 映射）
 tests/                           # pytest 单元测试（127 项）
-docs/                            # 项目文档（架构 / 合规 / 可复现性 / 重跑指南）
+docs/                            # 项目文档（架构 / 合规 / 可复现性 / 跨主题报告 / 外部资源）
 workspace/
 ├── outputs/
 │   ├── <run-dir>/literature_survey/       # 各主题产出
@@ -289,6 +316,20 @@ workspace/
 ├── logs/                                  # 运行轨迹 + 审计日志
 └── data/literature_cache/                 # 文献缓存（search_log.jsonl 入库，其余 gitignore）
 ```
+
+### 本地保留材料（不入库）
+
+以下路径只存在于本机工作副本，已由 `.gitignore` 排除，`git clone` 不会包含：
+
+| 路径 | 内容 | 说明 |
+|------|------|------|
+| `初赛材料/` | 初赛 4 件套原件：`方案说明文档.docx`、`pi-agent.zip`、`文献调研报告/`（6 主题）、`路线A_构效关系清单与解释文档/` | 平台提交原件；代码以 GitHub 仓库为准 |
+| `初赛材料/初赛提交物整理.md` | 4 件套清单、赛题要求逐项对照、提交方式 | 2026-08 整理稿 |
+| `赛题文件/` | 赛题正文、补充说明、GOAI 赛道三手册修订对照表、赛题修订对照表 | 第三方赛题材料，不随仓库分发 |
+| `归档/` | 2026-08-16 赛后归档：20 份方案 docx 备份、约 70 个一次性核验脚本、716 个 workspace 过程文件、提交包副本 | 只归档、不删除；`workspace/` 已从 Git 恢复，归档内同名文件为历史副本 |
+| `vendor/` | pandoc 3.10.1 / tectonic 0.17.0 单二进制 | 可重新下载；`vendor/README.md` 入库说明来源与许可证 |
+| `problem_definition.md` | 内部问题定义与探索环境设计 | 本地保留，不入公开仓库 |
+| `.api_key` | 本机 DeepSeek / Sciverse / MinerU 密钥 | 永不入库 |
 
 ---
 
@@ -316,14 +357,19 @@ workspace/
 | [`COMPLIANCE.md`](docs/COMPLIANCE.md) | **合规披露文档**——开源计划、商业 API、数据来源、第三方依赖、密钥管理、已有项目声明；对照修订版规则逐条自查 |
 | [`EXTERNAL_RESOURCES.md`](docs/EXTERNAL_RESOURCES.md) | **外部资源披露清单（随代码仓库提交）**——13 项外部资源（数据库/API/模型/编译工具）来源、版本、许可证、替代方案；与 `resource_registry.py` 代码注册表同步 |
 | [`REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) | 可复现性说明（确定性环节 / LLM 采样环节 / 独立核验流程）——docx 5.1 引用 |
-| [`CROSS_THEME_REPORT.md`](docs/CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（8 主题、51 Gap、5 跨领域连接）——docx 4.1.1 引用 |
+| [`CROSS_THEME_REPORT.md`](docs/CROSS_THEME_REPORT.md) | 跨主题泛化性验证报告（10 主题、63 Gap、31 条假设、5 跨领域连接）——docx 4.1.1 引用 |
 | [`ROUTE_A_SP_LIST.md`](workspace/outputs/ROUTE_A_SP_LIST.md) | 路线 A 构效关系清单（31 条假设、6 主题统一 SPR 编号、逐条证据链） |
 | [`ROUTE_A_EXPLANATION.md`](workspace/outputs/ROUTE_A_EXPLANATION.md) | 路线 A 科学解释文档（分主题学科背景 + 逐假设 LLM 解释 + 已知/新知判定） |
 | [`ROUTE_A_SP_LIST.pdf`](workspace/outputs/ROUTE_A_SP_LIST.pdf) | 路线 A 构效关系清单 PDF（LaTeX 编译，539 KB） |
 | [`ROUTE_A_EXPLANATION.pdf`](workspace/outputs/ROUTE_A_EXPLANATION.pdf) | 路线 A 科学解释文档 PDF（LaTeX 编译，664 KB） |
-| `初赛提交材料.md` | 完整方案说明、技术路线、实验结果、评审自查（**本地文档，不入公开仓库**） |
-| `初赛方案_修改清单.md` | docx 方案逐项核对清单（**本地文档，不入公开仓库**） |
-| `材料科学文献调研Agent_算法赛初赛方案.docx` | 初赛提交方案（**本地提交物，不入公开仓库**） |
+| `初赛材料/初赛提交物整理.md` | 初赛 4 件套清单、赛题要求逐项对照与提交方式（**本地文档，不入公开仓库**） |
+| `初赛材料/方案说明文档.docx` | 初赛方案说明文档，覆盖方向/科学问题/技术方案/路线/初步验证/仓库链接/资源披露/团队分工（**本地提交物，不入公开仓库**） |
+| `初赛材料/文献调研报告/` | 6 主题 PDF / tex / bib 三件套 + `report.tex.j2` 编译模板（**本地提交物，不入公开仓库**） |
+| `初赛材料/路线A_构效关系清单与解释文档/` | 路线 A 两份提交文档的 md / tex / pdf（**本地提交物，不入公开仓库**） |
+| `赛题文件/` | 赛题正文、补充说明与两份修订对照表（**第三方材料，不入公开仓库**） |
+| `归档/归档说明.md` | 2026-08-16 赛后归档的目录结构、归档原因与恢复方法（**本地文档，不入公开仓库**） |
+| [`项目完整性扫描报告.md`](项目完整性扫描报告.md) | 2026-08-16 五维只读扫描 + 人工复核记录（赛题合规 / 提交物完整性 / 文档一致性 / 证据链 / 代码质量） |
+| [`HARNESS_FIX_FRAMEWORK.md`](HARNESS_FIX_FRAMEWORK.md) | 扫描问题的修复工单框架（P0/P1/P2、执行顺序与提交前门禁清单） |
 | `workspace/outputs/literature_survey/gap_report.md` | 10 项 Gap 完整清单 + 证据链 |
 | `workspace/outputs/literature_survey/knowledge_graph.md` | R1–R33 构效关系知识图谱 |
 | `workspace/outputs/literature_survey/paper_register.md` | 文献登记表（546 篇次口径说明 + 543 条证据池） |
@@ -333,7 +379,7 @@ workspace/
 | `workspace/outputs/literature_survey/latex/report.tex` | 报告 LaTeX 源码（`survey_report.md + gap_report.md` 经 pandoc 转换生成） |
 | `workspace/outputs/literature_survey/latex/references.bib` | 71 条 BibTeX 参考文献（`build_bib.py` 从登记表/Crossref 自动生成，key 与正文引用一一对应） |
 | `workspace/outputs/{perovskite,thermoelectric,cathode,mof_e2e_v4,validation}/literature_survey/latex/` | 5 个跨主题 LaTeX 报告（均零编译错误、零 Unicode 缺字），合计 6 主题全覆盖 |
-| [`utils/resource_registry.py`](utils/resource_registry.py) | 外部资源注册表（12 项，来源/版本/用途/替代方案），对应方案 docx 5.3 节 Table 5 |
+| [`utils/resource_registry.py`](utils/resource_registry.py) | 外部资源注册表（13 项，来源/版本/用途/替代方案），对应方案 docx 5.3 节 Table 5 |
 | [`literature_agent/planned_capabilities.py`](literature_agent/planned_capabilities.py) | 复赛计划能力接口占位（混合检索/图谱库/自动二次核验），对应方案 docx 3.1.3 三项"为复赛计划" |
 
 ---
@@ -362,6 +408,7 @@ workspace/
 | v2.3.2 | 2026-08 | 跨主题 LaTeX 报告流水线（6 主题全覆盖）：① `build_bib.py` 新增 `--theme` 参数，支持 dict 格式条目（perovskite/cathode paper_summaries）、数学模式保护（`esc_title()` 不转义 `$...$` 内下划线）、截断标题正则兜底；② `md2latex.py` 新增 `--theme` + `---` 表格歧义修复（→`***`）+ `\label` 保护（避免 `\cite` 进入 `\csname`）+ YAML 元数据块禁用；③ 模板新增 21 条 `\newunicodechar`（αβκσχ≥≠⁴⁶⁷⁻ᵧ₄₈ₑₗ✅⏳⚠Ⅱ）；④ 产出 5 个跨主题 PDF（perovskite 308K/thermoelectric 440K/cathode 480K/mof 411K/validation 391K）+ 主案例重生成 578K，6 主题全部零编译错误、零 Unicode 缺字 |
 | v2.3.3 | 2026-08 | 路线 A 构效关系提交文档：① 新增 `scripts/build_route_a_docs.py`——从 6 主题 discovery 子目录提取 31 条假设，生成统一 SPR 编号体系（SPR-{THEME}-{NN}）的 SP 清单（69 KB / 694 行）与科学解释文档（73 KB / ~720 行），含已知/新知判定、证据链格式清理、LLM 解释增强；② 新增 `scripts/compile_route_a_pdf.py` + `scripts/templates/route_a.tex.j2`——pandoc → Jinja2 → tectonic 编译链路，补充 ²³₅×ΔΩ–—↑→↓∝ 等 20 条 Unicode 映射；③ 产出 `ROUTE_A_SP_LIST.pdf`（539 KB）与 `ROUTE_A_EXPLANATION.pdf`（664 KB），零编译错误；④ `CROSS_THEME_REPORT.md` 头部新增路线 A 文档索引 |
 | v2.3.4 | 2026-08 | validation（固态电解质）主题定量核验补跑：① 确认知识图谱无可提取 (x,y) 配对（0 组），5 条假设均为机制性/定性假设；② 新增 `scripts/complete_validation_verification.py`——仿 cathode 补跑模式为 5 条假设生成"数据不足（insufficient_data）"诚实核验产物（model_comparison_0..4.md + symbolic_0..4.md，未虚构数值）；③ hypotheses.json 5 条 validation_status 同步更新为 insufficient_data；④ `CROSS_THEME_REPORT.md` 七处表述同步更新（主表/中规模表/假设质量表/行动项与完整性说明），validation 由"待核验"改为"5 条 insufficient_data" |
+| v2.3.4-docs.1 | 2026-10-22 | README 与本地材料对齐（仅文档，无代码变更）：① 新增 §2.1 赛题要求对照（基本任务四项能力 + 路线 A 四项考察点 + 加分项）；② 新增 §3.5 初赛提交物 4 件套及规模/参考文献口径；③ 修正多主题口径（10 主题、7 个入库主题、补入 `mof_rerun_v3`，冒烟主题仅本地归档）；④ 新增「本地保留材料（不入库）」表，覆盖 `初赛材料/`、`赛题文件/`、`归档/`、`vendor/`、`problem_definition.md`、`.api_key`；⑤ 文档索引修正失效条目（`初赛提交材料.md` 等 → `初赛材料/` 实际文件），补入完整性扫描报告与修复框架；⑥ 同步 `CROSS_THEME_REPORT` 为 10 主题 / 63 Gap，资源注册表 12→13 项 |
 
 ---
 
@@ -402,8 +449,9 @@ workspace/outputs/<run-dir>/literature_survey/
     ├── discovery_report.md/.json # 发现报告
     └── baseline_random.json     # 参照系结果
 
-# 已入库主题（6 个）：cathode / literature_survey / mof_e2e_v4 /
-#   perovskite / thermoelectric / validation
+# 已入库主题（7 个）：cathode / literature_survey / mof_e2e_v4 /
+#   mof_rerun_v3 / perovskite / thermoelectric / validation
+# 另有 smoke_test / g3test / smoke_fix 仅本地归档（不入库）
 ```
 
 ## 附录 D：MinerU PDF 解析引擎启用指南
